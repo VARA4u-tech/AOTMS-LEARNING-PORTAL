@@ -86,7 +86,7 @@ const CoursesSection = () => {
               
               <div className="relative bg-card rounded-2xl overflow-hidden border border-border shadow-lg group-hover:shadow-2xl transition-all duration-500">
                 {/* Gradient Header */}
-                <div className={`relative h-32 bg-gradient-to-br ${course.gradient} p-5 overflow-hidden`}>
+                <div className={`relative h-44 bg-gradient-to-br ${course.gradient} p-5 overflow-hidden`}>
                   {/* Decorative circles */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
                   <div className="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />

@@ -76,14 +76,14 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="absolute top-[-8%] sm:top-[-5%] right-[2%] sm:right-[5%] md:right-[8%] lg:right-[12%] w-24 sm:w-32 md:w-44 lg:w-52"
+            className="absolute top-[0%] sm:top-[-5%] right-[3%] sm:right-[5%] md:right-[8%] lg:right-[12%] w-16 sm:w-28 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
-              <span className="text-sm sm:text-lg md:text-2xl font-bold text-primary mb-0.5 sm:mb-1">{steps[0].step}</span>
-              <h3 className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm mb-0.5 sm:mb-1">{steps[0].title}</h3>
-              <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">{steps[0].description}</p>
-              <div className="h-4 sm:h-6 md:h-8 w-0.5 bg-muted-foreground/30 mt-1 sm:mt-2" />
-              <div className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full ${steps[0].color} mt-1 sm:mt-2`} />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[0].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[0].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[0].description}</p>
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mt-0.5 sm:mt-1" />
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[0].color} mt-0.5 sm:mt-1`} />
             </div>
           </motion.div>
 
@@ -93,14 +93,14 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute top-[12%] sm:top-[15%] left-[2%] sm:left-[5%] md:left-[10%] lg:left-[15%] w-24 sm:w-32 md:w-44 lg:w-52"
+            className="absolute top-[18%] sm:top-[15%] left-[3%] sm:left-[5%] md:left-[10%] lg:left-[15%] w-16 sm:w-28 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
-              <span className="text-sm sm:text-lg md:text-2xl font-bold text-primary mb-0.5 sm:mb-1">{steps[1].step}</span>
-              <h3 className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm mb-0.5 sm:mb-1">{steps[1].title}</h3>
-              <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">{steps[1].description}</p>
-              <div className="h-4 sm:h-6 md:h-8 w-0.5 bg-muted-foreground/30 mt-1 sm:mt-2" />
-              <div className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full ${steps[1].color} mt-1 sm:mt-2`} />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[1].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[1].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[1].description}</p>
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mt-0.5 sm:mt-1" />
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[1].color} mt-0.5 sm:mt-1`} />
             </div>
           </motion.div>
 
@@ -110,14 +110,14 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="absolute top-[35%] sm:top-[38%] right-[2%] sm:right-[8%] md:right-[15%] lg:right-[20%] w-24 sm:w-32 md:w-44 lg:w-52"
+            className="absolute top-[38%] sm:top-[38%] right-[3%] sm:right-[8%] md:right-[15%] lg:right-[20%] w-16 sm:w-28 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
-              <div className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full ${steps[2].color} mb-1 sm:mb-2`} />
-              <div className="h-4 sm:h-6 md:h-8 w-0.5 bg-muted-foreground/30 mb-1 sm:mb-2" />
-              <span className="text-sm sm:text-lg md:text-2xl font-bold text-primary mb-0.5 sm:mb-1">{steps[2].step}</span>
-              <h3 className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm mb-0.5 sm:mb-1">{steps[2].title}</h3>
-              <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">{steps[2].description}</p>
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[2].color} mb-0.5 sm:mb-1`} />
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mb-0.5 sm:mb-1" />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[2].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[2].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[2].description}</p>
             </div>
           </motion.div>
 
@@ -127,14 +127,14 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="absolute top-[52%] sm:top-[55%] left-[2%] sm:left-[10%] md:left-[18%] lg:left-[22%] w-24 sm:w-32 md:w-44 lg:w-52"
+            className="absolute top-[55%] sm:top-[55%] left-[3%] sm:left-[10%] md:left-[18%] lg:left-[22%] w-16 sm:w-28 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
-              <span className="text-sm sm:text-lg md:text-2xl font-bold text-primary mb-0.5 sm:mb-1">{steps[3].step}</span>
-              <h3 className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm mb-0.5 sm:mb-1">{steps[3].title}</h3>
-              <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">{steps[3].description}</p>
-              <div className="h-4 sm:h-6 md:h-8 w-0.5 bg-muted-foreground/30 mt-1 sm:mt-2" />
-              <div className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full ${steps[3].color} mt-1 sm:mt-2`} />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[3].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[3].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[3].description}</p>
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mt-0.5 sm:mt-1" />
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[3].color} mt-0.5 sm:mt-1`} />
             </div>
           </motion.div>
 
@@ -144,14 +144,14 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="absolute top-[72%] sm:top-[75%] right-[5%] sm:right-[15%] md:right-[25%] lg:right-[30%] w-24 sm:w-32 md:w-44 lg:w-52"
+            className="absolute top-[72%] sm:top-[75%] right-[8%] sm:right-[15%] md:right-[25%] lg:right-[30%] w-16 sm:w-28 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
-              <div className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full ${steps[4].color} mb-1 sm:mb-2`} />
-              <div className="h-4 sm:h-6 md:h-8 w-0.5 bg-muted-foreground/30 mb-1 sm:mb-2" />
-              <span className="text-sm sm:text-lg md:text-2xl font-bold text-primary mb-0.5 sm:mb-1">{steps[4].step}</span>
-              <h3 className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm mb-0.5 sm:mb-1">{steps[4].title}</h3>
-              <p className="text-[8px] sm:text-[10px] md:text-xs text-muted-foreground leading-tight">{steps[4].description}</p>
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[4].color} mb-0.5 sm:mb-1`} />
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mb-0.5 sm:mb-1" />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[4].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[4].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[4].description}</p>
             </div>
           </motion.div>
         </div>

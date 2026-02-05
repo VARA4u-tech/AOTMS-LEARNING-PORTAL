@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import GridScan from "./GridScan";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
        {/* GridScan Background */}
        <div className="absolute inset-0 z-0">
@@ -77,15 +79,15 @@ const HeroSection = () => {
           duration: 0.6,
           delay: 0.3
         }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-             <Button variant="accent" size="xl" className="gap-2 group">
-               Get Started
-               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-             </Button>
-             <Button variant="hero" size="xl" className="gap-2">
-               <Play className="w-5 h-5" />
-               Watch Demo
-             </Button>
-           </motion.div>
+            <Button variant="accent" size="xl" className="gap-2 group" onClick={() => navigate("/auth")}>
+                Get Started
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button variant="hero" size="xl" className="gap-2" onClick={() => navigate("/dashboard")}>
+                <Play className="w-5 h-5" />
+                Watch Demo
+              </Button>
+            </motion.div>
  
            {/* Stats */}
            <motion.div initial={{

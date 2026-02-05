@@ -1,13 +1,24 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, Settings, LogOut, LayoutDashboard } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "@/hooks/useAuth";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   // Handle scroll effect
   useEffect(() => {
@@ -49,6 +60,27 @@ const Header = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
+
+  // Get user initials for avatar fallback
+  const getUserInitials = () => {
+    if (user?.user_metadata?.full_name) {
+      return user.user_metadata.full_name
+        .split(" ")
+        .map((n: string) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2);
+    }
+    if (user?.email) {
+      return user.email[0].toUpperCase();
+    }
+    return "U";
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-border ${
@@ -80,14 +112,54 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTA Buttons - Hidden on mobile/tablet */}
+          {/* Desktop CTA Buttons or User Avatar - Hidden on mobile/tablet */}
           <div className="hidden lg:flex items-center gap-3 xl:gap-4">
-            <Button variant="hero-outline" size="default" asChild>
-              <Link to="/auth">Login</Link>
-            </Button>
-            <Button variant="accent" size="default" asChild>
-              <Link to="/auth">Get Started</Link>
-            </Button>
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center gap-2 p-1 rounded-full hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <Avatar className="h-10 w-10 border-2 border-primary/20">
+                      <AvatarImage src={user.user_metadata?.avatar_url} alt="User avatar" />
+                      <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
+                        {getUserInitials()}
+                      </AvatarFallback>
+                    </Avatar>
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56 bg-background border border-border shadow-lg z-[100]">
+                  <div className="px-3 py-2 border-b border-border">
+                    <p className="text-sm font-medium text-foreground">{user.user_metadata?.full_name || "User"}</p>
+                    <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                  </div>
+                  <DropdownMenuItem asChild className="cursor-pointer">
+                    <Link to="/dashboard" className="flex items-center gap-2">
+                      <LayoutDashboard className="h-4 w-4" />
+                      <span>Dashboard</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="cursor-pointer">
+                    <Link to="/settings" className="flex items-center gap-2">
+                      <Settings className="h-4 w-4" />
+                      <span>Settings</span>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleSignOut} className="cursor-pointer text-destructive focus:text-destructive">
+                    <LogOut className="h-4 w-4 mr-2" />
+                    <span>Log out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Button variant="hero-outline" size="default" asChild>
+                  <Link to="/auth">Login</Link>
+                </Button>
+                <Button variant="accent" size="default" asChild>
+                  <Link to="/auth">Get Started</Link>
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Mobile/Tablet Menu Toggle */}
@@ -143,28 +215,73 @@ const Header = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2, delay: 0.25 }}
-                  className="flex flex-col sm:flex-row gap-3 pt-4 mt-2 border-t border-border"
+                  className="flex flex-col gap-3 pt-4 mt-2 border-t border-border"
                 >
-                  <Button
-                    variant="hero-outline"
-                    size="lg"
-                    className="w-full sm:flex-1"
-                    asChild
-                  >
-                    <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
-                      Login
-                    </Link>
-                  </Button>
-                  <Button
-                    variant="accent"
-                    size="lg"
-                    className="w-full sm:flex-1"
-                    asChild
-                  >
-                    <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
-                      Get Started
-                    </Link>
-                  </Button>
+                  {user ? (
+                    <>
+                      <div className="flex items-center gap-3 px-4 py-2">
+                        <Avatar className="h-10 w-10 border-2 border-primary/20">
+                          <AvatarImage src={user.user_metadata?.avatar_url} alt="User avatar" />
+                          <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
+                            {getUserInitials()}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="text-sm font-medium text-foreground">{user.user_metadata?.full_name || "User"}</p>
+                          <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                        </div>
+                      </div>
+                      <Link
+                        to="/dashboard"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted rounded-lg px-4 py-3 transition-all"
+                      >
+                        <LayoutDashboard className="h-5 w-5" />
+                        Dashboard
+                      </Link>
+                      <Link
+                        to="/settings"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex items-center gap-2 text-base font-medium text-muted-foreground hover:text-primary hover:bg-muted rounded-lg px-4 py-3 transition-all"
+                      >
+                        <Settings className="h-5 w-5" />
+                        Settings
+                      </Link>
+                      <button
+                        onClick={() => {
+                          handleSignOut();
+                          setIsMenuOpen(false);
+                        }}
+                        className="flex items-center gap-2 text-base font-medium text-destructive hover:bg-destructive/10 rounded-lg px-4 py-3 transition-all w-full text-left"
+                      >
+                        <LogOut className="h-5 w-5" />
+                        Log out
+                      </button>
+                    </>
+                  ) : (
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button
+                        variant="hero-outline"
+                        size="lg"
+                        className="w-full sm:flex-1"
+                        asChild
+                      >
+                        <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                          Login
+                        </Link>
+                      </Button>
+                      <Button
+                        variant="accent"
+                        size="lg"
+                        className="w-full sm:flex-1"
+                        asChild
+                      >
+                        <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
+                          Get Started
+                        </Link>
+                      </Button>
+                    </div>
+                  )}
                 </motion.div>
               </nav>
             </motion.div>

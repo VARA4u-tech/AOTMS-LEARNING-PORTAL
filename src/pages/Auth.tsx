@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { motion } from 'framer-motion';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,7 +12,7 @@ import { PhoneInput } from '@/components/ui/phone-input';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import logo from '@/assets/logo.png';
+import { LampContainer } from '@/components/ui/lamp';
 import { Mail, Lock, User, Eye, EyeOff, Check, X } from 'lucide-react';
 
 const loginSchema = z.object({
@@ -151,24 +152,31 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
-      {/* Left Panel - Gradient Background */}
-      <div className="lg:w-1/2 bg-gradient-to-br from-accent/30 via-primary/20 to-accent/40 p-6 lg:p-10 flex flex-col relative overflow-hidden pointer-events-none">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-3 z-10 pointer-events-auto">
-          <img src={logo} alt="AOTMS Logo" className="h-8 lg:h-10" />
-        </a>
-        
-        {/* Motivational Text */}
-        <div className="flex-1 flex flex-col justify-center mt-6 lg:mt-0 z-10">
-          <p className="text-muted-foreground text-sm mb-2">You can easily</p>
-          <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground leading-tight">
-            Get access to your personal hub for learning and growth.
-          </h1>
-        </div>
-        
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-accent/40 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Left Panel - Lamp Effect */}
+      <div className="hidden lg:block lg:w-1/2 relative overflow-hidden">
+        <LampContainer className="min-h-screen">
+          <motion.div
+            initial={{ opacity: 0.5, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="text-center"
+          >
+            <p className="text-primary/80 text-sm mb-3 tracking-wide">Welcome to AOTMS</p>
+            <h1 className="mt-2 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl lg:text-6xl">
+              Your Gateway to <br />
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Learning Excellence
+              </span>
+            </h1>
+            <p className="mt-4 text-slate-400 text-sm md:text-base max-w-md mx-auto">
+              Access courses, track progress, and grow with industry experts.
+            </p>
+          </motion.div>
+        </LampContainer>
       </div>
       
       {/* Right Panel - Auth Form */}

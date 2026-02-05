@@ -76,7 +76,7 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="absolute top-[2%] right-[5%] md:right-[8%] lg:right-[12%] w-36 md:w-44 lg:w-52"
+            className="absolute top-[-5%] right-[5%] md:right-[8%] lg:right-[12%] w-36 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
               <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full ${steps[0].color} mb-2`} />

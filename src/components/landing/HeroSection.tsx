@@ -38,7 +38,7 @@ const HeroSection = () => {
              </span>
            </motion.div>
  
-           <motion.h1 initial={{
+            <motion.h1 initial={{
           opacity: 0,
           y: 30
         }} animate={{
@@ -47,7 +47,7 @@ const HeroSection = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.1
-        }} className="font-hero text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-center font-semibold text-card-foreground">
+        }} className="font-hero text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-center font-semibold text-white drop-shadow-lg">
               Learn Practice<br />
               Get Job-Ready with AOTMS
            </motion.h1>

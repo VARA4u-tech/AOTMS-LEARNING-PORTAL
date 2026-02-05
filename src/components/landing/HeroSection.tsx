@@ -6,7 +6,7 @@ import GridScan from "./GridScan";
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
        {/* GridScan Background */}
-       <div className="absolute inset-0 -z-10">
+       <div className="absolute inset-0 z-0">
          <GridScan
            sensitivity={0.55}
            lineThickness={1}
@@ -21,7 +21,7 @@ const HeroSection = () => {
          />
        </div>
  
-       <div className="container-width section-padding">
+       <div className="container-width section-padding relative z-10">
          <div className="max-w-4xl mx-auto text-center">
            <motion.div initial={{
           opacity: 0,

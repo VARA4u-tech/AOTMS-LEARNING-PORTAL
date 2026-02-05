@@ -97,7 +97,7 @@ const HeroSection = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.4
-        }} className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-8 border-t border-border">
+        }} className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-8 border-t border-white/20">
              {[{
             value: "10K+",
             label: "Active Students"
@@ -111,10 +111,10 @@ const HeroSection = () => {
             value: "95%",
             label: "Success Rate"
           }].map(stat => <div key={stat.label} className="text-center">
-                 <p className="text-3xl md:text-4xl font-heading text-foreground">
+                 <p className="text-3xl md:text-4xl font-heading text-white">
                    {stat.value}
                  </p>
-                 <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                 <p className="text-sm text-white/70 mt-1">{stat.label}</p>
                </div>)}
            </motion.div>
          </div>

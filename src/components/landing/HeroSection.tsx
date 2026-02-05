@@ -36,9 +36,8 @@ const HeroSection = () => {
         }} transition={{
           duration: 0.6,
           delay: 0.1
-        }} className="font-hero md:text-6xl lg:text-7xl leading-tight mb-6 mx-0 my-0 px-[31px] py-[10px] font-medium text-center text-8xl">
-             Learn. Practice.
-             <br />
+        }} className="font-hero md:text-6xl lg:text-7xl leading-tight mb-6 mx-0 my-0 px-[31px] py-[10px] text-center text-8xl font-semibold">Learn Practice
+Get Job-Ready with AOTMS<br />
              Get Job-Ready with AOTMS
            </motion.h1>
  

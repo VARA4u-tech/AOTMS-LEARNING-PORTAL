@@ -1,84 +1,164 @@
 import { motion } from "framer-motion";
 import { UserPlus, BookMarked, Video, ClipboardCheck, Trophy } from "lucide-react";
-const steps = [{
-  icon: UserPlus,
-  step: "01",
-  title: "Sign Up & Create Profile",
-  description: "Create your account and personalize your learning profile"
-}, {
-  icon: BookMarked,
-  step: "02",
-  title: "Choose Your Course",
-  description: "Browse and enroll in courses that match your goals"
-}, {
-  icon: Video,
-  step: "03",
-  title: "Attend Classes",
-  description: "Join live sessions or watch recorded lectures"
-}, {
-  icon: ClipboardCheck,
-  step: "04",
-  title: "Practice Mock Tests",
-  description: "Sharpen your skills with practice assessments"
-}, {
-  icon: Trophy,
-  step: "05",
-  title: "Track Your Rank",
-  description: "Complete exams and climb the leaderboard"
-}];
+import roadImage from "@/assets/road.png";
+
+const steps = [
+  {
+    icon: UserPlus,
+    step: "01",
+    title: "Sign Up & Create Profile",
+    description: "Create your account and personalize your learning profile",
+    color: "bg-orange-500",
+  },
+  {
+    icon: BookMarked,
+    step: "02",
+    title: "Choose Your Course",
+    description: "Browse and enroll in courses that match your goals",
+    color: "bg-yellow-500",
+  },
+  {
+    icon: Video,
+    step: "03",
+    title: "Attend Classes",
+    description: "Join live sessions or watch recorded lectures",
+    color: "bg-green-500",
+  },
+  {
+    icon: ClipboardCheck,
+    step: "04",
+    title: "Practice Mock Tests",
+    description: "Sharpen your skills with practice assessments",
+    color: "bg-cyan-500",
+  },
+  {
+    icon: Trophy,
+    step: "05",
+    title: "Track Your Rank",
+    description: "Complete exams and climb the leaderboard",
+    color: "bg-pink-500",
+  },
+];
+
 const HowItWorks = () => {
-  return <section className="section-padding bg-background-alt">
-       <div className="container-width">
-         <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} whileInView={{
-        opacity: 1,
-        y: 0
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.5
-      }} className="text-center mb-12">
-           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-             HOW IT WORKS
-           </h2>
-           <p className="text-muted-foreground max-w-2xl mx-auto">
-             Your journey from enrollment to employment in 5 simple steps
-           </p>
-         </motion.div>
- 
-         <div className="relative">
-           {/* Connection line */}
-           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2 z-0" />
-           
-           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
-             {steps.map((step, index) => <motion.div key={step.title} initial={{
-            opacity: 0,
-            y: 20
-          }} whileInView={{
-            opacity: 1,
-            y: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.5,
-            delay: index * 0.1
-          }} className="flex flex-col items-center text-center">
-                 <div className="relative">
-                   <div className="w-20 h-20 rounded-full bg-card border-2 border-primary flex items-center justify-center mb-4 shadow-medium">
-                     <step.icon className="w-8 h-8 text-primary" />
-                   </div>
-                   <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent text-accent-foreground text-sm font-bold items-center justify-center flex flex-row border-0 mx-[40px] my-0 px-[240px] py-[7px]">
-                     {step.step}
-                   </span>
-                 </div>
-                 <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
-                 <p className="text-sm text-muted-foreground">{step.description}</p>
-               </motion.div>)}
-           </div>
-         </div>
-       </div>
-     </section>;
+  return (
+    <section className="py-16 md:py-24 bg-background-alt overflow-hidden">
+      <div className="container-width px-4 md:px-8 lg:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-8 md:mb-12"
+        >
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+            YOUR LEARNING JOURNEY
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Your journey from enrollment to employment in 5 simple steps
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Road Layout - Responsive for all devices */}
+      <div className="relative w-full">
+        <div className="relative w-full">
+          {/* Road Image - Full Width Responsive */}
+          <img 
+            src={roadImage} 
+            alt="Learning journey road" 
+            className="w-full h-auto object-cover min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]"
+          />
+          
+          {/* Step 1 - Top right area */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="absolute top-[0%] sm:top-[-5%] right-[3%] sm:right-[5%] md:right-[8%] lg:right-[12%] w-16 sm:w-28 md:w-44 lg:w-52"
+          >
+            <div className="flex flex-col items-center text-center">
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[0].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[0].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[0].description}</p>
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mt-0.5 sm:mt-1" />
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[0].color} mt-0.5 sm:mt-1`} />
+            </div>
+          </motion.div>
+
+          {/* Step 2 - Upper left */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="absolute top-[18%] sm:top-[15%] left-[3%] sm:left-[5%] md:left-[10%] lg:left-[15%] w-16 sm:w-28 md:w-44 lg:w-52"
+          >
+            <div className="flex flex-col items-center text-center">
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[1].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[1].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[1].description}</p>
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mt-0.5 sm:mt-1" />
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[1].color} mt-0.5 sm:mt-1`} />
+            </div>
+          </motion.div>
+
+          {/* Step 3 - Middle right */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="absolute top-[38%] sm:top-[38%] right-[3%] sm:right-[8%] md:right-[15%] lg:right-[20%] w-16 sm:w-28 md:w-44 lg:w-52"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[2].color} mb-0.5 sm:mb-1`} />
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mb-0.5 sm:mb-1" />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[2].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[2].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[2].description}</p>
+            </div>
+          </motion.div>
+
+          {/* Step 4 - Lower left */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="absolute top-[55%] sm:top-[55%] left-[3%] sm:left-[10%] md:left-[18%] lg:left-[22%] w-16 sm:w-28 md:w-44 lg:w-52"
+          >
+            <div className="flex flex-col items-center text-center">
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[3].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[3].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[3].description}</p>
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mt-0.5 sm:mt-1" />
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[3].color} mt-0.5 sm:mt-1`} />
+            </div>
+          </motion.div>
+
+          {/* Step 5 - Bottom right */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="absolute top-[72%] sm:top-[75%] right-[8%] sm:right-[15%] md:right-[25%] lg:right-[30%] w-16 sm:w-28 md:w-44 lg:w-52"
+          >
+            <div className="flex flex-col items-center text-center">
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-4 md:h-4 rounded-full ${steps[4].color} mb-0.5 sm:mb-1`} />
+              <div className="h-2 sm:h-4 md:h-8 w-0.5 bg-muted-foreground/30 mb-0.5 sm:mb-1" />
+              <span className="text-[10px] sm:text-base md:text-2xl font-bold text-primary mb-0.5">{steps[4].step}</span>
+              <h3 className="font-semibold text-foreground text-[7px] sm:text-[10px] md:text-sm mb-0.5 leading-tight">{steps[4].title}</h3>
+              <p className="text-[6px] sm:text-[8px] md:text-xs text-muted-foreground leading-tight hidden sm:block">{steps[4].description}</p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+    </section>
+  );
 };
+
 export default HowItWorks;

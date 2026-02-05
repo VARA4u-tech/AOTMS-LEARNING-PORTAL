@@ -79,11 +79,11 @@ const HowItWorks = () => {
             className="absolute top-[-5%] right-[5%] md:right-[8%] lg:right-[12%] w-36 md:w-44 lg:w-52"
           >
             <div className="flex flex-col items-center text-center">
-              <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full ${steps[0].color} mb-2`} />
-              <div className="h-6 md:h-8 w-0.5 bg-muted-foreground/30 mb-2" />
               <span className="text-xl md:text-2xl font-bold text-primary mb-1">{steps[0].step}</span>
               <h3 className="font-semibold text-foreground text-xs md:text-sm mb-1">{steps[0].title}</h3>
               <p className="text-[10px] md:text-xs text-muted-foreground">{steps[0].description}</p>
+              <div className="h-6 md:h-8 w-0.5 bg-muted-foreground/30 mt-2" />
+              <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full ${steps[0].color} mt-2`} />
             </div>
           </motion.div>
 

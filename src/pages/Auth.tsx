@@ -193,26 +193,23 @@ export default function Auth() {
           {/* Login Form */}
           {isLogin ? (
             <Form {...loginForm}>
-              <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-3">
+              <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-5">
                 <FormField
                   control={loginForm.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="login-email" className="text-sm">Email</FormLabel>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
-                        <FormControl>
-                          <Input
-                            id="login-email"
-                            type="email"
-                            placeholder="student@example.com"
-                            className="pl-10 h-11 bg-background text-foreground border-input relative z-10 pointer-events-auto cursor-text"
-                            autoComplete="email"
-                            {...field}
-                          />
-                        </FormControl>
-                      </div>
+                      <FormLabel htmlFor="login-email" className="text-sm font-medium text-foreground">Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          id="login-email"
+                          type="email"
+                          placeholder="student@example.com"
+                          className="h-12 bg-background text-foreground border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                          autoComplete="email"
+                          {...field}
+                        />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -223,15 +220,14 @@ export default function Auth() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="login-password" className="text-sm">Password</FormLabel>
+                      <FormLabel htmlFor="login-password" className="text-sm font-medium text-foreground">Password</FormLabel>
                       <div className="relative">
-                        <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
                         <FormControl>
                           <Input
                             id="login-password"
                             type={showLoginPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="pl-10 pr-10 h-11 bg-background text-foreground border-input relative z-10 pointer-events-auto cursor-text"
+                            className="h-12 pr-12 bg-background text-foreground border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                             autoComplete="current-password"
                             {...field}
                           />
@@ -239,10 +235,10 @@ export default function Auth() {
                         <button
                           type="button"
                           onClick={() => setShowLoginPassword(!showLoginPassword)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors z-10"
+                          className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                           tabIndex={-1}
                         >
-                          {showLoginPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                          {showLoginPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                         </button>
                       </div>
                       <FormMessage />
@@ -253,7 +249,7 @@ export default function Auth() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-11 bg-foreground text-background hover:bg-foreground/90 font-medium text-sm rounded-lg"
+                  className="w-full h-12 bg-foreground text-background hover:bg-foreground/90 font-medium text-sm rounded-lg mt-1"
                 >
                   {loading ? 'Signing in...' : 'Sign In'}
                 </Button>

@@ -7,6 +7,7 @@
  import Index from "./pages/Index";
  import Auth from "./pages/Auth";
  import Dashboard from "./pages/Dashboard";
+ import InstructorDashboard from "./pages/InstructorDashboard";
  import NotFound from "./pages/NotFound";
  
  const queryClient = new QueryClient();
@@ -23,6 +24,8 @@
              <Route path="/auth" element={<Auth />} />
              <Route path="/dashboard" element={<Dashboard />} />
              <Route path="/dashboard/*" element={<Dashboard />} />
+             <Route path="/instructor" element={<InstructorDashboard />} />
+             <Route path="/instructor/*" element={<InstructorDashboard />} />
              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
              <Route path="*" element={<NotFound />} />
            </Routes>

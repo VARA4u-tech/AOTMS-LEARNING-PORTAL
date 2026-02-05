@@ -144,7 +144,7 @@ const Header = () => {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className={`lg:hidden ${isScrolled ? "text-foreground" : "text-foreground"}`}
+                  className={`lg:hidden hover:bg-transparent ${isScrolled ? "text-foreground" : "text-white"}`}
                 >
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>

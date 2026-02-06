@@ -189,7 +189,7 @@ const FAQSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left Side - Sticky Visual (1080x1920 aspect ratio) */}
           <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="sticky top-24 w-full lg:aspect-[10/14] rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl bg-black z-10">
+            <div className="sticky top-24 w-full lg:aspect-[10/12] rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl bg-black z-10">
               <canvas ref={canvasRef} className="w-full h-full block object-cover" />
               {!isLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center text-white/50 font-mono tracking-widest text-sm">
@@ -198,7 +198,7 @@ const FAQSection = () => {
               )}
             </div>
           </div>
-
+              
           {/* Right Side - FAQ Content */}
           <div className="lg:col-span-7 space-y-12 lg:space-y-32 relative z-0 pb-24">
             {faqCategories.map((category, categoryIndex) => (

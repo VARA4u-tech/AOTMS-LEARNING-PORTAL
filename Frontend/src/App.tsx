@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import TargetCursor from "@/components/ui/TargetCursor";
 import Index from "./pages/Index";
+import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import LearningPaths from "./pages/LearningPaths";
 import InstructorRegister from "./pages/InstructorRegister";
@@ -14,14 +15,14 @@ import InstructorDashboard from "./pages/InstructorDashboard";
 import ManagerDashboard from "./pages/ManagerDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
- 
+
 const queryClient = new QueryClient();
- 
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <TooltipProvider>
-        <TargetCursor 
+        <TargetCursor
           spinDuration={2}
           hideDefaultCursor
           parallaxOn
@@ -30,26 +31,27 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/auth" element={<Auth />} />
-              <Route path="/become-instructor" element={<InstructorRegister />} />
-              <Route path="/learning-paths" element={<LearningPaths />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-             <Route path="/dashboard/*" element={<Dashboard />} />
-             <Route path="/instructor" element={<InstructorDashboard />} />
-             <Route path="/instructor/*" element={<InstructorDashboard />} />
-             <Route path="/manager" element={<ManagerDashboard />} />
-             <Route path="/manager/*" element={<ManagerDashboard />} />
-             <Route path="/admin" element={<AdminDashboard />} />
-             <Route path="/admin/*" element={<AdminDashboard />} />
-             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-             <Route path="*" element={<NotFound />} />
-           </Routes>
-         </BrowserRouter>
-       </TooltipProvider>
-     </AuthProvider>
-   </QueryClientProvider>
- );
- 
- export default App;
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/become-instructor" element={<InstructorRegister />} />
+            <Route path="/learning-paths" element={<LearningPaths />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard/*" element={<Dashboard />} />
+            <Route path="/instructor" element={<InstructorDashboard />} />
+            <Route path="/instructor/*" element={<InstructorDashboard />} />
+            <Route path="/manager" element={<ManagerDashboard />} />
+            <Route path="/manager/*" element={<ManagerDashboard />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/*" element={<AdminDashboard />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
+  </QueryClientProvider>
+);
+
+export default App;

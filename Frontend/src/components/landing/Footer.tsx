@@ -149,10 +149,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-10 pt-9 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 ">
           <div className="flex items-center gap-2">
             <img src={logo} alt="AOTMS Logo" className="h-8" />
-            <span className="text-sm text-muted-foreground">for LMS</span>
           </div>
           
           <p className="text-sm text-muted-foreground">

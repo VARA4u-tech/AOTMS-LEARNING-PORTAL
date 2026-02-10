@@ -21,10 +21,10 @@ import {
 } from 'lucide-react';
 
 const statsCards = [
-  { title: 'Enrolled Courses', value: '4', icon: BookOpen, color: 'text-primary' },
-  { title: 'Exams Completed', value: '12', icon: Trophy, color: 'text-accent' },
-  { title: 'Hours Learned', value: '48', icon: Clock, color: 'text-green-500' },
-  { title: 'ATS Score', value: '78%', icon: TrendingUp, color: 'text-purple-500' },
+  { title: 'Enrolled Courses', value: '4', icon: BookOpen, color: 'text-primary' }, // Blue
+  { title: 'Exams Completed', value: '12', icon: Trophy, color: 'text-accent' }, // Orange
+  { title: 'Hours Learned', value: '48', icon: Clock, color: 'text-primary' }, // Blue
+  { title: 'ATS Score', value: '78%', icon: TrendingUp, color: 'text-accent' }, // Orange
 ];
 
 const upcomingClasses = [
@@ -42,7 +42,7 @@ const recentCourses = [
 // Dashboard Home Content
 function DashboardHome() {
   const { user } = useAuth();
-  
+
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
@@ -54,7 +54,7 @@ function DashboardHome() {
           Here's what's happening with your learning journey
         </p>
       </div>
-      
+
       {/* Stats Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {statsCards.map((stat) => (
@@ -71,7 +71,7 @@ function DashboardHome() {
           </Card>
         ))}
       </div>
-      
+
       {/* Main Content Grid */}
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Recent Courses */}
@@ -113,7 +113,7 @@ function DashboardHome() {
             ))}
           </CardContent>
         </Card>
-        
+
         {/* Upcoming Classes */}
         <Card>
           <CardHeader>
@@ -141,7 +141,7 @@ function DashboardHome() {
           </CardContent>
         </Card>
       </div>
-      
+
       {/* Quick Actions */}
       <div className="grid gap-4 md:grid-cols-4">
         <Card className="hover-lift cursor-pointer group">
@@ -153,7 +153,7 @@ function DashboardHome() {
             <p className="text-xs text-muted-foreground mt-1">Practice exams</p>
           </CardContent>
         </Card>
-        
+
         <Card className="hover-lift cursor-pointer group">
           <CardContent className="flex flex-col items-center justify-center p-6 text-center">
             <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
@@ -163,21 +163,21 @@ function DashboardHome() {
             <p className="text-xs text-muted-foreground mt-1">Your achievements</p>
           </CardContent>
         </Card>
-        
+
         <Card className="hover-lift cursor-pointer group">
           <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-            <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-3 group-hover:bg-green-200 transition-colors">
-              <Trophy className="h-6 w-6 text-green-600" />
+            <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+              <Trophy className="h-6 w-6 text-primary" />
             </div>
             <h4 className="font-medium">Leaderboard</h4>
             <p className="text-xs text-muted-foreground mt-1">See rankings</p>
           </CardContent>
         </Card>
-        
+
         <Card className="hover-lift cursor-pointer group">
           <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-            <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-3 group-hover:bg-purple-200 transition-colors">
-              <TrendingUp className="h-6 w-6 text-purple-600" />
+            <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
+              <TrendingUp className="h-6 w-6 text-accent" />
             </div>
             <h4 className="font-medium">ATS Resume</h4>
             <p className="text-xs text-muted-foreground mt-1">Check your score</p>
@@ -189,13 +189,13 @@ function DashboardHome() {
 }
 
 // Generic Page Component for modules
-function ModulePage({ 
-  title, 
-  description, 
-  icon: Icon 
-}: { 
-  title: string; 
-  description: string; 
+function ModulePage({
+  title,
+  description,
+  icon: Icon
+}: {
+  title: string;
+  description: string;
   icon: React.ElementType;
 }) {
   return (
@@ -209,7 +209,7 @@ function ModulePage({
           <p className="text-muted-foreground">{description}</p>
         </div>
       </div>
-      
+
       <Card>
         <CardContent className="flex flex-col items-center justify-center py-16 text-center">
           <Icon className="h-16 w-16 text-muted-foreground/30 mb-4" />
@@ -240,19 +240,19 @@ const routeConfig: Record<string, { title: string; description: string; icon: Re
 export function DashboardContent() {
   const location = useLocation();
   const currentPath = location.pathname;
-  
+
   // Check if we're on the main dashboard page
   if (currentPath === '/dashboard' || currentPath === '/dashboard/') {
     return <DashboardHome />;
   }
-  
+
   // Get the config for the current route
   const config = routeConfig[currentPath];
-  
+
   if (config) {
     return <ModulePage title={config.title} description={config.description} icon={config.icon} />;
   }
-  
+
   // Fallback for unknown routes
   return <DashboardHome />;
 }

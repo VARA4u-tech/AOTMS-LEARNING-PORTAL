@@ -7,14 +7,19 @@ import { DashboardContent } from '@/components/dashboard/DashboardContent';
 import { useAuth } from '@/hooks/useAuth';
 
 export default function Dashboard() {
-  const { user, loading } = useAuth();
+  const { user, userRole, loading } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!loading && !user) {
-      navigate('/auth');
+    if (!loading) {
+      if (!user) {
+        navigate('/auth');
+      } else if (userRole && userRole !== 'student') {
+        const targetPath = userRole === 'admin' ? '/admin' : `/${userRole}`;
+        navigate(targetPath);
+      }
     }
-  }, [user, loading, navigate]);
+  }, [user, userRole, loading, navigate]);
 
   if (loading) {
     return (
@@ -29,7 +34,7 @@ export default function Dashboard() {
       <DashboardSidebar />
       <SidebarInset>
         <DashboardHeader />
-        
+
         <main className="flex-1 p-6">
           <DashboardContent />
         </main>

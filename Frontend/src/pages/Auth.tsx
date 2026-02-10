@@ -52,9 +52,9 @@ const getPasswordStrength = (password: string) => {
     lowercase: /[a-z]/.test(password),
     number: /[0-9]/.test(password),
   };
-  
+
   const score = Object.values(checks).filter(Boolean).length;
-  
+
   return { checks, score };
 };
 
@@ -84,13 +84,20 @@ export default function Auth() {
 
   const handleGoogleSignIn = async () => {
     setLoading(true);
+    // For Google Auth, we can't easily intercept the redirect here since it redirects the browser.
+    // The redirect URL is set to window.location.origin/dashboard.
+    // We'll rely on a Dashboard component effect to redirect if the role doesn't match, 
+    // or we can change the redirect URL to a special auth-callback page that handles routing.
+    // For now, let's keep it as is, but we might want to update the redirectTo if we have a robust way.
+    // actually, let's update the redirectTo to just origin, and let the root route or App handle it?
+    // or just leave it for now as the user primarily asked for login form.
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
         redirectTo: `${window.location.origin}/dashboard`,
       },
     });
-    
+
     if (error) {
       toast({
         title: 'Login Failed',
@@ -104,16 +111,49 @@ export default function Auth() {
   const handleLogin = async (data: LoginFormData) => {
     setLoading(true);
     const { error } = await signIn(data.email, data.password);
-    setLoading(false);
+
     if (error) {
+      setLoading(false);
       toast({
         title: 'Login Failed',
         description: error.message,
         variant: 'destructive',
       });
     } else {
+      // Fetch user role for redirection
+      const { data: { user } } = await supabase.auth.getUser();
+
+      let targetPath = '/dashboard';
+
+      if (user) {
+        const { data: roleData } = await supabase
+          .from('user_roles')
+          .select('role')
+          .eq('user_id', user.id)
+          .single();
+
+        const role = roleData?.role;
+
+        switch (role) {
+          case 'admin':
+            targetPath = '/admin';
+            break;
+          case 'manager':
+            targetPath = '/manager';
+            break;
+          case 'instructor':
+            targetPath = '/instructor';
+            break;
+          case 'student':
+          default:
+            targetPath = '/dashboard';
+            break;
+        }
+      }
+
       toast({ title: 'Welcome back!' });
-      navigate('/dashboard');
+      setLoading(false);
+      navigate(targetPath);
     }
   };
 
@@ -157,7 +197,7 @@ export default function Auth() {
         <a href="/" className="flex items-center gap-3 z-10 pointer-events-auto">
           <img src={logo} alt="AOTMS Logo" className="h-8 lg:h-10" />
         </a>
-        
+
         {/* Motivational Text */}
         <div className="flex-1 flex flex-col justify-center mt-6 lg:mt-0 z-10">
           <p className="text-muted-foreground text-sm mb-2">You can easily</p>
@@ -165,12 +205,12 @@ export default function Auth() {
             Get access to your personal hub for learning and growth.
           </h1>
         </div>
-        
+
         {/* Decorative gradient orbs */}
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-accent/40 rounded-full blur-3xl pointer-events-none -z-10" />
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary/30 rounded-full blur-3xl pointer-events-none -z-10" />
       </div>
-      
+
       {/* Right Panel - Auth Form */}
       <div className="lg:w-1/2 bg-background p-6 lg:p-8 flex items-center justify-center relative z-50 overflow-y-auto">
         <div className="w-full max-w-md relative z-50 pointer-events-auto py-4">
@@ -180,19 +220,19 @@ export default function Auth() {
               <span className="text-accent text-2xl">✦</span>
             </div>
           </div>
-          
+
           {/* Header */}
           <div className="text-center mb-6">
             <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-1">
               {isLogin ? 'Welcome back' : 'Create an account'}
             </h2>
             <p className="text-muted-foreground text-sm">
-              {isLogin 
+              {isLogin
                 ? 'Sign in to continue your learning journey.'
                 : 'Access your courses, track progress, and grow.'}
             </p>
           </div>
-          
+
           {/* Login Form */}
           {isLogin ? (
             <Form {...loginForm}>
@@ -238,7 +278,7 @@ export default function Auth() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={loginForm.control}
                   name="password"
@@ -269,7 +309,7 @@ export default function Auth() {
                     </FormItem>
                   )}
                 />
-                
+
                 <Button
                   type="submit"
                   disabled={loading}
@@ -308,7 +348,7 @@ export default function Auth() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={registerForm.control}
                     name="email"
@@ -457,7 +497,7 @@ export default function Auth() {
                     </FormItem>
                   )}
                 />
-                
+
                 <Button
                   type="submit"
                   disabled={loading}
@@ -468,14 +508,14 @@ export default function Auth() {
               </form>
             </Form>
           )}
-          
+
           {/* Divider */}
           <div className="flex items-center gap-3 my-4">
             <div className="flex-1 h-px bg-border" />
             <span className="text-muted-foreground text-xs">or</span>
             <div className="flex-1 h-px bg-border" />
           </div>
-          
+
           {/* Google Sign In Button */}
           <Button
             type="button"
@@ -504,7 +544,7 @@ export default function Auth() {
             </svg>
             Google
           </Button>
-          
+
           {/* Toggle Login/Register */}
           <p className="text-center text-xs text-muted-foreground mt-4">
             {isLogin ? "Don't have an account? " : "Already have an account? "}

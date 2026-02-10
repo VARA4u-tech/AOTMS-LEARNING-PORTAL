@@ -16,7 +16,7 @@ import {
 export function DashboardHeader() {
   const { user, signOut } = useAuth();
   const navigate = useNavigate();
-  
+
   const getUserInitials = () => {
     if (user?.user_metadata?.full_name) {
       return user.user_metadata.full_name
@@ -37,7 +37,7 @@ export function DashboardHeader() {
   return (
     <header className="sticky top-0 z-40 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <SidebarTrigger className="-ml-1" />
-      
+
       <div className="flex-1 flex items-center gap-4">
         <div className="relative hidden md:block w-64">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -47,11 +47,11 @@ export function DashboardHeader() {
           />
         </div>
       </div>
-      
+
       <div className="flex items-center gap-3">
-        <Button 
-          variant="ghost" 
-          size="icon" 
+        <Button
+          variant="ghost"
+          size="icon"
           className="relative"
           onClick={() => navigate('/dashboard/notifications')}
         >
@@ -60,7 +60,7 @@ export function DashboardHeader() {
             3
           </span>
         </Button>
-        
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button className="flex items-center gap-2 p-1 rounded-full hover:bg-muted transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20">

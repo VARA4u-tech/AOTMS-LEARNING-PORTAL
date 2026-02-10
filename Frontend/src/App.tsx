@@ -14,6 +14,9 @@ import InstructorDashboard from "./pages/InstructorDashboard";
 import ManagerDashboard from "./pages/ManagerDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import Assignments from "./pages/Assignments";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -30,8 +33,11 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/assignments" element={<Assignments />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/become-instructor" element={<InstructorRegister />} />
             <Route path="/learning-paths" element={<LearningPaths />} />

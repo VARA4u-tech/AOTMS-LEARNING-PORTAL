@@ -9,22 +9,22 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import logo from "@/assets/logo.png";
 
 // Pages with light backgrounds that need dark navbar text
-const lightBgPages = ["/learning-paths", "/auth", "/dashboard", "/instructor", "/manager", "/admin"];
+const lightBgPages = ["/learning-paths", "/auth", "/dashboard", "/instructor", "/manager", "/admin", "/about", "/assignments"];
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Courses", href: "/#courses" },
   { name: "Learning Paths", href: "/learning-paths" },
-  { name: "Assignments", href: "/#assignments" },
-  { name: "About", href: "/#about" },
+  { name: "Assignments", href: "/assignments" },
+  { name: "About", href: "/about" },
 ];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { user, signOut } = useAuth();
+  const { user, userRole, signOut } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   // Check if current page has a light background
   const hasLightBg = lightBgPages.some(page => location.pathname.startsWith(page));
 
@@ -84,11 +84,10 @@ const Header = () => {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className={`px-3 xl:px-4 py-2 rounded-lg text-sm xl:text-base font-medium transition-all duration-200 ${
-                  isScrolled || hasLightBg
-                    ? "text-foreground hover:text-primary" 
-                    : "text-white hover:text-primary"
-                }`}
+                className={`px-3 xl:px-4 py-2 rounded-lg text-sm xl:text-base font-medium transition-all duration-200 ${isScrolled || hasLightBg
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-primary"
+                  }`}
               >
                 {link.name}
               </button>
@@ -116,7 +115,7 @@ const Header = () => {
                     <p className="text-xs text-muted-foreground truncate">{user.email}</p>
                   </div>
                   <DropdownMenuItem asChild className="cursor-pointer">
-                    <Link to="/dashboard" className="flex items-center gap-2">
+                    <Link to={userRole === 'student' || !userRole ? "/dashboard" : userRole === 'admin' ? "/admin" : `/${userRole}`} className="flex items-center gap-2">
                       <LayoutDashboard className="h-4 w-4" />
                       <span>Dashboard</span>
                     </Link>
@@ -148,9 +147,9 @@ const Header = () => {
             {/* Mobile Menu */}
             <Sheet>
               <SheetTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
+                <Button
+                  variant="ghost"
+                  size="icon"
                   className={`lg:hidden hover:bg-transparent ${isScrolled || hasLightBg ? "text-foreground" : "text-white"}`}
                 >
                   <Menu className="h-6 w-6" />
@@ -229,8 +228,8 @@ const Header = () => {
                           </Link>
                         </Button>
                       </SheetClose>
-                      <Button 
-                        variant="ghost" 
+                      <Button
+                        variant="ghost"
                         className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10"
                         onClick={handleSignOut}
                       >

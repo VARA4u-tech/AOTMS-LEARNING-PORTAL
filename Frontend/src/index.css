@@ -7,75 +7,75 @@
 @layer base {
   :root {
     /* Core backgrounds */
-    --background: 0 0% 100%;
-    --background-alt: 0 0% 97%;
-    --foreground: 0 0% 12%;
+    --background: 0 0% 100%; /* White */
+    --background-alt: 0 0% 91%; /* Light Gray (#E9E9E9) */
+    --foreground: 0 0% 0%; /* Black */
 
     /* Brand colors */
-    --primary: 229 71% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 206 100% 41%; /* Primary Blue (#0075CF) */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --accent: 24 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 17 98% 55%; /* Primary Orange (#FD5A1A) */
+    --accent-foreground: 0 0% 100%; /* White */
 
     /* UI colors */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 0%; /* Black */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 0%; /* Black */
 
-    --secondary: 229 71% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 91%; /* Light Gray */
+    --secondary-foreground: 0 0% 0%; /* Black */
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 91%; /* Light Gray */
+    --muted-foreground: 0 0% 0%; /* Black */
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 17 98% 55%; /* Primary Orange */
+    --destructive-foreground: 0 0% 100%; /* White */
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 229 71% 50%;
+    --border: 0 0% 91%; /* Light Gray */
+    --input: 0 0% 91%; /* Light Gray */
+    --ring: 206 100% 41%; /* Primary Blue */
 
     --radius: 0.75rem;
 
-    /* Gradients */
+    /* Gradients (strictly adhering to the 5 colors) */
     --gradient-orange: linear-gradient(
       135deg,
-      hsl(24 95% 53%) 0%,
-      hsl(28 100% 60%) 100%
-    );
+      hsl(17 98% 55%) 0%,
+      hsl(0 0% 0%) 100%
+    ); /* Orange to Black */
     --gradient-blue: linear-gradient(
       135deg,
-      hsl(229 71% 50%) 0%,
-      hsl(235 80% 60%) 100%
-    );
+      hsl(206 100% 41%) 0%,
+      hsl(0 0% 0%) 100%
+    ); /* Blue to Black */
     --gradient-hero: linear-gradient(
       135deg,
       hsl(0 0% 100%) 0%,
-      hsl(229 30% 97%) 100%
-    );
+      hsl(0 0% 91%) 100%
+    ); /* White to Light Gray */
 
-    /* Shadows */
+    /* Shadows (derived from the 5 colors via opacity) */
     --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.08);
     --shadow-md: 0 4px 16px -4px hsl(0 0% 0% / 0.12);
     --shadow-lg: 0 8px 32px -8px hsl(0 0% 0% / 0.16);
-    --shadow-glow-orange: 0 8px 32px -8px hsl(24 95% 53% / 0.4);
-    --shadow-glow-blue: 0 8px 32px -8px hsl(229 71% 50% / 0.4);
+    --shadow-glow-orange: 0 8px 32px -8px hsl(17 98% 55% / 0.4);
+    --shadow-glow-blue: 0 8px 32px -8px hsl(206 100% 41% / 0.4);
 
-    /* Sidebar (keeping defaults) */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 229 71% 96%;
-    --sidebar-accent-foreground: 229 71% 50%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 0 0% 91%; /* Light Gray */
+    --sidebar-foreground: 0 0% 0%; /* Black */
+    --sidebar-primary: 206 100% 41%; /* Primary Blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 0 0% 100%; /* White */
+    --sidebar-accent-foreground: 0 0% 0%; /* Black */
+    --sidebar-border: 0 0% 91%; /* Light Gray */
+    --sidebar-ring: 206 100% 41%; /* Primary Blue */
 
-    /* Success color */
-    --success: 142 76% 36%;
+    /* Success color -> Mapped to Primary Blue (no green allowed!) */
+    --success: 206 100% 41%;
     --success-foreground: 0 0% 100%;
   }
 }

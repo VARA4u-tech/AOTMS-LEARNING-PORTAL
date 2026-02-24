@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 bg-[#050505]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16 bg-[#000000]">
       {/* High-Performance Mobile Background: Soft Glows + Grid Texture */}
       <div className="absolute inset-0 z-0">
         {/* Colorful soft lighting glows */}

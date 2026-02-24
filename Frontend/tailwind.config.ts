@@ -1,9 +1,66 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
+const allowedColors = {
+  orange: "#FD5A1A",
+  blue: "#0075CF",
+  black: "#000000",
+  lightGray: "#E9E9E9",
+  white: "#FFFFFF",
+};
+
+const grayMap = {
+  50: allowedColors.white,
+  100: allowedColors.lightGray,
+  200: allowedColors.lightGray,
+  300: allowedColors.lightGray,
+  400: allowedColors.lightGray,
+  500: allowedColors.black,
+  600: allowedColors.black,
+  700: allowedColors.black,
+  800: allowedColors.black,
+  900: allowedColors.black,
+  950: allowedColors.black,
+  DEFAULT: allowedColors.black,
+};
+
+const makeColorMap = (mainColor: string) => ({
+  50: allowedColors.white,
+  100: allowedColors.lightGray,
+  200: allowedColors.lightGray,
+  300: allowedColors.lightGray,
+  400: mainColor,
+  500: mainColor,
+  600: mainColor,
+  700: mainColor,
+  800: mainColor,
+  900: mainColor,
+  950: allowedColors.black,
+  DEFAULT: mainColor,
+});
+
+const strictColorOverrides: Record<string, any> = {};
+["slate", "gray", "zinc", "neutral", "stone"].forEach(
+  (c) => (strictColorOverrides[c] = grayMap),
+);
+["blue", "indigo", "sky", "cyan"].forEach(
+  (c) => (strictColorOverrides[c] = makeColorMap(allowedColors.blue)),
+);
+["red", "orange", "amber", "yellow", "rose", "pink"].forEach(
+  (c) => (strictColorOverrides[c] = makeColorMap(allowedColors.orange)),
+);
+["green", "emerald", "teal", "lime", "violet", "purple", "fuchsia"].forEach(
+  (c) => (strictColorOverrides[c] = makeColorMap(allowedColors.blue)),
+);
+
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -15,10 +72,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        heading: ['Anton', 'sans-serif'],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Anton", "sans-serif"],
       },
       colors: {
+        ...strictColorOverrides,
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,11 +132,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        'soft': 'var(--shadow-sm)',
-        'medium': 'var(--shadow-md)',
-        'large': 'var(--shadow-lg)',
-        'glow-orange': 'var(--shadow-glow-orange)',
-        'glow-blue': 'var(--shadow-glow-blue)',
+        soft: "var(--shadow-sm)",
+        medium: "var(--shadow-md)",
+        large: "var(--shadow-lg)",
+        "glow-orange": "var(--shadow-glow-orange)",
+        "glow-blue": "var(--shadow-glow-blue)",
       },
       keyframes: {
         "accordion-down": {
@@ -89,7 +147,7 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "float": {
+        float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
@@ -97,7 +155,7 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.8" },
         },
-        "shimmer": {
+        shimmer: {
           "0%": { transform: "translateX(-100%) skewX(-12deg)" },
           "100%": { transform: "translateX(200%) skewX(-12deg)" },
         },
@@ -105,7 +163,7 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "float": "float 3s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
       },
     },

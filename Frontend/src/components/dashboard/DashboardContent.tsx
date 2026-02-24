@@ -33,6 +33,9 @@ import NotificationsPage from "@/pages/NotificationsPage";
 import MyCoursesPage from "@/pages/MyCoursesPage";
 import LeaderboardPage from "@/pages/LeaderboardPage";
 import SettingsPage from "@/pages/SettingsPage";
+import ExamsPortalPage from "@/pages/ExamsPortalPage";
+import ExamHistoryPage from "@/pages/ExamHistoryPage";
+import LiveClassesPage from "@/pages/LiveClassesPage";
 
 // Dashboard Home Content
 function DashboardHome() {
@@ -363,6 +366,21 @@ export function DashboardContent() {
 
   if (currentPath === "/dashboard/settings") {
     return <SettingsPage />;
+  }
+
+  if (
+    currentPath === "/dashboard/mock-papers" ||
+    currentPath === "/dashboard/exams"
+  ) {
+    return <ExamsPortalPage />;
+  }
+
+  if (currentPath === "/dashboard/history") {
+    return <ExamHistoryPage />;
+  }
+
+  if (currentPath === "/dashboard/live-classes") {
+    return <LiveClassesPage />;
   }
 
   if (config) {

@@ -37,7 +37,7 @@ const menuItems = [
   { title: "Recorded Videos", url: "/dashboard/videos", icon: Video },
   { title: "Live Classes", url: "/dashboard/live-classes", icon: Calendar },
   { title: "Mock Papers", url: "/dashboard/mock-papers", icon: FileText },
-  { title: "Live Exams", url: "/exam?type=live", icon: ClipboardCheck },
+  { title: "Live Exams", url: "/dashboard/exams", icon: ClipboardCheck },
   { title: "Exam History", url: "/dashboard/history", icon: History },
   { title: "Leaderboard", url: "/dashboard/leaderboard", icon: Trophy },
   { title: "Notifications", url: "/dashboard/notifications", icon: Bell },

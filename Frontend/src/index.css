@@ -57,12 +57,12 @@
       hsl(0 0% 91%) 100%
     ); /* White to Light Gray */
 
-    /* Shadows (derived from the 5 colors via opacity) */
-    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.08);
-    --shadow-md: 0 4px 16px -4px hsl(0 0% 0% / 0.12);
-    --shadow-lg: 0 8px 32px -8px hsl(0 0% 0% / 0.16);
-    --shadow-glow-orange: 0 8px 32px -8px hsl(17 98% 55% / 0.4);
-    --shadow-glow-blue: 0 8px 32px -8px hsl(206 100% 41% / 0.4);
+    /* Shadows (Neobrutalist / High-Contrast Minimal) */
+    --shadow-sm: 2px 2px 0px 0px hsl(0 0% 0%);
+    --shadow-md: 4px 4px 0px 0px hsl(0 0% 0%);
+    --shadow-lg: 8px 8px 0px 0px hsl(0 0% 0%);
+    --shadow-glow-orange: 4px 4px 0px 0px hsl(17 98% 55%);
+    --shadow-glow-blue: 4px 4px 0px 0px hsl(206 100% 41%);
 
     /* Sidebar */
     --sidebar-background: 0 0% 91%; /* Light Gray */
@@ -95,7 +95,7 @@
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: hsl(0 0% 14%);
+    color: hsl(0 0% 0%);
   }
 
   .font-heading {
@@ -153,19 +153,19 @@
   }
 
   .hover-lift {
-    @apply transition-all duration-300 ease-out;
+    @apply transition-all duration-200 ease-out border-2 border-transparent;
   }
 
   .hover-lift:hover {
-    @apply -translate-y-1;
-    box-shadow: var(--shadow-lg);
+    @apply -translate-y-1 -translate-x-1 border-foreground;
+    box-shadow: var(--shadow-md);
   }
 
   .gradient-text-brand {
     background: linear-gradient(
       135deg,
-      hsl(229 71% 50%) 0%,
-      hsl(24 95% 53%) 100%
+      hsl(206 100% 41%) 0%,
+      hsl(17 98% 55%) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

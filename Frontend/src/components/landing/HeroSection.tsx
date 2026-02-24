@@ -71,8 +71,8 @@ const HeroSection = () => {
               duration: 0.6,
             }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/20 text-primary text-sm font-medium mb-6 shadow-sm shadow-primary/10">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full backdrop-blur-md bg-white/5 border-2 border-white/20 text-white text-sm font-black mb-8 shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,117,207,1)] transition-shadow duration-300">
+              <span className="w-2.5 h-2.5 rounded-sm bg-accent animate-pulse" />
               Skill-based Learning Platform
             </span>
           </motion.div>
@@ -171,8 +171,11 @@ const HeroSection = () => {
               duration: 0.6,
               delay: 0.4,
             }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-8 border-t border-white/20"
+            className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-10 border-t-[3px] border-white/10 relative"
           >
+            {/* Hard styling detail dot */}
+            <div className="absolute top-[-7px] left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45" />
+
             {[
               {
                 value: "10K+",

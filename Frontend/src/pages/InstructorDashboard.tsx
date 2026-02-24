@@ -114,20 +114,20 @@ export default function InstructorDashboard() {
     return (
       <div className="space-y-6 font-['Inter']">
         <div className="flex items-center gap-4">
-          <div className="h-16 w-16 rounded bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
-            <Icon className="h-8 w-8 text-[#000000]" />
+          <div className="h-12 w-12 sm:h-16 sm:w-16 rounded bg-[#E9E9E9] border-2 sm:border-4 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+            <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-[#000000]" />
           </div>
           <div>
-            <h1 className="text-3xl font-black text-[#000000] uppercase tracking-wider">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#000000] uppercase tracking-wider">
               {title}
             </h1>
-            <p className="text-sm font-bold text-[#000000]/60 uppercase tracking-widest mt-1">
+            <p className="text-xs sm:text-sm font-bold text-[#000000]/60 uppercase tracking-widest mt-1">
               {desc}
             </p>
           </div>
         </div>
 
-        <div className="bg-white rounded-xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
+        <div className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
           <div className="flex flex-col items-center justify-center py-20 text-center">
             <div className="p-6 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl mb-6 transform -rotate-3 transition-transform hover:rotate-3">
               <Wrench className="h-16 w-16 text-[#000000]" />
@@ -152,7 +152,7 @@ export default function InstructorDashboard() {
       <SidebarInset className="bg-[#E9E9E9] font-['Inter']">
         <InstructorHeader />
 
-        <main className="flex-1 p-6 lg:p-8 max-w-7xl mx-auto w-full space-y-8">
+        <main className="flex-1 p-3 sm:p-4 lg:p-6 xl:p-8 max-w-7xl mx-auto w-full space-y-6 sm:space-y-8">
           {currentPath === "/instructor/courses" &&
             renderModulePlaceholder(
               "My Courses",
@@ -190,10 +190,10 @@ export default function InstructorDashboard() {
               {/* Header Section */}
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h1 className="text-3xl font-black text-[#000000] uppercase tracking-wider">
+                  <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#000000] uppercase tracking-wider">
                     Dashboard
                   </h1>
-                  <p className="text-[#000000]/60 mt-1 text-sm md:text-base font-bold">
+                  <p className="text-[#000000]/60 mt-1 text-xs sm:text-sm md:text-base font-bold">
                     Welcome back,{" "}
                     {user?.user_metadata?.full_name || "Instructor"}. Here's an
                     overview of your teaching activity.

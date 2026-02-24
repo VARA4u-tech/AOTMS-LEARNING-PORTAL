@@ -270,18 +270,18 @@ export default function AdminDashboard() {
       <SidebarInset className="bg-[#E9E9E9] font-['Inter']">
         <AdminHeader />
 
-        <main className="flex-1 p-6 space-y-6">
+        <main className="flex-1 p-3 sm:p-4 lg:p-6 space-y-4 sm:space-y-6">
           {/* Welcome Section */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-black text-[#000000] uppercase tracking-tight">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#000000] uppercase tracking-tight">
                 Admin Control Panel 🔐
               </h1>
-              <p className="text-sm font-bold text-[#000000]/60 mt-1">
+              <p className="text-xs sm:text-sm font-bold text-[#000000]/60 mt-1">
                 Full system access and platform management
               </p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <Button
                 className="gap-2 bg-white text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] hover:translate-y-[1px] hover:translate-x-[1px] transition-all font-black uppercase tracking-widest text-xs"
                 onClick={refresh}
@@ -300,7 +300,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* Candidates Overview */}
-          <div className="grid gap-4 sm:grid-cols-3 mb-6">
+          <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 mb-4 sm:mb-6">
             <Card
               className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
               onClick={() => openRoleListView("all")}
@@ -364,7 +364,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mt-6">
+          <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4 mt-4 sm:mt-6">
             <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
@@ -465,7 +465,7 @@ export default function AdminDashboard() {
             onValueChange={setActiveTab}
             className="space-y-6"
           >
-            <TabsList className="grid w-full lg:max-w-4xl grid-cols-2 md:grid-cols-5 h-auto gap-2 bg-transparent p-0">
+            <TabsList className="grid w-full lg:max-w-4xl grid-cols-3 sm:grid-cols-5 h-auto gap-1.5 sm:gap-2 bg-transparent p-0">
               <TabsTrigger
                 value="users"
                 className="gap-2 h-12 bg-white text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] transition-all font-black uppercase tracking-widest text-[10px] data-[state=active]:bg-[#0075CF] data-[state=active]:text-white data-[state=active]:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] data-[state=active]:translate-y-[2px] data-[state=active]:translate-x-[2px]"

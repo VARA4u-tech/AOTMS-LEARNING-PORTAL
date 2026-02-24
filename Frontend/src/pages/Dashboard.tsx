@@ -37,7 +37,7 @@ export default function Dashboard() {
         <AmbientBackground />
         <DashboardHeader />
 
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-3 sm:p-4 lg:p-6">
           <DashboardContent />
         </main>
       </SidebarInset>

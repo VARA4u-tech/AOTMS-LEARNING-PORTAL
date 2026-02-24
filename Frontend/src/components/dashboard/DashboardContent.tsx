@@ -61,23 +61,23 @@ function DashboardHome() {
   ];
 
   return (
-    <div className="space-y-6 font-['Inter']">
+    <div className="space-y-4 sm:space-y-6 font-['Inter']">
       {/* Welcome Section */}
       <div>
-        <h1 className="text-3xl font-black text-[#000000] uppercase tracking-wider">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#000000] uppercase tracking-wider">
           Welcome back, {user?.user_metadata?.full_name || "Student"}! 👋
         </h1>
-        <p className="text-sm font-bold text-[#000000]/60 mt-1 uppercase tracking-widest">
+        <p className="text-xs sm:text-sm font-bold text-[#000000]/60 mt-1 uppercase tracking-widest">
           Here's what's happening with your learning journey
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4">
         {statsCards.map((stat) => (
           <Card
             key={stat.title}
-            className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default"
+            className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] sm:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default"
           >
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
@@ -89,8 +89,8 @@ function DashboardHome() {
                 />
               </div>
             </CardHeader>
-            <CardContent className="pb-4">
-              <div className="text-3xl font-black text-[#000000]">
+            <CardContent className="pb-3 sm:pb-4">
+              <div className="text-2xl sm:text-3xl font-black text-[#000000]">
                 {stat.value}
               </div>
             </CardContent>
@@ -101,11 +101,11 @@ function DashboardHome() {
       {/* Main Content Grid */}
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Enrolled Courses */}
-        <Card className="lg:col-span-2 bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+        <Card className="lg:col-span-2 bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
           <CardHeader className="border-b-4 border-[#000000] bg-[#E9E9E9] rounded-t-lg">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <CardTitle className="flex items-center gap-2 text-xl font-black uppercase tracking-widest text-[#000000]">
+                <CardTitle className="flex items-center gap-2 text-base sm:text-xl font-black uppercase tracking-wider sm:tracking-widest text-[#000000]">
                   <BookOpen className="h-6 w-6 text-[#0075CF]" />
                   Continue Learning
                 </CardTitle>
@@ -180,7 +180,7 @@ function DashboardHome() {
         </Card>
 
         {/* Upcoming Classes placeholder */}
-        <Card className="bg-[#0075CF] rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-white relative overflow-hidden group">
+        <Card className="bg-[#0075CF] rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-white relative overflow-hidden group">
           <CardHeader className="p-5 pb-2 relative z-10">
             <CardTitle className="flex items-center gap-2 text-xl font-black uppercase tracking-widest">
               <Calendar className="h-6 w-6" />
@@ -205,13 +205,13 @@ function DashboardHome() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid gap-3 sm:gap-4 grid-cols-2 md:grid-cols-4">
         <Card
-          className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+          className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] sm:hover:translate-x-[6px] sm:hover:translate-y-[6px] transition-all cursor-pointer group"
           onClick={() => navigate("/courses")}
         >
           <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-            <div className="h-16 w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-4 group-hover:bg-[#0075CF] group-hover:text-white transition-colors">
+            <div className="h-12 w-12 sm:h-16 sm:w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-[#0075CF] group-hover:text-white transition-colors">
               <Compass className="h-8 w-8 text-[#000000] group-hover:text-white transition-colors" />
             </div>
             <h4 className="font-black text-[#000000] uppercase tracking-wider text-sm">
@@ -224,11 +224,11 @@ function DashboardHome() {
         </Card>
 
         <Card
-          className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+          className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] sm:hover:translate-x-[6px] sm:hover:translate-y-[6px] transition-all cursor-pointer group"
           onClick={() => navigate("/exam?type=mock")}
         >
           <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-            <div className="h-16 w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-4 group-hover:bg-[#FD5A1A] group-hover:text-white transition-colors">
+            <div className="h-12 w-12 sm:h-16 sm:w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-[#FD5A1A] group-hover:text-white transition-colors">
               <FileText className="h-8 w-8 text-[#000000] group-hover:text-white transition-colors" />
             </div>
             <h4 className="font-black text-[#000000] uppercase tracking-wider text-sm">
@@ -240,10 +240,10 @@ function DashboardHome() {
           </CardContent>
         </Card>
 
-        <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group">
+        <Card className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] sm:hover:translate-x-[6px] sm:hover:translate-y-[6px] transition-all cursor-pointer group">
           <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-            <div className="h-16 w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-4 group-hover:bg-[#000000] group-hover:text-white transition-colors">
-              <Award className="h-8 w-8 text-[#000000] group-hover:text-white transition-colors" />
+            <div className="h-12 w-12 sm:h-16 sm:w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-[#000000] group-hover:text-white transition-colors">
+              <Award className="h-6 w-6 sm:h-8 sm:w-8 text-[#000000] group-hover:text-white transition-colors" />
             </div>
             <h4 className="font-black text-[#000000] uppercase tracking-wider text-sm">
               View Certificates
@@ -254,9 +254,9 @@ function DashboardHome() {
           </CardContent>
         </Card>
 
-        <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group">
+        <Card className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] sm:hover:translate-x-[6px] sm:hover:translate-y-[6px] transition-all cursor-pointer group">
           <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-            <div className="h-16 w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-4 group-hover:bg-[#0075CF] group-hover:text-white transition-colors">
+            <div className="h-12 w-12 sm:h-16 sm:w-16 bg-[#E9E9E9] rounded border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-[#0075CF] group-hover:text-white transition-colors">
               <Trophy className="h-8 w-8 text-[#000000] group-hover:text-white transition-colors" />
             </div>
             <h4 className="font-black text-[#000000] uppercase tracking-wider text-sm">
@@ -283,22 +283,22 @@ function ModulePage({
   icon: React.ElementType;
 }) {
   return (
-    <div className="space-y-6 font-['Inter']">
-      <div className="flex items-center gap-4">
-        <div className="h-16 w-16 rounded bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
-          <Icon className="h-8 w-8 text-[#000000]" />
+    <div className="space-y-4 sm:space-y-6 font-['Inter']">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <div className="h-12 w-12 sm:h-16 sm:w-16 rounded bg-[#E9E9E9] border-2 sm:border-4 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+          <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-[#000000]" />
         </div>
         <div>
-          <h1 className="text-3xl font-black text-[#000000] uppercase tracking-wider">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#000000] uppercase tracking-wider">
             {title}
           </h1>
-          <p className="text-sm font-bold text-[#000000]/60 uppercase tracking-widest mt-1">
+          <p className="text-xs sm:text-sm font-bold text-[#000000]/60 uppercase tracking-widest mt-1">
             {description}
           </p>
         </div>
       </div>
 
-      <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
+      <Card className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
         <CardContent className="flex flex-col items-center justify-center py-20 text-center">
           <div className="p-6 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl mb-6 transform -rotate-3 transition-transform hover:rotate-3">
             <Icon className="h-16 w-16 text-[#000000]" />

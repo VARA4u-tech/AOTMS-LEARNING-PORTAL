@@ -114,14 +114,14 @@ export default function ManagerDashboard() {
   const activeExamsCount = exams.filter((e) => e.status === "active").length;
 
   const renderOverview = () => (
-    <div className="space-y-8 animate-in fade-in duration-500 font-['Inter'] pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-500 font-['Inter'] pb-12">
       {/* Search and Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
-          <h2 className="text-3xl font-black tracking-tight text-[#000000] uppercase">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black tracking-tight text-[#000000] uppercase">
             Manager Console
           </h2>
-          <p className="text-sm font-bold text-[#000000]/60">
+          <p className="text-xs sm:text-sm font-bold text-[#000000]/60">
             Welcome back, {user?.user_metadata?.full_name || "Manager"}. Here is
             what's happening today.
           </p>
@@ -140,7 +140,7 @@ export default function ManagerDashboard() {
       </div>
 
       {/* Candidates Overview */}
-      <div className="grid gap-4 sm:grid-cols-3 mb-6">
+      <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 mb-6">
         <Card
           className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
           onClick={() => openUserList("all")}
@@ -204,7 +204,7 @@ export default function ManagerDashboard() {
       </div>
 
       {/* Standard Stats Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-6">
+      <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4 mt-6">
         {[
           {
             label: "Exams Scheduled",
@@ -626,7 +626,7 @@ export default function ManagerDashboard() {
       <SidebarInset>
         <AmbientBackground />
         <ManagerHeader />
-        <main className="flex-1 p-6 sm:p-8 lg:p-10 overflow-auto">
+        <main className="flex-1 p-3 sm:p-4 md:p-6 lg:p-8 overflow-auto">
           <div className="max-w-6xl mx-auto">{renderContent()}</div>
         </main>
       </SidebarInset>

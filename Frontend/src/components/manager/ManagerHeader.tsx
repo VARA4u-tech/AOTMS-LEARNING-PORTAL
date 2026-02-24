@@ -34,7 +34,7 @@ export function ManagerHeader() {
 
   return (
     <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b-4 border-[#000000] bg-white px-4 shrink-0 transition-all font-['Inter'] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         <SidebarTrigger className="-ml-1 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white hover:bg-[#E9E9E9]" />
 
         {/* Search */}
@@ -42,12 +42,12 @@ export function ManagerHeader() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#000000] z-10" />
           <Input
             placeholder="Search system..."
-            className="pl-10 w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:font-normal placeholder:text-[#000000]/50"
+            className="pl-10 w-48 lg:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:font-normal placeholder:text-[#000000]/50"
           />
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         {/* Role Badge */}
         <Badge className="hidden sm:flex gap-1.5 bg-[#0075CF] text-white border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest pointer-events-none text-[10px] px-2 py-1 rounded-sm hover:bg-[#0075CF]">
           <ShieldAlert className="h-3 w-3" />

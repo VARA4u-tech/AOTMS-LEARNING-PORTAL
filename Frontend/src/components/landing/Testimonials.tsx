@@ -54,11 +54,26 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden">
-      {/* Blue ambient */}
+    <section
+      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(170deg, #fff8f3 0%, #ffffff 40%, #fffaf6 100%)",
+      }}
+    >
+      {/* Micro dot-grid texture (orange tint) */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.2]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='0.8' fill='%23FD5A1A' fill-opacity='0.12'/%3E%3C/svg%3E")`,
+          backgroundSize: "22px 22px",
+        }}
+      />
+      {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[5%] w-[50%] h-[50%] bg-[#0075CF]/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] left-[5%] w-[50%] h-[50%] bg-[#FD5A1A]/[0.04] rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[10%] w-[40%] h-[50%] bg-[#0075CF]/[0.04] rounded-full blur-[100px]" />
+        <div className="absolute top-[50%] left-[50%] w-[30%] h-[30%] bg-[#FD5A1A]/[0.03] rounded-full blur-[80px]" />
       </div>
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">

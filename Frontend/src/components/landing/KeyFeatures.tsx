@@ -88,12 +88,26 @@ const KeyFeatures = () => {
   return (
     <section
       id="features"
-      className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(170deg, #0a0f1e 0%, #0d1525 50%, #0f1a2e 100%)",
+      }}
     >
-      {/* Dual gradient background */}
+      {/* Circuit-line grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,117,207,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,117,207,0.4) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+      {/* Brand-colored ambient radials */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[50%] h-[60%] bg-[#0075CF]/[0.03] rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] bg-[#FD5A1A]/[0.03] rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-0 w-[50%] h-[60%] bg-[#0075CF]/[0.08] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[50%] h-[60%] bg-[#FD5A1A]/[0.06] rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[40%] bg-[#0075CF]/[0.04] rounded-full blur-[80px]" />
       </div>
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">
@@ -112,12 +126,12 @@ const KeyFeatures = () => {
             </span>
             <span className="h-[3px] w-8 bg-[#FD5A1A] rounded-full" />
           </div>
-          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground mb-4 leading-tight">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4 leading-tight">
             LIVE CLASSES, EXAMS & MOCK TESTS ON{" "}
             <br className="hidden md:block" />
             <span className="gradient-text-brand">AOTMS LMS</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
+          <p className="text-white/50 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
             Everything you need to succeed in your learning journey — from live
             sessions to career tools
           </p>
@@ -137,7 +151,7 @@ const KeyFeatures = () => {
                 className="group relative"
               >
                 <div
-                  className={`relative bg-white border-2 border-[#000000] rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 ${style.shadow} ${style.hoverShadow} hover:-translate-y-1 hover:-translate-x-1`}
+                  className={`relative bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:bg-white/[0.10] hover:border-white/20 hover:-translate-y-1 shadow-lg hover:shadow-xl`}
                 >
                   {/* Top accent bar */}
                   <div
@@ -147,7 +161,7 @@ const KeyFeatures = () => {
                   {/* Icon Container */}
                   <div className="relative mb-6">
                     <div
-                      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${style.iconBg} flex items-center justify-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:scale-105 transition-transform duration-300`}
+                      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${style.iconBg} flex items-center justify-center border border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300`}
                     >
                       <feature.icon
                         className="w-7 h-7 sm:w-8 sm:h-8 text-white"
@@ -156,7 +170,7 @@ const KeyFeatures = () => {
                     </div>
                     {/* Secondary Icon */}
                     <div
-                      className={`absolute -bottom-2 left-10 sm:left-12 w-8 h-8 rounded-lg bg-white border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300`}
+                      className={`absolute -bottom-2 left-10 sm:left-12 w-8 h-8 rounded-lg bg-white/10 border border-white/20 shadow-lg flex items-center justify-center group-hover:-translate-y-1 transition-transform duration-300`}
                     >
                       <feature.secondaryIcon
                         className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${style.secondaryText}`}
@@ -166,11 +180,11 @@ const KeyFeatures = () => {
 
                   {/* Content */}
                   <h3
-                    className={`font-heading text-lg sm:text-xl md:text-2xl text-[#000000] mb-3 uppercase tracking-tight ${style.textHover} transition-colors duration-300`}
+                    className={`font-heading text-lg sm:text-xl md:text-2xl text-white mb-3 uppercase tracking-tight ${style.textHover} transition-colors duration-300`}
                   >
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-white/50 text-sm leading-relaxed">
                     {feature.description}
                   </p>
 

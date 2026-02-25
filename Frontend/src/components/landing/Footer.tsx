@@ -37,23 +37,59 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-white">
+    <footer
+      id="contact"
+      className="relative overflow-hidden"
+      style={{
+        background: "linear-gradient(175deg, #0d1117 0%, #161b22 100%)",
+      }}
+    >
+      {/* Subtle grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "50px 50px",
+        }}
+      />
+      {/* Orange accent top border */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[3px]"
+        style={{
+          background:
+            "linear-gradient(90deg, #0075CF 0%, #FD5A1A 50%, #0075CF 100%)",
+        }}
+      />
+
       {/* Newsletter Section */}
-      <div className="container-width section-padding !py-12 border-b border-border">
+      <div className="container-width section-padding !py-12 border-b border-white/10 relative z-10">
         <div className="text-center max-w-md mx-auto">
-          <h3 className="text-xl font-semibold text-foreground mb-2">Join our newsletter</h3>
-          <p className="text-sm text-muted-foreground mb-6">
+          <h3 className="text-xl font-semibold text-white mb-2">
+            Join our newsletter
+          </h3>
+          <p className="text-sm text-white/50 mb-6">
             We'll send you a newsletter once per week. No spam.
           </p>
           <div className="flex gap-2">
             <div className="flex-1 relative">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="pl-10 h-11 rounded-lg bg-muted/30 border-0"
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="pl-10 h-11 rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-white/30"
               />
-              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <svg
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
             </div>
             <Button variant="accent" className="h-11 px-6">
@@ -64,17 +100,17 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-width section-padding !py-10">
+      <div className="container-width section-padding !py-10 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Explore Links */}
           <div>
-            <h4 className="font-medium text-muted-foreground text-sm mb-4">Explore</h4>
+            <h4 className="font-medium text-white/40 text-sm mb-4">Explore</h4>
             <ul className="space-y-2.5">
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground hover:text-accent transition-colors"
+                    className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -85,13 +121,13 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-medium text-muted-foreground text-sm mb-4">Company</h4>
+            <h4 className="font-medium text-white/40 text-sm mb-4">Company</h4>
             <ul className="space-y-2.5">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground hover:text-accent transition-colors"
+                    className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -102,13 +138,15 @@ const Footer = () => {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-medium text-muted-foreground text-sm mb-4">Resources</h4>
+            <h4 className="font-medium text-white/40 text-sm mb-4">
+              Resources
+            </h4>
             <ul className="space-y-2.5">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground hover:text-accent transition-colors"
+                    className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -119,15 +157,21 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-medium text-muted-foreground text-sm mb-4">Contact</h4>
+            <h4 className="font-medium text-white/40 text-sm mb-4">Contact</h4>
             <ul className="space-y-2.5">
               <li>
-                <a href="tel:+919876543210" className="text-sm text-foreground hover:text-accent transition-colors">
+                <a
+                  href="tel:+919876543210"
+                  className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                >
                   (+91) 98765-43210
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@aotms.com" className="text-sm text-foreground hover:text-accent transition-colors">
+                <a
+                  href="mailto:hello@aotms.com"
+                  className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                >
                   hello@aotms.com
                 </a>
               </li>
@@ -136,35 +180,37 @@ const Footer = () => {
 
           {/* Address */}
           <div className="col-span-2">
-            <h4 className="font-medium text-muted-foreground text-sm mb-4">Address</h4>
-            <p className="text-sm text-foreground leading-relaxed">
-              Auram Creative Center, 19th Floor<br />
-              Vijayawada, Andhra Pradesh<br />
+            <h4 className="font-medium text-white/40 text-sm mb-4">Address</h4>
+            <p className="text-sm text-white/70 leading-relaxed">
+              Auram Creative Center, 19th Floor
+              <br />
+              Vijayawada, Andhra Pradesh
+              <br />
               India - 520001
             </p>
-            <p className="text-xs text-muted-foreground mt-2">
+            <p className="text-xs text-white/30 mt-2">
               Serving students across Vijayawada and beyond
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 pt-9 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 ">
+        <div className="mt-10 pt-9 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 ">
           <div className="flex items-center gap-2">
             <img src={logo} alt="AOTMS Logo" className="h-8" />
           </div>
-          
-          <p className="text-sm text-muted-foreground">
+
+          <p className="text-sm text-white/40">
             © {currentYear} AOTMS. All rights reserved.
           </p>
-          
+
           <div className="flex gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-8 h-8 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors text-muted-foreground"
+                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#FD5A1A] hover:border-[#FD5A1A] hover:text-white transition-all duration-300 text-white/50"
               >
                 <social.icon className="w-4 h-4" />
               </a>

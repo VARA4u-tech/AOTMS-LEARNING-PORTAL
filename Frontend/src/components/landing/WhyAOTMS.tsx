@@ -54,12 +54,25 @@ const WhyAOTMS = () => {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden"
+      className="py-16 md:py-24 lg:py-32 relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(170deg, #f0f7ff 0%, #ffffff 40%, #f5f9ff 100%)",
+      }}
     >
-      {/* Subtle blue gradient overlay */}
+      {/* Micro dot-grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.25]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='0.8' fill='%230075CF' fill-opacity='0.18'/%3E%3C/svg%3E")`,
+          backgroundSize: "22px 22px",
+        }}
+      />
+      {/* Animated brand-color ambient blobs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[50%] h-[60%] bg-[#0075CF]/[0.03] rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[40%] h-[50%] bg-[#0075CF]/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute top-[-10%] right-[-5%] w-[50%] h-[60%] bg-[#0075CF]/[0.06] rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[50%] bg-[#FD5A1A]/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute top-[40%] left-[30%] w-[30%] h-[30%] bg-[#0075CF]/[0.03] rounded-full blur-[80px]" />
       </div>
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">

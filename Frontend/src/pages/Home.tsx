@@ -9,6 +9,7 @@ import Testimonials from "@/components/landing/Testimonials";
 import FAQSection from "@/components/landing/FAQSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
+import ScrollToTop from "@/components/landing/ScrollToTop";
 import AmbientBackground from "@/components/ui/AmbientBackground";
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
           <CTASection />
         </main>
         <Footer />
+        <ScrollToTop />
       </div>
     </div>
   );

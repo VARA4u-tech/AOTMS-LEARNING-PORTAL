@@ -521,7 +521,7 @@ export default function Auth() {
                       render={({ field }) => (
                         <FormItem className="space-y-2">
                           <FormLabel className="text-xs font-black uppercase tracking-widest text-black">
-                            Confirm
+                            Confirm Password
                           </FormLabel>
                           <div className="relative">
                             <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black z-10" />

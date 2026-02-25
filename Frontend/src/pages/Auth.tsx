@@ -309,7 +309,7 @@ export default function Auth() {
                             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                             <Input
                               placeholder="Enter your email"
-                              className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/30 placeholder:font-bold rounded-none"
+                              className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/20 placeholder:font-bold rounded-none"
                               autoComplete="email"
                               {...field}
                             />
@@ -369,7 +369,7 @@ export default function Auth() {
                             <Input
                               type={showLoginPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/30 placeholder:font-bold rounded-none"
+                              className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/20 placeholder:font-bold rounded-none"
                               autoComplete="current-password"
                               {...field}
                             />
@@ -422,7 +422,7 @@ export default function Auth() {
                             <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black z-10" />
                             <Input
                               placeholder="Enter your full name"
-                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                           </div>
@@ -442,7 +442,7 @@ export default function Auth() {
                             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black z-10" />
                             <Input
                               placeholder="Enter your email"
-                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                           </div>
@@ -494,7 +494,7 @@ export default function Auth() {
                             <Input
                               type={showRegisterPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                             <button
@@ -528,7 +528,7 @@ export default function Auth() {
                             <Input
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                             <button

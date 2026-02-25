@@ -133,7 +133,7 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
           value={value}
           onChange={(e) => onValueChange?.(e.target.value.replace(/\D/g, ""))}
           placeholder={placeholder}
-          className="flex-1 h-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/30"
+          className="flex-1 h-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20"
           disabled={disabled}
           maxLength={15}
         />

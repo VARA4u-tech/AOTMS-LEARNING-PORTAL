@@ -343,7 +343,7 @@ export default function InstructorRegister() {
                           <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                           <Input
                             placeholder="John Doe"
-                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                         </div>
@@ -367,7 +367,7 @@ export default function InstructorRegister() {
                           <Input
                             type="email"
                             placeholder="instructor@example.com"
-                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                         </div>
@@ -393,7 +393,8 @@ export default function InstructorRegister() {
                           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                           <Input
                             type={showPassword ? "text" : "password"}
-                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                            placeholder="••••••••"
+                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                           <button
@@ -427,7 +428,8 @@ export default function InstructorRegister() {
                           <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                           <Input
                             type={showConfirmPassword ? "text" : "password"}
-                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                            placeholder="••••••••"
+                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                           <button
@@ -554,7 +556,7 @@ export default function InstructorRegister() {
                       <FormControl>
                         <Input
                           placeholder="e.g., Blockchain Development"
-                          className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none"
+                          className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
                           {...field}
                         />
                       </FormControl>

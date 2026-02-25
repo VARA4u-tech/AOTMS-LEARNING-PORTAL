@@ -41,7 +41,8 @@ const Footer = () => {
       id="contact"
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(175deg, #0d1117 0%, #161b22 100%)",
+        background:
+          "linear-gradient(175deg, #005fa3 0%, #0075CF 50%, #004d87 100%)",
       }}
     >
       {/* Subtle grid overlay */}
@@ -68,7 +69,7 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-white mb-2">
             Join our newsletter
           </h3>
-          <p className="text-sm text-white/50 mb-6">
+          <p className="text-sm text-white/80 mb-6">
             We'll send you a newsletter once per week. No spam.
           </p>
           <div className="flex gap-2">
@@ -104,13 +105,15 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {/* Explore Links */}
           <div>
-            <h4 className="font-medium text-white/40 text-sm mb-4">Explore</h4>
+            <h4 className="font-medium text-white/70 text-sm mb-4 uppercase tracking-wider">
+              Explore
+            </h4>
             <ul className="space-y-2.5">
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                    className="text-sm text-white/90 hover:text-[#FD5A1A] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -121,13 +124,15 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-medium text-white/40 text-sm mb-4">Company</h4>
+            <h4 className="font-medium text-white/70 text-sm mb-4 uppercase tracking-wider">
+              Company
+            </h4>
             <ul className="space-y-2.5">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                    className="text-sm text-white/90 hover:text-[#FD5A1A] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -138,7 +143,7 @@ const Footer = () => {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-medium text-white/40 text-sm mb-4">
+            <h4 className="font-medium text-white/70 text-sm mb-4 uppercase tracking-wider">
               Resources
             </h4>
             <ul className="space-y-2.5">
@@ -146,7 +151,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                    className="text-sm text-white/90 hover:text-[#FD5A1A] transition-colors"
                   >
                     {link.name}
                   </a>
@@ -157,12 +162,14 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-medium text-white/40 text-sm mb-4">Contact</h4>
+            <h4 className="font-medium text-white/70 text-sm mb-4 uppercase tracking-wider">
+              Contact
+            </h4>
             <ul className="space-y-2.5">
               <li>
                 <a
                   href="tel:+919876543210"
-                  className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                  className="text-sm text-white/90 hover:text-[#FD5A1A] transition-colors"
                 >
                   (+91) 98765-43210
                 </a>
@@ -170,7 +177,7 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:hello@aotms.com"
-                  className="text-sm text-white/70 hover:text-[#FD5A1A] transition-colors"
+                  className="text-sm text-white/90 hover:text-[#FD5A1A] transition-colors"
                 >
                   hello@aotms.com
                 </a>
@@ -180,15 +187,17 @@ const Footer = () => {
 
           {/* Address */}
           <div className="col-span-2">
-            <h4 className="font-medium text-white/40 text-sm mb-4">Address</h4>
-            <p className="text-sm text-white/70 leading-relaxed">
+            <h4 className="font-medium text-white/70 text-sm mb-4 uppercase tracking-wider">
+              Address
+            </h4>
+            <p className="text-sm text-white/90 leading-relaxed">
               Auram Creative Center, 19th Floor
               <br />
               Vijayawada, Andhra Pradesh
               <br />
               India - 520001
             </p>
-            <p className="text-xs text-white/30 mt-2">
+            <p className="text-xs text-white/60 mt-2">
               Serving students across Vijayawada and beyond
             </p>
           </div>
@@ -197,10 +206,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-10 pt-9 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 ">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="AOTMS Logo" className="h-8" />
+            <div className="bg-white rounded-lg px-3 py-1.5">
+              <img src={logo} alt="AOTMS Logo" className="h-8" />
+            </div>
           </div>
 
-          <p className="text-sm text-white/40">
+          <p className="text-sm text-white/70">
             © {currentYear} AOTMS. All rights reserved.
           </p>
 
@@ -210,7 +221,7 @@ const Footer = () => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#FD5A1A] hover:border-[#FD5A1A] hover:text-white transition-all duration-300 text-white/50"
+                className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center hover:bg-[#FD5A1A] hover:border-[#FD5A1A] hover:text-white transition-all duration-300 text-white/80"
               >
                 <social.icon className="w-4 h-4" />
               </a>

@@ -1,44 +1,62 @@
-import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { useAuth } from '@/hooks/useAuth';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
-import { PhoneInput } from '@/components/ui/phone-input';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { useToast } from '@/hooks/use-toast';
-import logo from '@/assets/logo.png';
-import { Mail, Lock, User, Eye, EyeOff, Check, X } from 'lucide-react';
+import { useState, useMemo, useEffect } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useAuth } from "@/hooks/useAuth";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { PhoneInput } from "@/components/ui/phone-input";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
+import logo from "@/assets/logo.png";
+import { Mail, Lock, User, Eye, EyeOff, Check, X } from "lucide-react";
 
 const loginSchema = z.object({
-  email: z.string().email({ message: 'Please enter a valid email address' }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().optional(),
-  countryCode: z.string().default('+91'),
-  password: z.string().min(1, { message: 'Password is required' }),
+  countryCode: z.string().default("+91"),
+  password: z.string().min(1, { message: "Password is required" }),
 });
 
-const registerSchema = z.object({
-  fullName: z.string().min(2, { message: 'Name must be at least 2 characters' }).max(50, { message: 'Name must be less than 50 characters' }),
-  email: z.string().email({ message: 'Please enter a valid email address' }),
-  phone: z.string().optional(),
-  countryCode: z.string().default('+91'),
-  password: z
-    .string()
-    .min(8, { message: 'Password must be at least 8 characters' })
-    .regex(/[A-Z]/, { message: 'Password must contain at least one uppercase letter' })
-    .regex(/[a-z]/, { message: 'Password must contain at least one lowercase letter' })
-    .regex(/[0-9]/, { message: 'Password must contain at least one number' }),
-  confirmPassword: z.string().min(1, { message: 'Please confirm your password' }),
-  agreeToTerms: z.boolean().refine((val) => val === true, {
-    message: 'You must agree to the Terms & Privacy Policy',
-  }),
-}).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords don't match",
-  path: ["confirmPassword"],
-});
+const registerSchema = z
+  .object({
+    fullName: z
+      .string()
+      .min(2, { message: "Name must be at least 2 characters" })
+      .max(50, { message: "Name must be less than 50 characters" }),
+    email: z.string().email({ message: "Please enter a valid email address" }),
+    phone: z.string().optional(),
+    countryCode: z.string().default("+91"),
+    password: z
+      .string()
+      .min(8, { message: "Password must be at least 8 characters" })
+      .regex(/[A-Z]/, {
+        message: "Password must contain at least one uppercase letter",
+      })
+      .regex(/[a-z]/, {
+        message: "Password must contain at least one lowercase letter",
+      })
+      .regex(/[0-9]/, { message: "Password must contain at least one number" }),
+    confirmPassword: z
+      .string()
+      .min(1, { message: "Please confirm your password" }),
+    agreeToTerms: z.boolean().refine((val) => val === true, {
+      message: "You must agree to the Terms & Privacy Policy",
+    }),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
 
 type LoginFormData = z.infer<typeof loginSchema>;
 type RegisterFormData = z.infer<typeof registerSchema>;
@@ -58,34 +76,49 @@ const getPasswordStrength = (password: string) => {
 };
 
 export default function Auth() {
-  const [isLogin, setIsLogin] = useState(false);
+  const location = useLocation();
+  const initialMode = location.state?.mode === "login";
+  const [isLogin, setIsLogin] = useState(initialMode);
   const [loading, setLoading] = useState(false);
   const [showLoginPassword, setShowLoginPassword] = useState(false);
   const [showRegisterPassword, setShowRegisterPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [showLoginConfirmPassword, setShowLoginConfirmPassword] = useState(false);
+  const [showLoginConfirmPassword, setShowLoginConfirmPassword] =
+    useState(false);
   const { signIn, signUp } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
   const loginForm = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
-    defaultValues: { email: '', phone: '', countryCode: '+91', password: '' },
+    defaultValues: { email: "", phone: "", countryCode: "+91", password: "" },
   });
 
   const registerForm = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
-    defaultValues: { fullName: '', email: '', phone: '', countryCode: '+91', password: '', confirmPassword: '', agreeToTerms: false },
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      countryCode: "+91",
+      password: "",
+      confirmPassword: "",
+      agreeToTerms: false,
+    },
   });
 
-  const watchPassword = registerForm.watch('password');
-  const passwordStrength = useMemo(() => getPasswordStrength(watchPassword || ''), [watchPassword]);
+  const watchPassword = registerForm.watch("password");
+  const passwordStrength = useMemo(
+    () => getPasswordStrength(watchPassword || ""),
+    [watchPassword],
+  );
 
   const handleGoogleSignIn = async () => {
     toast({
-      title: 'Google Sign In',
-      description: 'Google authentication is currently disabled in backend-mode.',
-      variant: 'default',
+      title: "Google Sign In",
+      description:
+        "Google authentication is currently disabled in backend-mode.",
+      variant: "default",
     });
     // Implementation would require backend OAuth flow
   };
@@ -97,33 +130,35 @@ export default function Auth() {
     if (error) {
       setLoading(false);
       toast({
-        title: 'Login Failed',
+        title: "Login Failed",
         description: error.message,
-        variant: 'destructive',
+        variant: "destructive",
       });
     } else {
-      toast({ title: 'Welcome back!' });
+      toast({ title: "Welcome back!" });
       setLoading(false);
       // specific redirection is handled by Dashboard component or could be returned by signIn
-      navigate('/dashboard');
+      navigate("/dashboard");
     }
   };
 
   const handleRegister = async (data: RegisterFormData) => {
     setLoading(true);
-    const fullPhone = data.phone ? `${data.countryCode}${data.phone}` : undefined;
+    const fullPhone = data.phone
+      ? `${data.countryCode}${data.phone}`
+      : undefined;
     const { error } = await signUp(data.email, data.password, data.fullName);
     setLoading(false);
     if (error) {
       toast({
-        title: 'Registration Failed',
+        title: "Registration Failed",
         description: error.message,
-        variant: 'destructive',
+        variant: "destructive",
       });
     } else {
       toast({
-        title: 'Account Created!',
-        description: 'Please check your email to verify your account.',
+        title: "Account Created!",
+        description: "Please check your email to verify your account.",
       });
     }
   };
@@ -134,33 +169,83 @@ export default function Auth() {
     registerForm.reset();
   };
 
-  const PasswordRequirement = ({ met, text }: { met: boolean; text: string }) => (
-    <div className={`flex items-center gap-1.5 text-xs ${met ? 'text-green-600' : 'text-muted-foreground'}`}>
-      {met ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
+  useEffect(() => {
+    if (location.state?.mode) {
+      setIsLogin(location.state.mode === "login");
+    }
+  }, [location.state]);
+
+  const PasswordRequirement = ({
+    met,
+    text,
+  }: {
+    met: boolean;
+    text: string;
+  }) => (
+    <div
+      className={`flex items-center gap-1.5 text-xs transition-colors duration-300 ${met ? "text-green-500 font-medium" : "text-muted-foreground/60"}`}
+    >
+      <div
+        className={`h-1.5 w-1.5 rounded-full ${met ? "bg-green-500" : "bg-muted-foreground/30"}`}
+      />
       <span>{text}</span>
     </div>
   );
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
-      {/* Left Panel - Gradient Background */}
-      <div className="lg:w-1/2 bg-gradient-to-br from-accent/30 via-primary/20 to-accent/40 p-6 lg:p-10 flex flex-col relative overflow-hidden pointer-events-none">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-3 z-10 pointer-events-auto">
-          <img src={logo} alt="AOTMS Logo" className="h-8 lg:h-10" />
-        </a>
-
-        {/* Motivational Text */}
-        <div className="flex-1 flex flex-col justify-center mt-6 lg:mt-0 z-10">
-          <p className="text-muted-foreground text-sm mb-2">You can easily</p>
-          <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-foreground leading-tight">
-            Get access to your personal hub for learning and growth.
-          </h1>
+    <div className="min-h-screen flex flex-col lg:flex-row bg-background">
+      {/* Left Panel - Brand Showcase */}
+      <div className="hidden lg:flex lg:w-1/2 bg-[#0075CF] p-12 flex-col justify-between relative overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-white rounded-full blur-[100px]" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-80 h-80 bg-[#FD5A1A] rounded-full blur-[100px]" />
         </div>
 
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-accent/40 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary/30 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="relative z-10">
+          <Link
+            to="/"
+            className="inline-block bg-white p-4 rounded-2xl shadow-xl"
+          >
+            <img src={logo} alt="AOTMS Logo" className="h-10 w-auto" />
+          </Link>
+        </div>
+
+        <div className="relative z-10 space-y-6">
+          <h1 className="text-4xl xl:text-5xl font-bold text-white leading-tight">
+            Empowering Your <br />
+            <span className="text-[#FD5A1A]">Career Journey</span> with <br />
+            Industry Expertise.
+          </h1>
+          <p className="text-white/80 text-lg max-w-lg leading-relaxed">
+            Join thousands of students who are already learning the skills that
+            matter. Access real-world projects, expert mentorship, and career
+            support all in one place.
+          </p>
+        </div>
+
+        <div className="relative z-10 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+          <div className="flex items-center gap-4">
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="h-10 w-10 rounded-full border-2 border-[#0075CF] bg-muted overflow-hidden"
+                >
+                  <img
+                    src={`https://i.pravatar.cc/150?u=${i}`}
+                    alt="user"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-white text-sm font-medium">
+              Join <span className="text-[#FD5A1A] font-bold">5,000+</span>{" "}
+              graduates today!
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Right Panel - Auth Form */}
@@ -176,25 +261,33 @@ export default function Auth() {
           {/* Header */}
           <div className="text-center mb-6">
             <h2 className="text-xl lg:text-2xl font-bold text-foreground mb-1">
-              {isLogin ? 'Welcome back' : 'Create an account'}
+              {isLogin ? "Welcome back" : "Create an account"}
             </h2>
             <p className="text-muted-foreground text-sm">
               {isLogin
-                ? 'Sign in to continue your learning journey.'
-                : 'Access your courses, track progress, and grow.'}
+                ? "Sign in to continue your learning journey."
+                : "Access your courses, track progress, and grow."}
             </p>
           </div>
 
           {/* Login Form */}
           {isLogin ? (
             <Form {...loginForm}>
-              <form onSubmit={loginForm.handleSubmit(handleLogin)} className="space-y-6">
+              <form
+                onSubmit={loginForm.handleSubmit(handleLogin)}
+                className="space-y-6"
+              >
                 <FormField
                   control={loginForm.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="login-email" className="text-sm font-medium text-foreground">Email Address</FormLabel>
+                      <FormLabel
+                        htmlFor="login-email"
+                        className="text-sm font-medium text-foreground"
+                      >
+                        Email Address
+                      </FormLabel>
                       <FormControl>
                         <Input
                           id="login-email"
@@ -216,13 +309,20 @@ export default function Auth() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">Phone Number <span className="text-muted-foreground text-xs">(Optional)</span></FormLabel>
+                      <FormLabel className="text-sm font-medium text-foreground">
+                        Phone Number{" "}
+                        <span className="text-muted-foreground text-xs">
+                          (Optional)
+                        </span>
+                      </FormLabel>
                       <FormControl>
                         <PhoneInput
                           value={field.value}
                           onValueChange={field.onChange}
-                          countryCode={loginForm.watch('countryCode')}
-                          onCountryChange={(code) => loginForm.setValue('countryCode', code)}
+                          countryCode={loginForm.watch("countryCode")}
+                          onCountryChange={(code) =>
+                            loginForm.setValue("countryCode", code)
+                          }
                           placeholder="9876543210"
                         />
                       </FormControl>
@@ -236,7 +336,12 @@ export default function Auth() {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="login-password" className="text-sm font-medium text-foreground">Password</FormLabel>
+                      <FormLabel
+                        htmlFor="login-password"
+                        className="text-sm font-medium text-foreground"
+                      >
+                        Password
+                      </FormLabel>
                       <div className="relative">
                         <FormControl>
                           <Input
@@ -250,11 +355,17 @@ export default function Auth() {
                         </FormControl>
                         <button
                           type="button"
-                          onClick={() => setShowLoginPassword(!showLoginPassword)}
+                          onClick={() =>
+                            setShowLoginPassword(!showLoginPassword)
+                          }
                           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-muted-foreground hover:text-foreground transition-colors"
                           tabIndex={-1}
                         >
-                          {showLoginPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                          {showLoginPassword ? (
+                            <EyeOff className="h-5 w-5" />
+                          ) : (
+                            <Eye className="h-5 w-5" />
+                          )}
                         </button>
                       </div>
                       <FormMessage />
@@ -265,16 +376,19 @@ export default function Auth() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-12 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm rounded-xl shadow-md hover:shadow-lg transition-all"
+                  className="w-full h-12 bg-[#0075CF] text-white hover:bg-[#005fa3] font-bold text-base rounded-2xl shadow-[0_8px_20px_rgba(0,117,207,0.3)] hover:shadow-[0_12px_30px_rgba(0,117,207,0.4)] transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  {loading ? 'Signing in...' : 'Sign In'}
+                  {loading ? "Signing in..." : "Sign In to Portal"}
                 </Button>
               </form>
             </Form>
           ) : (
             /* Register Form */
             <Form {...registerForm}>
-              <form onSubmit={registerForm.handleSubmit(handleRegister)} className="space-y-3">
+              <form
+                onSubmit={registerForm.handleSubmit(handleRegister)}
+                className="space-y-3"
+              >
                 {/* Row 1: Full Name & Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <FormField
@@ -282,7 +396,9 @@ export default function Auth() {
                     name="fullName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel htmlFor="register-name" className="text-sm">Full Name</FormLabel>
+                        <FormLabel htmlFor="register-name" className="text-sm">
+                          Full Name
+                        </FormLabel>
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
                           <FormControl>
@@ -306,7 +422,9 @@ export default function Auth() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel htmlFor="register-email" className="text-sm">Email</FormLabel>
+                        <FormLabel htmlFor="register-email" className="text-sm">
+                          Email
+                        </FormLabel>
                         <div className="relative">
                           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
                           <FormControl>
@@ -332,13 +450,20 @@ export default function Auth() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm">Phone Number <span className="text-muted-foreground text-xs">(Optional)</span></FormLabel>
+                      <FormLabel className="text-sm">
+                        Phone Number{" "}
+                        <span className="text-muted-foreground text-xs">
+                          (Optional)
+                        </span>
+                      </FormLabel>
                       <FormControl>
                         <PhoneInput
                           value={field.value}
                           onValueChange={field.onChange}
-                          countryCode={registerForm.watch('countryCode')}
-                          onCountryChange={(code) => registerForm.setValue('countryCode', code)}
+                          countryCode={registerForm.watch("countryCode")}
+                          onCountryChange={(code) =>
+                            registerForm.setValue("countryCode", code)
+                          }
                           placeholder="9876543210"
                         />
                       </FormControl>
@@ -354,7 +479,12 @@ export default function Auth() {
                     name="password"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel htmlFor="register-password" className="text-sm">Password</FormLabel>
+                        <FormLabel
+                          htmlFor="register-password"
+                          className="text-sm"
+                        >
+                          Password
+                        </FormLabel>
                         <div className="relative">
                           <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
                           <FormControl>
@@ -369,11 +499,17 @@ export default function Auth() {
                           </FormControl>
                           <button
                             type="button"
-                            onClick={() => setShowRegisterPassword(!showRegisterPassword)}
+                            onClick={() =>
+                              setShowRegisterPassword(!showRegisterPassword)
+                            }
                             className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors z-10"
                             tabIndex={-1}
                           >
-                            {showRegisterPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                            {showRegisterPassword ? (
+                              <EyeOff className="h-4 w-4" />
+                            ) : (
+                              <Eye className="h-4 w-4" />
+                            )}
                           </button>
                         </div>
                         <FormMessage />
@@ -386,7 +522,12 @@ export default function Auth() {
                     name="confirmPassword"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel htmlFor="register-confirm-password" className="text-sm">Confirm Password</FormLabel>
+                        <FormLabel
+                          htmlFor="register-confirm-password"
+                          className="text-sm"
+                        >
+                          Confirm Password
+                        </FormLabel>
                         <div className="relative">
                           <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none z-10" />
                           <FormControl>
@@ -401,11 +542,17 @@ export default function Auth() {
                           </FormControl>
                           <button
                             type="button"
-                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                            onClick={() =>
+                              setShowConfirmPassword(!showConfirmPassword)
+                            }
                             className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground hover:text-foreground transition-colors z-10"
                             tabIndex={-1}
                           >
-                            {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                            {showConfirmPassword ? (
+                              <EyeOff className="h-4 w-4" />
+                            ) : (
+                              <Eye className="h-4 w-4" />
+                            )}
                           </button>
                         </div>
                         <FormMessage />
@@ -417,10 +564,22 @@ export default function Auth() {
                 {/* Password Strength Indicator */}
                 {watchPassword && watchPassword.length > 0 && (
                   <div className="p-2.5 bg-muted/50 rounded-lg grid grid-cols-2 gap-1">
-                    <PasswordRequirement met={passwordStrength.checks.length} text="8+ characters" />
-                    <PasswordRequirement met={passwordStrength.checks.uppercase} text="Uppercase" />
-                    <PasswordRequirement met={passwordStrength.checks.lowercase} text="Lowercase" />
-                    <PasswordRequirement met={passwordStrength.checks.number} text="Number" />
+                    <PasswordRequirement
+                      met={passwordStrength.checks.length}
+                      text="8+ characters"
+                    />
+                    <PasswordRequirement
+                      met={passwordStrength.checks.uppercase}
+                      text="Uppercase"
+                    />
+                    <PasswordRequirement
+                      met={passwordStrength.checks.lowercase}
+                      text="Lowercase"
+                    />
+                    <PasswordRequirement
+                      met={passwordStrength.checks.number}
+                      text="Number"
+                    />
                   </div>
                 )}
 
@@ -439,10 +598,20 @@ export default function Auth() {
                       </FormControl>
                       <div className="space-y-1 leading-none">
                         <FormLabel className="text-xs font-normal text-muted-foreground cursor-pointer">
-                          I agree to the{' '}
-                          <a href="/terms" className="text-accent hover:underline">Terms</a>
-                          {' '}&{' '}
-                          <a href="/privacy" className="text-accent hover:underline">Privacy Policy</a>
+                          I agree to the{" "}
+                          <a
+                            href="/terms"
+                            className="text-accent hover:underline"
+                          >
+                            Terms
+                          </a>{" "}
+                          &{" "}
+                          <a
+                            href="/privacy"
+                            className="text-accent hover:underline"
+                          >
+                            Privacy Policy
+                          </a>
                         </FormLabel>
                         <FormMessage />
                       </div>
@@ -453,9 +622,9 @@ export default function Auth() {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-11 bg-foreground text-background hover:bg-foreground/90 font-medium text-sm rounded-lg"
+                  className="w-full h-12 bg-[#FD5A1A] text-white hover:bg-[#e45117] font-bold text-base rounded-2xl shadow-[0_8px_20px_rgba(253,90,26,0.3)] hover:shadow-[0_12px_30px_rgba(253,90,26,0.4)] transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  {loading ? 'Creating account...' : 'Create account'}
+                  {loading ? "Creating account..." : "Create Account"}
                 </Button>
               </form>
             </Form>
@@ -505,7 +674,7 @@ export default function Auth() {
               onClick={toggleMode}
               className="text-accent hover:underline font-medium"
             >
-              {isLogin ? 'Register' : 'Login'}
+              {isLogin ? "Register" : "Login"}
             </button>
           </p>
         </div>

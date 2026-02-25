@@ -201,7 +201,9 @@ const Header = () => {
                   className={`text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 rounded-full border-2 transition-all duration-300 hover:scale-105 hover:bg-transparent ${isScrolled || hasLightBg ? "text-foreground border-foreground/30 hover:border-primary hover:text-primary" : "text-white border-white/50 hover:border-white hover:text-white/90"}`}
                   asChild
                 >
-                  <Link to="/auth">Login</Link>
+                  <Link to="/auth" state={{ mode: "login" }}>
+                    Login
+                  </Link>
                 </Button>
                 <Button
                   variant="ghost"
@@ -209,7 +211,9 @@ const Header = () => {
                   className={`text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 rounded-full border-2 transition-all duration-300 animate-[pulse_3s_ease-in-out_infinite] hover:animate-none hover:scale-105 hover:bg-transparent ${isScrolled || hasLightBg ? "text-foreground border-foreground/30 hover:border-primary hover:text-primary" : "text-white border-white/50 hover:border-white hover:text-white/90"}`}
                   asChild
                 >
-                  <Link to="/auth">Sign Up</Link>
+                  <Link to="/auth" state={{ mode: "signup" }}>
+                    Sign Up
+                  </Link>
                 </Button>
               </div>
             )}
@@ -232,8 +236,14 @@ const Header = () => {
               >
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
-                  <div className="flex items-center justify-between p-4 border-b border-border">
-                    <img src={logo} alt="AOTMS Logo" className="h-10 w-auto" />
+                  <div className="flex items-center justify-between">
+                    <div className="bg-white rounded-xl px-4 py-2 shadow-sm border border-white/10">
+                      <img
+                        src={logo}
+                        alt="AOTMS Logo"
+                        className="h-12 sm:h-14 md:h-16"
+                      />
+                    </div>
                   </div>
 
                   {/* Mobile Navigation */}
@@ -259,12 +269,16 @@ const Header = () => {
                     <div className="p-4 border-t border-border space-y-3">
                       <SheetClose asChild>
                         <Button variant="outline" className="w-full" asChild>
-                          <Link to="/auth">Login</Link>
+                          <Link to="/auth" state={{ mode: "login" }}>
+                            Login
+                          </Link>
                         </Button>
                       </SheetClose>
                       <SheetClose asChild>
                         <Button variant="accent" className="w-full" asChild>
-                          <Link to="/auth">Sign Up</Link>
+                          <Link to="/auth" state={{ mode: "signup" }}>
+                            Sign Up
+                          </Link>
                         </Button>
                       </SheetClose>
                     </div>

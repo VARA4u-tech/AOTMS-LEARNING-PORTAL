@@ -206,8 +206,12 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-10 pt-9 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 ">
           <div className="flex items-center gap-2">
-            <div className="bg-white rounded-lg px-3 py-1.5">
-              <img src={logo} alt="AOTMS Logo" className="h-8" />
+            <div className="bg-white rounded-xl px-4 py-2 shadow-sm border border-white/10">
+              <img
+                src={logo}
+                alt="AOTMS Logo"
+                className="h-14 sm:h-18 md:h-24 px-2"
+              />
             </div>
           </div>
 

@@ -17,12 +17,8 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-24 bg-white font-['Inter']">
-      {/* Ambient Background - Consistency with Dashboard */}
-      <div className="absolute inset-0 z-0">
-        <AmbientBackground />
-        {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none" />
-      </div>
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none" />
 
       <div className="container-width section-padding relative z-10 w-full">
         <div className="max-w-5xl mx-auto text-center">

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Trophy, Medal, Award, ArrowRight } from "lucide-react";
-import AmbientBackground from "@/components/ui/AmbientBackground";
 
 const leaderboardData = [
   { rank: 1, name: "Arun Kumar", score: 9850, avatar: "AK" },
@@ -26,10 +25,7 @@ const getRankIcon = (rank: number) => {
 const Leaderboard = () => {
   return (
     <section className="py-24 md:py-32 bg-white relative overflow-hidden border-t-4 border-black font-['Inter']">
-      <div className="absolute inset-0 z-0">
-        <AmbientBackground />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-      </div>
+      <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

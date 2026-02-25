@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/logo.png";
-import AmbientBackground from "@/components/ui/AmbientBackground";
 
 interface Tech {
   name: string;
@@ -203,10 +202,7 @@ const TechnologyEcosystem = () => {
       className="relative py-24 md:py-32 overflow-hidden bg-[#E9E9E9] border-t-4 border-black font-['Inter']"
     >
       {/* Background Patterns */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <AmbientBackground />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-      </div>
+      <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

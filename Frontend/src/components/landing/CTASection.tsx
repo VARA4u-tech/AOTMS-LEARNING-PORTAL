@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import AmbientBackground from "@/components/ui/AmbientBackground";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -10,10 +9,7 @@ const CTASection = () => {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden bg-black font-['Inter']">
       {/* Background patterns */}
-      <div className="absolute inset-0 z-0">
-        <AmbientBackground />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-      </div>
+      <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">
         <motion.div

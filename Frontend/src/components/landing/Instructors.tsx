@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import AmbientBackground from "../ui/AmbientBackground";
 
 const instructors = [
   {
@@ -36,10 +35,7 @@ const instructors = [
 const Instructors = () => {
   return (
     <section className="py-24 md:py-32 bg-[#E9E9E9] relative overflow-hidden border-t-4 border-black font-['Inter']">
-      <div className="absolute inset-0 z-0 opacity-40">
-        <AmbientBackground />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
-      </div>
+      <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">
         {/* Header */}

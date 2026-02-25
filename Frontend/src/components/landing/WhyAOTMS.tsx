@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import AmbientBackground from "@/components/ui/AmbientBackground";
 import {
   Users,
   Trophy,
@@ -57,11 +56,6 @@ const WhyAOTMS = () => {
       id="about"
       className="py-24 md:py-32 relative overflow-hidden bg-[#E9E9E9] border-t-4 border-black font-['Inter']"
     >
-      {/* Ambient Background for consistency */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <AmbientBackground />
-      </div>
-
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">
         {/* Section Header */}
         <motion.div

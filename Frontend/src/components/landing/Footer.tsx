@@ -2,7 +2,6 @@ import logo from "@/assets/logo.png";
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import AmbientBackground from "@/components/ui/AmbientBackground";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,10 +41,7 @@ const Footer = () => {
       id="contact"
       className="relative overflow-hidden bg-black border-t-8 border-black font-['Inter']"
     >
-      <div className="absolute inset-0 z-0">
-        <AmbientBackground />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
-      </div>
+      <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
 
       {/* Newsletter Section */}
       <div className="container-width py-16 border-b-4 border-white/10 relative z-10 px-4 md:px-8">

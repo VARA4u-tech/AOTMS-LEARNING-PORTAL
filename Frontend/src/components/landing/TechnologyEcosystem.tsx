@@ -236,7 +236,7 @@ const TechnologyEcosystem = () => {
                     <img
                       src={tech.icon}
                       alt={tech.name}
-                      className="w-10 h-10 object-contain grayscale group-hover:grayscale-0"
+                      className="w-10 h-10 object-contain"
                     />
                     <span className="text-[10px] font-black uppercase tracking-widest text-black">
                       {tech.name}
@@ -320,7 +320,7 @@ const TechnologyEcosystem = () => {
                     <img
                       src={reliableIcons[tech.name] || tech.icon}
                       alt={tech.name}
-                      className="w-10 h-10 mb-2 grayscale group-hover:grayscale-0 transition-all"
+                      className="w-10 h-10 mb-2 transition-all"
                     />
                     <span className="text-[9px] font-black uppercase tracking-widest text-black text-center">
                       {tech.name}

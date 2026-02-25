@@ -126,9 +126,6 @@ const Header = () => {
                 className="h-8 sm:h-10 md:h-12 w-auto"
               />
             </div>
-            <span className="text-2xl font-black uppercase tracking-tighter text-black">
-              AOTMS
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

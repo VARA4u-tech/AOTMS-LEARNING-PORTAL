@@ -1,5 +1,6 @@
-import { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useTransform } from "framer-motion";
+import FaqImage from "@/Home_images/AOTMS_LMS_000.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -222,92 +223,52 @@ const faqCategories = [
 ];
 
 const FAQSection = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [images, setImages] = useState<HTMLImageElement[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  // Autoplay FAQ Logic
+  const allQuestions = faqCategories.flatMap((cat, catIdx) =>
+    cat.questions.map((q, qIdx) => ({
+      value: `${catIdx}-${qIdx}`,
+      categoryIndex: catIdx,
+    })),
+  );
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Map scroll progress to frame index (playing only first 60 frames for slower effect)
-  const TOTAL_FRAMES = 224;
-  const frameIndex = useTransform(scrollYProgress, [0, 1], [0, 60]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const loadImages = async () => {
-      const imageUrls = import.meta.glob("@/Home_images/*.jpg", {
-        eager: true,
-        query: "?url",
-        import: "default",
+    if (isPaused) return;
+
+    const intervalTime = 4000; // 4 seconds per item
+    const stepTime = 100;
+    const steps = intervalTime / stepTime;
+
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          setActiveIndex((current) => (current + 1) % allQuestions.length);
+          return 0;
+        }
+        return prev + 100 / steps;
       });
-      const sortedUrls = Object.keys(imageUrls)
-        .sort((a, b) => {
-          const aNum = parseInt(a.match(/frame-(\d+)/)?.[1] || "0");
-          const bNum = parseInt(b.match(/frame-(\d+)/)?.[1] || "0");
-          return aNum - bNum;
-        })
-        .map((key) => imageUrls[key] as string);
+    }, stepTime);
 
-      const loadedImages: HTMLImageElement[] = [];
-      for (const url of sortedUrls) {
-        const img = new Image();
-        img.src = url;
-        await new Promise((resolve) => {
-          img.onload = () => resolve(null);
-          img.onerror = () => resolve(null);
-        });
-        loadedImages.push(img);
+    return () => clearInterval(timer);
+  }, [isPaused, allQuestions.length]);
+
+  const activeValue = allQuestions[activeIndex].value;
+
+  const handleAccordionChange = (value: string) => {
+    if (value) {
+      const index = allQuestions.findIndex((q) => q.value === value);
+      if (index !== -1) {
+        setActiveIndex(index);
+        setProgress(0);
       }
-      setImages(loadedImages);
-      setIsLoaded(true);
-    };
-    loadImages();
-  }, []);
-
-  useEffect(() => {
-    if (!isLoaded || images.length === 0) return;
-
-    const renderFrame = (index: number) => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext("2d");
-      if (!canvas || !ctx) return;
-
-      const img = images[Math.round(index)];
-      if (!img) return;
-
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
-
-      const scale = Math.max(
-        canvas.width / img.width,
-        canvas.height / img.height,
-      );
-      const x = canvas.width / 2 - (img.width / 2) * scale;
-      const y = canvas.height / 2 - (img.height / 2) * scale;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
-    };
-
-    const handleResize = () => renderFrame(frameIndex.get());
-    window.addEventListener("resize", handleResize);
-    renderFrame(0);
-
-    const unsubscribe = frameIndex.on("change", (latest) =>
-      renderFrame(latest),
-    );
-    return () => {
-      unsubscribe();
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isLoaded, frameIndex, images]);
+    }
+  };
 
   return (
     <section
-      ref={containerRef}
       id="faq"
       className="py-24 md:py-32 bg-white relative overflow-hidden border-t-4 border-black font-['Inter']"
     >
@@ -339,23 +300,23 @@ const FAQSection = () => {
           {/* Left Side - Sticky Visual */}
           <div className="hidden lg:block lg:col-span-4 relative">
             <div className="sticky top-32 w-full aspect-[9/12] bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,117,207,1)] overflow-hidden">
-              <canvas
-                ref={canvasRef}
+              <img
+                src={FaqImage}
+                alt="FAQ Visual"
                 className="w-full h-full block object-cover grayscale"
               />
               <div className="absolute top-0 left-0 bg-black text-white px-4 py-1 font-black text-[10px] uppercase tracking-widest italic border-b-4 border-r-4 border-white">
                 LIVE_FEED_01
               </div>
-              {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-white font-black text-sm uppercase tracking-tighter">
-                  LOADING SYSTEMS...
-                </div>
-              )}
             </div>
           </div>
 
           {/* Right Side - FAQ Content */}
-          <div className="lg:col-span-8 space-y-16">
+          <div
+            className="lg:col-span-8 space-y-16"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {faqCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
@@ -374,21 +335,38 @@ const FAQSection = () => {
                   </h3>
                 </div>
 
-                <Accordion type="single" collapsible className="space-y-4">
-                  {category.questions.map((item, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`${categoryIndex}-${index}`}
-                      className="border-2 border-black px-6 py-1 data-[state=open]:bg-[#E9E9E9] transition-colors rounded-none"
-                    >
-                      <AccordionTrigger className="text-left text-sm font-black uppercase tracking-wider hover:no-underline py-4">
-                        {item.q}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-[13px] font-bold text-black/60 leading-relaxed uppercase tracking-wide pb-6">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
+                <Accordion
+                  type="single"
+                  collapsible
+                  value={activeValue}
+                  onValueChange={handleAccordionChange}
+                  className="space-y-4"
+                >
+                  {category.questions.map((item, index) => {
+                    const itemValue = `${categoryIndex}-${index}`;
+                    const isActive = activeValue === itemValue;
+
+                    return (
+                      <AccordionItem
+                        key={index}
+                        value={itemValue}
+                        className="border-2 border-black px-6 py-1 data-[state=open]:bg-[#E9E9E9] transition-colors rounded-none relative overflow-hidden"
+                      >
+                        {isActive && !isPaused && (
+                          <div
+                            className="absolute bottom-0 left-0 h-1 bg-[#FD5A1A] transition-all duration-100 ease-linear"
+                            style={{ width: `${progress}%` }}
+                          />
+                        )}
+                        <AccordionTrigger className="text-left text-sm font-black uppercase tracking-wider hover:no-underline py-4">
+                          {item.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[13px] font-bold text-black/60 leading-relaxed uppercase tracking-wide pb-6">
+                          {item.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    );
+                  })}
                 </Accordion>
               </motion.div>
             ))}

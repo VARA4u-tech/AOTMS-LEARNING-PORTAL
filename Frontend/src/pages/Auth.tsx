@@ -19,6 +19,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import logo from "@/assets/logo.png";
 import { Mail, Lock, User, Eye, EyeOff, Check, X } from "lucide-react";
+import AmbientBackground from "@/components/ui/AmbientBackground";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -183,11 +184,13 @@ export default function Auth() {
     text: string;
   }) => (
     <div
-      className={`flex items-center gap-1.5 text-xs transition-colors duration-300 ${met ? "text-green-500 font-medium" : "text-muted-foreground/60"}`}
+      className={`flex items-center gap-2 p-2 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-[10px] font-black uppercase tracking-widest transition-all duration-300 ${met ? "bg-green-400 text-black px-3" : "bg-white text-black/40"}`}
     >
-      <div
-        className={`h-1.5 w-1.5 rounded-full ${met ? "bg-green-500" : "bg-muted-foreground/30"}`}
-      />
+      {met ? (
+        <Check className="h-3 w-3 stroke-[3px]" />
+      ) : (
+        <div className="h-1.5 w-1.5 bg-black/20 rounded-full" />
+      )}
       <span>{text}</span>
     </div>
   );

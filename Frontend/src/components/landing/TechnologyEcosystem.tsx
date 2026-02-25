@@ -1,74 +1,177 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "@/assets/logo.png";
-import { motion } from "framer-motion";
 
-const technologies = [
+interface Tech {
+  name: string;
+  icon: string;
+  color: string;
+  textColor: string;
+}
+
+const technologies: Tech[] = [
   {
     name: "React",
-    icon: "https://cdn.simpleicons.org/react/61DAFB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     color: "#61DAFB",
+    textColor: "#0e7490",
   },
   {
     name: "Next.js",
-    icon: "https://cdn.simpleicons.org/nextdotjs/black",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     color: "#000000",
+    textColor: "#111827",
   },
   {
-    name: "Tailwind CSS",
-    icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
-    color: "#06B6D4",
+    name: "GraphQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+    color: "#E10098",
+    textColor: "#be185d",
   },
   {
     name: "TypeScript",
-    icon: "https://cdn.simpleicons.org/typescript/3178C6",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     color: "#3178C6",
+    textColor: "#1e3a8a",
   },
   {
     name: "Node.js",
-    icon: "https://cdn.simpleicons.org/nodedotjs/339933",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     color: "#339933",
+    textColor: "#14532d",
   },
   {
     name: "Supabase",
-    icon: "https://cdn.simpleicons.org/supabase/3ECF8E",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
     color: "#3ECF8E",
+    textColor: "#065f46",
   },
   {
     name: "PostgreSQL",
-    icon: "https://cdn.simpleicons.org/postgresql/4169E1",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     color: "#4169E1",
+    textColor: "#1e3a8a",
   },
   {
-    name: "Razorpay",
-    icon: "https://cdn.simpleicons.org/razorpay/02042B",
-    color: "#02042B",
+    name: "MongoDB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    color: "#47A248",
+    textColor: "#14532d",
   },
   {
-    name: "AWS",
-    icon: "https://cdn.simpleicons.org/amazonaws/232F3E",
-    color: "#232F3E",
+    name: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    color: "#2496ED",
+    textColor: "#1e3a8a",
   },
   {
     name: "Vercel",
-    icon: "https://cdn.simpleicons.org/vercel/black",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
     color: "#000000",
+    textColor: "#111827",
   },
   {
-    name: "Zoom API",
-    icon: "https://cdn.simpleicons.org/zoom/0B5CFF",
-    color: "#0B5CFF",
+    name: "GitHub",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    color: "#181717",
+    textColor: "#111827",
   },
   {
-    name: "WhatsApp API",
-    icon: "https://cdn.simpleicons.org/whatsapp/25D366",
-    color: "#25D366",
+    name: "Redis",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    color: "#DC382D",
+    textColor: "#991b1b",
   },
 ];
+
+// Use abbreviation badge when no proper icon is available
+const specialLogos: Record<string, string> = {};
+
+// Simple, well-tested devicon URLs (override broken ones)
+const reliableIcons: Record<string, string> = {
+  "Next.js":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nextjs/nextjs-original.svg",
+  Vercel:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vercel/vercel-original.svg",
+};
+
+const TechCard = ({ tech, size }: { tech: Tech; size: number }) => {
+  const abbr =
+    specialLogos[tech.name] ||
+    (reliableIcons[tech.name] === ""
+      ? tech.name.slice(0, 2).toUpperCase()
+      : null);
+  const iconUrl =
+    reliableIcons[tech.name] !== undefined
+      ? reliableIcons[tech.name]
+      : tech.icon;
+  const showAbbr = !iconUrl;
+
+  return (
+    <div
+      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white cursor-pointer select-none
+        border border-gray-100
+        shadow-[0_4px_16px_rgba(0,0,0,0.07)]
+        hover:shadow-[0_12px_36px_rgba(0,0,0,0.16)]
+        hover:-translate-y-2
+        transition-all duration-300
+        overflow-hidden"
+      style={{ width: size, height: size }}
+    >
+      {/* Colored accent bar at bottom */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-[3px] opacity-80"
+        style={{ backgroundColor: tech.color }}
+      />
+
+      {/* Color wash on hover */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-[0.07] transition-opacity duration-300"
+        style={{ backgroundColor: tech.color }}
+      />
+
+      {/* Icon or abbreviation */}
+      {showAbbr || abbr ? (
+        <div
+          className="w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-sm tracking-tight text-white shadow-sm mb-1"
+          style={{ backgroundColor: tech.color, letterSpacing: "0.04em" }}
+        >
+          {abbr}
+        </div>
+      ) : (
+        <img
+          src={iconUrl}
+          alt={tech.name}
+          draggable={false}
+          className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = "none";
+            const parent = target.parentElement;
+            if (parent) {
+              const div = document.createElement("div");
+              div.style.cssText = `width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:${tech.color};color:white;font-weight:800;font-size:12px`;
+              div.textContent = tech.name.slice(0, 2).toUpperCase();
+              parent.insertBefore(div, target);
+            }
+          }}
+        />
+      )}
+
+      {/* Name label */}
+      <span className="text-[10px] font-semibold mt-1 text-gray-600 group-hover:text-gray-900 transition-colors duration-300 leading-tight text-center px-1">
+        {tech.name}
+      </span>
+    </div>
+  );
+};
+
+const CARD_SIZE = 90; // px
 
 const TechnologyEcosystem = () => {
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 1200,
   );
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -77,175 +180,210 @@ const TechnologyEcosystem = () => {
   }, []);
 
   const isMobile = windowWidth < 768;
-  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+  const isTablet = windowWidth >= 768 && windowWidth < 1100;
+
+  // Calculate orbit radius and container
+  const orbitRadius = isTablet ? 210 : 265;
+  const padding = CARD_SIZE + 10;
+  const totalSize = (orbitRadius + padding) * 2;
+  const center = totalSize / 2;
+
+  // trig positions for each tech
+  const nodePositions = technologies.map((_, i) => {
+    // -90° so first item is at the top
+    const angleDeg = (360 / technologies.length) * i - 90;
+    const angleRad = (angleDeg * Math.PI) / 180;
+    return {
+      left: center + orbitRadius * Math.cos(angleRad) - CARD_SIZE / 2,
+      top: center + orbitRadius * Math.sin(angleRad) - CARD_SIZE / 2,
+      lx: center + orbitRadius * Math.cos(angleRad),
+      ly: center + orbitRadius * Math.sin(angleRad),
+    };
+  });
 
   return (
     <section
-      className="py-24 bg-white overflow-hidden relative"
+      ref={sectionRef}
       id="technology-ecosystem"
+      className="relative py-20 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(160deg, #f9fafb 0%, #ffffff 50%, #f0f9ff 100%)",
+      }}
     >
-      <div className="container-width px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-black tracking-tight"
-          >
-            Our Technology <span className="text-primary">Ecosystem</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-gray-600"
-          >
-            Built on a robust, scalable, and modern stack to deliver a seamless
-            learning experience.
-          </motion.p>
+      {/* Decorative background blobs */}
+      <div
+        className="absolute -top-20 -left-20 w-72 h-72 rounded-full opacity-30 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, #bfdbfe 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full opacity-30 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, #d1fae5 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* ── Section Header ── */}
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <p className="text-xs font-semibold tracking-widest uppercase text-primary mb-3">
+            Powered By
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            Our Technology{" "}
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(90deg, #F27006, #f59e0b)",
+              }}
+            >
+              Ecosystem
+            </span>
+          </h2>
+          <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
+            A carefully chosen, modern stack — from UI to cloud — powering every
+            feature of AOTMS.
+          </p>
         </div>
 
-        {isMobile ? (
-          <div className="flex flex-col items-center gap-12">
-            {/* Center Logo on top for Mobile */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              className="relative w-32 h-32 rounded-full bg-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 flex items-center justify-center z-10 backdrop-blur-md"
-            >
-              <div className="w-24 h-24 rounded-full bg-white shadow-inner flex items-center justify-center border border-gray-50">
-                <img src={logo} alt="AOTMS Logo" className="w-16 h-auto" />
-              </div>
-            </motion.div>
+        {/* ── MOBILE: Staggered Clustered Layout ── */}
+        {isMobile && (
+          <div className="relative flex flex-col items-center py-6">
+            {/* Center Logo integrated into the flow */}
+            <div className="relative z-20 mb-10 w-32 h-32 rounded-full bg-white flex flex-col items-center justify-center p-3 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100">
+              <div
+                className="absolute inset-0 rounded-full opacity-10"
+                style={{
+                  background:
+                    "radial-gradient(circle, #F27006 0%, transparent 70%)",
+                }}
+              />
+              <img
+                src={logo}
+                alt="AOTMS"
+                className="w-24 h-auto relative z-10"
+              />
+            </div>
 
-            <div className="grid grid-cols-2 gap-4 w-full max-w-sm">
+            {/* Seamless 3-column staggered layout */}
+            <div className="grid grid-cols-3 gap-3 w-full max-w-[340px] px-2 relative z-10">
               {technologies.map((tech, i) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
+                <div
                   key={tech.name}
-                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-gray-50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                  className={`flex justify-center transform transition-transform duration-300 ${
+                    i % 2 === 0
+                      ? "translate-y-4"
+                      : "" /* Stagger odd/even cols */
+                  }`}
                 >
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"
-                    style={{ backgroundColor: tech.color }}
-                  />
-                  <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                    <img
-                      src={tech.icon}
-                      alt={tech.name}
-                      className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700 text-center">
-                    {tech.name}
-                  </span>
-                </motion.div>
+                  <TechCard tech={tech} size={92} />
+                </div>
               ))}
             </div>
           </div>
-        ) : (
-          <div className="relative w-full h-[650px] max-w-5xl mx-auto flex items-center justify-center">
-            {/* Center Logo */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              className={`absolute rounded-full bg-white/60 backdrop-blur-xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-white flex items-center justify-center z-20 ${isTablet ? "w-32 h-32" : "w-44 h-44"}`}
+        )}
+
+        {/* ── TABLET / DESKTOP: Radial layout ── */}
+        {!isMobile && (
+          <div
+            className="flex justify-center items-center"
+            style={{ minHeight: totalSize }}
+          >
+            <div
+              className="relative flex-shrink-0"
+              style={{ width: totalSize, height: totalSize }}
             >
-              <div
-                className={`rounded-full bg-white shadow-inner flex items-center justify-center border border-gray-50 flex-col gap-2 ${isTablet ? "w-24 h-24" : "w-32 h-32"}`}
+              {/* SVG: orbit ring + connecting lines */}
+              <svg
+                className="absolute inset-0 pointer-events-none"
+                width={totalSize}
+                height={totalSize}
+                viewBox={`0 0 ${totalSize} ${totalSize}`}
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <img
-                  src={logo}
-                  alt="AOTMS Logo"
-                  className={isTablet ? "w-16 h-auto" : "w-20 h-auto"}
+                {/* Outer orbit ring */}
+                <circle
+                  cx={center}
+                  cy={center}
+                  r={orbitRadius}
+                  fill="none"
+                  stroke="#e5e7eb"
+                  strokeWidth="1"
+                  strokeDasharray="3 6"
                 />
+                {/* Inner ring (decoration) */}
+                <circle
+                  cx={center}
+                  cy={center}
+                  r={90}
+                  fill="none"
+                  stroke="#f3f4f6"
+                  strokeWidth="1"
+                />
+                {/* Connecting lines */}
+                {nodePositions.map((pos, i) => (
+                  <line
+                    key={`line-${i}`}
+                    x1={center}
+                    y1={center}
+                    x2={pos.lx}
+                    y2={pos.ly}
+                    stroke={`${technologies[i].color}55`}
+                    strokeWidth="1.5"
+                  />
+                ))}
+              </svg>
+
+              {/* ── Center Logo ── */}
+              <div
+                className="absolute z-20 rounded-full bg-white flex items-center justify-center"
+                style={{
+                  width: 160,
+                  height: 160,
+                  left: center - 80,
+                  top: center - 80,
+                  boxShadow:
+                    "0 0 0 16px rgba(255,255,255,0.55), 0 8px 48px rgba(0,0,0,0.12)",
+                  border: "2px solid rgba(229,231,235,0.9)",
+                }}
+              >
+                <img src={logo} alt="AOTMS Logo" className="w-28 h-auto" />
               </div>
-            </motion.div>
 
-            {technologies.map((tech, index) => {
-              const angle = isTablet
-                ? 180 + index * (180 / 11)
-                : (360 / 12) * index;
-              const radius = isTablet ? 280 : 340;
-
-              return (
+              {/* ── Technology Node Cards ── */}
+              {technologies.map((tech, i) => (
                 <div
                   key={tech.name}
-                  className="absolute top-1/2 left-1/2 w-0 h-0 z-10"
-                  style={{ transform: `rotate(${angle}deg)` }}
+                  className="absolute z-10 tech-node"
+                  style={{
+                    width: CARD_SIZE,
+                    height: CARD_SIZE,
+                    left: nodePositions[i].left,
+                    top: nodePositions[i].top,
+                    animationDelay: `${i * 0.28}s`,
+                  }}
                 >
-                  {/* Connecting Line */}
-                  <div
-                    className="absolute top-1/2 left-0 h-[1px] bg-gradient-to-r from-gray-200 to-transparent origin-left opacity-60"
-                    style={{
-                      width: `${radius - 20}px`,
-                      transform: "translateY(-50%)",
-                    }}
-                  />
-
-                  {/* Technology Node */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: index * 0.05,
-                      duration: 0.6,
-                      type: "spring",
-                      bounce: 0.4,
-                    }}
-                    className="absolute"
-                    style={{
-                      transform: `translate(${radius}px, 0) rotate(-${angle}deg)`,
-                      marginLeft: "-40px", // Center the 80px element
-                      marginTop: "-40px",
-                    }}
-                  >
-                    <div
-                      className="group relative w-20 h-20 rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 flex items-center justify-center hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 backdrop-blur-lg bg-white/80 overflow-visible cursor-pointer animate-[float_6s_ease-in-out_infinite] hover:animate-none"
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    >
-                      <div className="w-10 h-10 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                        <img
-                          src={tech.icon}
-                          alt={tech.name}
-                          className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                        />
-                      </div>
-
-                      {/* Tooltip Label */}
-                      <div className="absolute -bottom-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 flex justify-center w-full">
-                        <span className="text-xs font-semibold text-gray-800 bg-white px-3 py-1.5 rounded-full shadow-lg border border-gray-100 whitespace-nowrap">
-                          {tech.name}
-                        </span>
-                      </div>
-
-                      {/* Subtle Color Glow */}
-                      <div
-                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
-                        style={{ backgroundColor: tech.color }}
-                      />
-                    </div>
-                  </motion.div>
+                  <TechCard tech={tech} size={CARD_SIZE} />
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         )}
       </div>
 
-      {/* Floating global style for animation */}
       <style>{`
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-          100% { transform: translateY(0px); }
+        @keyframes techFloat {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-8px); }
+        }
+        .tech-node {
+          animation: techFloat 5s ease-in-out infinite;
+        }
+        .tech-node:hover {
+          animation-play-state: paused;
+          z-index: 30 !important;
         }
       `}</style>
     </section>

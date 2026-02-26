@@ -26,7 +26,8 @@ function getTodayString() {
   return `${year}-${month}-${day}`;
 }
 
-export function getAllAttendance(): AttendanceRecord[] {
+// Internal Helper for local storage
+function getLocalAttendance(): AttendanceRecord[] {
   try {
     const data = localStorage.getItem(ATTENDANCE_KEY);
     return data ? JSON.parse(data) : [];
@@ -35,11 +36,11 @@ export function getAllAttendance(): AttendanceRecord[] {
   }
 }
 
-export function saveAllAttendance(records: AttendanceRecord[]) {
+function saveLocalAttendance(records: AttendanceRecord[]) {
   localStorage.setItem(ATTENDANCE_KEY, JSON.stringify(records));
 }
 
-export function getSuspendedUsers(): SuspendedUser[] {
+function getLocalSuspended(): SuspendedUser[] {
   try {
     const data = localStorage.getItem(SUSPENDED_KEY);
     return data ? JSON.parse(data) : [];
@@ -48,17 +49,73 @@ export function getSuspendedUsers(): SuspendedUser[] {
   }
 }
 
-export function saveSuspendedUsers(users: SuspendedUser[]) {
+function saveLocalSuspended(users: SuspendedUser[]) {
   localStorage.setItem(SUSPENDED_KEY, JSON.stringify(users));
+}
+
+// ─── Public API ─────────────────────────────────────────────────────────────
+
+export async function getAllAttendance(): Promise<AttendanceRecord[]> {
+  try {
+    const token = localStorage.getItem("access_token");
+    if (!token) return getLocalAttendance();
+
+    const res = await fetch(`${API_URL}/data/attendance`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!res.ok) throw new Error("Backend fetch failed");
+
+    const data = await res.json();
+    const normalized = data.map((r: any) => ({
+      id: r.id,
+      userId: r.user_id,
+      role: r.role,
+      date: r.date,
+      status: r.status,
+      timestamp: r.created_at || r.timestamp,
+    }));
+
+    // Update local cache
+    saveLocalAttendance(normalized);
+    return normalized;
+  } catch (e) {
+    console.warn("Falling back to local attendance data:", e);
+    return getLocalAttendance();
+  }
+}
+
+export async function getSuspendedUsers(): Promise<SuspendedUser[]> {
+  try {
+    const token = localStorage.getItem("access_token");
+    if (!token) return getLocalSuspended();
+
+    const res = await fetch(`${API_URL}/data/suspended_users`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (!res.ok) throw new Error("Backend fetch failed");
+
+    const data = await res.json();
+    const normalized = data.map((r: any) => ({
+      userId: r.user_id,
+      suspendedAt: r.suspended_at || r.suspendedAt,
+    }));
+
+    // Update local cache
+    saveLocalSuspended(normalized);
+    return normalized;
+  } catch (e) {
+    console.warn("Falling back to local suspension data:", e);
+    return getLocalSuspended();
+  }
 }
 
 // 1. Log Daily Attendance on Login
 export async function logDailyAttendance(userId: string, role: string) {
   const today = getTodayString();
-  const records = getAllAttendance();
-  const existing = records.find((r) => r.userId === userId && r.date === today);
 
-  // Still update LocalStorage for immediate UI feedback
+  // Update Local Cache immediately
+  const records = getLocalAttendance();
+  const existing = records.find((r) => r.userId === userId && r.date === today);
   if (!existing) {
     records.push({
       id: `${userId}-${today}`,
@@ -68,10 +125,10 @@ export async function logDailyAttendance(userId: string, role: string) {
       status: "present",
       timestamp: new Date().toISOString(),
     });
-    saveAllAttendance(records);
+    saveLocalAttendance(records);
   }
 
-  // Also call Backend
+  // Sync to Backend
   try {
     const token = localStorage.getItem("access_token");
     if (token) {
@@ -81,7 +138,7 @@ export async function logDailyAttendance(userId: string, role: string) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ userId, role }),
+        body: JSON.stringify({ role }), // userId taken from token by backend
       });
     }
   } catch (e) {
@@ -91,7 +148,8 @@ export async function logDailyAttendance(userId: string, role: string) {
 
 // 2. Mark absent (Manager or system could do this)
 export async function markAbsent(userId: string, role: string, date: string) {
-  const records = getAllAttendance();
+  // Update Local Cache
+  const records = getLocalAttendance();
   const existingIndex = records.findIndex(
     (r) => r.userId === userId && r.date === date,
   );
@@ -108,7 +166,7 @@ export async function markAbsent(userId: string, role: string, date: string) {
       timestamp: new Date().toISOString(),
     });
   }
-  saveAllAttendance(records);
+  saveLocalAttendance(records);
 
   // Sync to Backend
   try {
@@ -132,15 +190,15 @@ export async function markAbsent(userId: string, role: string, date: string) {
     console.error("Failed to mark absent on backend:", e);
   }
 
-  checkAbsencesAndSuspend(userId);
+  await checkAbsencesAndSuspend(userId);
 }
 
 // 3. Suspend & Reactivate
 export async function suspendUser(userId: string) {
-  const suspended = getSuspendedUsers();
+  const suspended = getLocalSuspended();
   if (!suspended.find((s) => s.userId === userId)) {
     suspended.push({ userId, suspendedAt: new Date().toISOString() });
-    saveSuspendedUsers(suspended);
+    saveLocalSuspended(suspended);
 
     // Sync to Backend
     try {
@@ -173,18 +231,15 @@ export async function suspendUser(userId: string) {
 }
 
 export async function reactivateUser(userId: string) {
-  let suspended = getSuspendedUsers();
+  let suspended = getLocalSuspended();
   suspended = suspended.filter((s) => s.userId !== userId);
-  saveSuspendedUsers(suspended);
+  saveLocalSuspended(suspended);
 
   // Sync to Backend
   try {
     const token = localStorage.getItem("access_token");
     if (token) {
-      // We need the record ID to delete, but for now we can delete by user_id if we had a proper route.
-      // Since /api/data/:table/:id expects ID, we'll try to find it or just use a generic delete if available.
-      // However, we'll assume the manager UI will handle the specific ID delete.
-      // For this helper, we'll try to find the ID first.
+      // Find the specific record ID in the backend
       const res = await fetch(
         `${API_URL}/data/suspended_users?user_id=${userId}`,
         {
@@ -205,15 +260,17 @@ export async function reactivateUser(userId: string) {
 }
 
 // Calculate total absences to check if we should throw a warning or suspend
-export function checkAbsencesAndSuspend(userId: string) {
-  const records = getAllAttendance();
+export async function checkAbsencesAndSuspend(userId: string) {
+  const records = await getAllAttendance();
   const userRecords = records.filter(
-    (r) => r.userId === userId && r.status === "absent",
+    (r) =>
+      (r.userId === userId || (r as any).user_id === userId) &&
+      r.status === "absent",
   );
   const missingDays = userRecords.length;
 
   if (missingDays >= 5) {
-    suspendUser(userId);
+    await suspendUser(userId);
   } else if (missingDays > 1) {
     console.log(
       `[Notification] Strict warning for ${userId}: Multiple days absent.`,
@@ -223,6 +280,7 @@ export function checkAbsencesAndSuspend(userId: string) {
       `[Notification] Warning for ${userId}: Missed a class/test today.`,
     );
   }
+  return missingDays;
 }
 
 export async function isUserSuspended(userId: string): Promise<boolean> {
@@ -233,7 +291,7 @@ export async function isUserSuspended(userId: string): Promise<boolean> {
     return data.suspended;
   } catch (e) {
     // Fallback to LocalStorage
-    const suspended = getSuspendedUsers();
+    const suspended = getLocalSuspended();
     return !!suspended.find((s) => s.userId === userId);
   }
 }

@@ -367,9 +367,13 @@ const createCourseResourceRoutes = (resourceName, tableName) => {
         .insert(req.body)
         .select()
         .single();
-      if (error) throw error;
+      if (error) {
+        if (error.code === "PGRST205") return res.json({});
+        throw error;
+      }
       res.json(data);
     } catch (err) {
+      if (err.code === "PGRST205") return res.json({});
       res.status(500).json({ error: err.message });
     }
   });
@@ -382,9 +386,13 @@ const createCourseResourceRoutes = (resourceName, tableName) => {
     try {
       const authClient = getAuthClient(token);
       const { error } = await authClient.from(tableName).delete().eq("id", id);
-      if (error) throw error;
+      if (error) {
+        if (error.code === "PGRST205") return res.json({ success: true });
+        throw error;
+      }
       res.json({ success: true });
     } catch (err) {
+      if (err.code === "PGRST205") return res.json({ success: true });
       res.status(500).json({ error: err.message });
     }
   });
@@ -402,9 +410,13 @@ const createCourseResourceRoutes = (resourceName, tableName) => {
         .eq("id", id)
         .select()
         .single();
-      if (error) throw error;
+      if (error) {
+        if (error.code === "PGRST205") return res.json({});
+        throw error;
+      }
       res.json(data);
     } catch (err) {
+      if (err.code === "PGRST205") return res.json({});
       res.status(500).json({ error: err.message });
     }
   });
@@ -586,18 +598,6 @@ app.get("/api/data/:table", async (req, res) => {
   }
 });
 
-// Global Error Handler for PayloadTooLarge and other middleware errors
-app.use((err, req, res, next) => {
-  if (err.type === "entity.too.large") {
-    return res.status(413).json({
-      error:
-        "Request entity too large. Please reduce the size of your data or upload images via the dedicated endpoint.",
-    });
-  }
-  console.error("Unhandled Error:", err);
-  res.status(500).json({ error: "Internal server error" });
-});
-
 app.post("/api/data/:table", async (req, res) => {
   const { table } = req.params;
   if (!ALLOWED_TABLES.includes(table))
@@ -622,6 +622,9 @@ app.post("/api/data/:table", async (req, res) => {
     if (error) throw error;
     res.json(data);
   } catch (err) {
+    if (err.code === "PGRST205") {
+      return res.json([]);
+    }
     console.error(`POST data/${table} error:`, err);
     res.status(500).json({ error: err.message });
   }
@@ -644,9 +647,13 @@ app.put("/api/data/:table/:id", async (req, res) => {
       .select()
       .single();
 
-    if (error) throw error;
+    if (error) {
+      if (error.code === "PGRST205") return res.json({});
+      throw error;
+    }
     res.json(data);
   } catch (err) {
+    if (err.code === "PGRST205") return res.json({});
     res.status(500).json({ error: err.message });
   }
 });
@@ -663,9 +670,13 @@ app.delete("/api/data/:table/:id", async (req, res) => {
     const authClient = getAuthClient(token);
     const { error } = await authClient.from(table).delete().eq("id", id);
 
-    if (error) throw error;
+    if (error) {
+      if (error.code === "PGRST205") return res.json({ success: true });
+      throw error;
+    }
     res.json({ success: true });
   } catch (err) {
+    if (err.code === "PGRST205") return res.json({ success: true });
     res.status(500).json({ error: err.message });
   }
 });
@@ -683,6 +694,18 @@ app.post("/api/rpc/:function", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+// Global Error Handler for PayloadTooLarge and other middleware errors
+app.use((err, req, res, next) => {
+  if (err.type === "entity.too.large") {
+    return res.status(413).json({
+      error:
+        "Request entity too large. Please reduce the size of your data or upload images via the dedicated endpoint.",
+    });
+  }
+  console.error("Unhandled Error:", err);
+  res.status(500).json({ error: "Internal server error" });
 });
 
 // Start Server

@@ -11,7 +11,6 @@ import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
 import ScrollToTop from "@/components/landing/ScrollToTop";
 import ChatbotWidget from "@/components/landing/ChatbotWidget";
-import ScrollSpy from "@/components/landing/ScrollSpy";
 import AmbientBackground from "@/components/ui/AmbientBackground";
 
 const Home = () => {
@@ -36,7 +35,6 @@ const Home = () => {
         </main>
         <Footer />
         <ScrollToTop />
-        <ScrollSpy />
         <ChatbotWidget />
       </div>
     </div>

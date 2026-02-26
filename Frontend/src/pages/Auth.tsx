@@ -214,12 +214,12 @@ export default function Auth() {
         <div className="space-y-12">
           <Link
             to="/"
-            className="inline-block bg-white p-5 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+            className="inline-block bg-white p-5 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all rounded-3xl"
           >
             <img src={logo} alt="AOTMS Logo" className="h-10 w-auto" />
           </Link>
 
-          <div className="bg-white border-4 border-black p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform -rotate-1 relative overflow-hidden group">
+          <div className="bg-white border-4 border-black p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transform -rotate-1 relative overflow-hidden group rounded-3xl">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform duration-500">
               <span className="text-8xl font-black">✦</span>
             </div>
@@ -239,7 +239,7 @@ export default function Auth() {
           </div>
         </div>
 
-        <div className="bg-[#FD5A1A] border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-white transform rotate-1 flex items-center justify-between">
+        <div className="bg-[#FD5A1A] border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-white transform rotate-1 flex items-center justify-between rounded-3xl">
           <div className="flex items-center gap-6">
             <div className="flex -space-x-4">
               {[1, 2, 3, 4].map((i) => (
@@ -272,10 +272,10 @@ export default function Auth() {
 
       {/* Right Panel - Auth Form */}
       <div className="flex-1 p-4 sm:p-8 lg:p-12 flex items-center justify-center relative z-20 overflow-y-auto">
-        <div className="w-full max-w-xl bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] relative">
+        <div className="w-full max-w-xl bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-[url( rounded-3xl'https://www.transparenttextures.com/patterns/cubes.png')] relative rounded-3xl">
           {/* Header */}
           <div className="text-center mb-10">
-            <div className="inline-block p-4 bg-[#E9E9E9] border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mb-8 transform -rotate-3 hover:translate-x-[2px] transition-all">
+            <div className="inline-block p-4 bg-[#E9E9E9] border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mb-8 transform -rotate-3 hover:translate-x-[2px] transition-all rounded-3xl">
               <span className="text-black text-4xl font-black">✦</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-black uppercase tracking-tighter mb-3">
@@ -309,7 +309,7 @@ export default function Auth() {
                             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                             <Input
                               placeholder="Enter your email"
-                              className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/20 placeholder:font-bold rounded-none"
+                              className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/20 placeholder:font-bold rounded-3xl"
                               autoComplete="email"
                               {...field}
                             />
@@ -369,7 +369,7 @@ export default function Auth() {
                             <Input
                               type={showLoginPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/20 placeholder:font-bold rounded-none"
+                              className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all placeholder:text-black/20 placeholder:font-bold rounded-3xl"
                               autoComplete="current-password"
                               {...field}
                             />
@@ -396,7 +396,7 @@ export default function Auth() {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full h-16 bg-[#0075CF] text-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] font-black uppercase tracking-widest text-lg transition-all rounded-none mt-4"
+                    className="w-full h-16 bg-[#0075CF] text-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] font-black uppercase tracking-widest text-lg transition-all rounded-3xl mt-4"
                   >
                     {loading ? "Signing in..." : "Sign In to Portal"}
                   </Button>
@@ -422,7 +422,7 @@ export default function Auth() {
                             <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black z-10" />
                             <Input
                               placeholder="Enter your full name"
-                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                           </div>
@@ -442,7 +442,7 @@ export default function Auth() {
                             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black z-10" />
                             <Input
                               placeholder="Enter your email"
-                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                              className="h-12 pl-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                           </div>
@@ -494,7 +494,7 @@ export default function Auth() {
                             <Input
                               type={showRegisterPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                             <button
@@ -528,7 +528,7 @@ export default function Auth() {
                             <Input
                               type={showConfirmPassword ? "text" : "password"}
                               placeholder="••••••••"
-                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                              className="h-12 pl-9 pr-9 bg-[#E9E9E9] border-4 border-black font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                               {...field}
                             />
                             <button
@@ -583,7 +583,7 @@ export default function Auth() {
                           <Checkbox
                             checked={field.value}
                             onCheckedChange={field.onChange}
-                            className="h-6 w-6 border-4 border-black data-[state=checked]:bg-[#0075CF] transition-colors rounded-none"
+                            className="h-6 w-6 border-4 border-black data-[state=checked]:bg-[#0075CF] transition-colors rounded-3xl"
                           />
                         </FormControl>
                         <FormLabel className="text-[10px] font-black uppercase tracking-widest leading-tight cursor-pointer">
@@ -609,7 +609,7 @@ export default function Auth() {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full h-16 bg-[#FD5A1A] text-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] font-black uppercase tracking-widest text-lg transition-all rounded-none mt-4"
+                    className="w-full h-16 bg-[#FD5A1A] text-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] font-black uppercase tracking-widest text-lg transition-all rounded-3xl mt-4"
                   >
                     {loading ? "Creating..." : "Create Account"}
                   </Button>
@@ -632,7 +632,7 @@ export default function Auth() {
               onClick={handleGoogleSignIn}
               disabled={loading}
               variant="outline"
-              className="w-full h-14 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] font-black uppercase tracking-widest text-sm transition-all rounded-none flex items-center justify-center gap-3"
+              className="w-full h-14 bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] font-black uppercase tracking-widest text-sm transition-all rounded-3xl flex items-center justify-center gap-3"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path
@@ -674,3 +674,4 @@ export default function Auth() {
     </div>
   );
 }
+

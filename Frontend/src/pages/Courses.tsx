@@ -81,7 +81,7 @@ function CourseModal({
 
         {/* Modal — bottom sheet on mobile/tablet portrait, centered card on md+ */}
         <motion.div
-          className="relative z-10 w-full max-w-2xl bg-white border-t-4 md:border-4 border-[#000000] rounded-t-3xl md:rounded-2xl shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden max-h-[92vh] overflow-y-auto"
+          className="relative z-10 w-full max-w-2xl bg-white border-t-4 md:border-4 border-[#000000] rounded-t-3xl md:rounded-3xl shadow-[0px_-4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden max-h-[92vh] overflow-y-auto"
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: "100%", opacity: 0 }}
@@ -99,14 +99,14 @@ function CourseModal({
             {/* Close */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 md:top-5 md:right-5 w-9 h-9 flex items-center justify-center border-2 border-[#000000] rounded-lg hover:bg-[#E9E9E9] active:bg-[#E9E9E9] transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10"
+              className="absolute top-4 right-4 md:top-5 md:right-5 w-9 h-9 flex items-center justify-center border-2 border-[#000000] rounded-3xl hover:bg-[#E9E9E9] active:bg-[#E9E9E9] transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Icon + Category */}
             <div className="flex items-center gap-3 mb-4 md:mb-5 pr-12">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#0075CF] border-2 border-[#000000] flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] shrink-0">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-3xl bg-[#0075CF] border-2 border-[#000000] flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] shrink-0">
                 <Icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
               </div>
               <div>
@@ -159,7 +159,7 @@ function CourseModal({
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="flex flex-col items-center justify-center p-3 bg-[#E9E9E9] border-2 border-[#000000] rounded-xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  className="flex flex-col items-center justify-center p-3 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <s.icon className="w-5 h-5 text-[#0075CF] mb-1" />
                   <span className="text-lg font-black text-[#000000]">
@@ -172,7 +172,7 @@ function CourseModal({
 
             {/* CTA */}
             {isEnrolled ? (
-              <div className="flex items-center gap-3 p-4 bg-[#E9E9E9] border-2 border-[#000000] rounded-xl">
+              <div className="flex items-center gap-3 p-4 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl">
                 <CheckCircle className="w-6 h-6 text-[#0075CF] shrink-0" />
                 <div>
                   <p className="font-black text-[#000000]">You're enrolled!</p>
@@ -235,7 +235,7 @@ function CourseCard({
       onClick={onClick}
       className="group cursor-pointer"
     >
-      <div className="bg-white border-2 border-[#000000] rounded-2xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] transition-shadow duration-200 h-full flex flex-col">
+      <div className="bg-white border-2 border-[#000000] rounded-3xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] transition-shadow duration-200 h-full flex flex-col">
         {/* Thumbnail */}
         <div className="h-36 sm:h-40 md:h-44 bg-[#E9E9E9] flex items-center justify-center relative border-b-2 border-[#000000] shrink-0">
           <Icon className="w-14 h-14 md:w-16 md:h-16 text-[#0075CF]/40" />
@@ -293,13 +293,13 @@ function CourseCard({
 /* ── Skeleton Card ───────────────────────────────── */
 function SkeletonCard() {
   return (
-    <div className="bg-white border-2 border-[#E9E9E9] rounded-2xl overflow-hidden animate-pulse">
+    <div className="bg-white border-2 border-[#E9E9E9] rounded-3xl overflow-hidden animate-pulse">
       <div className="h-36 sm:h-40 md:h-44 bg-[#E9E9E9]" />
       <div className="p-4 md:p-5 space-y-3">
         <div className="h-4 bg-[#E9E9E9] rounded w-3/4" />
         <div className="h-3 bg-[#E9E9E9] rounded w-full" />
         <div className="h-3 bg-[#E9E9E9] rounded w-2/3" />
-        <div className="h-8 bg-[#E9E9E9] rounded-xl w-full mt-2" />
+        <div className="h-8 bg-[#E9E9E9] rounded-3xl w-full mt-2" />
       </div>
     </div>
   );
@@ -309,7 +309,7 @@ function SkeletonCard() {
 function EmptyState({ query }: { query: string }) {
   return (
     <div className="col-span-full flex flex-col items-center justify-center py-16 sm:py-24 text-center px-4">
-      <div className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-[#000000] rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-[#E9E9E9] flex items-center justify-center mb-4 sm:mb-5">
+      <div className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-[#E9E9E9] flex items-center justify-center mb-4 sm:mb-5">
         <Lock className="w-8 h-8 sm:w-10 sm:h-10 text-[#000000]/40" />
       </div>
       <h3 className="font-black text-lg sm:text-xl text-[#000000] mb-2">
@@ -414,7 +414,7 @@ export default function CoursesPage() {
             <aside className="lg:w-72 shrink-0 space-y-8">
               <div className="sticky top-28 space-y-8">
                 {/* Search Card */}
-                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                   <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-4 text-black/40">
                     Search
                   </h4>
@@ -425,13 +425,13 @@ export default function CoursesPage() {
                       placeholder="ENTER KEYWORD..."
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 bg-[#E9E9E9] border-2 border-black text-xs font-black uppercase tracking-widest focus:outline-none focus:bg-white transition-colors"
+                      className="w-full pl-10 pr-4 py-3 bg-[#E9E9E9] border-2 border-black text-xs font-black uppercase tracking-widest focus:outline-none focus:bg-white transition-colors rounded-3xl"
                     />
                   </div>
                 </div>
 
                 {/* Level Card */}
-                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,117,207,1)]">
+                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] rounded-3xl">
                   <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-4 text-black/40">
                     Experience Level
                   </h4>
@@ -453,7 +453,7 @@ export default function CoursesPage() {
                 </div>
 
                 {/* Category Card */}
-                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(253,90,26,1)]">
+                <div className="bg-white border-4 border-black p-6 shadow-[8px_8px_0px_0px_rgba(253,90,26,1)] rounded-3xl">
                   <h4 className="text-xs font-black uppercase tracking-[0.2em] mb-4 text-black/40">
                     Technology Area
                   </h4>
@@ -539,3 +539,4 @@ export default function CoursesPage() {
     </div>
   );
 }
+

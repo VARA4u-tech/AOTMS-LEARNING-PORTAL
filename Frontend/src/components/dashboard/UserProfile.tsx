@@ -155,7 +155,7 @@ export function UserProfile() {
                 <Card className="md:col-span-4 h-fit">
                     <CardHeader className="text-center">
                         <div className="mx-auto mb-4 relative group">
-                            <Avatar className="h-24 w-24 border-4 border-background shadow-lg">
+                            <Avatar className="h-24 w-24 border-4 border-background shadow-lg rounded-3xl">
                                 <AvatarImage src={profile.avatar_url || ''} />
                                 <AvatarFallback className="text-2xl">{profile.full_name?.[0]?.toUpperCase()}</AvatarFallback>
                             </Avatar>
@@ -230,3 +230,4 @@ export function UserProfile() {
         </div>
     );
 }
+

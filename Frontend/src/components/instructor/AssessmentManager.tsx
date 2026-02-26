@@ -55,7 +55,7 @@ export function AssessmentManager() {
           </div>
         </div>
 
-        <Button className="bg-[#FD5A1A] text-white border-4 border-black px-8 py-6 h-auto font-black uppercase tracking-widest text-xs shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-none italic">
+        <Button className="bg-[#FD5A1A] text-white border-4 border-black px-8 py-6 h-auto font-black uppercase tracking-widest text-xs shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl italic">
           <Plus className="h-5 w-5 mr-3" /> New Assessment
         </Button>
       </div>
@@ -67,10 +67,10 @@ export function AssessmentManager() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="group relative bg-white border-4 border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_#0075CF] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+            className="group relative bg-white border-4 border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_#0075CF] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6 rounded-3xl"
           >
             <div className="flex items-center gap-6">
-              <div className="h-16 w-16 bg-[#E9E9E9] border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_black] rounded-xl group-hover:bg-[#0075CF] group-hover:text-white transition-colors">
+              <div className="h-16 w-16 bg-[#E9E9E9] border-2 border-black flex items-center justify-center shadow-[4px_4px_0px_0px_black] rounded-3xl group-hover:bg-[#0075CF] group-hover:text-white transition-colors">
                 <FileText className="h-8 w-8" />
               </div>
               <div>
@@ -100,11 +100,11 @@ export function AssessmentManager() {
             <div className="flex items-center gap-3">
               <Button
                 variant="outline"
-                className="border-2 border-black font-black uppercase tracking-widest text-[9px] h-10 px-6 hover:bg-black hover:text-white transition-all rounded-none"
+                className="border-2 border-black font-black uppercase tracking-widest text-[9px] h-10 px-6 hover:bg-black hover:text-white transition-all rounded-3xl"
               >
                 Results
               </Button>
-              <Button className="bg-black text-white border-2 border-black font-black uppercase tracking-widest text-[9px] h-10 px-6 shadow-[3px_3px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-none">
+              <Button className="bg-black text-white border-2 border-black font-black uppercase tracking-widest text-[9px] h-10 px-6 shadow-[3px_3px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl">
                 Edit
               </Button>
             </div>
@@ -114,3 +114,4 @@ export function AssessmentManager() {
     </div>
   );
 }
+

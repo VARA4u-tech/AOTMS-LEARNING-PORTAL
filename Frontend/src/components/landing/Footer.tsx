@@ -39,13 +39,13 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="relative overflow-hidden bg-[#0075CF] border-t-8 border-black font-['Inter']"
+      className="relative overflow-hidden bg-[#0075CF] border-t-8 border-black font-[ rounded-3xl'Inter']"
     >
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
       {/* Newsletter Section */}
-      <div className="container-width py-16 border-b-4 border-black/20 relative z-10 px-4 md:px-8">
-        <div className="bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-4xl mx-auto rotate-[-0.5deg]">
+      <div className="container-width py-16 border-b-4 border-black/20 relative z-10 px-4 md:px-8 rounded-3xl">
+        <div className="bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] max-w-4xl mx-auto rotate-[-0.5deg] rounded-3xl">
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex-1 text-center lg:text-left">
               <h3 className="text-3xl font-black text-black uppercase tracking-tight mb-2 italic">
@@ -60,10 +60,10 @@ const Footer = () => {
                 <Input
                   type="email"
                   placeholder="ENTER EMAIL"
-                  className="h-16 rounded-none bg-[#E9E9E9] border-4 border-black text-black placeholder:text-black/20 font-black uppercase tracking-widest px-6 focus:ring-0 focus:border-[#FD5A1A] transition-colors"
+                  className="h-16 rounded-3xl bg-[#E9E9E9] border-4 border-black text-black placeholder:text-black/20 font-black uppercase tracking-widest px-6 focus:ring-0 focus:border-[#FD5A1A] transition-colors"
                 />
               </div>
-              <Button className="h-16 px-10 bg-[#FD5A1A] text-white border-4 border-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all rounded-none">
+              <Button className="h-16 px-10 bg-[#FD5A1A] text-white border-4 border-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all rounded-3xl">
                 Subscribe
               </Button>
             </div>
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <div className="bg-white inline-block p-4 border-4 border-black shadow-[6px_6px_0px_0px_#000000] mb-8">
+            <div className="bg-white inline-block p-4 border-4 border-black shadow-[6px_6px_0px_0px_#000000] mb-8 rounded-3xl">
               <img src={logo} alt="AOTMS" className="h-12 w-auto" />
             </div>
             <p className="text-white font-black uppercase tracking-widest text-[10px] leading-relaxed opacity-70">
@@ -183,7 +183,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-20 pt-10 border-t-4 border-black/10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="mt-20 pt-10 border-t-4 border-black/10 flex flex-col md:flex-row items-center justify-between gap-8 rounded-3xl">
           <p className="text-[10px] font-black uppercase tracking-widest text-white/70">
             © {currentYear} AOTMS PORTAL. BUILT FOR THE FUTURE.
           </p>
@@ -193,7 +193,7 @@ const Footer = () => {
               <a
                 key={social.label}
                 href={social.href}
-                className="w-12 h-12 bg-white/10 border-2 border-black/20 flex items-center justify-center text-white hover:bg-black hover:border-black hover:text-white transition-all rounded-none"
+                className="w-12 h-12 bg-white/10 border-2 border-black/20 flex items-center justify-center text-white hover:bg-black hover:border-black hover:text-white transition-all rounded-3xl"
               >
                 <social.icon className="w-5 h-5" />
               </a>
@@ -206,3 +206,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

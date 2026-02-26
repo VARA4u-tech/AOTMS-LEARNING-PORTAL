@@ -192,7 +192,7 @@ export function ResourceUploader({ courseId }: ResourceUploaderProps) {
               </DialogHeader>
               <div className="space-y-4 py-4">
                 <div
-                  className="border-2 border-dashed border-border rounded-lg p-6 text-center cursor-pointer hover:border-primary/50 transition-colors"
+                  className="border-2 border-dashed border-border rounded-3xl p-6 text-center cursor-pointer hover:border-primary/50 transition-colors"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <input
@@ -338,9 +338,9 @@ export function ResourceUploader({ courseId }: ResourceUploaderProps) {
               return (
                 <div
                   key={resource.id}
-                  className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                  className="flex items-center gap-3 p-4 rounded-3xl bg-muted/50 hover:bg-muted transition-colors"
                 >
-                  <div className="h-10 w-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <div className="h-10 w-10 rounded-3xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                     <Icon className="h-5 w-5 text-accent" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -387,3 +387,4 @@ export function ResourceUploader({ courseId }: ResourceUploaderProps) {
     </Card>
   );
 }
+

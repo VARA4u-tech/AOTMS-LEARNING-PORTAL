@@ -294,7 +294,7 @@ export default function InstructorRegister() {
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="h-12 w-12 rounded-none border-2 border-black bg-[#E9E9E9] flex items-center justify-center font-black text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
+                className="h-12 w-12 rounded-3xl border-2 border-black bg-[#E9E9E9] flex items-center justify-center font-black text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
               >
                 <img
                   src={`https://i.pravatar.cc/150?u=${i + 20}`}
@@ -312,7 +312,7 @@ export default function InstructorRegister() {
 
       {/* Right Panel - Auth Form */}
       <div className="flex-1 p-4 sm:p-8 lg:p-12 flex items-center justify-center relative z-20 overflow-y-auto">
-        <div className="w-full max-w-2xl bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] relative">
+        <div className="w-full max-w-2xl bg-white border-4 border-black p-8 sm:p-12 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-[url( rounded-3xl'https://www.transparenttextures.com/patterns/cubes.png')] relative">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-12 border-b-4 border-black pb-8">
             <div>
               <h2 className="text-4xl font-black text-black uppercase tracking-tight mb-2 italic">
@@ -343,7 +343,7 @@ export default function InstructorRegister() {
                           <User className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-black z-10" />
                           <Input
                             placeholder="John Doe"
-                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                         </div>
@@ -367,7 +367,7 @@ export default function InstructorRegister() {
                           <Input
                             type="email"
                             placeholder="instructor@example.com"
-                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                            className="h-14 pl-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                         </div>
@@ -394,7 +394,7 @@ export default function InstructorRegister() {
                           <Input
                             type={showPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                           <button
@@ -429,7 +429,7 @@ export default function InstructorRegister() {
                           <Input
                             type={showConfirmPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                            className="h-14 pl-12 pr-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                             {...field}
                           />
                           <button
@@ -488,11 +488,11 @@ export default function InstructorRegister() {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none">
+                          <SelectTrigger className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                             <SelectValue placeholder="Select expertise" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none">
+                        <SelectContent className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                           {expertiseOptions.map((option) => (
                             <SelectItem
                               key={option}
@@ -522,11 +522,11 @@ export default function InstructorRegister() {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none">
+                          <SelectTrigger className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                             <SelectValue placeholder="Select experience" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none">
+                        <SelectContent className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                           {experienceOptions.map((option) => (
                             <SelectItem
                               key={option}
@@ -556,7 +556,7 @@ export default function InstructorRegister() {
                       <FormControl>
                         <Input
                           placeholder="e.g., Blockchain Development"
-                          className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20 placeholder:font-bold"
+                          className="h-14 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20 placeholder:font-bold"
                           {...field}
                         />
                       </FormControl>
@@ -582,7 +582,7 @@ export default function InstructorRegister() {
                           onChange={handleFileChange}
                           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
                         />
-                        <div className="flex items-center gap-4 h-14 px-6 bg-[#E9E9E9] border-4 border-dashed border-black/40 group-hover:bg-[#E9E9E9]/50 group-hover:border-black transition-all rounded-none">
+                        <div className="flex items-center gap-4 h-14 px-6 bg-[#E9E9E9] border-4 border-dashed border-black/40 group-hover:bg-[#E9E9E9]/50 group-hover:border-black transition-all rounded-3xl">
                           <Upload className="h-5 w-5 text-black/60 group-hover:text-black" />
                           <span className="text-sm font-black uppercase tracking-widest text-black/40 group-hover:text-black">
                             {resumeFile ? resumeFile.name : "Upload Document"}
@@ -605,7 +605,7 @@ export default function InstructorRegister() {
                       <Checkbox
                         checked={field.value}
                         onCheckedChange={field.onChange}
-                        className="h-5 w-5 border-2 border-black data-[state=checked]:bg-black"
+                        className="h-5 w-5 border-2 border-black data-[state=checked]:bg-black rounded-3xl"
                       />
                     </FormControl>
                     <div className="leading-tight">
@@ -636,7 +636,7 @@ export default function InstructorRegister() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full h-16 bg-[#0075CF] text-white border-4 border-black font-black uppercase tracking-[0.2em] text-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all disabled:opacity-50"
+                className="w-full h-16 bg-[#0075CF] text-white border-4 border-black font-black uppercase tracking-[0.2em] text-sm shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all disabled:opacity-50 rounded-3xl"
               >
                 {loading ? "Processing..." : "Submit Application"}
               </Button>
@@ -656,7 +656,7 @@ export default function InstructorRegister() {
 
       {/* Dialogs - Neobrutalist Style */}
       <Dialog open={showTermsDialog} onOpenChange={setShowTermsDialog}>
-        <DialogContent className="max-w-2xl max-h-[80vh] bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] rounded-none p-8">
+        <DialogContent className="max-w-2xl max-h-[80vh] bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] rounded-3xl p-8">
           <DialogHeader>
             <DialogTitle className="text-3xl font-black uppercase tracking-tighter italic">
               Terms of Service
@@ -705,7 +705,7 @@ export default function InstructorRegister() {
           <div className="mt-8 flex justify-end">
             <Button
               onClick={() => setShowTermsDialog(false)}
-              className="bg-black text-white px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              className="bg-black text-white px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-3xl"
             >
               I Understand
             </Button>
@@ -714,7 +714,7 @@ export default function InstructorRegister() {
       </Dialog>
 
       <Dialog open={showPrivacyDialog} onOpenChange={setShowPrivacyDialog}>
-        <DialogContent className="max-w-2xl max-h-[80vh] bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] rounded-none p-8">
+        <DialogContent className="max-w-2xl max-h-[80vh] bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] rounded-3xl p-8">
           <DialogHeader>
             <DialogTitle className="text-3xl font-black uppercase tracking-tighter italic">
               Privacy Policy
@@ -754,7 +754,7 @@ export default function InstructorRegister() {
           <div className="mt-8 flex justify-end">
             <Button
               onClick={() => setShowPrivacyDialog(false)}
-              className="bg-black text-white px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+              className="bg-black text-white px-8 py-4 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-3xl"
             >
               I Understand
             </Button>
@@ -764,3 +764,4 @@ export default function InstructorRegister() {
     </div>
   );
 }
+

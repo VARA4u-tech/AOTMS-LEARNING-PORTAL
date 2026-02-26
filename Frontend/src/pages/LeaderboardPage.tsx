@@ -191,7 +191,7 @@ export default function LeaderboardPage() {
             className="flex flex-col items-center w-[30%]"
           >
             <div className="relative mb-2 group">
-              <Avatar className="w-12 h-12 sm:w-20 sm:h-20 border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] bg-white z-10 transition-transform group-hover:-translate-y-1">
+              <Avatar className="w-12 h-12 sm:w-20 sm:h-20 border-2 sm:border-4 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] bg-white z-10 transition-transform group-hover:-translate-y-1 rounded-3xl">
                 <AvatarImage src={top3[1].avatar_url} />
                 <AvatarFallback className="font-black text-xs sm:text-xl bg-[#E9E9E9] text-[#000000]">
                   {getInitials(top3[1].full_name)}
@@ -225,7 +225,7 @@ export default function LeaderboardPage() {
               <div className="absolute -top-4 sm:-top-6 inset-x-0 flex justify-center">
                 <Medal className="w-6 h-6 sm:w-10 sm:h-10 text-[#FD5A1A]" />
               </div>
-              <Avatar className="w-16 h-16 sm:w-28 sm:h-28 border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] bg-white z-10 transition-transform group-hover:-translate-y-1">
+              <Avatar className="w-16 h-16 sm:w-28 sm:h-28 border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] bg-white z-10 transition-transform group-hover:-translate-y-1 rounded-3xl">
                 <AvatarImage src={top3[0].avatar_url} />
                 <AvatarFallback className="font-black text-sm sm:text-3xl bg-[#0075CF]/10 text-[#0075CF]">
                   {getInitials(top3[0].full_name)}
@@ -257,7 +257,7 @@ export default function LeaderboardPage() {
             className="flex flex-col items-center w-[30%]"
           >
             <div className="relative mb-2 group">
-              <Avatar className="w-11 h-11 sm:w-16 sm:h-16 border-2 sm:border-4 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white z-10 transition-transform group-hover:-translate-y-1">
+              <Avatar className="w-11 h-11 sm:w-16 sm:h-16 border-2 sm:border-4 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white z-10 transition-transform group-hover:-translate-y-1 rounded-3xl">
                 <AvatarImage src={top3[2].avatar_url} />
                 <AvatarFallback className="font-black text-[10px] sm:text-lg bg-[#E9E9E9] text-[#000000]">
                   {getInitials(top3[2].full_name)}
@@ -283,7 +283,7 @@ export default function LeaderboardPage() {
       )}
 
       {/* LIST BELOW PODIUM */}
-      <div className="bg-white border-2 sm:border-4 border-[#000000] rounded-xl sm:rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+      <div className="bg-white border-2 sm:border-4 border-[#000000] rounded-3xl sm:rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
         {/* Headings */}
         <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-4 bg-[#E9E9E9] border-b-4 border-[#000000] font-black uppercase text-xs tracking-widest text-[#000000]/70">
           <div className="col-span-2 text-center">Rank</div>
@@ -318,7 +318,7 @@ export default function LeaderboardPage() {
 
                 {/* Student */}
                 <div className="flex-1 flex items-center gap-3 min-w-0">
-                  <Avatar className="w-8 h-8 sm:w-10 sm:h-10 border-2 border-[#000000] shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] sm:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white flex-shrink-0">
+                  <Avatar className="w-8 h-8 sm:w-10 sm:h-10 border-2 border-[#000000] shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] sm:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white flex-shrink-0 rounded-3xl">
                     <AvatarImage src={entry.avatar_url} />
                     <AvatarFallback className="font-bold text-xs bg-primary/10 text-primary">
                       {getInitials(entry.full_name)}
@@ -359,3 +359,4 @@ export default function LeaderboardPage() {
     </div>
   );
 }
+

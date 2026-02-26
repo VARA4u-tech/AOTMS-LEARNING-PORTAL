@@ -109,7 +109,7 @@ const TechCard = ({ tech, size }: { tech: Tech; size: number }) => {
 
   return (
     <div
-      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white cursor-pointer select-none
+      className="group relative flex flex-col items-center justify-center rounded-3xl bg-white cursor-pointer select-none
         border border-gray-100
         shadow-[0_4px_16px_rgba(0,0,0,0.07)]
         hover:shadow-[0_12px_36px_rgba(0,0,0,0.16)]
@@ -133,7 +133,7 @@ const TechCard = ({ tech, size }: { tech: Tech; size: number }) => {
       {/* Icon or abbreviation */}
       {showAbbr || abbr ? (
         <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center font-extrabold text-sm tracking-tight text-white shadow-sm mb-1"
+          className="w-10 h-10 rounded-3xl flex items-center justify-center font-extrabold text-sm tracking-tight text-white shadow-sm mb-1"
           style={{ backgroundColor: tech.color, letterSpacing: "0.04em" }}
         >
           {abbr}
@@ -208,7 +208,7 @@ const TechnologyEcosystem = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Our Technology stack
             </span>
@@ -226,7 +226,7 @@ const TechnologyEcosystem = () => {
         {/* MOBILE: Swipeable Carousel */}
         {isMobile && (
           <div className="relative flex flex-col items-center py-6">
-            <div className="relative z-20 mb-8 w-24 h-24 bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(253,90,26,1)] flex items-center justify-center p-3 animate-pulse">
+            <div className="relative z-20 mb-8 w-24 h-24 bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(253,90,26,1)] flex items-center justify-center p-3 animate-pulse rounded-3xl">
               <img src={logo} alt="AOTMS" className="w-full h-auto" />
             </div>
 
@@ -236,7 +236,7 @@ const TechnologyEcosystem = () => {
                   key={tech.name}
                   className="flex justify-center shrink-0 snap-center w-[40vw]"
                 >
-                  <div className="bg-white border-4 border-black p-4 md:p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center gap-3 w-full h-[120px]">
+                  <div className="bg-white border-4 border-black p-4 md:p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center gap-3 w-full h-[120px] rounded-3xl">
                     <img
                       src={tech.icon}
                       alt={tech.name}
@@ -301,7 +301,7 @@ const TechnologyEcosystem = () => {
 
               {/* Center Box */}
               <div
-                className="absolute z-20 bg-white border-8 border-black shadow-[16px_16px_0px_0px_rgba(0,117,207,1)] flex items-center justify-center rotate-[-2deg]"
+                className="absolute z-20 bg-white border-8 border-black shadow-[16px_16px_0px_0px_rgba(0,117,207,1)] flex items-center justify-center rotate-[-2deg] rounded-3xl"
                 style={{
                   width: 180,
                   height: 180,
@@ -325,7 +325,7 @@ const TechnologyEcosystem = () => {
                     animationDelay: `${i * 0.2}s`,
                   }}
                 >
-                  <div className="w-full h-full bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[10px_10px_0px_0px_rgba(253,90,26,1)] group-hover:bg-[#E9E9E9] group-hover:translate-x-[-2px] group-hover:translate-y-[-2px] transition-all flex flex-col items-center justify-center p-2 rounded-none cursor-pointer">
+                  <div className="w-full h-full bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[10px_10px_0px_0px_rgba(253,90,26,1)] group-hover:bg-[#E9E9E9] group-hover:translate-x-[-2px] group-hover:translate-y-[-2px] transition-all flex flex-col items-center justify-center p-2 rounded-3xl cursor-pointer">
                     <img
                       src={reliableIcons[tech.name] || tech.icon}
                       alt={tech.name}
@@ -359,3 +359,5 @@ const TechnologyEcosystem = () => {
 };
 
 export default TechnologyEcosystem;
+
+

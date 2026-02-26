@@ -130,7 +130,7 @@ export function MockTestManager() {
               Create Mock Test
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-lg rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-[#000000] bg-white p-0 font-['Inter']">
+          <DialogContent className="sm:max-w-lg rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-4 border-[#000000] bg-white p-0 font-['Inter']">
             <DialogHeader className="p-6 border-b-4 border-[#000000] bg-[#FFD166]">
               <DialogTitle className="text-2xl font-black text-[#000000] uppercase tracking-wider">
                 Mock Test Configuration
@@ -151,7 +151,7 @@ export function MockTestManager() {
                   onChange={(e) =>
                     setNewConfig({ ...newConfig, title: e.target.value })
                   }
-                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export function MockTestManager() {
                 </Label>
                 <Textarea
                   placeholder="Instructions for students..."
-                  className="min-h-[80px] resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+                  className="min-h-[80px] resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
                   value={newConfig.description}
                   onChange={(e) =>
                     setNewConfig({
@@ -182,7 +182,7 @@ export function MockTestManager() {
                   onChange={(e) =>
                     setNewConfig({ ...newConfig, topics: e.target.value })
                   }
-                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
                 />
               </div>
 
@@ -194,7 +194,7 @@ export function MockTestManager() {
                   <Input
                     type="number"
                     value={newConfig.question_count}
-                    className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
+                    className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
                     onChange={(e) =>
                       setNewConfig({
                         ...newConfig,
@@ -210,7 +210,7 @@ export function MockTestManager() {
                   <Input
                     type="number"
                     value={newConfig.duration_minutes}
-                    className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
+                    className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
                     onChange={(e) =>
                       setNewConfig({
                         ...newConfig,
@@ -221,7 +221,7 @@ export function MockTestManager() {
                 </div>
               </div>
 
-              <div className="p-4 border-2 border-[#000000] bg-[#E9E9E9] rounded-none space-y-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="p-4 border-2 border-[#000000] bg-[#E9E9E9] rounded-3xl space-y-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <h4 className="text-[10px] font-black uppercase text-[#000000] flex items-center gap-2 tracking-[0.2em]">
                   <Shuffle className="h-3.5 w-3.5" /> Difficulty Balance
                 </h4>
@@ -253,7 +253,7 @@ export function MockTestManager() {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between p-4 border-2 border-[#000000] rounded-none bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="flex items-center justify-between p-4 border-2 border-[#000000] rounded-3xl bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <div className="space-y-0.5">
                   <Label className="text-[10px] font-black uppercase tracking-widest">
                     Active Status
@@ -273,13 +273,13 @@ export function MockTestManager() {
 
             <DialogFooter className="p-6 border-t-4 border-[#000000] bg-[#E9E9E9] gap-3">
               <Button
-                className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex-1 h-12"
+                className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex-1 h-12"
                 onClick={() => setIsAddOpen(false)}
               >
                 Cancel
               </Button>
               <Button
-                className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex-1 h-12"
+                className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex-1 h-12"
                 onClick={handleCreate}
                 disabled={createConfig.isPending}
               >
@@ -330,13 +330,13 @@ export function MockTestManager() {
         ].map((stat, i) => (
           <Card
             key={i}
-            className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+            className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
           >
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
                 <div
                   className={cn(
-                    "h-10 w-10 rounded-none border-2 border-[#000000] flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white",
+                    "h-10 w-10 rounded-3xl border-2 border-[#000000] flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white",
                   )}
                 >
                   <stat.icon className={cn("h-5 w-5 text-[#000000]")} />
@@ -367,7 +367,7 @@ export function MockTestManager() {
         </div>
 
         {configs.length === 0 ? (
-          <div className="py-20 border-2 border-dashed rounded-xl flex flex-col items-center justify-center text-center space-y-3 bg-muted/5">
+          <div className="py-20 border-2 border-dashed rounded-3xl flex flex-col items-center justify-center text-center space-y-3 bg-muted/5">
             <Shuffle className="h-8 w-8 text-muted-foreground/30" />
             <p className="text-sm text-muted-foreground">
               No mock tests configured yet.
@@ -378,7 +378,7 @@ export function MockTestManager() {
             {configs.map((config) => (
               <Card
                 key={config.id}
-                className="relative group border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] transition-all bg-white rounded-none flex items-center overflow-hidden"
+                className="relative group border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] transition-all bg-white rounded-3xl flex items-center overflow-hidden"
               >
                 <div
                   className={cn(
@@ -392,7 +392,7 @@ export function MockTestManager() {
                     <div className="flex items-center gap-2">
                       <Badge
                         className={cn(
-                          "text-[9px] font-black tracking-widest h-5 px-2 uppercase rounded-none border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
+                          "text-[9px] font-black tracking-widest h-5 px-2 uppercase rounded-3xl border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
                           config.is_active
                             ? "bg-[#6BCB77] text-[#000000]"
                             : "bg-[#E9E9E9] text-[#000000]/40",
@@ -425,12 +425,12 @@ export function MockTestManager() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="h-10 w-10 border-2 border-[#000000] rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#FD5A1A]/10 hover:text-[#FD5A1A] transition-all text-[#000000]/40"
+                      className="h-10 w-10 border-2 border-[#000000] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#FD5A1A]/10 hover:text-[#FD5A1A] transition-all text-[#000000]/40"
                       onClick={() => deleteConfig.mutate(config.id)}
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
-                    <Button className="rounded-none px-6 h-10 gap-3 bg-[#0075CF] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black uppercase tracking-widest text-[10px]">
+                    <Button className="rounded-3xl px-6 h-10 gap-3 bg-[#0075CF] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all font-black uppercase tracking-widest text-[10px]">
                       Launch Test <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>
@@ -443,3 +443,4 @@ export function MockTestManager() {
     </div>
   );
 }
+

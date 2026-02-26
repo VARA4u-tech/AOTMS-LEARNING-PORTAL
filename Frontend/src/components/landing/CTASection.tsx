@@ -20,7 +20,7 @@ const CTASection = () => {
           className="text-center max-w-4xl mx-auto"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black mb-12 rotate-[-1deg]">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-black mb-12 rotate-[-1deg] rounded-3xl">
             <Sparkles className="w-4 h-4 text-[#FD5A1A]" />
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Start Your Journey Today
@@ -41,14 +41,14 @@ const CTASection = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-20">
             <Button
-              className="h-20 px-12 bg-black text-white border-4 border-black text-xl font-black uppercase tracking-widest shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] hover:bg-[#0075CF] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-none group"
+              className="h-20 px-12 bg-black text-white border-4 border-black text-xl font-black uppercase tracking-widest shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] hover:bg-[#0075CF] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-3xl group"
               onClick={() => navigate("/auth")}
             >
               Get Started Now
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Button>
             <Button
-              className="h-20 px-12 bg-white text-black border-4 border-black text-xl font-black uppercase tracking-widest shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-none gap-3"
+              className="h-20 px-12 bg-white text-black border-4 border-black text-xl font-black uppercase tracking-widest shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-3xl gap-3"
               onClick={() => navigate("/courses")}
             >
               Browse Library
@@ -56,7 +56,7 @@ const CTASection = () => {
           </div>
 
           {/* Metric Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 border-t-4 border-black/10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 border-t-4 border-black/10 rounded-3xl">
             {[
               { label: "Students Trained", value: "2000+", color: "black" },
               { label: "Placement Rate", value: "85%", color: "white" },
@@ -64,7 +64,7 @@ const CTASection = () => {
             ].map((item) => (
               <div
                 key={item.label}
-                className="bg-white/10 border-2 border-black/20 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:border-black transition-colors"
+                className="bg-white/10 border-2 border-black/20 p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:border-black transition-colors rounded-3xl"
               >
                 <div
                   className="text-3xl font-black mb-1 italic"
@@ -85,3 +85,5 @@ const CTASection = () => {
 };
 
 export default CTASection;
+
+

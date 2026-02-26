@@ -863,7 +863,7 @@ export function QuestionBankManager() {
       </div>
 
       {/* ─── Bulk Creator Section ─── */}
-      <div className="grid gap-6 bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
+      <div className="grid gap-6 bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-6">
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-black uppercase tracking-widest text-[#000000] flex items-center gap-2">
@@ -880,7 +880,7 @@ export function QuestionBankManager() {
               </Label>
               <Input
                 placeholder="e.g. React Hooks"
-                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
                 value={globalTopic}
                 onChange={(e) => setGlobalTopic(e.target.value)}
               />
@@ -890,10 +890,10 @@ export function QuestionBankManager() {
                 Type
               </Label>
               <Select value={globalType} onValueChange={setGlobalType}>
-                <SelectTrigger className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+                <SelectTrigger className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   {QUESTION_TYPES.map((t) => (
                     <SelectItem
                       key={t.value}
@@ -914,10 +914,10 @@ export function QuestionBankManager() {
                 value={globalDifficulty}
                 onValueChange={setGlobalDifficulty}
               >
-                <SelectTrigger className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+                <SelectTrigger className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   <SelectItem
                     value="easy"
                     className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -946,7 +946,7 @@ export function QuestionBankManager() {
               <Input
                 type="number"
                 min={1}
-                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
+                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
                 value={globalMarks}
                 onChange={(e) => setGlobalMarks(parseInt(e.target.value) || 1)}
               />
@@ -959,7 +959,7 @@ export function QuestionBankManager() {
                 type="number"
                 min={1}
                 max={50}
-                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
+                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all"
                 value={globalCount}
                 onChange={(e) => setGlobalCount(parseInt(e.target.value) || 1)}
               />
@@ -977,7 +977,7 @@ export function QuestionBankManager() {
             <Textarea
               placeholder="e.g. Focus on edge cases and performance optimization..."
               rows={2}
-              className="resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+              className="resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
               value={globalPrompt}
               onChange={(e) => setGlobalPrompt(e.target.value)}
             />
@@ -986,7 +986,7 @@ export function QuestionBankManager() {
           {/* Action Buttons */}
           <div className="flex items-center gap-3 pt-2">
             <Button
-              className="bg-white text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#E9E9E9] transition-all font-black uppercase tracking-widest text-[10px] gap-2 rounded-none h-10 px-4"
+              className="bg-white text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#E9E9E9] transition-all font-black uppercase tracking-widest text-[10px] gap-2 rounded-3xl h-10 px-4"
               onClick={handleAddBlanks}
             >
               <Plus className="h-4 w-4" />
@@ -997,7 +997,7 @@ export function QuestionBankManager() {
             <Button
               onClick={handleAiAnalyze}
               disabled={aiLoading}
-              className="gap-2 bg-[#0075CF] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#0075CF]/90 transition-all font-black uppercase tracking-widest text-[10px] rounded-none h-10 px-4"
+              className="gap-2 bg-[#0075CF] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#0075CF]/90 transition-all font-black uppercase tracking-widest text-[10px] rounded-3xl h-10 px-4"
             >
               {aiLoading ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -1011,7 +1011,7 @@ export function QuestionBankManager() {
           {/* AI Error / Raw Output Display */}
           {/* Show error if any */}
           {aiError && (
-            <div className="flex items-start gap-3 p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm mt-3 animate-in fade-in">
+            <div className="flex items-start gap-3 p-4 rounded-3xl bg-destructive/10 border border-destructive/20 text-destructive text-sm mt-3 animate-in fade-in">
               <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
               <div>
                 <p className="font-medium">Generation Error</p>
@@ -1040,7 +1040,7 @@ export function QuestionBankManager() {
                   value={rawInput}
                   onChange={(e) => setRawInput(e.target.value)}
                   placeholder="Paste AI output or JSON here..."
-                  className="font-mono text-xs min-h-[150px] bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 outline-none focus:ring-0 transition-all"
+                  className="font-mono text-xs min-h-[150px] bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 outline-none focus:ring-0 transition-all"
                 />
 
                 <div className="flex items-center justify-between">
@@ -1052,7 +1052,7 @@ export function QuestionBankManager() {
                     onClick={handleDistribute}
                     disabled={!rawInput.trim()}
                     size="sm"
-                    className="gap-2 bg-[#6BCB77] text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] transition-all font-black uppercase tracking-widest text-[10px] rounded-none px-4 h-9"
+                    className="gap-2 bg-[#6BCB77] text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] transition-all font-black uppercase tracking-widest text-[10px] rounded-3xl px-4 h-9"
                   >
                     <FileQuestion className="h-4 w-4" />
                     Distribute
@@ -1098,7 +1098,7 @@ export function QuestionBankManager() {
             {batchQuestions.map((q, idx) => (
               <Card
                 key={idx}
-                className="relative group bg-white border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-xl"
+                className="relative group bg-white border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
               >
                 <button
                   onClick={() => handleRemoveQuestion(idx)}
@@ -1134,7 +1134,7 @@ export function QuestionBankManager() {
                           e.target.value,
                         )
                       }
-                      className="resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30 min-h-[80px]"
+                      className="resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30 min-h-[80px]"
                       placeholder="What is..."
                     />
                   </div>
@@ -1165,7 +1165,7 @@ export function QuestionBankManager() {
                                   )
                                 }
                                 placeholder={`Option ${String.fromCharCode(65 + optIdx)}`}
-                                className="h-9 bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+                                className="h-9 bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
                               />
                             </div>
                           ))}
@@ -1185,10 +1185,10 @@ export function QuestionBankManager() {
                               handleUpdateQuestion(idx, "correct_answer", v)
                             }
                           >
-                            <SelectTrigger className="bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+                            <SelectTrigger className="bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
                               <SelectValue placeholder="Select True/False" />
                             </SelectTrigger>
-                            <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                            <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                               <SelectItem
                                 value="true"
                                 className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -1218,7 +1218,7 @@ export function QuestionBankManager() {
                                 ? "Enter option (e.g. MongoDB)"
                                 : "Enter answer"
                             }
-                            className="bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
+                            className="bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30"
                           />
                         )}
                         <p className="text-[10px] text-muted-foreground">
@@ -1242,7 +1242,7 @@ export function QuestionBankManager() {
                             )
                           }
                           rows={2}
-                          className="resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30 text-xs"
+                          className="resize-none bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/30 text-xs"
                           placeholder="Why is this correct?"
                         />
                       </div>
@@ -1300,7 +1300,7 @@ export function QuestionBankManager() {
                 <Card
                   key={s.topic}
                   className={cn(
-                    "bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer relative overflow-hidden group p-0",
+                    "bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer relative overflow-hidden group p-0",
                     filterTopic === s.topic
                       ? "ring-4 ring-[#0075CF] ring-offset-4"
                       : "",
@@ -1320,7 +1320,7 @@ export function QuestionBankManager() {
                             "Curated batch of questions for practice and assessment."}
                         </p>
                       </div>
-                      <Badge className="bg-[#0075CF] text-white border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-none font-black text-xs shrink-0">
+                      <Badge className="bg-[#0075CF] text-white border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl font-black text-xs shrink-0">
                         {s.total}
                       </Badge>
                     </div>
@@ -1341,14 +1341,14 @@ export function QuestionBankManager() {
       </div>
 
       {/* ── Questions Table ── */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
         <CardHeader className="px-6 pt-5 pb-4 border-b-4 border-[#000000] bg-[#FFD166]">
           <div className="flex flex-col gap-5">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <CardTitle className="flex items-center gap-3 text-2xl font-black tracking-wider text-[#000000] uppercase">
                 <Brain className="h-7 w-7 text-[#000000]" />
                 Explorer
-                <Badge className="bg-white text-[#000000] border-2 border-[#000000] ml-1 text-sm font-black rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <Badge className="bg-white text-[#000000] border-2 border-[#000000] ml-1 text-sm font-black rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                   {filteredQuestions.length}
                 </Badge>
               </CardTitle>
@@ -1359,17 +1359,17 @@ export function QuestionBankManager() {
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#000000]" />
                   <Input
                     placeholder="Search context..."
-                    className="pl-9 h-10 w-full sm:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:text-[#000000]/50"
+                    className="pl-9 h-10 w-full sm:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:text-[#000000]/50 rounded-3xl"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
 
                 <Select value={filterType} onValueChange={setFilterType}>
-                  <SelectTrigger className="h-10 w-[140px] bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0 uppercase text-[10px] tracking-widest">
+                  <SelectTrigger className="h-10 w-[140px] bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0 uppercase text-[10px] tracking-widest">
                     <SelectValue placeholder="Type" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     <SelectItem
                       value="all"
                       className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -1392,10 +1392,10 @@ export function QuestionBankManager() {
                   value={filterDifficulty}
                   onValueChange={setFilterDifficulty}
                 >
-                  <SelectTrigger className="h-10 w-[130px] bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0 uppercase text-[10px] tracking-widest">
+                  <SelectTrigger className="h-10 w-[130px] bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0 uppercase text-[10px] tracking-widest">
                     <SelectValue placeholder="Level" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                     <SelectItem
                       value="all"
                       className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -1431,7 +1431,7 @@ export function QuestionBankManager() {
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#000000]">
                   Filtering by Topic:
                 </span>
-                <Badge className="bg-[#FD5A1A] text-white border-2 border-[#000000] rounded-none px-3 py-1 text-[10px] font-black uppercase tracking-widest">
+                <Badge className="bg-[#FD5A1A] text-white border-2 border-[#000000] rounded-3xl px-3 py-1 text-[10px] font-black uppercase tracking-widest">
                   {filterTopic}
                 </Badge>
                 <div className="flex items-center gap-1.5 ml-2 border-l-2 border-[#000000] pl-3">
@@ -1477,7 +1477,7 @@ export function QuestionBankManager() {
                 return (
                   <div
                     key={q.id}
-                    className="rounded-none border-4 border-[#000000] bg-white hover:bg-[#E9E9E9] transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    className="rounded-3xl border-4 border-[#000000] bg-white hover:bg-[#E9E9E9] transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                   >
                     {/* Row */}
                     <div
@@ -1495,7 +1495,7 @@ export function QuestionBankManager() {
                           <QuestionTypeIcon type={q.question_type} />
                           <Badge
                             className={cn(
-                              "text-[9px] uppercase tracking-widest h-5 px-2 font-black border-2 border-[#000000] rounded-none",
+                              "text-[9px] uppercase tracking-widest h-5 px-2 font-black border-2 border-[#000000] rounded-3xl",
                               q.difficulty === "easy"
                                 ? "bg-[#6BCB77] text-white"
                                 : q.difficulty === "hard"
@@ -1505,7 +1505,7 @@ export function QuestionBankManager() {
                           >
                             {q.difficulty}
                           </Badge>
-                          <span className="text-[9px] font-black text-[#000000] bg-[#E9E9E9] border-2 border-[#000000] px-2 py-0.5 rounded-none uppercase tracking-widest">
+                          <span className="text-[9px] font-black text-[#000000] bg-[#E9E9E9] border-2 border-[#000000] px-2 py-0.5 rounded-3xl uppercase tracking-widest">
                             {q.marks ?? 1} Marks
                           </span>
                         </div>
@@ -1578,7 +1578,7 @@ export function QuestionBankManager() {
                                   <div
                                     key={i}
                                     className={cn(
-                                      "flex items-center gap-4 px-4 py-4 rounded-none text-sm border-2 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
+                                      "flex items-center gap-4 px-4 py-4 rounded-3xl text-sm border-2 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
                                       isCorrect
                                         ? "bg-[#6BCB77] border-[#000000] text-[#000000]"
                                         : "bg-white border-[#000000] hover:bg-[#E9E9E9]",
@@ -1586,7 +1586,7 @@ export function QuestionBankManager() {
                                   >
                                     <div
                                       className={cn(
-                                        "h-8 w-8 rounded-none flex items-center justify-center text-[11px] font-black border-2 transition-all shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]",
+                                        "h-8 w-8 rounded-3xl flex items-center justify-center text-[11px] font-black border-2 transition-all shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]",
                                         isCorrect
                                           ? "bg-white text-[#000000] border-[#000000]"
                                           : "bg-[#E9E9E9] border-[#000000]",
@@ -1612,7 +1612,7 @@ export function QuestionBankManager() {
 
                         {/* Explanation & Details */}
                         {(q.explanation || q.correct_answer) && (
-                          <div className="mt-4 p-5 rounded-none bg-white border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] space-y-3">
+                          <div className="mt-4 p-5 rounded-3xl bg-white border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] space-y-3">
                             <div className="flex items-center gap-2 text-[#0075CF]">
                               <Sparkles className="h-5 w-5" />
                               <span className="text-[10px] font-black uppercase tracking-[0.2em]">
@@ -1652,7 +1652,7 @@ export function QuestionBankManager() {
 
       {/* ─── Save Wizard Dialog ─── */}
       <Dialog open={isSaveWizardOpen} onOpenChange={setIsSaveWizardOpen}>
-        <DialogContent className="sm:max-w-3xl overflow-hidden p-0 border-4 border-[#000000] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white font-['Inter']">
+        <DialogContent className="sm:max-w-3xl overflow-hidden p-0 border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white font-['Inter']">
           <div className="flex h-[600px]">
             {/* Steps Left Panel */}
             <div className="w-[28%] bg-muted/30 p-10 border-r space-y-10 relative overflow-hidden flex flex-col">
@@ -1676,7 +1676,7 @@ export function QuestionBankManager() {
                   >
                     <div
                       className={cn(
-                        "h-11 w-11 rounded-none flex items-center justify-center text-sm font-black border-4 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
+                        "h-11 w-11 rounded-3xl flex items-center justify-center text-sm font-black border-4 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]",
                         saveWizardStep === s.step
                           ? "border-[#000000] bg-[#FD5A1A] text-white"
                           : saveWizardStep > s.step
@@ -1721,7 +1721,7 @@ export function QuestionBankManager() {
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-emerald-500/5 rounded-full -ml-20 -mb-20 blur-[60px] pointer-events-none" />
 
               <DialogHeader className="mb-8 relative z-10 text-left">
-                <div className="h-16 w-16 rounded-none bg-[#FFD166] flex items-center justify-center mb-6 border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-3 transition-transform hover:rotate-0 duration-300">
+                <div className="h-16 w-16 rounded-3xl bg-[#FFD166] flex items-center justify-center mb-6 border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] -rotate-3 transition-transform hover:rotate-0 duration-300">
                   <ClipboardList className="h-8 w-8 text-[#000000]" />
                 </div>
                 <div className="space-y-2">
@@ -1758,7 +1758,7 @@ export function QuestionBankManager() {
                       </div>
                       <Input
                         placeholder="e.g. Backend Architecture Mastery"
-                        className="h-14 rounded-none text-lg font-bold border-4 bg-[#E9E9E9] focus:bg-white focus:ring-0 transition-all px-6 border-[#000000] focus:border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-[#000000] placeholder:text-[#000000]/40"
+                        className="h-14 rounded-3xl text-lg font-bold border-4 bg-[#E9E9E9] focus:bg-white focus:ring-0 transition-all px-6 border-[#000000] focus:border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-[#000000] placeholder:text-[#000000]/40"
                         value={quizTitle}
                         onChange={(e) => setQuizTitle(e.target.value)}
                         autoFocus
@@ -1779,7 +1779,7 @@ export function QuestionBankManager() {
                       <Textarea
                         placeholder="Provide context or learning objectives..."
                         rows={5}
-                        className="resize-none rounded-none border-4 bg-[#E9E9E9] focus:bg-white focus:ring-0 transition-all text-sm font-medium p-5 border-[#000000] focus:border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] leading-relaxed text-[#000000] placeholder:text-[#000000]/40"
+                        className="resize-none rounded-3xl border-4 bg-[#E9E9E9] focus:bg-white focus:ring-0 transition-all text-sm font-medium p-5 border-[#000000] focus:border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] leading-relaxed text-[#000000] placeholder:text-[#000000]/40"
                         value={quizDescription}
                         onChange={(e) => setQuizDescription(e.target.value)}
                       />
@@ -1789,7 +1789,7 @@ export function QuestionBankManager() {
 
                 {saveWizardStep === 2 && (
                   <div className="animate-in slide-in-from-right-8 duration-500 py-4">
-                    <Card className="border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none overflow-hidden bg-white">
+                    <Card className="border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl overflow-hidden bg-white">
                       <CardContent className="p-8 space-y-8">
                         <div className="flex items-start justify-between gap-6">
                           <div className="space-y-3">
@@ -1800,7 +1800,7 @@ export function QuestionBankManager() {
                               {quizDescription || "No description provided."}
                             </p>
                           </div>
-                          <Badge className="bg-[#FD5A1A] hover:bg-[#FD5A1A] h-10 px-6 rounded-none border-2 border-[#000000] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-[10px] tracking-widest shrink-0 uppercase text-white">
+                          <Badge className="bg-[#FD5A1A] hover:bg-[#FD5A1A] h-10 px-6 rounded-3xl border-2 border-[#000000] font-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-[10px] tracking-widest shrink-0 uppercase text-white">
                             {batchQuestions.length} ITEMS
                           </Badge>
                         </div>
@@ -1821,7 +1821,7 @@ export function QuestionBankManager() {
 
                 {saveWizardStep === 3 && (
                   <div className="flex flex-col items-center justify-center space-y-8 animate-in zoom-in-95 duration-700 py-6">
-                    <div className="h-32 w-32 rounded-none bg-[#6BCB77] border-4 border-[#000000] flex items-center justify-center shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] rotate-3 relative overflow-hidden group">
+                    <div className="h-32 w-32 rounded-3xl bg-[#6BCB77] border-4 border-[#000000] flex items-center justify-center shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] rotate-3 relative overflow-hidden group">
                       <CheckCircle className="h-16 w-16 text-[#000000] -rotate-3 relative z-10" />
                     </div>
                     <div className="space-y-3 text-center">
@@ -1840,11 +1840,11 @@ export function QuestionBankManager() {
                 )}
               </div>
 
-              <DialogFooter className="mt-auto pt-8 border-t border-muted/50 gap-4 relative z-10 bg-background/80 backdrop-blur-sm -mx-12 px-12 pb-2">
+              <DialogFooter className="mt-auto pt-8 border-t border-muted/50 gap-4 relative z-10 bg-background/80 backdrop-blur-sm -mx-12 px-12 pb-2 rounded-3xl">
                 {saveWizardStep > 1 && (
                   <Button
                     variant="ghost"
-                    className="rounded-none h-14 font-black uppercase tracking-widest px-8 hover:bg-[#E9E9E9] border-2 border-transparent hover:border-[#000000] transition-all text-[11px]"
+                    className="rounded-3xl h-14 font-black uppercase tracking-widest px-8 hover:bg-[#E9E9E9] border-2 border-transparent hover:border-[#000000] transition-all text-[11px]"
                     onClick={() => setSaveWizardStep((prev) => prev - 1)}
                   >
                     Back
@@ -1852,7 +1852,7 @@ export function QuestionBankManager() {
                 )}
                 {saveWizardStep < 3 ? (
                   <Button
-                    className="flex-1 h-14 rounded-none font-black text-[11px] uppercase tracking-[0.2em] gap-3 bg-[#FD5A1A] hover:bg-[#FD5A1A]/90 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] border-4 border-[#000000] transition-all"
+                    className="flex-1 h-14 rounded-3xl font-black text-[11px] uppercase tracking-[0.2em] gap-3 bg-[#FD5A1A] hover:bg-[#FD5A1A]/90 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] border-4 border-[#000000] transition-all"
                     onClick={() => {
                       if (saveWizardStep === 1 && !quizTitle.trim()) {
                         toast({
@@ -1869,7 +1869,7 @@ export function QuestionBankManager() {
                   </Button>
                 ) : (
                   <Button
-                    className="flex-1 h-14 rounded-none font-black text-[11px] uppercase tracking-[0.2em] gap-3 bg-[#0075CF] hover:bg-[#0075CF]/90 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] border-4 border-[#000000] transition-all"
+                    className="flex-1 h-14 rounded-3xl font-black text-[11px] uppercase tracking-[0.2em] gap-3 bg-[#0075CF] hover:bg-[#0075CF]/90 text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] border-4 border-[#000000] transition-all"
                     onClick={handleFinalSave}
                     disabled={isSaving}
                   >
@@ -1889,3 +1889,4 @@ export function QuestionBankManager() {
     </div>
   );
 }
+

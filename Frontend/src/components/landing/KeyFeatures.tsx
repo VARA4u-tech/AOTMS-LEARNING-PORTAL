@@ -104,11 +104,11 @@ const KeyFeatures = () => {
           className="text-center mb-24"
         >
           <div className="inline-flex items-center gap-4 mb-8">
-            <span className="h-1.5 w-12 bg-black" />
+            <span className="h-1.5 w-12 bg-black rounded-3xl" />
             <span className="text-sm font-black tracking-[0.3em] uppercase text-white">
               Platform Features
             </span>
-            <span className="h-1.5 w-12 bg-black" />
+            <span className="h-1.5 w-12 bg-black rounded-3xl" />
           </div>
           <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mb-6 uppercase italic leading-[0.9]">
             Advanced <span className="text-black">Learning</span> <br />
@@ -133,7 +133,7 @@ const KeyFeatures = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="w-[85vw] sm:w-auto shrink-0 snap-center"
               >
-                <div className="h-full bg-white border-4 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all group relative rounded-none flex flex-col">
+                <div className="h-full bg-white border-4 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all group relative rounded-3xl flex flex-col">
                   {/* Decorative corner tag */}
                   <div
                     className={`absolute top-0 right-0 p-3 border-l-4 border-b-4 border-black font-black text-[10px] tracking-widest uppercase ${feature.theme === "blue" ? "bg-[#0075CF] text-white" : "bg-[#FD5A1A] text-white"}`}
@@ -171,7 +171,7 @@ const KeyFeatures = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-24 bg-[#E9E9E9] border-4 border-black p-10 shadow-[12px_12px_0px_0px_rgba(0,117,207,1)]"
+          className="mt-24 bg-[#E9E9E9] border-4 border-black p-10 shadow-[12px_12px_0px_0px_rgba(0,117,207,1)] rounded-3xl"
         >
           <div className="flex flex-wrap justify-center gap-12 md:gap-24">
             {[
@@ -200,3 +200,5 @@ const KeyFeatures = () => {
 };
 
 export default KeyFeatures;
+
+

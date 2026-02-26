@@ -133,9 +133,9 @@ export default function LiveClassesPage() {
             {liveClasses.map((cls) => (
               <div
                 key={cls.id}
-                className="bg-white border-4 border-[#FD5A1A] rounded-2xl p-6 shadow-[6px_6px_0px_0px_rgba(253,90,26,1)] flex flex-col md:flex-row items-center gap-6"
+                className="bg-white border-4 border-[#FD5A1A] rounded-3xl p-6 shadow-[6px_6px_0px_0px_rgba(253,90,26,1)] flex flex-col md:flex-row items-center gap-6"
               >
-                <div className="w-full md:w-32 aspect-video md:aspect-square bg-[#000000] rounded-xl flex items-center justify-center border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shrink-0 overflow-hidden relative">
+                <div className="w-full md:w-32 aspect-video md:aspect-square bg-[#000000] rounded-3xl flex items-center justify-center border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] shrink-0 overflow-hidden relative">
                   <div className="absolute inset-0 bg-[#FD5A1A]/20 mix-blend-overlay" />
                   <Video className="w-10 h-10 text-white animate-pulse" />
                 </div>
@@ -147,7 +147,7 @@ export default function LiveClassesPage() {
                     {cls.title}
                   </h3>
                   <div className="flex flex-col md:flex-row items-center gap-2 justify-center md:justify-start">
-                    <Avatar className="w-8 h-8 border-2 border-[#000000] bg-white">
+                    <Avatar className="w-8 h-8 border-2 border-[#000000] bg-white rounded-3xl">
                       <AvatarFallback className="font-bold text-xs">
                         {cls.instructor_name[0]}
                       </AvatarFallback>
@@ -175,7 +175,7 @@ export default function LiveClassesPage() {
         </h2>
 
         {upcomingClasses.length === 0 ? (
-          <div className="bg-white border-4 border-[#000000] rounded-xl p-12 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="bg-white border-4 border-[#000000] rounded-3xl p-12 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <CalIcon className="w-12 h-12 text-[#000000]/20 mx-auto mb-3" />
             <h3 className="font-black text-lg text-[#000000]">
               No Upcoming Classes
@@ -193,7 +193,7 @@ export default function LiveClassesPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white border-4 border-[#000000] rounded-2xl flex flex-col shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all overflow-hidden"
+                className="bg-white border-4 border-[#000000] rounded-3xl flex flex-col shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all overflow-hidden"
               >
                 {/* Top Date Bar */}
                 <div className="bg-[#E9E9E9] border-b-4 border-[#000000] px-4 py-3 flex items-center justify-between">
@@ -218,7 +218,7 @@ export default function LiveClassesPage() {
 
                     <div className="flex items-center justify-between text-sm font-bold border-t-2 border-[#E9E9E9] pt-4 mb-2">
                       <div className="flex items-center gap-2 text-[#000000]/70">
-                        <Avatar className="w-6 h-6 border-2 border-[#000000] bg-white">
+                        <Avatar className="w-6 h-6 border-2 border-[#000000] bg-white rounded-3xl">
                           <AvatarFallback className="text-[10px] font-black">
                             {cls.instructor_name[0]}
                           </AvatarFallback>
@@ -250,3 +250,4 @@ export default function LiveClassesPage() {
     </div>
   );
 }
+

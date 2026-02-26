@@ -94,7 +94,7 @@ const Assignments = () => {
                   </p>
                 </div>
 
-                <div className="bg-white border-2 sm:border-4 border-black p-4 sm:p-6 shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] text-left sm:text-right w-full sm:w-auto">
+                <div className="bg-white border-2 sm:border-4 border-black p-4 sm:p-6 shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] text-left sm:text-right w-full sm:w-auto rounded-3xl">
                   <span className="text-[10px] font-black uppercase tracking-widest block mb-1 opacity-40">
                     TERMINATION_DATE
                   </span>
@@ -116,7 +116,7 @@ const Assignments = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white border-2 sm:border-4 border-black p-5 sm:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+              className="bg-white border-2 sm:border-4 border-black p-5 sm:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
             >
               <h2 className="text-xl sm:text-2xl font-black text-black uppercase italic mb-4 sm:mb-6 border-b-2 sm:border-b-4 border-black pb-2 sm:pb-4 inline-block">
                 MISSION_PARAMETERS
@@ -142,7 +142,7 @@ const Assignments = () => {
               <Button
                 variant="ghost"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="mt-4 sm:mt-6 text-black hover:bg-black hover:text-white border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px] sm:text-xs h-10 px-6 w-full sm:w-auto"
+                className="mt-4 sm:mt-6 text-black hover:bg-black hover:text-white border-2 border-black rounded-3xl font-black uppercase tracking-widest text-[10px] sm:text-xs h-10 px-6 w-full sm:w-auto"
               >
                 {isExpanded ? "COLLAPSE_LOGS" : "EXPAND_FULL_SPECS"}
               </Button>
@@ -173,7 +173,7 @@ const Assignments = () => {
                 <motion.div
                   key={idx}
                   whileHover={{ y: -4, x: -4 }}
-                  className="bg-white p-5 sm:p-6 border-2 sm:border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col sm:block"
+                  className="bg-white p-5 sm:p-6 border-2 sm:border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col sm:block rounded-3xl"
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#E9E9E9] border-2 border-black flex items-center justify-center mb-3 shadow-[2px_2px_0px_0px_black]">
                     <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
@@ -194,7 +194,7 @@ const Assignments = () => {
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white border-2 sm:border-4 border-black p-5 sm:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden"
+              className="bg-white border-2 sm:border-4 border-black p-5 sm:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden rounded-3xl"
             >
               <div className="absolute top-0 left-0 w-full h-1 sm:h-2 bg-[#FD5A1A]" />
               <div className="mb-6 sm:mb-8">
@@ -207,16 +207,16 @@ const Assignments = () => {
               </div>
 
               <Tabs defaultValue="upload" className="w-full">
-                <TabsList className="flex mb-6 sm:mb-8 bg-[#E9E9E9] p-1 border-2 border-black rounded-none w-full">
+                <TabsList className="flex mb-6 sm:mb-8 bg-[#E9E9E9] p-1 border-2 border-black rounded-3xl w-full">
                   <TabsTrigger
                     value="upload"
-                    className="flex-1 rounded-none data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[9px] sm:text-xs py-2 sm:py-3"
+                    className="flex-1 rounded-3xl data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[9px] sm:text-xs py-2 sm:py-3"
                   >
                     HARD_DRIVE
                   </TabsTrigger>
                   <TabsTrigger
                     value="link"
-                    className="flex-1 rounded-none data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[9px] sm:text-xs py-2 sm:py-3"
+                    className="flex-1 rounded-3xl data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[9px] sm:text-xs py-2 sm:py-3"
                   >
                     NETWORK_LINK
                   </TabsTrigger>
@@ -239,7 +239,7 @@ const Assignments = () => {
                       OR CLICK TO SELECT FROM LOCAL STORAGE
                     </p>
                     <Button
-                      className="bg-black text-white rounded-none border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest text-[11px] sm:text-xs h-12 px-6 sm:px-8 w-full sm:w-auto mt-2"
+                      className="bg-black text-white rounded-3xl border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest text-[11px] sm:text-xs h-12 px-6 sm:px-8 w-full sm:w-auto mt-2"
                       onClick={() =>
                         document.getElementById("file-upload")?.click()
                       }
@@ -281,7 +281,7 @@ const Assignments = () => {
                       </Label>
                       <Textarea
                         placeholder="HTTPS://GITHUB.COM/USER/PROJECT"
-                        className="rounded-none border-2 border-black focus-visible:ring-0 focus-visible:border-[#0075CF] min-h-[60px] sm:min-h-[80px] font-bold text-xs sm:text-sm"
+                        className="rounded-3xl border-2 border-black focus-visible:ring-0 focus-visible:border-[#0075CF] min-h-[60px] sm:min-h-[80px] font-bold text-xs sm:text-sm"
                       />
                     </div>
                     <div className="space-y-2 sm:space-y-3">
@@ -290,7 +290,7 @@ const Assignments = () => {
                       </Label>
                       <Textarea
                         placeholder="ANY ADDITIONAL INTEL FOR THE INSTRUCTOR..."
-                        className="rounded-none border-2 border-black focus-visible:ring-0 focus-visible:border-[#0075CF] min-h-[100px] sm:min-h-[120px] font-bold text-xs sm:text-sm"
+                        className="rounded-3xl border-2 border-black focus-visible:ring-0 focus-visible:border-[#0075CF] min-h-[100px] sm:min-h-[120px] font-bold text-xs sm:text-sm"
                       />
                     </div>
                   </div>
@@ -305,7 +305,7 @@ const Assignments = () => {
                   SAVE_LOG_DRAFT
                 </Button>
                 <Button
-                  className={`w-full sm:w-auto px-6 sm:px-12 h-12 sm:h-14 bg-black text-white rounded-none border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm order-1 sm:order-2 ${submissionStatus === "submitted" ? "bg-[#0075CF]" : ""}`}
+                  className={`w-full sm:w-auto px-6 sm:px-12 h-12 sm:h-14 bg-black text-white rounded-3xl border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm order-1 sm:order-2 ${submissionStatus === "submitted" ? "bg-[#0075CF]" : ""}`}
                   onClick={handleSubmit}
                   disabled={submissionStatus === "submitted"}
                 >
@@ -331,7 +331,7 @@ const Assignments = () => {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white border-2 sm:border-4 border-black p-5 sm:p-6 shadow-[4px_4px_0px_0px_#0075CF] sm:shadow-[8px_8px_0px_0px_#0075CF]"
+              className="bg-white border-2 sm:border-4 border-black p-5 sm:p-6 shadow-[4px_4px_0px_0px_#0075CF] sm:shadow-[8px_8px_0px_0px_#0075CF] rounded-3xl"
             >
               <h3 className="text-lg sm:text-xl font-black text-black uppercase italic mb-4 sm:mb-6">
                 INTELLIGENCE_ASSETS
@@ -344,7 +344,7 @@ const Assignments = () => {
                 ].map((res, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-3 sm:p-4 bg-[#E9E9E9] border-2 border-black hover:bg-white hover:shadow-[4px_4px_0px_0px_black] transition-all cursor-pointer group flex-wrap sm:flex-nowrap gap-2 sm:gap-0"
+                    className="flex items-center justify-between p-3 sm:p-4 bg-[#E9E9E9] border-2 border-black hover:bg-white hover:shadow-[4px_4px_0px_0px_black] transition-all cursor-pointer group flex-wrap sm:flex-nowrap gap-2 sm:gap-0 rounded-3xl"
                   >
                     <div className="flex items-center gap-3 w-full sm:w-auto">
                       <div className="w-8 h-8 bg-black text-white flex items-center justify-center shrink-0">
@@ -366,14 +366,14 @@ const Assignments = () => {
             </motion.div>
 
             {/* 6. Submission Status */}
-            <div className="bg-black text-white border-2 sm:border-4 border-black p-5 sm:p-6 shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A]">
+            <div className="bg-black text-white border-2 sm:border-4 border-black p-5 sm:p-6 shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] rounded-3xl">
               <h3 className="text-lg sm:text-xl font-black uppercase italic mb-4 sm:mb-6 text-[#FD5A1A]">
                 SYNC_STATUS
               </h3>
               <div className="space-y-6 sm:space-y-8">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div
-                    className={`w-3 h-3 sm:w-4 sm:h-4 rounded-none ${submissionStatus === "submitted" ? "bg-[#0075CF] shadow-[0_0_10px_#0075CF]" : "bg-[#FD5A1A] animate-pulse shadow-[0_0_10px_#FD5A1A]"}`}
+                    className={`w-3 h-3 sm:w-4 sm:h-4 rounded-3xl ${submissionStatus === "submitted" ? "bg-[#0075CF] shadow-[0_0_10px_#0075CF]" : "bg-[#FD5A1A] animate-pulse shadow-[0_0_10px_#FD5A1A]"}`}
                   />
                   <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest">
                     {submissionStatus === "submitted"
@@ -412,7 +412,7 @@ const Assignments = () => {
             </div>
 
             {/* 8. Rules */}
-            <div className="bg-[#FD5A1A] border-2 sm:border-4 border-black p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 text-white shadow-[4px_4px_0px_0px_black] sm:shadow-[8px_8px_0px_0px_black] sm:-rotate-1 sm:hover:rotate-0 transition-transform">
+            <div className="bg-[#FD5A1A] border-2 sm:border-4 border-black p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 text-white shadow-[4px_4px_0px_0px_black] sm:shadow-[8px_8px_0px_0px_black] sm:-rotate-1 sm:hover:rotate-0 transition-transform rounded-3xl">
               <Zap className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0 text-white fill-current" />
               <div className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest leading-relaxed">
                 <p className="mb-1 sm:mb-2 italic text-base sm:text-lg">
@@ -436,3 +436,4 @@ const Assignments = () => {
 };
 
 export default Assignments;
+

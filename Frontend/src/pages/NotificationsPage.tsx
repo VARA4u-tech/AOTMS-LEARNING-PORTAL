@@ -91,7 +91,7 @@ function NotifCard({
       whileHover={{ x: -3, y: -3 }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
       onClick={() => onRead(notif.id)}
-      className={`group relative flex items-start gap-4 p-5 border-2 border-[#000000] rounded-2xl cursor-pointer transition-shadow duration-200
+      className={`group relative flex items-start gap-4 p-5 border-2 border-[#000000] rounded-3xl cursor-pointer transition-shadow duration-200
         ${
           isRead
             ? "bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,117,207,1)]"
@@ -105,7 +105,7 @@ function NotifCard({
 
       {/* Icon */}
       <div
-        className={`w-12 h-12 rounded-xl border-2 border-[#000000] flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${cfg.bg}`}
+        className={`w-12 h-12 rounded-3xl border-2 border-[#000000] flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${cfg.bg}`}
       >
         <Icon className={`w-6 h-6 ${cfg.text}`} />
       </div>
@@ -195,7 +195,7 @@ export default function NotificationsPage() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => navigate("/dashboard")}
-            className="w-9 h-9 flex items-center justify-center border-2 border-[#000000] rounded-xl bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            className="w-9 h-9 flex items-center justify-center border-2 border-[#000000] rounded-3xl bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
           </button>
@@ -251,7 +251,7 @@ export default function NotificationsPage() {
         ].map((s) => (
           <div
             key={s.label}
-            className={`${s.bg} border-2 border-[#000000] rounded-xl p-4 text-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]`}
+            className={`${s.bg} border-2 border-[#000000] rounded-3xl p-4 text-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]`}
           >
             <div className={`text-3xl font-black ${s.text}`}>{s.value}</div>
             <div
@@ -275,7 +275,7 @@ export default function NotificationsPage() {
           animate={{ opacity: 1, scale: 1 }}
           className="flex flex-col items-center justify-center py-24 gap-5"
         >
-          <div className="w-24 h-24 bg-[#E9E9E9] border-2 border-[#000000] rounded-2xl flex items-center justify-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+          <div className="w-24 h-24 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl flex items-center justify-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
             <Bell className="w-12 h-12 text-[#000000]/20" />
           </div>
           <div className="text-center">
@@ -347,3 +347,4 @@ export default function NotificationsPage() {
     </div>
   );
 }
+

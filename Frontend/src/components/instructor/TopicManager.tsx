@@ -173,7 +173,7 @@ export function TopicManager({ courseId }: TopicManagerProps) {
             {topics.map((topic, idx) => (
               <div
                 key={topic.id}
-                className={`flex items-center gap-4 p-4 rounded-lg border transition-colors ${
+                className={`flex items-center gap-4 p-4 rounded-3xl border transition-colors ${
                   topic.is_completed
                     ? "bg-green-50 border-green-200 dark:bg-green-950/20"
                     : "bg-muted/50"
@@ -223,7 +223,7 @@ export function TopicManager({ courseId }: TopicManagerProps) {
           </div>
         )}
         {topics.length > 0 && (
-          <div className="mt-4 p-4 rounded-lg bg-muted/50">
+          <div className="mt-4 p-4 rounded-3xl bg-muted/50">
             <div className="flex items-center justify-between">
               <span className="text-sm font-medium">Progress</span>
               <span className="text-sm text-muted-foreground">
@@ -245,3 +245,4 @@ export function TopicManager({ courseId }: TopicManagerProps) {
     </Card>
   );
 }
+

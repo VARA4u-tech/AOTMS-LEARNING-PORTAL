@@ -168,7 +168,7 @@ export function AccessControlManager() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#000000]" />
           <Input
             placeholder="Search guests..."
-            className="pl-10 w-full sm:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:text-[#000000]/50"
+            className="pl-10 w-full sm:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:text-[#000000]/50 rounded-3xl"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -177,7 +177,7 @@ export function AccessControlManager() {
 
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Total Guests
@@ -192,7 +192,7 @@ export function AccessControlManager() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Active
@@ -207,7 +207,7 @@ export function AccessControlManager() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Expired
@@ -222,7 +222,7 @@ export function AccessControlManager() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Disabled
@@ -240,7 +240,7 @@ export function AccessControlManager() {
       </div>
 
       {/* Access Level Overview */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
             <Shield className="h-6 w-6 text-[#0075CF]" />
@@ -262,7 +262,7 @@ export function AccessControlManager() {
               return (
                 <div
                   key={level}
-                  className="flex items-center gap-3 p-3 rounded-none border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-[#E9E9E9]"
+                  className="flex items-center gap-3 p-3 rounded-3xl border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-[#E9E9E9]"
                 >
                   <div
                     className={`h-10 w-10 border-2 border-[#000000] ${iconBg} flex items-center justify-center shrink-0`}
@@ -290,7 +290,7 @@ export function AccessControlManager() {
       </Card>
 
       {/* Guest Accounts List with Access Control */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
             <KeyRound className="h-6 w-6 text-[#FD5A1A]" />
@@ -322,7 +322,7 @@ export function AccessControlManager() {
                 return (
                   <div
                     key={cred.id}
-                    className={`flex items-center gap-4 p-4 rounded-none border-2 border-[#000000] transition-colors ${
+                    className={`flex items-center gap-4 p-4 rounded-3xl border-2 border-[#000000] transition-colors ${
                       !cred.is_active || isExpired
                         ? "bg-[#E9E9E9] opacity-70"
                         : "bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9]"
@@ -352,7 +352,7 @@ export function AccessControlManager() {
                           {levelConfig.label}
                         </Badge>
                         {isExpired && (
-                          <Badge className="text-[10px] font-black uppercase tracking-widest bg-[#FD5A1A] text-white border-2 border-[#000000] rounded-none">
+                          <Badge className="text-[10px] font-black uppercase tracking-widest bg-[#FD5A1A] text-white border-2 border-[#000000] rounded-3xl">
                             Expired
                           </Badge>
                         )}
@@ -392,7 +392,7 @@ export function AccessControlManager() {
                       <Button
                         size="icon"
                         onClick={() => openEditDialog(cred)}
-                        className="bg-white text-[#000000] border-2 border-[#000000] rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all ml-2"
+                        className="bg-white text-[#000000] border-2 border-[#000000] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all ml-2"
                       >
                         <Settings className="h-4 w-4" />
                       </Button>
@@ -410,7 +410,7 @@ export function AccessControlManager() {
         open={!!editingCred}
         onOpenChange={(open) => !open && setEditingCred(null)}
       >
-        <DialogContent className="sm:max-w-lg bg-white border-4 border-[#000000] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
+        <DialogContent className="sm:max-w-lg bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
           <DialogHeader className="p-6 border-b-4 border-[#000000] bg-[#FFD166]">
             <DialogTitle className="flex items-center gap-2 text-2xl font-black text-[#000000] uppercase tracking-wider">
               <Shield className="h-6 w-6 text-[#000000]" />
@@ -431,10 +431,10 @@ export function AccessControlManager() {
                   setEditForm({ ...editForm, access_level: value })
                 }
               >
-                <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+                <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   {Object.entries(accessLevelConfig).map(([level, config]) => (
                     <SelectItem
                       key={level}
@@ -459,7 +459,7 @@ export function AccessControlManager() {
                 type="number"
                 min={1}
                 max={10}
-                className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                 value={editForm.max_sessions}
                 onChange={(e) =>
                   setEditForm({
@@ -534,13 +534,13 @@ export function AccessControlManager() {
                       </div>
                       {course.is_published ? (
                         <Badge
-                          className={`rounded-none border-2 border-[#000000] font-black text-xs ${editForm.allowed_courses.includes(course.id) ? "bg-[#000000] text-white" : "bg-white text-[#000000]"}`}
+                          className={`rounded-3xl border-2 border-[#000000] font-black text-xs ${editForm.allowed_courses.includes(course.id) ? "bg-[#000000] text-white" : "bg-white text-[#000000]"}`}
                         >
                           Published
                         </Badge>
                       ) : (
                         <Badge
-                          className={`rounded-none border-2 border-[#000000] font-black text-xs ${editForm.allowed_courses.includes(course.id) ? "bg-[#000000]/20 text-[#000000]" : "bg-[#E9E9E9] text-[#000000]"}`}
+                          className={`rounded-3xl border-2 border-[#000000] font-black text-xs ${editForm.allowed_courses.includes(course.id) ? "bg-[#000000]/20 text-[#000000]" : "bg-[#E9E9E9] text-[#000000]"}`}
                         >
                           Draft
                         </Badge>
@@ -558,13 +558,13 @@ export function AccessControlManager() {
           </div>
           <DialogFooter className="p-6 border-t-4 border-[#000000] bg-[#E9E9E9] flex sm:justify-between items-center w-full">
             <Button
-              className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
+              className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
               onClick={() => setEditingCred(null)}
             >
               Cancel
             </Button>
             <Button
-              className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
+              className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
               onClick={handleSave}
               disabled={updateCredential.isPending}
             >
@@ -578,3 +578,4 @@ export function AccessControlManager() {
     </div>
   );
 }
+

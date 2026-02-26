@@ -66,7 +66,7 @@ export function InstructorAnalytics() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
-            className="bg-white border-4 border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-xl"
+            className="bg-white border-4 border-black p-6 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
           >
             <div className="flex items-center justify-between mb-2">
               <stat.icon className={`h-5 w-5 ${stat.color}`} />
@@ -83,7 +83,7 @@ export function InstructorAnalytics() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-2">
-        <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden">
+        <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl overflow-hidden">
           <CardHeader className="bg-[#E9E9E9] border-b-4 border-black">
             <CardTitle className="text-lg font-black uppercase tracking-wider flex items-center gap-2">
               <Target className="h-5 w-5" /> Student Progress Flow
@@ -126,7 +126,7 @@ export function InstructorAnalytics() {
           </CardContent>
         </Card>
 
-        <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden">
+        <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl overflow-hidden">
           <CardHeader className="bg-[#E9E9E9] border-b-4 border-black">
             <CardTitle className="text-lg font-black uppercase tracking-wider flex items-center gap-2">
               <TrendingUp className="h-5 w-5" /> Growth Trajectory
@@ -145,3 +145,4 @@ export function InstructorAnalytics() {
     </div>
   );
 }
+

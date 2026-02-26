@@ -79,7 +79,7 @@ const CareerOutcomes = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border-2 sm:border-4 border-black p-6 sm:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group rounded-2xl"
+              className="bg-white border-2 sm:border-4 border-black p-6 sm:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group rounded-3xl"
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-8 gap-4">
                 <div>
@@ -90,7 +90,7 @@ const CareerOutcomes = () => {
                     Targets Identified
                   </div>
                 </div>
-                <div className="self-start bg-black text-[#FD5A1A] border-2 border-black px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(253,90,26,0.3)] flex items-center gap-2 rounded-md">
+                <div className="self-start bg-black text-[#FD5A1A] border-2 border-black px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(253,90,26,0.3)] flex items-center gap-2 rounded-3xl">
                   <CheckCircle className="w-3 h-3" />
                   {outcome.confidence}% Ready
                 </div>
@@ -108,7 +108,7 @@ const CareerOutcomes = () => {
                     {outcome.roles.map((role, i) => (
                       <Badge
                         key={i}
-                        className="bg-[#E9E9E9] text-black border-2 border-black rounded-lg px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
+                        className="bg-[#E9E9E9] text-black border-2 border-black rounded-3xl px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)]"
                       >
                         {role}
                       </Badge>
@@ -127,7 +127,7 @@ const CareerOutcomes = () => {
                     {outcome.industries.map((industry, i) => (
                       <Badge
                         key={i}
-                        className="bg-white text-black border-2 border-black rounded-lg px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,117,207,0.1)]"
+                        className="bg-white text-black border-2 border-black rounded-3xl px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,117,207,0.1)]"
                       >
                         {industry}
                       </Badge>
@@ -158,3 +158,4 @@ const CareerOutcomes = () => {
 };
 
 export default CareerOutcomes;
+

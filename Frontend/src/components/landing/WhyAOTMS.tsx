@@ -65,7 +65,7 @@ const WhyAOTMS = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+          <div className="inline-flex items-center gap-2 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
             <Sparkles className="w-4 h-4" />
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Why Students Love Us
@@ -96,7 +96,7 @@ const WhyAOTMS = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              className="bg-white border-4 border-black p-8 text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              className="bg-white border-4 border-black p-8 text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all rounded-3xl"
             >
               <div className="text-4xl font-black text-[#FD5A1A] mb-1 italic">
                 {stat.value}
@@ -118,8 +118,8 @@ const WhyAOTMS = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 + index * 0.08 }}
             >
-              <div className="h-full bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] transition-all group relative">
-                <div className="w-16 h-16 bg-[#0075CF] border-4 border-black flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-[#FD5A1A] transition-colors">
+              <div className="h-full bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] transition-all group relative rounded-3xl">
+                <div className="w-16 h-16 bg-[#0075CF] border-4 border-black flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:bg-[#FD5A1A] transition-colors rounded-3xl">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-black text-black mb-3 uppercase tracking-tight">
@@ -145,3 +145,5 @@ const WhyAOTMS = () => {
 };
 
 export default WhyAOTMS;
+
+

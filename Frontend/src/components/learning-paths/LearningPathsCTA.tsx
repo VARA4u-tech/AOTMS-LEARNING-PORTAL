@@ -29,14 +29,14 @@ const LearningPathsCTA = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
             <Button
-              className="bg-[#FD5A1A] text-white border-2 sm:border-4 border-black px-8 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_white] sm:shadow-[8px_8px_0px_0px_white] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all h-auto rounded-xl w-full sm:w-auto italic"
+              className="bg-[#FD5A1A] text-white border-2 sm:border-4 border-black px-8 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_white] sm:shadow-[8px_8px_0px_0px_white] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all h-auto rounded-3xl w-full sm:w-auto italic"
               onClick={() => window.scrollTo({ top: 400, behavior: "smooth" })}
             >
               Browse Strategies
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 ml-3" />
             </Button>
             <Button
-              className="bg-white text-black border-2 sm:border-4 border-black px-8 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_#0075CF] sm:shadow-[8px_8px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all h-auto rounded-xl w-full sm:w-auto italic"
+              className="bg-white text-black border-2 sm:border-4 border-black px-8 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_#0075CF] sm:shadow-[8px_8px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all h-auto rounded-3xl w-full sm:w-auto italic"
               onClick={() => navigate("/auth")}
             >
               <UserPlus className="w-5 h-5 sm:w-6 sm:h-6 mr-3" />
@@ -50,3 +50,4 @@ const LearningPathsCTA = () => {
 };
 
 export default LearningPathsCTA;
+

@@ -50,7 +50,7 @@ const PerformanceTracking = () => {
                   className="flex items-center gap-4 sm:gap-6 group"
                 >
                   <div
-                    className={`shrink-0 w-12 h-12 sm:w-14 sm:h-14 border-2 sm:border-4 border-black flex items-center justify-center transition-colors group-hover:bg-[#0075CF] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-lg`}
+                    className={`shrink-0 w-12 h-12 sm:w-14 sm:h-14 border-2 sm:border-4 border-black flex items-center justify-center transition-colors group-hover:bg-[#0075CF] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl`}
                   >
                     <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-black group-hover:text-white transition-colors" />
                   </div>
@@ -72,7 +72,7 @@ const PerformanceTracking = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-[#E9E9E9] border-2 sm:border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 relative overflow-hidden rounded-2xl"
+            className="bg-[#E9E9E9] border-2 sm:border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-6 sm:p-8 relative overflow-hidden rounded-3xl"
           >
             <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
@@ -99,7 +99,7 @@ const PerformanceTracking = () => {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-10 relative z-10">
-              <div className="bg-white border-2 sm:border-4 border-black p-4 sm:p-6 shadow-[3px_3px_0px_0px_#FD5A1A] rounded-xl">
+              <div className="bg-white border-2 sm:border-4 border-black p-4 sm:p-6 shadow-[3px_3px_0px_0px_#FD5A1A] rounded-3xl">
                 <p className="text-2xl sm:text-3xl font-black text-black mb-1 italic leading-none">
                   12
                 </p>
@@ -107,7 +107,7 @@ const PerformanceTracking = () => {
                   Modules Sync
                 </p>
               </div>
-              <div className="bg-white border-2 sm:border-4 border-black p-4 sm:p-6 shadow-[3px_3px_0px_0px_#0075CF] rounded-xl">
+              <div className="bg-white border-2 sm:border-4 border-black p-4 sm:p-6 shadow-[3px_3px_0px_0px_#0075CF] rounded-3xl">
                 <p className="text-2xl sm:text-3xl font-black text-black mb-1 italic leading-none">
                   85%
                 </p>
@@ -139,7 +139,7 @@ const PerformanceTracking = () => {
                 ].map((entry, index) => (
                   <div
                     key={index}
-                    className={`flex items-center justify-between p-3 sm:p-4 border-2 border-black rounded-lg ${
+                    className={`flex items-center justify-between p-3 sm:p-4 border-2 border-black rounded-3xl ${
                       entry.isUser
                         ? "bg-black text-white shadow-[3px_3px_0px_0px_#FD5A1A]"
                         : "bg-white text-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
@@ -168,3 +168,4 @@ const PerformanceTracking = () => {
 };
 
 export default PerformanceTracking;
+

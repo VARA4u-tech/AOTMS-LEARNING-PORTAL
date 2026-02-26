@@ -176,7 +176,7 @@ export function SecurityMonitor({
                     unresolvedEvents.map((event) => (
                       <div
                         key={event.id}
-                        className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                        className="flex items-start gap-4 p-4 rounded-3xl bg-muted/50 hover:bg-muted transition-colors"
                       >
                         <div className="mt-1">
                           {getEventIcon(event.event_type)}
@@ -221,7 +221,7 @@ export function SecurityMonitor({
                     resolvedEvents.map((event) => (
                       <div
                         key={event.id}
-                        className="flex items-start gap-4 p-4 rounded-lg bg-muted/30 opacity-70"
+                        className="flex items-start gap-4 p-4 rounded-3xl bg-muted/30 opacity-70"
                       >
                         <div className="mt-1">
                           <CheckCircle className="h-4 w-4 text-green-500" />
@@ -266,7 +266,7 @@ export function SecurityMonitor({
                 systemLogs.map((log) => (
                   <div
                     key={log.id}
-                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors"
+                    className="flex items-start gap-3 p-3 rounded-3xl hover:bg-muted/50 transition-colors"
                   >
                     {getLogIcon(log.log_type)}
                     <div className="flex-1 min-w-0">
@@ -285,3 +285,4 @@ export function SecurityMonitor({
     </div>
   );
 }
+

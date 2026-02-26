@@ -291,7 +291,7 @@ export function TimelineManager({ courseId }: TimelineManagerProps) {
                     </div>
 
                     <div
-                      className={`flex-1 p-4 rounded-lg border ${
+                      className={`flex-1 p-4 rounded-3xl border ${
                         today ? "border-primary bg-primary/5" : "bg-muted/50"
                       }`}
                     >
@@ -337,3 +337,4 @@ export function TimelineManager({ courseId }: TimelineManagerProps) {
     </Card>
   );
 }
+

@@ -56,7 +56,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-16 md:py-32 bg-white relative overflow-hidden font-['Inter']"
+      className="py-16 md:py-32 bg-white relative overflow-hidden font-[ rounded-3xl'Inter']"
     >
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
@@ -68,7 +68,7 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#FD5A1A] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#FD5A1A] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
             <Star className="w-4 h-4 fill-white" />
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Student Reviews
@@ -86,8 +86,8 @@ const Testimonials = () => {
         {/* Horizontal Autoplay Marquee */}
         <div className="relative w-full overflow-hidden pb-12 pt-4 -mx-4 px-4 md:-mx-8 md:px-8 lg:-mx-16 lg:px-16 max-w-[100vw]">
           {/* Fade overlays for smooth edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none rounded-3xl" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none rounded-3xl" />
 
           <div className="flex w-max">
             {/* First Set */}
@@ -101,9 +101,9 @@ const Testimonials = () => {
                   key={`${testimonial.name}-1`}
                   className="w-[320px] md:w-[400px] flex-shrink-0"
                 >
-                  <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] hover:shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded-none relative h-full flex flex-col justify-between">
+                  <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] hover:shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded-3xl relative h-full flex flex-col justify-between">
                     <div>
-                      <div className="w-12 h-12 bg-[#0075CF] border-2 border-black flex items-center justify-center mb-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                      <div className="w-12 h-12 bg-[#0075CF] border-2 border-black flex items-center justify-center mb-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                         <Quote className="w-6 h-6 text-white" />
                       </div>
 
@@ -112,7 +112,7 @@ const Testimonials = () => {
                           (_, i) => (
                             <div
                               key={i}
-                              className="w-4 h-4 bg-[#FD5A1A] border border-black rotate-45"
+                              className="w-4 h-4 bg-[#FD5A1A] border border-black rotate-45 rounded-3xl"
                             />
                           ),
                         )}
@@ -123,8 +123,8 @@ const Testimonials = () => {
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-4 pt-6 border-t-4 border-black/10">
-                      <div className="w-12 h-12 bg-white border-2 border-black flex items-center justify-center text-sm font-black italic shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] shrink-0">
+                    <div className="flex items-center gap-4 pt-6 border-t-4 border-black/10 rounded-3xl">
+                      <div className="w-12 h-12 bg-white border-2 border-black flex items-center justify-center text-sm font-black italic shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] shrink-0 rounded-3xl">
                         {testimonial.avatar}
                       </div>
                       <div className="overflow-hidden">
@@ -153,9 +153,9 @@ const Testimonials = () => {
                   key={`${testimonial.name}-2`}
                   className="w-[320px] md:w-[400px] flex-shrink-0"
                 >
-                  <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] hover:shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded-none relative h-full flex flex-col justify-between">
+                  <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,117,207,1)] hover:shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all rounded-3xl relative h-full flex flex-col justify-between">
                     <div>
-                      <div className="w-12 h-12 bg-[#0075CF] border-2 border-black flex items-center justify-center mb-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                      <div className="w-12 h-12 bg-[#0075CF] border-2 border-black flex items-center justify-center mb-6 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl">
                         <Quote className="w-6 h-6 text-white" />
                       </div>
 
@@ -164,7 +164,7 @@ const Testimonials = () => {
                           (_, i) => (
                             <div
                               key={i}
-                              className="w-4 h-4 bg-[#FD5A1A] border border-black rotate-45"
+                              className="w-4 h-4 bg-[#FD5A1A] border border-black rotate-45 rounded-3xl"
                             />
                           ),
                         )}
@@ -175,8 +175,8 @@ const Testimonials = () => {
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-4 pt-6 border-t-4 border-black/10">
-                      <div className="w-12 h-12 bg-white border-2 border-black flex items-center justify-center text-sm font-black italic shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] shrink-0">
+                    <div className="flex items-center gap-4 pt-6 border-t-4 border-black/10 rounded-3xl">
+                      <div className="w-12 h-12 bg-white border-2 border-black flex items-center justify-center text-sm font-black italic shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] shrink-0 rounded-3xl">
                         {testimonial.avatar}
                       </div>
                       <div className="overflow-hidden">
@@ -200,3 +200,5 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+

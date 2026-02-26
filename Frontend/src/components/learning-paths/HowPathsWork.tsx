@@ -74,13 +74,13 @@ const HowPathsWork = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative group h-full"
             >
-              <div className="bg-white border-2 sm:border-4 border-black p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none group-hover:translate-x-1 group-hover:translate-y-1 transition-all h-full rounded-2xl">
-                <div className="absolute -top-4 -left-4 w-10 h-10 bg-black text-white border-2 border-black flex items-center justify-center font-black italic shadow-[3px_3px_0px_0px_#FD5A1A] group-hover:bg-[#FD5A1A] group-hover:shadow-none transition-colors rounded-lg">
+              <div className="bg-white border-2 sm:border-4 border-black p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none group-hover:translate-x-1 group-hover:translate-y-1 transition-all h-full rounded-3xl">
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-black text-white border-2 border-black flex items-center justify-center font-black italic shadow-[3px_3px_0px_0px_#FD5A1A] group-hover:bg-[#FD5A1A] group-hover:shadow-none transition-colors rounded-3xl">
                   0{index + 1}
                 </div>
 
                 <div className="mb-6 mt-2">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#E9E9E9] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_#000000] group-hover:bg-white transition-colors rounded-xl">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#E9E9E9] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_#000000] group-hover:bg-white transition-colors rounded-3xl">
                     <step.icon className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
                   </div>
                 </div>
@@ -101,3 +101,4 @@ const HowPathsWork = () => {
 };
 
 export default HowPathsWork;
+

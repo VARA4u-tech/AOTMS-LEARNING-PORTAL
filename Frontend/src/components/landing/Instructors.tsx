@@ -49,7 +49,7 @@ const Instructors = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#FD5A1A] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#FD5A1A] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Expert Mentors
             </span>
@@ -75,9 +75,9 @@ const Instructors = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="w-[80vw] sm:w-auto shrink-0 snap-center"
             >
-              <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(253,90,26,1)] md:hover:shadow-[12px_12px_0px_0px_rgba(253,90,26,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] md:hover:translate-x-[-4px] md:hover:translate-y-[-4px] transition-all group overflow-hidden rounded-none h-full flex flex-col">
+              <div className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(253,90,26,1)] md:hover:shadow-[12px_12px_0px_0px_rgba(253,90,26,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] md:hover:translate-x-[-4px] md:hover:translate-y-[-4px] transition-all group overflow-hidden rounded-3xl h-full flex flex-col">
                 {/* Image */}
-                <div className="relative h-48 md:h-64 border-b-4 border-black overflow-hidden bg-black/5 shrink-0">
+                <div className="relative h-48 md:h-64 border-b-4 border-black overflow-hidden bg-black/5 shrink-0 rounded-3xl">
                   <img
                     src={instructor.image}
                     alt={instructor.name}
@@ -85,7 +85,7 @@ const Instructors = () => {
                   />
 
                   {/* Experience badge */}
-                  <div className="absolute top-0 right-0 px-3 md:px-4 py-1.5 md:py-2 bg-black text-white text-[9px] md:text-[10px] font-black uppercase tracking-widest border-l-4 border-b-4 border-white shadow-none">
+                  <div className="absolute top-0 right-0 px-3 md:px-4 py-1.5 md:py-2 bg-black text-white text-[9px] md:text-[10px] font-black uppercase tracking-widest border-l-4 border-b-4 border-white shadow-none rounded-3xl">
                     {instructor.experience} EXP
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const Instructors = () => {
                   <h3 className="text-lg md:text-xl font-black text-black mb-2 uppercase tracking-tight italic">
                     {instructor.name}
                   </h3>
-                  <div className="inline-block px-2 md:px-3 py-1 bg-[#E9E9E9] border-2 border-black font-black text-[8px] md:text-[9px] uppercase tracking-widest mb-4 self-start">
+                  <div className="inline-block px-2 md:px-3 py-1 bg-[#E9E9E9] border-2 border-black font-black text-[8px] md:text-[9px] uppercase tracking-widest mb-4 self-start rounded-3xl">
                     {instructor.expertise}
                   </div>
 
@@ -114,3 +114,5 @@ const Instructors = () => {
 };
 
 export default Instructors;
+
+

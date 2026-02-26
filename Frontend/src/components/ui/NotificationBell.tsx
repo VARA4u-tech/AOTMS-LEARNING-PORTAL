@@ -65,7 +65,7 @@ function NotifRow({
     >
       {/* Type icon */}
       <div
-        className={`w-9 h-9 rounded-lg border-2 border-[#000000] flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${bg}`}
+        className={`w-9 h-9 rounded-3xl border-2 border-[#000000] flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${bg}`}
       >
         <Icon className={`w-4 h-4 ${text}`} />
       </div>
@@ -146,7 +146,7 @@ export function NotificationBell() {
         ref={buttonRef}
         aria-label={`Notifications${unreadCount ? ` (${unreadCount} unread)` : ""}`}
         onClick={() => setOpen((v) => !v)}
-        className={`relative flex items-center justify-center w-10 h-10 border-2 border-[#000000] rounded-xl transition-all duration-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] ${open ? "bg-[#0075CF] text-white" : "bg-white text-[#000000] hover:bg-[#E9E9E9]"}`}
+        className={`relative flex items-center justify-center w-10 h-10 border-2 border-[#000000] rounded-3xl transition-all duration-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] ${open ? "bg-[#0075CF] text-white" : "bg-white text-[#000000] hover:bg-[#E9E9E9]"}`}
       >
         {unreadCount > 0 ? (
           <BellRing className="w-5 h-5 animate-[wiggle_1s_ease-in-out_infinite]" />
@@ -176,7 +176,7 @@ export function NotificationBell() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute right-0 top-12 w-80 sm:w-96 bg-white border-2 border-[#000000] rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden z-[200]"
+            className="absolute right-0 top-12 w-80 sm:w-96 bg-white border-2 border-[#000000] rounded-3xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden z-[200]"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b-2 border-[#000000] bg-[#000000]">
@@ -196,14 +196,14 @@ export function NotificationBell() {
                   <button
                     onClick={markAllAsRead}
                     title="Mark all as read"
-                    className="flex items-center gap-1 text-[10px] font-black text-white/70 hover:text-[#FD5A1A] transition-colors px-2 py-1 rounded-lg hover:bg-white/10"
+                    className="flex items-center gap-1 text-[10px] font-black text-white/70 hover:text-[#FD5A1A] transition-colors px-2 py-1 rounded-3xl hover:bg-white/10"
                   >
                     <CheckCheck className="w-3.5 h-3.5" /> All read
                   </button>
                 )}
                 <button
                   onClick={() => setOpen(false)}
-                  className="w-7 h-7 flex items-center justify-center rounded-lg hover:bg-white/10 text-white/70 hover:text-white transition-colors"
+                  className="w-7 h-7 flex items-center justify-center rounded-3xl hover:bg-white/10 text-white/70 hover:text-white transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -221,7 +221,7 @@ export function NotificationBell() {
                 </div>
               ) : notifications.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-14 gap-3">
-                  <div className="w-16 h-16 bg-[#E9E9E9] border-2 border-[#000000] rounded-2xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="w-16 h-16 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
                     <Bell className="w-8 h-8 text-[#000000]/30" />
                   </div>
                   <div className="text-center">
@@ -275,3 +275,4 @@ export function NotificationBell() {
     </div>
   );
 }
+

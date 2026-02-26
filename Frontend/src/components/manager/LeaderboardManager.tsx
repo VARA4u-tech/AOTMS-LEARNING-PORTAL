@@ -66,11 +66,11 @@ export function LeaderboardManager() {
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Badge className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-none px-3 py-1 text-[10px] font-black uppercase tracking-widest gap-2">
+          <Badge className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl px-3 py-1 text-[10px] font-black uppercase tracking-widest gap-2">
             <CheckCircle className="h-3.5 w-3.5" />
             {verifiedCount} Verified
           </Badge>
-          <Badge className="bg-[#FFD166] text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-none px-3 py-1 text-[10px] font-black uppercase tracking-widest gap-2">
+          <Badge className="bg-[#FFD166] text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl px-3 py-1 text-[10px] font-black uppercase tracking-widest gap-2">
             <Shield className="h-3.5 w-3.5" />
             {unverifiedCount} Pending
           </Badge>
@@ -102,7 +102,7 @@ export function LeaderboardManager() {
         ].map((stat, i) => (
           <Card
             key={i}
-            className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
+            className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
           >
             <CardContent className="p-6 space-y-2">
               <p className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
@@ -119,8 +119,8 @@ export function LeaderboardManager() {
         ))}
       </div>
 
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-        <CardHeader className="bg-[#FFD166] border-b-4 border-[#000000] p-6">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+        <CardHeader className="bg-[#FFD166] border-b-4 border-[#000000] p-6 rounded-3xl">
           <CardTitle className="flex items-center gap-3 text-xl font-black uppercase tracking-wider text-[#000000]">
             <Trophy className="h-6 w-6" />
             Student Rankings
@@ -192,7 +192,7 @@ export function LeaderboardManager() {
                   </div>
                   {!entry.is_verified && (
                     <Button
-                      className="ml-4 h-11 px-5 bg-white text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#6BCB77] transition-all font-black uppercase tracking-widest text-[10px] gap-2 rounded-none"
+                      className="ml-4 h-11 px-5 bg-white text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#6BCB77] transition-all font-black uppercase tracking-widest text-[10px] gap-2 rounded-3xl"
                       onClick={() => handleVerify(entry.id)}
                       disabled={verifyEntry.isPending}
                     >
@@ -209,3 +209,4 @@ export function LeaderboardManager() {
     </div>
   );
 }
+

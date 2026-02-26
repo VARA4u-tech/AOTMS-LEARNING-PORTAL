@@ -32,7 +32,7 @@ const LearningPathCard = ({
     <motion.div
       whileHover={{ y: -6, x: -6 }}
       transition={{ duration: 0.2 }}
-      className="group relative bg-white border-2 sm:border-4 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col h-full rounded-xl"
+      className="group relative bg-white border-2 sm:border-4 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all flex flex-col h-full rounded-3xl"
     >
       {isPopular && (
         <div className="absolute -top-3 sm:-top-4 -right-2 sm:-right-4 z-10">
@@ -71,7 +71,7 @@ const LearningPathCard = ({
       </div>
 
       <Button
-        className="w-full bg-black text-white rounded-xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,117,207,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest text-[10px] sm:text-xs h-12"
+        className="w-full bg-black text-white rounded-3xl border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,117,207,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest text-[10px] sm:text-xs h-12"
         onClick={onViewPath}
       >
         View Strategy
@@ -82,3 +82,4 @@ const LearningPathCard = ({
 };
 
 export default LearningPathCard;
+

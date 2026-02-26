@@ -75,9 +75,9 @@ export function ManagerHelp() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.05 }}
-            className="bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-xl"
+            className="bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
           >
-            <div className="h-10 w-10 bg-[#E9E9E9] border-2 border-black rounded-lg flex items-center justify-center mb-4 shadow-[2px_2px_0px_0px_black]">
+            <div className="h-10 w-10 bg-[#E9E9E9] border-2 border-black rounded-3xl flex items-center justify-center mb-4 shadow-[2px_2px_0px_0px_black]">
               <feature.icon className="h-5 w-5 text-black" />
             </div>
             <h3 className="text-sm font-black uppercase tracking-wider mb-2">
@@ -90,7 +90,7 @@ export function ManagerHelp() {
         ))}
       </div>
 
-      <Card className="border-4 border-black shadow-[8px_8px_0px_0px_#FD5A1A] bg-black text-white rounded-xl overflow-hidden">
+      <Card className="border-4 border-black shadow-[8px_8px_0px_0px_#FD5A1A] bg-black text-white rounded-3xl overflow-hidden">
         <CardHeader className="border-b-2 border-white/20">
           <CardTitle className="text-lg font-black uppercase tracking-widest flex items-center gap-2">
             <CheckCircle2 className="h-5 w-5 text-[#FD5A1A]" /> Pro Tip
@@ -108,3 +108,4 @@ export function ManagerHelp() {
     </div>
   );
 }
+

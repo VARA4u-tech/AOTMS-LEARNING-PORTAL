@@ -87,7 +87,7 @@ export default function ExamsPortalPage() {
   return (
     <div className="space-y-6 sm:space-y-12 pb-12 px-2 sm:px-0 font-['Inter']">
       {/* HEADER BLOCK */}
-      <div className="bg-white border-2 sm:border-4 border-black p-6 sm:p-10 relative overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-lg sm:rounded-2xl">
+      <div className="bg-white border-2 sm:border-4 border-black p-6 sm:p-10 relative overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl sm:rounded-3xl">
         <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
@@ -104,7 +104,7 @@ export default function ExamsPortalPage() {
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <div className="bg-[#E9E9E9] border-2 border-black p-4 shadow-[4px_4px_0px_0px_#0075CF] rounded-xl flex items-center gap-4">
+            <div className="bg-[#E9E9E9] border-2 border-black p-4 shadow-[4px_4px_0px_0px_#0075CF] rounded-3xl flex items-center gap-4">
               <div>
                 <div className="text-2xl font-black text-black leading-none">
                   {displayedExams.length}
@@ -113,7 +113,7 @@ export default function ExamsPortalPage() {
                   Active Modules
                 </div>
               </div>
-              <div className="h-10 w-10 bg-white border-2 border-black rounded-lg flex items-center justify-center">
+              <div className="h-10 w-10 bg-white border-2 border-black rounded-3xl flex items-center justify-center">
                 <ClipboardCheck className="w-5 h-5 text-[#0075CF]" />
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ExamsPortalPage() {
 
         <div className="grid gap-6 sm:gap-8">
           {displayedExams.length === 0 ? (
-            <div className="bg-white border-4 border-dashed border-[#000000] rounded-xl p-12 text-center text-[#000000]/30 font-black uppercase tracking-widest">
+            <div className="bg-white border-4 border-dashed border-[#000000] rounded-3xl p-12 text-center text-[#000000]/30 font-black uppercase tracking-widest">
               No Active Protocols Found
             </div>
           ) : (
@@ -146,13 +146,13 @@ export default function ExamsPortalPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white border-2 sm:border-4 border-black rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_black] sm:shadow-[8px_8px_0px_0px_black] hover:rotate-[0.5deg] transition-transform group"
+                className="bg-white border-2 sm:border-4 border-black rounded-3xl overflow-hidden shadow-[4px_4px_0px_0px_black] sm:shadow-[8px_8px_0px_0px_black] hover:rotate-[0.5deg] transition-transform group"
               >
                 <div className="flex flex-col sm:flex-row h-full">
                   {/* Visual Side */}
-                  <div className="w-full sm:w-48 bg-[#E9E9E9] border-b-2 sm:border-b-0 sm:border-r-4 border-black flex items-center justify-center p-6 sm:p-0">
+                  <div className="w-full sm:w-48 bg-[#E9E9E9] border-b-2 sm:border-b-0 sm:border-r-4 border-black flex items-center justify-center p-6 sm:p-0 rounded-3xl">
                     <div className="relative">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-black rounded-lg flex items-center justify-center -rotate-6 transform group-hover:rotate-6 transition-transform">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-black rounded-3xl flex items-center justify-center -rotate-6 transform group-hover:rotate-6 transition-transform">
                         <FileText className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                       </div>
                       <Badge className="absolute -top-2 -right-4 bg-[#FD5A1A] text-white border-2 border-black font-black uppercase tracking-widest text-[9px]">
@@ -217,7 +217,7 @@ export default function ExamsPortalPage() {
                       </div>
                       <Button
                         onClick={() => navigate(`/exam/${exam.id}`)}
-                        className="bg-black text-white px-8 h-12 rounded-lg font-black uppercase tracking-widest text-[10px] sm:text-xs border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                        className="bg-black text-white px-8 h-12 rounded-3xl font-black uppercase tracking-widest text-[10px] sm:text-xs border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
                       >
                         Initialize Session{" "}
                         <Play className="w-3 h-3 ml-2 fill-current" />
@@ -233,3 +233,4 @@ export default function ExamsPortalPage() {
     </div>
   );
 }
+

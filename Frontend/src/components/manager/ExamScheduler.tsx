@@ -128,13 +128,13 @@ function FileUploadZone({
 
   if (value) {
     return (
-      <div className="relative rounded-none overflow-hidden border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group h-40 bg-white">
+      <div className="relative rounded-3xl overflow-hidden border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group h-40 bg-white">
         <img src={value} alt="Preview" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
           <Button
             size="sm"
             onClick={() => onChange("")}
-            className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest text-[10px] rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+            className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest text-[10px] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
           >
             <Trash2 className="h-4 w-4 mr-2" /> Remove
           </Button>
@@ -149,16 +149,16 @@ function FileUploadZone({
       onValueChange={(v) => setTab(v as "upload" | "url")}
       className="w-full"
     >
-      <TabsList className="grid w-full grid-cols-2 h-10 mb-2 bg-[#E9E9E9] border-2 border-[#000000] rounded-none p-1">
+      <TabsList className="grid w-full grid-cols-2 h-10 mb-2 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl p-1">
         <TabsTrigger
           value="upload"
-          className="text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-[#0075CF] data-[state=active]:text-white rounded-none transition-all"
+          className="text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-[#0075CF] data-[state=active]:text-white rounded-3xl transition-all"
         >
           Upload
         </TabsTrigger>
         <TabsTrigger
           value="url"
-          className="text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-[#0075CF] data-[state=active]:text-white rounded-none transition-all"
+          className="text-[10px] font-black uppercase tracking-widest data-[state=active]:bg-[#0075CF] data-[state=active]:text-white rounded-3xl transition-all"
         >
           URL
         </TabsTrigger>
@@ -166,7 +166,7 @@ function FileUploadZone({
       <TabsContent value="upload">
         <div
           className={cn(
-            "flex flex-col items-center justify-center w-full h-32 border-4 border-dashed rounded-none transition-all",
+            "flex flex-col items-center justify-center w-full h-32 border-4 border-dashed rounded-3xl transition-all",
             dragActive
               ? "border-[#0075CF] bg-[#0075CF]/5"
               : "border-[#000000]/20 hover:border-[#000000] hover:bg-[#E9E9E9]/50",
@@ -193,7 +193,7 @@ function FileUploadZone({
       <TabsContent value="url">
         <Input
           placeholder="https://example.com/image.png"
-          className="h-10 text-xs bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+          className="h-10 text-xs bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
           onChange={(e) => onChange(e.target.value)}
         />
       </TabsContent>
@@ -288,7 +288,7 @@ export function ExamScheduler() {
               <Plus className="h-4 w-4 mr-2" /> Schedule Exam
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-2xl bg-white border-4 border-[#000000] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
+          <DialogContent className="sm:max-w-2xl bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
             <div className="max-h-[90vh] overflow-y-auto">
               <DialogHeader className="p-6 border-b-4 border-[#000000] bg-[#FFD166]">
                 <DialogTitle className="text-2xl font-black text-[#000000] uppercase tracking-wider">
@@ -317,7 +317,7 @@ export function ExamScheduler() {
                             <FormControl>
                               <Input
                                 placeholder="Internal Assessment"
-                                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                                className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                                 {...field}
                               />
                             </FormControl>
@@ -338,11 +338,11 @@ export function ExamScheduler() {
                               defaultValue={field.value}
                             >
                               <FormControl>
-                                <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+                                <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
                                   <SelectValue />
                                 </SelectTrigger>
                               </FormControl>
-                              <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                              <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                                 <SelectItem
                                   value="live"
                                   className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -398,7 +398,7 @@ export function ExamScheduler() {
                         <FormControl>
                           <Textarea
                             placeholder="Instructions for candidates..."
-                            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 min-h-[80px]"
+                            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 min-h-[80px]"
                             {...field}
                           />
                         </FormControl>
@@ -407,7 +407,7 @@ export function ExamScheduler() {
                     )}
                   />
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 border-4 border-[#000000] rounded-none bg-[#E9E9E9]">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 border-4 border-[#000000] rounded-3xl bg-[#E9E9E9]">
                     <FormField
                       control={form.control}
                       name="scheduled_date"
@@ -420,7 +420,7 @@ export function ExamScheduler() {
                             <Input
                               type="datetime-local"
                               {...field}
-                              className="bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 h-9 text-xs"
+                              className="bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 h-9 text-xs"
                             />
                           </FormControl>
                           <FormMessage />
@@ -439,7 +439,7 @@ export function ExamScheduler() {
                             <Input
                               type="number"
                               {...field}
-                              className="bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 h-9 text-xs"
+                              className="bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 h-9 text-xs"
                             />
                           </FormControl>
                           <FormMessage />
@@ -458,7 +458,7 @@ export function ExamScheduler() {
                             <Input
                               type="number"
                               {...field}
-                              className="bg-white border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 h-9 text-xs"
+                              className="bg-white border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50 h-9 text-xs"
                             />
                           </FormControl>
                           <FormMessage />
@@ -467,7 +467,7 @@ export function ExamScheduler() {
                     />
                   </div>
 
-                  <div className="flex items-center justify-between p-4 border-4 border-[#000000] rounded-none bg-[#E9E9E9] gap-6">
+                  <div className="flex items-center justify-between p-4 border-4 border-[#000000] rounded-3xl bg-[#E9E9E9] gap-6">
                     <FormField
                       control={form.control}
                       name="shuffle_questions"
@@ -512,10 +512,10 @@ export function ExamScheduler() {
                     />
                   </div>
 
-                  <DialogFooter className="border-t-4 border-[#000000] bg-[#E9E9E9] -mx-6 mb-[-24px] p-6 flex sm:justify-between items-center w-[calc(100%+48px)]">
+                  <DialogFooter className="border-t-4 border-[#000000] bg-[#E9E9E9] -mx-6 mb-[-24px] p-6 flex sm:justify-between items-center w-[calc(100%+48px)] rounded-3xl">
                     <Button
                       type="button"
-                      className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
+                      className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
                       onClick={() => setIsAddOpen(false)}
                     >
                       Cancel
@@ -523,7 +523,7 @@ export function ExamScheduler() {
                     <Button
                       type="submit"
                       disabled={createExam.isPending}
-                      className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
+                      className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
                     >
                       {createExam.isPending
                         ? "Scheduling..."
@@ -540,7 +540,7 @@ export function ExamScheduler() {
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Active Today */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between bg-[#E9E9E9] p-3 rounded-lg border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          <div className="flex items-center justify-between bg-[#E9E9E9] p-3 rounded-3xl border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
             <h3 className="text-xs font-black uppercase tracking-widest text-[#000000] flex items-center gap-2">
               <CheckCircle2 className="h-3.5 w-3.5" /> Sessions Today
             </h3>
@@ -551,17 +551,17 @@ export function ExamScheduler() {
 
           <div className="space-y-2">
             {todayExams.length === 0 ? (
-              <p className="text-center py-8 text-xs font-medium text-muted-foreground border rounded-lg bg-muted/5">
+              <p className="text-center py-8 text-xs font-medium text-muted-foreground border rounded-3xl bg-muted/5">
                 No active sessions for today.
               </p>
             ) : (
               todayExams.map((exam) => (
                 <Card
                   key={exam.id}
-                  className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all p-4 space-y-4"
+                  className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all p-4 space-y-4"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="h-12 w-12 rounded-none bg-[#E9E9E9] flex items-center justify-center overflow-hidden shrink-0 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="h-12 w-12 rounded-3xl bg-[#E9E9E9] flex items-center justify-center overflow-hidden shrink-0 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                       {exam.assigned_image ? (
                         <img
                           src={exam.assigned_image}
@@ -586,7 +586,7 @@ export function ExamScheduler() {
                     <Button
                       size="sm"
                       className={cn(
-                        "flex-1 h-9 text-[10px] font-black uppercase tracking-widest rounded-none border-2 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all",
+                        "flex-1 h-9 text-[10px] font-black uppercase tracking-widest rounded-3xl border-2 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all",
                         exam.status === "active"
                           ? "bg-[#FD5A1A] text-white"
                           : "bg-[#6BCB77] text-[#000000]",
@@ -604,7 +604,7 @@ export function ExamScheduler() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="h-8 w-8 rounded-lg text-muted-foreground/40 hover:text-destructive"
+                      className="h-8 w-8 rounded-3xl text-muted-foreground/40 hover:text-destructive"
                       onClick={() => deleteExam.mutate(exam.id)}
                     >
                       <Trash2 className="h-3.5 w-3.5" />
@@ -618,7 +618,7 @@ export function ExamScheduler() {
 
         {/* Upcoming Grid */}
         <div className="lg:col-span-2 space-y-4">
-          <div className="flex items-center justify-between p-3 rounded-lg border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-[#E9E9E9]">
+          <div className="flex items-center justify-between p-3 rounded-3xl border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-[#E9E9E9]">
             <h3 className="text-xs font-black uppercase tracking-widest text-[#000000] flex items-center gap-2">
               <CalendarIcon className="h-3.5 w-3.5" /> Upcoming Schedule
             </h3>
@@ -629,7 +629,7 @@ export function ExamScheduler() {
 
           <div className="grid gap-3 sm:grid-cols-1 xl:grid-cols-2">
             {upcomingExams.length === 0 ? (
-              <div className="col-span-full py-20 border-2 border-dashed rounded-xl flex flex-col items-center justify-center text-center space-y-2 bg-muted/5">
+              <div className="col-span-full py-20 border-2 border-dashed rounded-3xl flex flex-col items-center justify-center text-center space-y-2 bg-muted/5">
                 <AlertCircle className="h-8 w-8 text-muted-foreground/20" />
                 <p className="text-sm font-medium text-muted-foreground">
                   No upcoming exams found.
@@ -639,7 +639,7 @@ export function ExamScheduler() {
               upcomingExams.map((exam) => (
                 <Card
                   key={exam.id}
-                  className="group bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col overflow-hidden"
+                  className="group bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col overflow-hidden"
                 >
                   <div className="h-20 sm:h-24 relative bg-[#E9E9E9] border-b-4 border-[#000000]">
                     {exam.assigned_image ? (
@@ -656,7 +656,7 @@ export function ExamScheduler() {
                     <div className="absolute top-2 right-2">
                       <Badge
                         variant="secondary"
-                        className="bg-background/90 text-[10px] h-5 rounded-md border border-border"
+                        className="bg-background/90 text-[10px] h-5 rounded-3xl border border-border"
                       >
                         {exam.exam_type}
                       </Badge>
@@ -679,7 +679,7 @@ export function ExamScheduler() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Button
-                        className="flex-1 h-9 rounded-none bg-white text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-[10px] font-black uppercase tracking-widest"
+                        className="flex-1 h-9 rounded-3xl bg-white text-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-[10px] font-black uppercase tracking-widest"
                         onClick={() => setIsAddOpen(true)}
                       >
                         Edit
@@ -687,7 +687,7 @@ export function ExamScheduler() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-9 w-9 bg-white border-2 border-[#000000] rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#FD5A1A]/10 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-[#000000]/40 hover:text-[#FD5A1A]"
+                        className="h-9 w-9 bg-white border-2 border-[#000000] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#FD5A1A]/10 hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all text-[#000000]/40 hover:text-[#FD5A1A]"
                         onClick={() => deleteExam.mutate(exam.id)}
                       >
                         <Trash2 className="h-4 w-4" />
@@ -703,3 +703,4 @@ export function ExamScheduler() {
     </div>
   );
 }
+

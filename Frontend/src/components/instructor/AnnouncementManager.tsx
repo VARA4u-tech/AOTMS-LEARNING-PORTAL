@@ -192,7 +192,7 @@ export function AnnouncementManager({ courseId }: AnnouncementManagerProps) {
             {sortedAnnouncements.map((announcement) => (
               <div
                 key={announcement.id}
-                className={`p-4 rounded-lg border ${
+                className={`p-4 rounded-3xl border ${
                   announcement.is_pinned
                     ? "border-accent bg-accent/5"
                     : "bg-muted/50"
@@ -242,3 +242,4 @@ export function AnnouncementManager({ courseId }: AnnouncementManagerProps) {
     </Card>
   );
 }
+

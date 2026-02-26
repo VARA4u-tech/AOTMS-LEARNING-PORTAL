@@ -174,10 +174,10 @@ export function ExamRulesManager() {
             })
           }
         >
-          <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+          <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
             <SelectValue placeholder="Select exam or global" />
           </SelectTrigger>
-          <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <SelectItem
               value="global"
               className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -212,7 +212,7 @@ export function ExamRulesManager() {
             type="number"
             min={5}
             max={360}
-            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
             value={ruleForm.duration_minutes}
             onChange={(e) =>
               setRuleForm({
@@ -231,7 +231,7 @@ export function ExamRulesManager() {
             type="number"
             min={1}
             max={10}
-            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
             value={ruleForm.max_attempts}
             onChange={(e) =>
               setRuleForm({
@@ -255,7 +255,7 @@ export function ExamRulesManager() {
             min={0}
             max={5}
             step={0.25}
-            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
             value={ruleForm.negative_marking_value}
             onChange={(e) =>
               setRuleForm({
@@ -277,7 +277,7 @@ export function ExamRulesManager() {
             type="number"
             min={0}
             max={100}
-            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+            className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
             value={ruleForm.passing_percentage}
             onChange={(e) =>
               setRuleForm({
@@ -290,7 +290,7 @@ export function ExamRulesManager() {
       </div>
 
       {/* Toggle Settings */}
-      <div className="space-y-4 border-4 border-[#000000] rounded-none p-4 bg-[#E9E9E9]">
+      <div className="space-y-4 border-4 border-[#000000] rounded-3xl p-4 bg-[#E9E9E9]">
         <h4 className="font-black text-[#000000] uppercase tracking-wider text-sm">
           Exam Behavior
         </h4>
@@ -379,14 +379,14 @@ export function ExamRulesManager() {
         <Dialog open={isAddOpen} onOpenChange={setIsAddOpen}>
           <DialogTrigger asChild>
             <Button
-              className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all rounded-none gap-2"
+              className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all rounded-3xl gap-2"
               onClick={() => resetForm()}
             >
               <Plus className="h-4 w-4" />
               Create Rule
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-lg bg-white border-4 border-[#000000] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
+          <DialogContent className="sm:max-w-lg bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
             <DialogHeader className="p-6 border-b-4 border-[#000000] bg-[#FFD166]">
               <DialogTitle className="text-2xl font-black text-[#000000] uppercase tracking-wider">
                 Create Exam Rule
@@ -398,13 +398,13 @@ export function ExamRulesManager() {
             <RuleFormContent />
             <DialogFooter className="p-6 border-t-4 border-[#000000] bg-[#E9E9E9] flex sm:justify-between items-center w-full">
               <Button
-                className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
+                className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
                 onClick={() => setIsAddOpen(false)}
               >
                 Cancel
               </Button>
               <Button
-                className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
+                className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
                 onClick={handleCreate}
                 disabled={createRule.isPending}
               >
@@ -417,7 +417,7 @@ export function ExamRulesManager() {
 
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Total Rules
@@ -429,7 +429,7 @@ export function ExamRulesManager() {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Global Rules
@@ -444,7 +444,7 @@ export function ExamRulesManager() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Exam-Specific
@@ -459,7 +459,7 @@ export function ExamRulesManager() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Proctoring
@@ -477,7 +477,7 @@ export function ExamRulesManager() {
       </div>
 
       {/* Rules List */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
             <Gavel className="h-6 w-6 text-[#0075CF]" />
@@ -503,7 +503,7 @@ export function ExamRulesManager() {
               {rules.map((rule) => (
                 <div
                   key={rule.id}
-                  className="p-4 rounded-none border-2 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  className="p-4 rounded-3xl border-2 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3">
@@ -521,7 +521,7 @@ export function ExamRulesManager() {
                           {getExamTitle(rule.exam_id)}
                         </h4>
                         <Badge
-                          className={`text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-none ${rule.exam_id ? "bg-white text-[#000000]" : "bg-[#E9E9E9] text-[#000000]"}`}
+                          className={`text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-3xl ${rule.exam_id ? "bg-white text-[#000000]" : "bg-[#E9E9E9] text-[#000000]"}`}
                         >
                           {rule.exam_id ? "Exam-Specific" : "Global"}
                         </Badge>
@@ -531,14 +531,14 @@ export function ExamRulesManager() {
                       <Button
                         size="icon"
                         onClick={() => openEdit(rule)}
-                        className="bg-white text-[#000000] border-2 border-[#000000] rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                        className="bg-white text-[#000000] border-2 border-[#000000] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
                       >
                         <Pencil className="h-4 w-4" />
                       </Button>
                       <Button
                         size="icon"
                         onClick={() => deleteRule.mutate(rule.id)}
-                        className="bg-white text-destructive border-2 border-destructive rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                        className="bg-white text-destructive border-2 border-destructive rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
                       >
                         <Trash2 className="h-4 w-4" />
                       </Button>
@@ -611,23 +611,23 @@ export function ExamRulesManager() {
 
                   <div className="flex flex-wrap gap-2 mt-4">
                     {rule.shuffle_questions && (
-                      <Badge className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                      <Badge className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         <Shuffle className="h-3 w-3" /> Shuffle Q
                       </Badge>
                     )}
                     {rule.shuffle_options && (
-                      <Badge className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                      <Badge className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         <Shuffle className="h-3 w-3" /> Shuffle Opt
                       </Badge>
                     )}
                     {rule.show_results_immediately && (
-                      <Badge className="bg-[#6BCB77] text-white border-2 border-[#000000] font-black uppercase tracking-widest rounded-none text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                      <Badge className="bg-[#6BCB77] text-white border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         <Eye className="h-3 w-3 text-[#000000]" />{" "}
                         <span className="text-[#000000]">Instant Results</span>
                       </Badge>
                     )}
                     {rule.allow_review && (
-                      <Badge className="bg-[#0075CF] text-white border-2 border-[#000000] font-black uppercase tracking-widest rounded-none text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                      <Badge className="bg-[#0075CF] text-white border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl text-[10px] gap-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         <BookCheck className="h-3 w-3" /> Review
                       </Badge>
                     )}
@@ -644,7 +644,7 @@ export function ExamRulesManager() {
         open={!!editingRule}
         onOpenChange={(open) => !open && setEditingRule(null)}
       >
-        <DialogContent className="sm:max-w-lg bg-white border-4 border-[#000000] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
+        <DialogContent className="sm:max-w-lg bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
           <DialogHeader className="p-6 border-b-4 border-[#000000] bg-[#FFD166]">
             <DialogTitle className="text-2xl font-black text-[#000000] uppercase tracking-wider">
               Edit Exam Rule
@@ -656,13 +656,13 @@ export function ExamRulesManager() {
           <RuleFormContent isEdit />
           <DialogFooter className="p-6 border-t-4 border-[#000000] bg-[#E9E9E9] flex sm:justify-between items-center w-full">
             <Button
-              className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
+              className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
               onClick={() => setEditingRule(null)}
             >
               Cancel
             </Button>
             <Button
-              className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
+              className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
               onClick={handleUpdate}
               disabled={updateRule.isPending}
             >
@@ -674,3 +674,4 @@ export function ExamRulesManager() {
     </div>
   );
 }
+

@@ -30,8 +30,8 @@ const NotFound = () => {
       <div className="absolute inset-0 md:hidden bg-gradient-to-br from-primary via-primary/80 to-accent" />
 
       {/* Center content overlay */}
-      <div className="absolute inset-0 flex items-center justify-center text-primary-foreground rounded-sm border-secondary-foreground border bg-[sidebar-primary-foreground] bg-white">
-        <div className="text-center px-6 py-12 rounded-2xl bg-background/95 backdrop-blur-sm shadow-large max-w-md mx-4 border border-border">
+      <div className="absolute inset-0 flex items-center justify-center text-primary-foreground rounded-3xl border-secondary-foreground border bg-[sidebar-primary-foreground] bg-white">
+        <div className="text-center px-6 py-12 rounded-3xl bg-background/95 backdrop-blur-sm shadow-large max-w-md mx-4 border border-border">
           {/* 404 Number */}
           <h1 className="text-8xl md:text-9xl font-bold gradient-text-brand mb-4 font-heading tracking-tight">
             404
@@ -59,3 +59,4 @@ const NotFound = () => {
     </div>;
 };
 export default NotFound;
+

@@ -141,9 +141,9 @@ const ChatbotWidget = () => {
         }`}
       >
         {/* Header */}
-        <div className="bg-black p-4 text-white relative flex items-center gap-3 shrink-0 border-b-4 border-black">
+        <div className="bg-black p-4 text-white relative flex items-center gap-3 shrink-0 border-b-4 border-black rounded-3xl">
           <div className="relative">
-            <div className="w-10 h-10 bg-white border-2 border-white flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(253,90,26,1)]">
+            <div className="w-10 h-10 bg-white border-2 border-white flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(253,90,26,1)] rounded-3xl">
               <Bot className="w-6 h-6 text-black" />
             </div>
           </div>
@@ -158,7 +158,7 @@ const ChatbotWidget = () => {
 
           <button
             onClick={() => setIsOpen(false)}
-            className="w-10 h-10 shrink-0 border-2 border-white/20 hover:border-white hover:bg-white hover:text-black flex items-center justify-center transition-all bg-transparent"
+            className="w-10 h-10 shrink-0 border-2 border-white/20 hover:border-white hover:bg-white hover:text-black flex items-center justify-center transition-all bg-transparent rounded-3xl"
           >
             <X className="w-5 h-5" />
           </button>
@@ -215,7 +215,7 @@ const ChatbotWidget = () => {
                     setInputValue(reply);
                     setTimeout(() => handleSend(), 50);
                   }}
-                  className="shrink-0 px-3 py-2 bg-white border-2 border-black text-black text-[9px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all"
+                  className="shrink-0 px-3 py-2 bg-white border-2 border-black text-black text-[9px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all rounded-3xl"
                 >
                   {reply}
                 </button>
@@ -224,7 +224,7 @@ const ChatbotWidget = () => {
           )}
 
         {/* Input Area */}
-        <div className="p-3 bg-white border-t-4 border-black shrink-0">
+        <div className="p-3 bg-white border-t-4 border-black shrink-0 rounded-3xl">
           <div className="flex items-center gap-2">
             <input
               type="text"
@@ -232,7 +232,7 @@ const ChatbotWidget = () => {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="TYPE_HERE..."
-              className="flex-1 min-w-0 h-12 bg-[#E9E9E9] border-2 border-black text-black placeholder:text-black/20 font-black uppercase tracking-widest px-3 focus:outline-none focus:border-[#FD5A1A] text-xs"
+              className="flex-1 min-w-0 h-12 bg-[#E9E9E9] border-2 border-black text-black placeholder:text-black/20 font-black uppercase tracking-widest px-3 focus:outline-none focus:border-[#FD5A1A] text-xs rounded-3xl"
             />
             <button
               onClick={handleSend}
@@ -293,3 +293,5 @@ const ChatbotWidget = () => {
 };
 
 export default ChatbotWidget;
+
+

@@ -84,13 +84,13 @@ function DashboardHome() {
           {statsCards.map((stat) => (
             <Card
               key={stat.title}
-              className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-default"
+              className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-default"
             >
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-[9px] font-black uppercase tracking-widest text-[#000000]/60">
                   {stat.title}
                 </CardTitle>
-                <div className="h-8 w-8 bg-[#E9E9E9] rounded border-2 border-[#000000] flex items-center justify-center">
+                <div className="h-8 w-8 bg-[#E9E9E9] rounded-xl border-2 border-[#000000] flex items-center justify-center">
                   <stat.icon
                     className={`h-4 w-4 ${stat.color === "text-primary" ? "text-[#0075CF]" : stat.color === "text-accent" ? "text-[#FD5A1A]" : "text-[#000000]"}`}
                   />
@@ -116,7 +116,7 @@ function DashboardHome() {
         </div>
         <div className="grid gap-6 lg:grid-cols-3">
           {/* Enrolled Courses */}
-          <Card className="lg:col-span-2 bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+          <Card className="lg:col-span-2 bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
             <CardHeader className="border-b-4 border-[#000000] bg-[#E9E9E9] rounded-t-lg">
               <div className="flex items-center justify-between">
                 <div>
@@ -136,12 +136,12 @@ function DashboardHome() {
                   {[1, 2].map((i) => (
                     <div
                       key={i}
-                      className="h-20 bg-[#E9E9E9] border-2 border-[#000000] rounded-lg animate-pulse"
+                      className="h-20 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl animate-pulse"
                     />
                   ))}
                 </div>
               ) : enrollments.length === 0 ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center border-4 border-dashed border-[#000000] rounded-xl">
+                <div className="flex flex-col items-center justify-center py-12 text-center border-4 border-dashed border-[#000000] rounded-3xl">
                   <BookOpen className="h-10 w-10 text-[#000000]/20 mb-4" />
                   <p className="text-sm font-bold text-[#000000]/60 uppercase tracking-wider mb-4">
                     No active deployments found.
@@ -157,12 +157,12 @@ function DashboardHome() {
                 enrollments.slice(0, 3).map((enrollment) => (
                   <div
                     key={enrollment.id}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white border-2 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all cursor-pointer group"
+                    className="flex items-center gap-4 p-4 rounded-3xl bg-white border-2 border-[#000000] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all cursor-pointer group"
                     onClick={() =>
                       navigate(`/course/${enrollment.course_id}/play`)
                     }
                   >
-                    <div className="h-12 w-12 rounded bg-[#0075CF] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
+                    <div className="h-12 w-12 rounded-2xl bg-[#0075CF] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center group-hover:scale-105 transition-transform shrink-0">
                       <Play className="h-5 w-5 text-white ml-1" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -194,14 +194,14 @@ function DashboardHome() {
           </Card>
 
           {/* Schedule */}
-          <Card className="bg-[#0075CF] rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-white relative overflow-hidden group">
+          <Card className="bg-[#0075CF] rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-white relative overflow-hidden group">
             <CardHeader className="p-6 pb-2 relative z-10">
               <CardTitle className="flex items-center gap-2 text-xl font-black uppercase tracking-widest">
                 <Calendar className="h-6 w-6" /> Deployment
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6 relative z-10 flex flex-col items-center justify-center text-center mt-6">
-              <div className="h-16 w-16 bg-white rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_black] flex items-center justify-center mb-6 group-hover:-rotate-3 transition-transform">
+              <div className="h-16 w-16 bg-white rounded-3xl border-4 border-black shadow-[4px_4px_0px_0px_black] flex items-center justify-center mb-6 group-hover:-rotate-3 transition-transform">
                 <Clock className="h-8 w-8 text-[#0075CF]" />
               </div>
               <p className="text-sm font-bold opacity-90 leading-relaxed max-w-[200px] uppercase tracking-widest">
@@ -256,11 +256,11 @@ function DashboardHome() {
           ].map((action, i) => (
             <Card
               key={i}
-              className={`bg-white rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer group ${action.color}`}
+              className={`bg-white rounded-3xl border-4 border-black shadow-[4px_4px_0px_0px_black] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer group ${action.color}`}
               onClick={() => navigate(action.path)}
             >
               <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-                <div className="h-12 w-12 bg-[#E9E9E9] rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_black] flex items-center justify-center mb-4 group-hover:bg-white group-hover:text-inherit transition-colors">
+                <div className="h-12 w-12 bg-[#E9E9E9] rounded-3xl border-2 border-black shadow-[2px_2px_0px_0px_black] flex items-center justify-center mb-4 group-hover:bg-white group-hover:text-inherit transition-colors">
                   <action.icon className="h-6 w-6" />
                 </div>
                 <h4 className="font-black uppercase tracking-wider text-xs">
@@ -304,9 +304,9 @@ function ModulePage({
         </div>
       </div>
 
-      <Card className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
+      <Card className="bg-white rounded-3xl sm:rounded-3xl border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
         <CardContent className="flex flex-col items-center justify-center py-20 text-center">
-          <div className="p-6 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl mb-6 transform -rotate-3 transition-transform hover:rotate-3">
+          <div className="p-6 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl mb-6 transform -rotate-3 transition-transform hover:rotate-3">
             <Icon className="h-16 w-16 text-[#000000]" />
           </div>
           <h3 className="text-2xl font-black text-[#000000] uppercase tracking-wider">
@@ -441,3 +441,4 @@ export function DashboardContent() {
   // Fallback for unknown routes
   return <DashboardHome />;
 }
+

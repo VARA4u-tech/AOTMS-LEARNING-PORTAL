@@ -259,7 +259,7 @@ export default function CoursePlayer() {
         <div className="flex items-center gap-4 min-w-0">
           <button
             onClick={() => navigate("/dashboard")}
-            className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors shrink-0"
+            className="w-8 h-8 flex items-center justify-center rounded-3xl bg-white/10 hover:bg-white/20 text-white transition-colors shrink-0"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -305,7 +305,7 @@ export default function CoursePlayer() {
 
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="w-9 h-9 flex items-center justify-center rounded-lg bg-white text-[#000000] border-2 border-white shadow-[2px_2px_0px_0px_rgba(253,90,26,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0px_0px_rgba(253,90,26,1)] transition-all md:hidden"
+            className="w-9 h-9 flex items-center justify-center rounded-3xl bg-white text-[#000000] border-2 border-white shadow-[2px_2px_0px_0px_rgba(253,90,26,1)] hover:translate-y-[1px] hover:translate-x-[1px] hover:shadow-[1px_1px_0px_0px_rgba(253,90,26,1)] transition-all md:hidden"
           >
             <Menu className="w-5 h-5" />
           </button>
@@ -380,7 +380,7 @@ export default function CoursePlayer() {
                       Course Resources
                     </h2>
                     {resources.length === 0 ? (
-                      <p className="text-sm text-[#000000]/60 p-4 border-2 border-dashed border-[#000000]/20 rounded-xl text-center">
+                      <p className="text-sm text-[#000000]/60 p-4 border-2 border-dashed border-[#000000]/20 rounded-3xl text-center">
                         No resources attached to this course.
                       </p>
                     ) : (
@@ -391,9 +391,9 @@ export default function CoursePlayer() {
                             href={res.file_url}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center p-4 border-2 border-[#000000] rounded-xl bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,117,207,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
+                            className="flex items-center p-4 border-2 border-[#000000] rounded-3xl bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,117,207,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group"
                           >
-                            <div className="w-10 h-10 rounded-lg bg-[#E9E9E9] border-2 border-[#000000] flex items-center justify-center mr-3 shrink-0">
+                            <div className="w-10 h-10 rounded-3xl bg-[#E9E9E9] border-2 border-[#000000] flex items-center justify-center mr-3 shrink-0">
                               <FileText className="w-5 h-5 text-[#0075CF]" />
                             </div>
                             <div className="flex-1 min-w-0">
@@ -415,7 +415,7 @@ export default function CoursePlayer() {
                 {/* Q&A TAB */}
                 {activeTab === "qna" && (
                   <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <div className="w-16 h-16 bg-[#E9E9E9] border-2 border-[#000000] rounded-2xl flex items-center justify-center mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="w-16 h-16 bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl flex items-center justify-center mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                       <MessageSquare className="w-8 h-8 text-[#000000]/30" />
                     </div>
                     <h3 className="font-black text-lg text-[#000000] mb-2">
@@ -474,7 +474,7 @@ export default function CoursePlayer() {
                 </h3>
                 <button
                   onClick={() => setSidebarOpen(false)}
-                  className="md:hidden w-8 h-8 flex items-center justify-center rounded-lg border-2 border-[#000000] bg-white text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  className="md:hidden w-8 h-8 flex items-center justify-center rounded-3xl border-2 border-[#000000] bg-white text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -566,3 +566,4 @@ export default function CoursePlayer() {
     </div>
   );
 }
+

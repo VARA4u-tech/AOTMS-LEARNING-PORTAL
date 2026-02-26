@@ -91,7 +91,7 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
             </button>
           </PopoverTrigger>
           <PopoverContent
-            className="w-[280px] p-0 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-[100] rounded-none"
+            className="w-[280px] p-0 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-[100] rounded-3xl"
             align="start"
             side="bottom"
             sideOffset={8}
@@ -133,7 +133,7 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
           value={value}
           onChange={(e) => onValueChange?.(e.target.value.replace(/\D/g, ""))}
           placeholder={placeholder}
-          className="flex-1 h-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-none placeholder:text-black/20"
+          className="flex-1 h-12 bg-[#E9E9E9] border-4 border-black text-black font-bold focus:ring-0 focus:border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] rounded-3xl placeholder:text-black/20"
           disabled={disabled}
           maxLength={15}
         />
@@ -145,3 +145,4 @@ const PhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
 PhoneInput.displayName = "PhoneInput";
 
 export { PhoneInput, countries };
+

@@ -164,7 +164,7 @@ function ResultsScreen({
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", damping: 20 }}
       >
-        <div className="bg-[#E9E9E9] border-8 border-black p-10 shadow-[20px_20px_0px_0px_#000000]">
+        <div className="bg-[#E9E9E9] border-8 border-black p-10 shadow-[20px_20px_0px_0px_#000000] rounded-3xl">
           <div className="text-center mb-10">
             <div
               className={`w-24 h-24 mx-auto mb-8 bg-black text-white border-4 border-black flex items-center justify-center shadow-[6px_6px_0px_0px_#FD5A1A] -rotate-6`}
@@ -195,7 +195,7 @@ function ResultsScreen({
             </div>
 
             <div className="grid grid-cols-3 gap-6 mb-12 uppercase font-black italic">
-              <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#0075CF]">
+              <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#0075CF] rounded-3xl">
                 <div className="text-xl text-black">
                   {correct}/{total}
                 </div>
@@ -203,7 +203,7 @@ function ResultsScreen({
                   CORRECT_NODES
                 </div>
               </div>
-              <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#FD5A1A]">
+              <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#FD5A1A] rounded-3xl">
                 <div className="text-xl text-black">
                   {score}/{maxScore}
                 </div>
@@ -211,7 +211,7 @@ function ResultsScreen({
                   TOTAL_MARKS
                 </div>
               </div>
-              <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_black]">
+              <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_black] rounded-3xl">
                 <div className="text-xl text-black">
                   {mins}M {secs}S
                 </div>
@@ -225,7 +225,7 @@ function ResultsScreen({
               <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-4 border-l-4 border-black pl-4">
                 INTEL_REVIEW
               </h3>
-              <div className="max-h-60 overflow-y-auto border-4 border-black bg-white">
+              <div className="max-h-60 overflow-y-auto border-4 border-black bg-white rounded-3xl">
                 {exam.questions.map((q, i) => {
                   const isCorrect = answers[i] === q.correct_index;
                   return (
@@ -260,13 +260,13 @@ function ResultsScreen({
 
             <div className="flex flex-col sm:flex-row gap-6">
               <Button
-                className="flex-1 bg-white text-black border-4 border-black h-14 rounded-none font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                className="flex-1 bg-white text-black border-4 border-black h-14 rounded-3xl font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
                 onClick={() => navigate("/dashboard/exams")}
               >
                 <ChevronLeft className="w-5 h-5 mr-3" /> RETURN_TO_BASE
               </Button>
               <Button
-                className="flex-1 bg-black text-white border-4 border-black h-14 rounded-none font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                className="flex-1 bg-black text-white border-4 border-black h-14 rounded-3xl font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
                 onClick={() => window.location.reload()}
               >
                 <RotateCcw className="w-5 h-5 mr-3" /> RE_INITIALIZE
@@ -325,19 +325,19 @@ function ReviewModal({
           </h2>
 
           <div className="grid grid-cols-3 gap-4 mb-10">
-            <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#0075CF]">
+            <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#0075CF] rounded-3xl">
               <div className="text-2xl font-black text-black">{answered}</div>
               <div className="text-[8px] font-black uppercase tracking-[0.2em] opacity-40">
                 SYNCED
               </div>
             </div>
-            <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#FD5A1A]">
+            <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_#FD5A1A] rounded-3xl">
               <div className="text-2xl font-black text-black">{unanswered}</div>
               <div className="text-[8px] font-black uppercase tracking-[0.2em] opacity-40">
                 MISSING
               </div>
             </div>
-            <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_black]">
+            <div className="bg-white border-4 border-black p-4 shadow-[4px_4px_0px_0px_black] rounded-3xl">
               <div className="text-2xl font-black text-black">{flagged}</div>
               <div className="text-[8px] font-black uppercase tracking-[0.2em] opacity-40">
                 FLAGGED
@@ -346,7 +346,7 @@ function ReviewModal({
           </div>
 
           {unanswered > 0 && (
-            <div className="bg-[#FD5A1A] border-4 border-black p-6 mb-10 text-white flex items-center gap-4 text-left">
+            <div className="bg-[#FD5A1A] border-4 border-black p-6 mb-10 text-white flex items-center gap-4 text-left rounded-3xl">
               <AlertTriangle className="w-10 h-10 shrink-0" />
               <p className="text-[10px] font-black uppercase tracking-widest leading-loose">
                 DETECTION: {unanswered} UNANSWERED DATA NODES FOUND. LOSS OF
@@ -357,13 +357,13 @@ function ReviewModal({
 
           <div className="flex flex-col sm:flex-row gap-6">
             <Button
-              className="flex-1 bg-white text-black border-4 border-black h-14 rounded-none font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_black] hover:shadow-none transition-all"
+              className="flex-1 bg-white text-black border-4 border-black h-14 rounded-3xl font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_black] hover:shadow-none transition-all"
               onClick={onCancel}
             >
               BACK_TO_INPUT
             </Button>
             <Button
-              className="flex-1 bg-black text-white border-4 border-black h-14 rounded-none font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none transition-all"
+              className="flex-1 bg-black text-white border-4 border-black h-14 rounded-3xl font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none transition-all"
               onClick={onConfirm}
             >
               EXECUTE_SUBMISSION <Send className="ml-3 w-5 h-5" />
@@ -542,7 +542,7 @@ export default function ExamPage() {
           </div>
 
           <Button
-            className="h-14 bg-white text-black border-4 border-black px-8 font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-none"
+            className="h-14 bg-white text-black border-4 border-black px-8 font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
             onClick={() => setShowReview(true)}
           >
             SUBMIT <Send className="ml-3 w-5 h-5" />
@@ -650,7 +650,7 @@ export default function ExamPage() {
                   </button>
                 </div>
 
-                <div className="bg-white border-4 border-black p-10 shadow-[12px_12px_0px_0px_black] mb-10 relative">
+                <div className="bg-white border-4 border-black p-10 shadow-[12px_12px_0px_0px_black] mb-10 relative rounded-3xl">
                   <div className="absolute top-0 left-0 w-full h-2 bg-[#0075CF]" />
                   <p className="text-2xl font-black text-black leading-tight italic">
                     {question.text}
@@ -685,7 +685,7 @@ export default function ExamPage() {
 
             <div className="flex items-center justify-between mt-16 pt-10 border-t-8 border-black/10">
               <Button
-                className="h-14 bg-white text-black border-4 border-black px-8 font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all disabled:opacity-20"
+                className="h-14 bg-white text-black border-4 border-black px-8 font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all disabled:opacity-20 rounded-3xl"
                 onClick={goPrev}
                 disabled={currentQ === 0}
               >
@@ -698,14 +698,14 @@ export default function ExamPage() {
 
               {currentQ === exam.questions.length - 1 ? (
                 <Button
-                  className="h-14 bg-[#FD5A1A] text-white border-4 border-black px-10 font-black uppercase tracking-[0.2em] shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                  className="h-14 bg-[#FD5A1A] text-white border-4 border-black px-10 font-black uppercase tracking-[0.2em] shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
                   onClick={() => setShowReview(true)}
                 >
                   REVIEW_SUBMIT <Eye className="ml-3 w-6 h-6" />
                 </Button>
               ) : (
                 <Button
-                  className="h-14 bg-black text-white border-4 border-black px-10 font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
+                  className="h-14 bg-black text-white border-4 border-black px-10 font-black uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
                   onClick={goNext}
                 >
                   NEXT_NODE <ChevronRight className="ml-3 w-6 h-6" />
@@ -730,3 +730,4 @@ export default function ExamPage() {
     </div>
   );
 }
+

@@ -143,12 +143,12 @@ export function GuestCredentialsManager() {
         </div>
         <Dialog open={isAddOpen} onOpenChange={setIsAddOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all rounded-none gap-2">
+            <Button className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all rounded-3xl gap-2">
               <Plus className="h-4 w-4" />
               Create Guest
             </Button>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-md bg-white border-4 border-[#000000] rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
+          <DialogContent className="sm:max-w-md bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-0 font-['Inter']">
             <DialogHeader className="p-6 border-b-4 border-[#000000] bg-[#FFD166]">
               <DialogTitle className="text-2xl font-black text-[#000000] uppercase tracking-wider">
                 Create Guest Credential
@@ -164,7 +164,7 @@ export function GuestCredentialsManager() {
                 </Label>
                 <Input
                   placeholder="e.g., Demo User"
-                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                   value={newCredential.display_name}
                   onChange={(e) =>
                     setNewCredential({
@@ -184,13 +184,13 @@ export function GuestCredentialsManager() {
                     variant="ghost"
                     size="sm"
                     onClick={generateUsername}
-                    className="h-6 text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-none"
+                    className="h-6 text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-3xl"
                   >
                     Generate
                   </Button>
                 </div>
                 <Input
-                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                   value={newCredential.username}
                   onChange={(e) =>
                     setNewCredential({
@@ -210,14 +210,14 @@ export function GuestCredentialsManager() {
                     variant="ghost"
                     size="sm"
                     onClick={generatePassword}
-                    className="h-6 text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-none"
+                    className="h-6 text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-3xl"
                   >
                     Generate
                   </Button>
                 </div>
                 <Input
                   type="text"
-                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                   value={newCredential.password}
                   onChange={(e) =>
                     setNewCredential({
@@ -241,10 +241,10 @@ export function GuestCredentialsManager() {
                       })
                     }
                   >
-                    <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
+                    <SelectTrigger className="w-full bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:ring-0">
                       <SelectValue />
                     </SelectTrigger>
-                    <SelectContent className="bg-white border-2 border-[#000000] rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <SelectContent className="bg-white border-2 border-[#000000] rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                       <SelectItem
                         value="demo"
                         className="font-bold cursor-pointer focus:bg-[#E9E9E9]"
@@ -279,7 +279,7 @@ export function GuestCredentialsManager() {
                   <Input
                     type="number"
                     min={1}
-                    className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                    className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                     value={newCredential.max_sessions}
                     onChange={(e) =>
                       setNewCredential({
@@ -296,7 +296,7 @@ export function GuestCredentialsManager() {
                 </Label>
                 <Input
                   type="datetime-local"
-                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-none font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
+                  className="bg-[#E9E9E9] border-2 border-[#000000] rounded-3xl font-bold text-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-[#000000]/50"
                   value={newCredential.expires_at}
                   onChange={(e) =>
                     setNewCredential({
@@ -309,13 +309,13 @@ export function GuestCredentialsManager() {
             </div>
             <DialogFooter className="p-6 border-t-4 border-[#000000] bg-[#E9E9E9] flex sm:justify-between items-center w-full">
               <Button
-                className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
+                className="bg-white text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all w-full sm:w-auto"
                 onClick={() => setIsAddOpen(false)}
               >
                 Cancel
               </Button>
               <Button
-                className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
+                className="bg-[#6BCB77] text-[#000000] border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all w-full sm:w-auto mt-2 sm:mt-0"
                 onClick={handleCreate}
                 disabled={createCredential.isPending}
               >
@@ -330,7 +330,7 @@ export function GuestCredentialsManager() {
 
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-3">
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Total Credentials
@@ -342,7 +342,7 @@ export function GuestCredentialsManager() {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Active
@@ -354,7 +354,7 @@ export function GuestCredentialsManager() {
             </div>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Expired
@@ -369,7 +369,7 @@ export function GuestCredentialsManager() {
       </div>
 
       {/* Active Credentials */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
             <UserPlus className="h-6 w-6 text-[#0075CF]" />
@@ -386,7 +386,7 @@ export function GuestCredentialsManager() {
               {activeCredentials.map((cred) => (
                 <div
                   key={cred.id}
-                  className="flex items-center gap-4 p-4 rounded-none border-2 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] transition-colors"
+                  className="flex items-center gap-4 p-4 rounded-3xl border-2 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#E9E9E9] transition-colors"
                 >
                   <div className="h-10 w-10 border-2 border-[#000000] bg-[#0075CF] flex items-center justify-center shrink-0">
                     <Key className="h-5 w-5 text-white" />
@@ -419,7 +419,7 @@ export function GuestCredentialsManager() {
                         cred.id,
                       )
                     }
-                    className="bg-white text-[#000000] border-2 border-[#000000] rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all ml-2"
+                    className="bg-white text-[#000000] border-2 border-[#000000] rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all ml-2"
                   >
                     {copiedId === cred.id ? (
                       <Check className="h-4 w-4 text-[#6BCB77]" />
@@ -430,7 +430,7 @@ export function GuestCredentialsManager() {
                   <Button
                     size="icon"
                     onClick={() => deleteCredential.mutate(cred.id)}
-                    className="bg-white text-destructive border-2 border-destructive rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
+                    className="bg-white text-destructive border-2 border-destructive rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
                   >
                     <Trash2 className="h-4 w-4" />
                   </Button>
@@ -443,3 +443,4 @@ export function GuestCredentialsManager() {
     </div>
   );
 }
+

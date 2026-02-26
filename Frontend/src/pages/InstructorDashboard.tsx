@@ -131,9 +131,9 @@ export default function InstructorDashboard() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg sm:rounded-xl border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
+        <div className="bg-white rounded-3xl sm:rounded-3xl border-2 sm:border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] overflow-hidden">
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <div className="p-6 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl mb-6 transform -rotate-3 transition-transform hover:rotate-3">
+            <div className="p-6 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl mb-6 transform -rotate-3 transition-transform hover:rotate-3">
               <Wrench className="h-16 w-16 text-[#000000]" />
             </div>
             <h3 className="text-2xl font-black text-[#000000] uppercase tracking-wider">
@@ -165,9 +165,9 @@ export default function InstructorDashboard() {
             )}
           {currentPath === "/instructor/upload" && (
             <div className="space-y-12">
-              <div className="bg-white border-4 border-black p-6 shadow-[6px_6px_0px_0px_black] rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="bg-white border-4 border-black p-6 shadow-[6px_6px_0px_0px_black] rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 bg-[#E9E9E9] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_black] rounded-lg">
+                  <div className="h-12 w-12 bg-[#E9E9E9] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_black] rounded-3xl">
                     <Upload className="h-6 w-6 text-black" />
                   </div>
                   <div>
@@ -193,7 +193,7 @@ export default function InstructorDashboard() {
                   <ResourceUploader courseId={selectedCourse.id} />
                 </div>
               ) : (
-                <div className="bg-[#E9E9E9] border-4 border-dashed border-black/20 p-20 rounded-xl text-center">
+                <div className="bg-[#E9E9E9] border-4 border-dashed border-black/20 p-20 rounded-3xl text-center">
                   <Upload className="h-16 w-16 text-black/10 mx-auto mb-4" />
                   <p className="font-black uppercase tracking-widest text-black/20">
                     Awaiting Course Selection...
@@ -244,7 +244,7 @@ export default function InstructorDashboard() {
                   <motion.div
                     key={stat.title}
                     variants={itemVariants}
-                    className="bg-white border-4 border-[#000000] rounded-xl p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between"
+                    className="bg-white border-4 border-[#000000] rounded-3xl p-5 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -256,7 +256,7 @@ export default function InstructorDashboard() {
                         </span>
                       </div>
                       <div
-                        className={`w-12 h-12 flex items-center justify-center rounded-xl border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${stat.bg === "bg-[#0075CF]" || stat.bg === "bg-[#FD5A1A]" ? stat.bg + " text-white" : "bg-[#E9E9E9] text-[#000000]"}`}
+                        className={`w-12 h-12 flex items-center justify-center rounded-3xl border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${stat.bg === "bg-[#0075CF]" || stat.bg === "bg-[#FD5A1A]" ? stat.bg + " text-white" : "bg-[#E9E9E9] text-[#000000]"}`}
                       >
                         <stat.icon className="h-6 w-6" />
                       </div>
@@ -273,7 +273,7 @@ export default function InstructorDashboard() {
 
               {/* Main Content Area */}
               <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-xl p-4">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-3xl p-4">
                   <div className="flex items-center gap-3 w-full sm:w-auto">
                     <h2 className="text-xl font-black text-[#000000] uppercase tracking-wider">
                       Course Studio
@@ -294,7 +294,7 @@ export default function InstructorDashboard() {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden"
+                    className="bg-white border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl overflow-hidden"
                   >
                     <Tabs
                       defaultValue="topics"
@@ -333,7 +333,7 @@ export default function InstructorDashboard() {
                             <TabsTrigger
                               key={tab.id}
                               value={tab.id}
-                              className="w-full flex items-center justify-start gap-3 h-14 px-6 rounded-none border-b-2md:border-b-4 border-transparent md:border-b-[#000000]/10 data-[state=active]:bg-[#000000] data-[state=active]:text-white font-black text-xs uppercase tracking-widest text-[#000000]/60 hover:text-[#000000] data-[state=active]:hover:text-white transition-colors"
+                              className="w-full flex items-center justify-start gap-3 h-14 px-6 rounded-3xl border-b-2md:border-b-4 border-transparent md:border-b-[#000000]/10 data-[state=active]:bg-[#000000] data-[state=active]:text-white font-black text-xs uppercase tracking-widest text-[#000000]/60 hover:text-[#000000] data-[state=active]:hover:text-white transition-colors"
                             >
                               <tab.icon className="h-4 w-4 shrink-0" />
                               <span className="whitespace-nowrap">
@@ -383,7 +383,7 @@ export default function InstructorDashboard() {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex flex-col items-center justify-center py-24 bg-white border-4 border-[#000000] border-dashed rounded-xl text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]"
+                    className="flex flex-col items-center justify-center py-24 bg-white border-4 border-[#000000] border-dashed rounded-3xl text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]"
                   >
                     <div className="w-20 h-20 bg-[#FD5A1A]/10 border-4 border-[#FD5A1A] rounded-full flex items-center justify-center mb-6">
                       <GraduationCap className="h-10 w-10 text-[#FD5A1A]" />
@@ -409,3 +409,4 @@ export default function InstructorDashboard() {
     </SidebarProvider>
   );
 }
+

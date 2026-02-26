@@ -26,7 +26,7 @@ const Leaderboard = () => {
   return (
     <section
       id="leaderboard"
-      className="py-24 md:py-32 bg-white relative overflow-hidden font-['Inter']"
+      className="py-24 md:py-32 bg-white relative overflow-hidden font-[ rounded-3xl'Inter']"
     >
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
@@ -38,7 +38,7 @@ const Leaderboard = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+            <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
               <Trophy className="w-4 h-4" />
               <span className="text-xs font-black uppercase tracking-[0.2em]">
                 Competitive Learning
@@ -54,7 +54,7 @@ const Leaderboard = () => {
               and achieve your learning goals.
             </p>
             <div className="flex gap-12">
-              <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-[-1deg] hover:rotate-0 transition-transform">
+              <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-[-1deg] hover:rotate-0 transition-transform rounded-3xl">
                 <p className="text-4xl font-black text-[#0075CF] mb-1 italic">
                   500+
                 </p>
@@ -62,7 +62,7 @@ const Leaderboard = () => {
                   Weekly Competitors
                 </p>
               </div>
-              <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-[1deg] hover:rotate-0 transition-transform">
+              <div className="bg-white p-6 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-[1deg] hover:rotate-0 transition-transform rounded-3xl">
                 <p className="text-4xl font-black text-[#FD5A1A] mb-1 italic">
                   25+
                 </p>
@@ -78,16 +78,16 @@ const Leaderboard = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 sm:p-10 rounded-none relative overflow-hidden"
+            className="bg-white border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 sm:p-10 rounded-3xl relative overflow-hidden"
           >
             {/* Background Detail */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#E9E9E9] -rotate-45 translate-x-16 -translate-y-16 border-4 border-black pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#E9E9E9] -rotate-45 translate-x-16 -translate-y-16 border-4 border-black pointer-events-none rounded-3xl" />
 
-            <div className="flex items-center justify-between mb-10 border-b-4 border-black pb-6">
+            <div className="flex items-center justify-between mb-10 border-b-4 border-black pb-6 rounded-3xl">
               <h3 className="text-2xl font-black text-black uppercase tracking-tight italic flex items-center gap-3">
                 <Medal className="w-6 h-6 text-[#FD5A1A]" /> Top Performers
               </h3>
-              <span className="text-[10px] font-black uppercase tracking-widest bg-black text-white px-3 py-1">
+              <span className="text-[10px] font-black uppercase tracking-widest bg-black text-white px-3 py-1 rounded-3xl">
                 This Week
               </span>
             </div>
@@ -130,7 +130,7 @@ const Leaderboard = () => {
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t-4 border-black/10 flex justify-center">
+            <div className="mt-8 pt-6 border-t-4 border-black/10 flex justify-center rounded-3xl">
               <div className="flex items-center gap-3 font-black text-[10px] tracking-[0.2em] uppercase text-[#0075CF] hover:translate-x-2 transition-transform cursor-pointer">
                 View Full Rankings <ArrowRight className="w-4 h-4" />
               </div>
@@ -143,3 +143,5 @@ const Leaderboard = () => {
 };
 
 export default Leaderboard;
+
+

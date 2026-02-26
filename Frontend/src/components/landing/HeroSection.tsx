@@ -79,17 +79,17 @@ const TechBackground = () => (
     <motion.div
       animate={{ y: [-200, 1000], opacity: [0, 0.8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-      className="absolute left-[25%] top-0 w-[1px] h-[200px] bg-gradient-to-b from-transparent via-[#0075CF] to-transparent"
+      className="absolute left-[25%] top-0 w-[1px] h-[200px] bg-gradient-to-b from-transparent via-[#0075CF] to-transparent rounded-3xl"
     />
     <motion.div
       animate={{ y: [-200, 1000], opacity: [0, 0.8, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 2.5 }}
-      className="absolute left-[75%] top-0 w-[1px] h-[250px] bg-gradient-to-b from-transparent via-[#FD5A1A] to-transparent"
+      className="absolute left-[75%] top-0 w-[1px] h-[250px] bg-gradient-to-b from-transparent via-[#FD5A1A] to-transparent rounded-3xl"
     />
     <motion.div
       animate={{ x: [-200, 1000], opacity: [0, 0.6, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
-      className="absolute top-[30%] left-0 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[#0075CF] to-transparent"
+      className="absolute top-[30%] left-0 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[#0075CF] to-transparent rounded-3xl"
     />
 
     {/* Soft glows */}
@@ -143,7 +143,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-16 md:pb-24 bg-white font-['Inter']"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-16 md:pb-24 bg-white font-[ rounded-3xl'Inter']"
     >
       <TechBackground />
 
@@ -187,7 +187,7 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <Button
-              className="h-20 px-12 bg-black text-white border-4 border-black text-xl font-black uppercase tracking-widest shadow-[10px_10px_0px_0px_rgba(0,117,207,1)] hover:bg-[#0075CF] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-none group"
+              className="h-20 px-12 bg-black text-white border-4 border-black text-xl font-black uppercase tracking-widest shadow-[10px_10px_0px_0px_rgba(0,117,207,1)] hover:bg-[#0075CF] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-3xl group"
               onClick={() => navigate("/auth")}
             >
               Start Learning
@@ -195,7 +195,7 @@ const HeroSection = () => {
             </Button>
             <Button
               variant="outline"
-              className="h-20 px-12 bg-white text-black border-4 border-black text-xl font-black uppercase tracking-widest shadow-[10px_10px_0px_0px_rgba(253,90,26,1)] hover:bg-[#E9E9E9] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-none gap-3"
+              className="h-20 px-12 bg-white text-black border-4 border-black text-xl font-black uppercase tracking-widest shadow-[10px_10px_0px_0px_rgba(253,90,26,1)] hover:bg-[#E9E9E9] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[6px_6px_0_0_rgba(0,0,0,1)] active:translate-x-[8px] active:translate-y-[8px] active:shadow-none transition-all rounded-3xl gap-3"
               onClick={() => navigate("/dashboard")}
             >
               <Play className="w-6 h-6 fill-black" />
@@ -277,3 +277,5 @@ const HeroSection = () => {
   );
 };
 export default HeroSection;
+
+

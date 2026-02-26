@@ -51,7 +51,7 @@ export function ExamMonitoring() {
       {/* Stats */}
       {/* Stats */}
       <div className="grid gap-4 md:grid-cols-4">
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Active Exams
@@ -66,7 +66,7 @@ export function ExamMonitoring() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Students Taking Exam
@@ -81,7 +81,7 @@ export function ExamMonitoring() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Completed Today
@@ -96,7 +96,7 @@ export function ExamMonitoring() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Avg. Score
@@ -123,7 +123,7 @@ export function ExamMonitoring() {
 
       {/* Active Exams */}
       {/* Active Exams */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
             <Monitor className="h-6 w-6 text-[#6BCB77]" />
@@ -160,7 +160,7 @@ export function ExamMonitoring() {
                 return (
                   <div
                     key={exam.id}
-                    className="p-4 rounded-none border-4 border-[#000000] bg-[#6BCB77]/20 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    className="p-4 rounded-3xl border-4 border-[#000000] bg-[#6BCB77]/20 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div>
@@ -168,7 +168,7 @@ export function ExamMonitoring() {
                           <h4 className="font-black text-[#000000] uppercase tracking-wider text-sm">
                             {exam.title}
                           </h4>
-                          <Badge className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest rounded-none text-[10px]">
+                          <Badge className="bg-[#FD5A1A] text-white border-2 border-[#000000] font-black uppercase tracking-widest rounded-3xl text-[10px]">
                             LIVE
                           </Badge>
                         </div>
@@ -212,7 +212,7 @@ export function ExamMonitoring() {
                         </span>
                       </div>
                       <Progress
-                        className="h-3 border-2 border-[#000000] rounded-none bg-white [&>div]:bg-[#000000]"
+                        className="h-3 border-2 border-[#000000] rounded-3xl bg-white [&>div]:bg-[#000000]"
                         value={
                           inProgress + completed > 0
                             ? (completed / (inProgress + completed)) * 100
@@ -230,7 +230,7 @@ export function ExamMonitoring() {
 
       {/* Recent Submissions */}
       {/* Recent Submissions */}
-      <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
+      <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
             <Activity className="h-6 w-6 text-[#0075CF]" />
@@ -247,7 +247,7 @@ export function ExamMonitoring() {
               {completedResults.slice(0, 10).map((result) => (
                 <div
                   key={result.id}
-                  className="flex items-center justify-between p-3 border-2 border-[#000000] bg-white hover:bg-[#E9E9E9] transition-colors rounded-none shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                  className="flex items-center justify-between p-3 border-2 border-[#000000] bg-white hover:bg-[#E9E9E9] transition-colors rounded-3xl shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                 >
                   <div className="flex items-center gap-3">
                     <div
@@ -275,7 +275,7 @@ export function ExamMonitoring() {
                       {result.score}/{result.total_marks}
                     </div>
                     <Badge
-                      className={`text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-none ${result.percentage && result.percentage >= 40 ? "bg-white text-[#000000]" : "bg-white text-[#FD5A1A]"}`}
+                      className={`text-[10px] font-black uppercase tracking-widest border-2 border-[#000000] rounded-3xl ${result.percentage && result.percentage >= 40 ? "bg-white text-[#000000]" : "bg-white text-[#FD5A1A]"}`}
                     >
                       {result.percentage || 0}%
                     </Badge>
@@ -289,3 +289,4 @@ export function ExamMonitoring() {
     </div>
   );
 }
+

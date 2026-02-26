@@ -81,7 +81,7 @@ const About = () => {
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-[#000000] border-2 sm:border-4 border-black shadow-[8px_8px_0px_0px_#0075CF] sm:shadow-[12px_12px_0px_0px_#0075CF] aspect-video relative overflow-hidden group rounded-lg sm:rounded-none"
+                className="bg-[#000000] border-2 sm:border-4 border-black shadow-[8px_8px_0px_0px_#0075CF] sm:shadow-[12px_12px_0px_0px_#0075CF] aspect-video relative overflow-hidden group rounded-3xl sm:rounded-3xl"
               >
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20 pointer-events-none" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -145,7 +145,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-white border-2 sm:border-4 border-black p-6 sm:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group rounded-xl"
+                  className="bg-white border-2 sm:border-4 border-black p-6 sm:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all group rounded-3xl"
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black text-white rounded flex items-center justify-center mb-6 group-hover:bg-[#FD5A1A] transition-colors shadow-[2px_2px_0px_0px_rgba(253,90,26,0.3)]">
                     <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -197,9 +197,9 @@ const About = () => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white border-2 sm:border-4 border-black p-6 sm:p-8 text-center shadow-[3px_3px_0px_0px_#0075CF] sm:shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-xl"
+                  className="bg-white border-2 sm:border-4 border-black p-6 sm:p-8 text-center shadow-[3px_3px_0px_0px_#0075CF] sm:shadow-[4px_4px_0px_0px_#0075CF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
                 >
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-[#E9E9E9] border-2 border-black flex items-center justify-center mb-6 rounded-lg">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto bg-[#E9E9E9] border-2 border-black flex items-center justify-center mb-6 rounded-3xl">
                     <Users className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
                   </div>
                   <h3 className="text-base sm:text-lg font-black text-black uppercase italic mb-3">
@@ -237,7 +237,7 @@ const About = () => {
                   evolution.
                 </p>
               </div>
-              <div className="bg-white border-2 sm:border-4 border-black p-6 sm:p-10 shadow-[8px_8px_0px_0px_#FD5A1A] sm:shadow-[12px_12px_0px_0px_#FD5A1A] rounded-xl sm:rounded-none">
+              <div className="bg-white border-2 sm:border-4 border-black p-6 sm:p-10 shadow-[8px_8px_0px_0px_#FD5A1A] sm:shadow-[12px_12px_0px_0px_#FD5A1A] rounded-3xl sm:rounded-3xl">
                 <h4 className="text-lg sm:text-xl font-black text-black uppercase italic mb-4">
                   Node Location
                 </h4>
@@ -275,7 +275,7 @@ const About = () => {
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex gap-4 sm:gap-6">
-                      <div className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 border-2 border-black bg-black text-white flex items-center justify-center rounded">
+                      <div className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 border-2 border-black bg-black text-white flex items-center justify-center rounded rounded-3xl">
                         <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                       <div>
@@ -291,8 +291,8 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="bg-[#E9E9E9] border-2 sm:border-4 border-black p-8 sm:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] relative rounded-2xl">
-                <div className="absolute -top-6 -right-4 sm:-top-10 sm:-right-10 w-16 h-16 sm:w-24 sm:h-24 bg-[#FD5A1A] border-2 sm:border-4 border-black flex items-center justify-center -rotate-12 hover:rotate-0 transition-transform rounded-xl">
+              <div className="bg-[#E9E9E9] border-2 sm:border-4 border-black p-8 sm:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sm:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] relative rounded-3xl">
+                <div className="absolute -top-6 -right-4 sm:-top-10 sm:-right-10 w-16 h-16 sm:w-24 sm:h-24 bg-[#FD5A1A] border-2 sm:border-4 border-black flex items-center justify-center -rotate-12 hover:rotate-0 transition-transform rounded-3xl">
                   <Star className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-black uppercase italic mb-6 sm:mb-8">
@@ -315,7 +315,7 @@ const About = () => {
                       4.8/5
                     </span>
                   </div>
-                  <div className="flex items-center justify-between p-4 bg-black text-white rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-black text-white rounded-3xl">
                     <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest">
                       Practical Focus Nodes
                     </span>
@@ -336,3 +336,4 @@ const About = () => {
 };
 
 export default About;
+

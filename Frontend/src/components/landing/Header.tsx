@@ -120,7 +120,7 @@ const Header = () => {
             to="/"
             className="flex items-center gap-3 group transition-transform active:scale-95"
           >
-            <div className="bg-white p-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+            <div className="bg-white p-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all rounded-2xl">
               <img
                 src={logo}
                 alt="AOTMS Logo"
@@ -135,7 +135,7 @@ const Header = () => {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="px-4 py-2 rounded-none text-sm font-black uppercase tracking-widest border-2 border-transparent transition-all duration-200 text-black hover:text-[#0075CF] hover:border-black hover:bg-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                className="px-4 py-2 rounded-3xl text-sm font-black uppercase tracking-widest border-2 border-transparent transition-all duration-200 text-black hover:text-[#0075CF] hover:border-black hover:bg-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               >
                 {link.name}
               </button>
@@ -149,8 +149,8 @@ const Header = () => {
                 <NotificationBell />
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex items-center gap-2 p-1 border-2 border-transparent hover:border-black hover:bg-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all rounded-none focus:outline-none group">
-                      <Avatar className="h-10 w-10 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none bg-[#FD5A1A]">
+                    <button className="flex items-center gap-2 p-1 border-2 border-transparent hover:border-black hover:bg-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all rounded-3xl focus:outline-none group">
+                      <Avatar className="h-10 w-10 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none bg-[#FD5A1A] rounded-3xl">
                         <AvatarImage src={user.user_metadata?.avatar_url} />
                         <AvatarFallback className="bg-[#FD5A1A] text-white font-black">
                           {getUserInitials()}
@@ -161,9 +161,9 @@ const Header = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
                     align="end"
-                    className="w-64 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-none p-0 bg-white z-[100]"
+                    className="w-64 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl p-0 bg-white z-[100]"
                   >
-                    <div className="bg-[#E9E9E9] p-4 border-b-2 border-black">
+                    <div className="bg-[#E9E9E9] p-4 border-b-2 border-black rounded-3xl">
                       <p className="text-sm font-black uppercase text-black">
                         {user.user_metadata?.full_name || "User Account"}
                       </p>
@@ -174,7 +174,7 @@ const Header = () => {
                     <div className="p-1">
                       <DropdownMenuItem
                         asChild
-                        className="cursor-pointer font-black uppercase text-xs tracking-widest p-3 focus:bg-[#0075CF] focus:text-white rounded-none border-2 border-transparent focus:border-black"
+                        className="cursor-pointer font-black uppercase text-xs tracking-widest p-3 focus:bg-[#0075CF] focus:text-white rounded-3xl border-2 border-transparent focus:border-black"
                       >
                         <Link
                           to={
@@ -192,7 +192,7 @@ const Header = () => {
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         asChild
-                        className="cursor-pointer font-black uppercase text-xs tracking-widest p-3 focus:bg-[#0075CF] focus:text-white rounded-none border-2 border-transparent focus:border-black"
+                        className="cursor-pointer font-black uppercase text-xs tracking-widest p-3 focus:bg-[#0075CF] focus:text-white rounded-3xl border-2 border-transparent focus:border-black"
                       >
                         <Link
                           to="/settings"
@@ -203,10 +203,10 @@ const Header = () => {
                         </Link>
                       </DropdownMenuItem>
                     </div>
-                    <div className="border-t-2 border-black p-1">
+                    <div className="border-t-2 border-black p-1 rounded-3xl">
                       <DropdownMenuItem
                         onClick={handleSignOut}
-                        className="cursor-pointer font-black uppercase text-xs tracking-widest p-3 text-[#FD5A1A] focus:bg-[#FD5A1A] focus:text-white rounded-none border-2 border-transparent focus:border-black"
+                        className="cursor-pointer font-black uppercase text-xs tracking-widest p-3 text-[#FD5A1A] focus:bg-[#FD5A1A] focus:text-white rounded-3xl border-2 border-transparent focus:border-black"
                       >
                         <LogOut className="h-4 w-4 mr-2" />
                         <span>Sign out</span>
@@ -219,7 +219,7 @@ const Header = () => {
               <div className="hidden sm:flex items-center gap-3">
                 <Button
                   variant="ghost"
-                  className="h-11 px-6 font-black uppercase tracking-widest text-xs text-black border-2 border-transparent hover:border-black hover:bg-white hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+                  className="h-11 px-6 font-black uppercase tracking-widest text-xs text-black border-2 border-transparent hover:border-black hover:bg-white hover:shadow-[4px_4px_0_0_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded-3xl"
                   asChild
                 >
                   <Link to="/auth" state={{ mode: "login" }}>
@@ -227,7 +227,7 @@ const Header = () => {
                   </Link>
                 </Button>
                 <Button
-                  className="h-11 px-8 bg-[#FD5A1A] text-white border-2 border-black font-black uppercase tracking-widest text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 transition-all rounded-none"
+                  className="h-11 px-8 bg-[#FD5A1A] text-white border-2 border-black font-black uppercase tracking-widest text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 transition-all rounded-3xl"
                   asChild
                 >
                   <Link to="/auth" state={{ mode: "signup" }}>
@@ -243,17 +243,17 @@ const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="lg:hidden text-black border-2 border-transparent hover:border-black hover:bg-white active:bg-white transition-all"
+                  className="lg:hidden text-black border-2 border-transparent hover:border-black hover:bg-white active:bg-white transition-all rounded-3xl"
                 >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-[300px] bg-white border-l-4 border-black p-0 rounded-none shadow-none"
+                className="w-[300px] bg-white border-l-4 border-black p-0 rounded-3xl shadow-none"
               >
                 <div className="flex flex-col h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-                  <div className="p-6 border-b-4 border-black bg-white">
+                  <div className="p-6 border-b-4 border-black bg-white rounded-3xl">
                     <img src={logo} alt="AOTMS Logo" className="h-10" />
                   </div>
                   <nav className="flex-1 px-4 py-8">
@@ -263,7 +263,7 @@ const Header = () => {
                           <SheetClose asChild>
                             <button
                               onClick={() => handleNavClick(link.href)}
-                              className="w-full text-left px-4 py-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-sm active:translate-x-1 active:translate-y-1 active:shadow-none transition-all"
+                              className="w-full text-left px-4 py-4 border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-sm active:translate-x-1 active:translate-y-1 active:shadow-none transition-all rounded-3xl"
                             >
                               {link.name}
                             </button>
@@ -273,11 +273,11 @@ const Header = () => {
                     </ul>
                   </nav>
                   {!user && (
-                    <div className="p-6 bg-white border-t-4 border-black space-y-4">
+                    <div className="p-6 bg-white border-t-4 border-black space-y-4 rounded-3xl">
                       <SheetClose asChild>
                         <Button
                           variant="outline"
-                          className="w-full h-14 border-2 border-black font-black uppercase tracking-widest text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-none"
+                          className="w-full h-14 border-2 border-black font-black uppercase tracking-widest text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
                           asChild
                         >
                           <Link to="/auth" state={{ mode: "login" }}>
@@ -287,7 +287,7 @@ const Header = () => {
                       </SheetClose>
                       <SheetClose asChild>
                         <Button
-                          className="w-full h-14 bg-[#0075CF] text-white border-2 border-black font-black uppercase tracking-widest text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-none"
+                          className="w-full h-14 bg-[#0075CF] text-white border-2 border-black font-black uppercase tracking-widest text-xs shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl"
                           asChild
                         >
                           <Link to="/auth" state={{ mode: "signup" }}>
@@ -298,9 +298,9 @@ const Header = () => {
                     </div>
                   )}
                   {user && (
-                    <div className="p-6 bg-white border-t-4 border-black space-y-4">
+                    <div className="p-6 bg-white border-t-4 border-black space-y-4 rounded-3xl">
                       <div className="flex items-center gap-4 mb-6">
-                        <Avatar className="h-12 w-12 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-[#0075CF]">
+                        <Avatar className="h-12 w-12 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-[#0075CF] rounded-3xl">
                           <AvatarFallback className="bg-[#0075CF] text-white font-black">
                             {getUserInitials()}
                           </AvatarFallback>
@@ -317,7 +317,7 @@ const Header = () => {
                       <SheetClose asChild>
                         <Button
                           variant="ghost"
-                          className="w-full h-12 justify-start border-2 border-transparent hover:border-black font-black uppercase tracking-widest text-[10px] rounded-none"
+                          className="w-full h-12 justify-start border-2 border-transparent hover:border-black font-black uppercase tracking-widest text-[10px] rounded-3xl"
                           asChild
                         >
                           <Link to="/dashboard">
@@ -328,7 +328,7 @@ const Header = () => {
                       </SheetClose>
                       <Button
                         variant="ghost"
-                        className="w-full h-12 justify-start border-2 border-transparent hover:border-black font-black uppercase tracking-widest text-[10px] text-[#FD5A1A] rounded-none"
+                        className="w-full h-12 justify-start border-2 border-transparent hover:border-black font-black uppercase tracking-widest text-[10px] text-[#FD5A1A] rounded-3xl"
                         onClick={handleSignOut}
                       >
                         <LogOut className="h-4 w-4 mr-3" />
@@ -347,3 +347,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

@@ -225,7 +225,7 @@ const FAQSection = () => {
   return (
     <section
       id="faq"
-      className="py-16 md:py-32 bg-white relative overflow-hidden font-['Inter']"
+      className="py-16 md:py-32 bg-white relative overflow-hidden font-[ rounded-3xl'Inter']"
     >
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
@@ -237,7 +237,7 @@ const FAQSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#0075CF] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Common Questions
             </span>
@@ -267,16 +267,16 @@ const FAQSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: categoryIndex * 0.1 }}
-                className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-none"
+                className="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-3xl"
               >
                 <AccordionItem
                   value={`category-${categoryIndex}`}
-                  className="border-none rounded-none w-full"
+                  className="border-none rounded-3xl w-full"
                 >
                   {/* Category Trigger (Main Heading) */}
                   <AccordionTrigger className="w-full justify-between items-center p-6 md:p-8 hover:no-underline group">
                     <div className="flex items-center gap-4 text-left">
-                      <div className="w-12 h-12 shrink-0 bg-[#FD5A1A] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] group-data-[state=open]:bg-[#0075CF] transition-colors">
+                      <div className="w-12 h-12 shrink-0 bg-[#FD5A1A] border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] group-data-[state=open]:bg-[#0075CF] transition-colors rounded-3xl">
                         <category.icon className="w-6 h-6 text-white" />
                       </div>
                       <h3 className="text-xl md:text-2xl font-black text-black uppercase tracking-tight italic">
@@ -290,13 +290,13 @@ const FAQSection = () => {
                     <Accordion
                       type="single"
                       collapsible
-                      className="space-y-4 border-t-2 border-black/10 pt-6"
+                      className="space-y-4 border-t-2 border-black/10 pt-6 rounded-3xl"
                     >
                       {category.questions.map((item, index) => (
                         <AccordionItem
                           key={index}
                           value={`question-${categoryIndex}-${index}`}
-                          className="border-2 border-black px-6 py-1 data-[state=open]:bg-[#E9E9E9] transition-colors rounded-none relative overflow-hidden"
+                          className="border-2 border-black px-6 py-1 data-[state=open]:bg-[#E9E9E9] transition-colors rounded-3xl relative overflow-hidden"
                         >
                           <AccordionTrigger className="text-left text-sm font-black uppercase tracking-wider hover:no-underline py-4">
                             {item.q}
@@ -319,3 +319,5 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+
+

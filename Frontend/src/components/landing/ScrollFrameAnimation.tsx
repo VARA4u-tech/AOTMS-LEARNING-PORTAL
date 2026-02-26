@@ -104,7 +104,7 @@ const ScrollFrameAnimation = () => {
     };
 
     return (
-        <div ref={containerRef} className="relative bg-black">
+        <div ref={containerRef} className="relative bg-black rounded-3xl">
             <div className="sticky top-0 h-screen md:top-10 md:h-auto md:w-[60vh] lg:w-[70vh] md:aspect-[19/16] md:mx-auto md:rounded-3xl overflow-hidden bg-black md:border md:border-white/20 md:shadow-2xl transition-all duration-500">
                 <canvas ref={canvasRef} className="w-full h-full block object-cover" />
 
@@ -133,3 +133,5 @@ const ScrollFrameAnimation = () => {
 };
 
 export default ScrollFrameAnimation;
+
+

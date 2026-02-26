@@ -38,7 +38,7 @@
     --input: 0 0% 91%; /* Light Gray */
     --ring: 206 100% 41%; /* Primary Blue */
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
 
     /* Gradients (strictly adhering to the 5 colors) */
     --gradient-orange: linear-gradient(

@@ -55,7 +55,7 @@ export default function SettingsPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-xl border-2 transition-all font-black text-sm uppercase tracking-widest ${
+              className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-3xl border-2 transition-all font-black text-sm uppercase tracking-widest ${
                 activeTab === tab.id
                   ? "bg-[#000000] text-white border-[#000000] shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] translate-x-[-2px] translate-y-[-2px]"
                   : "bg-white text-[#000000]/70 border-transparent hover:border-[#000000]/20 hover:bg-[#E9E9E9]"
@@ -70,7 +70,7 @@ export default function SettingsPage() {
         </div>
 
         {/* CONTENT AREA */}
-        <div className="flex-1 w-full bg-white border-4 border-[#000000] rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+        <div className="flex-1 w-full bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
           {/* PROFILE SETTINGS */}
           {activeTab === "profile" && (
             <div className="p-6 sm:p-8 space-y-6">
@@ -79,7 +79,7 @@ export default function SettingsPage() {
               </h2>
 
               <div className="flex items-center gap-6 mb-8">
-                <div className="w-24 h-24 rounded-2xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-[#0075CF]/10 flex items-center justify-center font-black text-4xl text-[#0075CF]">
+                <div className="w-24 h-24 rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-[#0075CF]/10 flex items-center justify-center font-black text-4xl text-[#0075CF]">
                   {fullName.charAt(0) || "U"}
                 </div>
                 <div className="space-y-3">
@@ -103,7 +103,7 @@ export default function SettingsPage() {
                   <Input
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="border-2 border-[#000000] bg-[#E9E9E9]/50 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white text-base font-bold shadow-inner"
+                    className="border-2 border-[#000000] bg-[#E9E9E9]/50 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white text-base font-bold shadow-inner rounded-3xl"
                   />
                 </div>
                 <div className="space-y-2">
@@ -209,7 +209,7 @@ export default function SettingsPage() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="p-4 border-2 border-[#000000] rounded-xl flex items-center justify-between shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white hover:bg-[#E9E9E9] transition-colors cursor-pointer group"
+                    className="p-4 border-2 border-[#000000] rounded-3xl flex items-center justify-between shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white hover:bg-[#E9E9E9] transition-colors cursor-pointer group"
                   >
                     <div>
                       <p className="font-black text-[#000000] group-hover:text-[#0075CF] transition-colors">
@@ -233,3 +233,4 @@ export default function SettingsPage() {
     </div>
   );
 }
+

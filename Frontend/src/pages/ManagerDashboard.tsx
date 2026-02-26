@@ -144,12 +144,12 @@ export default function ManagerDashboard() {
       {/* Candidates Overview */}
       <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 mb-6">
         <Card
-          className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+          className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
           onClick={() => openUserList("all")}
         >
           <CardContent className="p-6">
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="h-12 w-12 rounded-3xl flex items-center justify-center bg-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <Users className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -164,12 +164,12 @@ export default function ManagerDashboard() {
           </CardContent>
         </Card>
         <Card
-          className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+          className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
           onClick={() => openUserList("student")}
         >
           <CardContent className="p-6">
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-[#0075CF] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="h-12 w-12 rounded-3xl flex items-center justify-center bg-[#0075CF] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <GraduationCap className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -184,12 +184,12 @@ export default function ManagerDashboard() {
           </CardContent>
         </Card>
         <Card
-          className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+          className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
           onClick={() => openUserList("instructor")}
         >
           <CardContent className="p-6">
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-[#FD5A1A] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="h-12 w-12 rounded-3xl flex items-center justify-center bg-[#FD5A1A] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                 <UserCheck className="h-6 w-6 text-white" />
               </div>
               <div>
@@ -231,7 +231,7 @@ export default function ManagerDashboard() {
         ].map((stat, i) => (
           <Card
             key={i}
-            className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default"
+            className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default"
           >
             <CardContent className="p-5 flex items-center justify-between">
               <div>
@@ -252,7 +252,7 @@ export default function ManagerDashboard() {
 
       <div className="grid gap-6 md:grid-cols-3">
         {/* Main Quick Actions Section */}
-        <Card className="md:col-span-2 bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+        <Card className="md:col-span-2 bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
           <CardHeader className="border-b-4 border-[#000000] bg-[#E9E9E9] rounded-t-lg">
             <CardTitle className="text-xl font-black uppercase tracking-widest text-[#000000]">
               Quick Tasks
@@ -310,11 +310,11 @@ export default function ManagerDashboard() {
                 <button
                   key={item.id}
                   onClick={() => setActiveSection(item.id)}
-                  className="group flex flex-col p-4 rounded-xl border-2 border-[#000000] bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all text-left"
+                  className="group flex flex-col p-4 rounded-3xl border-2 border-[#000000] bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all text-left"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div
-                      className={`h-10 w-10 rounded-lg flex items-center justify-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${item.bg}`}
+                      className={`h-10 w-10 rounded-3xl flex items-center justify-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${item.bg}`}
                     >
                       <item.icon
                         className={`h-5 w-5 ${item.bg === "bg-white" ? "text-[#000000]" : "text-white"}`}
@@ -336,7 +336,7 @@ export default function ManagerDashboard() {
 
         {/* Status/Health Section */}
         <div className="space-y-6">
-          <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+          <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
             <CardHeader className="p-5 pb-3 border-b-2 border-[#000000] bg-[#E9E9E9] rounded-t-lg">
               <CardTitle className="text-xs font-black uppercase tracking-widest flex items-center gap-2 text-[#000000]">
                 <Shield className="h-4 w-4 text-[#000000]" />
@@ -363,7 +363,7 @@ export default function ManagerDashboard() {
                 </div>
               </div>
               <Button
-                className="w-full text-xs h-10 rounded-none bg-white text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] transition-all font-black uppercase tracking-widest mt-2"
+                className="w-full text-xs h-10 rounded-3xl bg-white text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] transition-all font-black uppercase tracking-widest mt-2"
                 onClick={() => setActiveSection("monitoring")}
               >
                 Monitoring Console
@@ -371,7 +371,7 @@ export default function ManagerDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-[#FD5A1A] rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-white overflow-hidden relative group">
+          <Card className="bg-[#FD5A1A] rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-white overflow-hidden relative group">
             <CardHeader className="p-5 pb-2 relative z-10">
               <CardTitle className="text-xs font-black uppercase tracking-widest flex items-center gap-2">
                 <Activity className="h-4 w-4" />
@@ -384,7 +384,7 @@ export default function ManagerDashboard() {
                 active exams.
               </p>
               <Button
-                className="w-full text-[10px] h-10 rounded-none bg-[#000000] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:bg-[#000000]/80 hover:translate-y-[2px] transition-all font-black uppercase tracking-widest"
+                className="w-full text-[10px] h-10 rounded-3xl bg-[#000000] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:bg-[#000000]/80 hover:translate-y-[2px] transition-all font-black uppercase tracking-widest"
                 onClick={() => setActiveSection("access-control")}
               >
                 Manage Permissions
@@ -508,15 +508,15 @@ export default function ManagerDashboard() {
             placeholder={`Search ${label.toLowerCase()} by name or email...`}
             value={userSearchQuery}
             onChange={(e) => setUserSearchQuery(e.target.value)}
-            className="pl-10 pr-4 py-3 w-full border-4 border-[#000000] bg-white text-[#000000] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none placeholder:font-normal placeholder:text-[#000000]/50"
+            className="pl-10 pr-4 py-3 w-full border-4 border-[#000000] bg-white text-[#000000] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none placeholder:font-normal placeholder:text-[#000000]/50 rounded-3xl"
           />
         </div>
 
         {/* List */}
-        <Card className="rounded-xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white relative overflow-hidden">
+        <Card className="rounded-3xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white relative overflow-hidden">
           {enrichedUsers.length === 0 ? (
             <CardContent className="flex flex-col items-center justify-center py-20 gap-3 text-[#000000]/60 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-              <div className="p-4 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl mb-2">
+              <div className="p-4 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl mb-2">
                 <Users className="h-10 w-10 text-[#000000]" />
               </div>
               <p className="font-black uppercase tracking-wider text-xl text-[#000000]">
@@ -535,13 +535,13 @@ export default function ManagerDashboard() {
                 >
                   {/* Avatar */}
                   <div
-                    className={`h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 font-black text-sm border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${accentColor.bg} ${accentColor.text}`}
+                    className={`h-12 w-12 rounded-3xl flex items-center justify-center flex-shrink-0 font-black text-sm border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${accentColor.bg} ${accentColor.text}`}
                   >
                     {u.avatar_url ? (
                       <img
                         src={u.avatar_url}
                         alt={u.full_name || "User"}
-                        className="h-12 w-12 rounded-lg object-cover"
+                        className="h-12 w-12 rounded-3xl object-cover"
                       />
                     ) : (
                       getInitials(u.full_name)
@@ -639,3 +639,4 @@ export default function ManagerDashboard() {
     </SidebarProvider>
   );
 }
+

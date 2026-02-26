@@ -38,3 +38,4 @@ export function CourseSelector({ selectedCourse, onSelectCourse }: CourseSelecto
     </div>
   );
 }
+

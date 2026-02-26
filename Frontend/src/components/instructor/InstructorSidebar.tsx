@@ -92,10 +92,10 @@ export function InstructorSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t-4 border-[#000000] p-4 bg-[#E9E9E9]">
+      <SidebarFooter className="border-t-4 border-[#000000] p-4 bg-[#E9E9E9] rounded-3xl">
         <Button
           variant="ghost"
-          className="w-full justify-start gap-3 h-12 font-black uppercase tracking-widest text-xs border-2 border-transparent hover:border-[#000000] bg-white text-[#FD5A1A] hover:bg-[#FD5A1A] hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all"
+          className="w-full justify-start gap-3 h-12 font-black uppercase tracking-widest text-xs border-2 border-transparent hover:border-[#000000] bg-white text-[#FD5A1A] hover:bg-[#FD5A1A] hover:text-white hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all rounded-3xl"
           onClick={signOut}
         >
           <LogOut className="h-5 w-5" />
@@ -105,3 +105,4 @@ export function InstructorSidebar() {
     </Sidebar>
   );
 }
+

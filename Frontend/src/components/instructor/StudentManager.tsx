@@ -68,12 +68,12 @@ export function StudentManager() {
           <input
             type="text"
             placeholder="SEARCH ENROLLMENTS..."
-            className="w-full bg-white border-4 border-black px-10 py-3 text-xs font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_black] focus:outline-none focus:shadow-none focus:translate-x-1 focus:translate-y-1 transition-all"
+            className="w-full bg-white border-4 border-black px-10 py-3 text-xs font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_black] focus:outline-none focus:shadow-none focus:translate-x-1 focus:translate-y-1 transition-all rounded-3xl"
           />
         </div>
       </div>
 
-      <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl overflow-hidden">
+      <Card className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-3xl overflow-hidden">
         <div className="divide-y-4 divide-black">
           {mockStudents.map((student, idx) => (
             <motion.div
@@ -121,7 +121,7 @@ export function StudentManager() {
                   </div>
                 </div>
                 <Badge
-                  className={`border-2 border-black rounded-none px-3 py-1 text-[9px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_black] ${student.status === "active" ? "bg-green-500 text-white" : "bg-red-500 text-white"}`}
+                  className={`border-2 border-black rounded-3xl px-3 py-1 text-[9px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_black] ${student.status === "active" ? "bg-green-500 text-white" : "bg-red-500 text-white"}`}
                 >
                   {student.status}
                 </Badge>
@@ -133,3 +133,4 @@ export function StudentManager() {
     </div>
   );
 }
+

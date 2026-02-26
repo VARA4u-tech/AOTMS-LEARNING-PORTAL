@@ -199,7 +199,7 @@ export function UserManagement({
             filteredUsers.map((user) => (
               <div
                 key={user.id}
-                className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                className="flex items-center gap-4 p-4 rounded-3xl bg-muted/50 hover:bg-muted transition-colors"
               >
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <Users className="h-5 w-5 text-primary" />
@@ -280,25 +280,25 @@ export function UserManagement({
           <CardDescription>User role distribution</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="p-4 rounded-lg bg-muted/50">
+          <div className="p-4 rounded-3xl bg-muted/50">
             <div className="flex justify-between items-center">
               <span className="font-medium">Students</span>
               <Badge>{roleCounts.student || 0}</Badge>
             </div>
           </div>
-          <div className="p-4 rounded-lg bg-muted/50">
+          <div className="p-4 rounded-3xl bg-muted/50">
             <div className="flex justify-between items-center">
               <span className="font-medium">Instructors</span>
               <Badge>{roleCounts.instructor || 0}</Badge>
             </div>
           </div>
-          <div className="p-4 rounded-lg bg-muted/50">
+          <div className="p-4 rounded-3xl bg-muted/50">
             <div className="flex justify-between items-center">
               <span className="font-medium">Managers</span>
               <Badge>{roleCounts.manager || 0}</Badge>
             </div>
           </div>
-          <div className="p-4 rounded-lg bg-primary/10">
+          <div className="p-4 rounded-3xl bg-primary/10">
             <div className="flex justify-between items-center">
               <span className="font-medium text-primary">Admins</span>
               <Badge variant="default">{roleCounts.admin || 0}</Badge>
@@ -343,3 +343,4 @@ export function UserManagement({
     </div>
   );
 }
+

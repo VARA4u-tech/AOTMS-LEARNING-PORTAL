@@ -94,7 +94,7 @@ export function DashboardSidebar() {
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         asChild
-                        className={`font-black uppercase tracking-widest text-xs h-10 border-2 transition-all cursor-pointer ${
+                        className={`font-black uppercase tracking-widest text-xs h-10 border-2 transition-all cursor-pointer rounded-xl ${
                           isActive
                             ? "bg-[#FD5A1A] text-white border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-[#FD5A1A]/90 hover:text-white"
                             : "bg-white text-[#000000] border-transparent hover:border-[#000000] hover:bg-[#E9E9E9] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-[1px]"
@@ -116,12 +116,12 @@ export function DashboardSidebar() {
         ))}
       </SidebarContent>
 
-      <SidebarFooter className="border-t-4 border-[#000000] p-4 bg-[#E9E9E9] space-y-2">
+      <SidebarFooter className="border-t-4 border-[#000000] p-4 bg-[#E9E9E9] space-y-2 rounded-3xl">
         <SidebarMenu className="gap-2">
           <SidebarMenuItem>
             <SidebarMenuButton
               onClick={signOut}
-              className="font-black uppercase tracking-widest text-[10px] h-10 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white text-[#FD5A1A] hover:bg-[#FD5A1A] hover:text-white hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] cursor-pointer transition-all"
+              className="font-black uppercase tracking-widest text-[10px] h-10 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white text-[#FD5A1A] hover:bg-[#FD5A1A] hover:text-white hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] cursor-pointer transition-all rounded-xl"
             >
               <LogOut className="h-4 w-4 shrink-0" />
               <span>Sign Out</span>
@@ -132,3 +132,4 @@ export function DashboardSidebar() {
     </Sidebar>
   );
 }
+

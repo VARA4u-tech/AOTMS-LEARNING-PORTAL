@@ -170,7 +170,7 @@ export function VideoUploader({ courseId }: VideoUploaderProps) {
               </DialogHeader>
               <div className="space-y-4 py-4">
                 <div
-                  className="border-2 border-dashed border-border rounded-lg p-6 text-center cursor-pointer hover:border-primary/50 transition-colors"
+                  className="border-2 border-dashed border-border rounded-3xl p-6 text-center cursor-pointer hover:border-primary/50 transition-colors"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <input
@@ -296,9 +296,9 @@ export function VideoUploader({ courseId }: VideoUploaderProps) {
             {videos.map((video, idx) => (
               <div
                 key={video.id}
-                className="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+                className="flex items-center gap-4 p-4 rounded-3xl bg-muted/50 hover:bg-muted transition-colors"
               >
-                <div className="h-16 w-24 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="h-16 w-24 rounded-3xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <PlayCircle className="h-8 w-8 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -351,3 +351,4 @@ export function VideoUploader({ courseId }: VideoUploaderProps) {
     </Card>
   );
 }
+

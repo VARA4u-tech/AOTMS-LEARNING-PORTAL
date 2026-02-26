@@ -46,7 +46,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="py-16 md:py-32 bg-white relative overflow-hidden font-['Inter']"
+      className="py-16 md:py-32 bg-white relative overflow-hidden font-[ rounded-3xl'Inter']"
     >
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
@@ -59,7 +59,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#FD5A1A] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
+          <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#FD5A1A] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-white mb-8 rounded-3xl">
             <span className="text-xs font-black uppercase tracking-[0.2em]">
               Your Learning Journey
             </span>
@@ -76,7 +76,7 @@ const HowItWorks = () => {
         {/* Steps Grid - Horizontal Scroll on Mobile */}
         <div className="relative">
           {/* Thick Connecting Line */}
-          <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[4px] bg-black z-0" />
+          <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[4px] bg-black z-0 rounded-3xl" />
 
           <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 relative z-10 snap-x snap-mandatory hide-scrollbar">
             {steps.map((step, index) => (
@@ -89,15 +89,15 @@ const HowItWorks = () => {
                 className="relative group w-[75vw] sm:w-auto shrink-0 snap-center flex flex-col items-center text-center"
               >
                 {/* Step Number Box */}
-                <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-black flex items-center justify-center mb-6 md:mb-8 shadow-[6px_6px_0px_0px_rgba(253,90,26,1)] group-hover:bg-[#FD5A1A] group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
+                <div className="relative z-10 w-16 h-16 md:w-20 md:h-20 bg-white border-4 border-black flex items-center justify-center mb-6 md:mb-8 shadow-[6px_6px_0px_0px_rgba(253,90,26,1)] group-hover:bg-[#FD5A1A] group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all rounded-3xl">
                   <span className="text-xl md:text-2xl font-black text-black group-hover:text-white italic">
                     {step.step}
                   </span>
                 </div>
 
                 {/* Content Card */}
-                <div className="bg-white border-4 border-black p-5 md:p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] group-hover:translate-x-[4px] group-hover:translate-y-[4px] transition-all h-full rounded-none w-full flex flex-col flex-1">
-                  <div className="w-10 h-10 bg-[#E9E9E9] border-2 border-black flex items-center justify-center mb-4 mx-auto group-hover:bg-[#FD5A1A] transition-colors">
+                <div className="bg-white border-4 border-black p-5 md:p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] group-hover:translate-x-[4px] group-hover:translate-y-[4px] transition-all h-full rounded-3xl w-full flex flex-col flex-1">
+                  <div className="w-10 h-10 bg-[#E9E9E9] border-2 border-black flex items-center justify-center mb-4 mx-auto group-hover:bg-[#FD5A1A] transition-colors rounded-3xl">
                     <step.icon className="w-5 h-5 text-black group-hover:text-white" />
                   </div>
                   <h3 className="text-sm font-black text-black mb-3 uppercase tracking-wider italic">
@@ -117,3 +117,5 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
+
+

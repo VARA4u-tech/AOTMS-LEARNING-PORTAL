@@ -118,7 +118,7 @@ export function CourseMonitoring() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-[#000000]" />
           <Input
             placeholder="Search courses..."
-            className="pl-10 w-full sm:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:text-[#000000]/50"
+            className="pl-10 w-full sm:w-64 bg-[#E9E9E9] border-2 border-[#000000] text-[#000000] font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:bg-white transition-all placeholder:text-[#000000]/50 rounded-3xl"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -127,7 +127,7 @@ export function CourseMonitoring() {
 
       {/* Summary Stats */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Total Courses
@@ -142,7 +142,7 @@ export function CourseMonitoring() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Total Topics
@@ -157,7 +157,7 @@ export function CourseMonitoring() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Avg. Progress
@@ -169,11 +169,11 @@ export function CourseMonitoring() {
             </div>
             <Progress
               value={avgProgress}
-              className="h-2 mt-1 border-2 border-[#000000] rounded-none"
+              className="h-2 mt-1 border-2 border-[#000000] rounded-3xl"
             />
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Active Instructors
@@ -188,7 +188,7 @@ export function CourseMonitoring() {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#E9E9E9] rounded-none border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
+        <Card className="bg-[#E9E9E9] rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all">
           <CardHeader className="pb-2">
             <CardTitle className="text-[10px] font-black text-[#000000]/60 uppercase tracking-widest">
               Completion Rate
@@ -209,17 +209,17 @@ export function CourseMonitoring() {
       </div>
 
       <Tabs defaultValue="courses" className="space-y-4">
-        <TabsList className="bg-[#E9E9E9] border-2 border-[#000000] p-1 h-auto flex gap-1">
+        <TabsList className="bg-[#E9E9E9] border-2 border-[#000000] p-1 h-auto flex gap-1 rounded-3xl">
           <TabsTrigger
             value="courses"
-            className="gap-2 font-black uppercase tracking-widest text-xs data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-[#000000] data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-none"
+            className="gap-2 font-black uppercase tracking-widest text-xs data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-[#000000] data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
           >
             <BookOpen className="h-4 w-4" />
             Course Progress
           </TabsTrigger>
           <TabsTrigger
             value="instructors"
-            className="gap-2 font-black uppercase tracking-widest text-xs data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-[#000000] data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-none"
+            className="gap-2 font-black uppercase tracking-widest text-xs data-[state=active]:bg-white data-[state=active]:border-2 data-[state=active]:border-[#000000] data-[state=active]:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-3xl"
           >
             <Users className="h-4 w-4" />
             Instructor Activity
@@ -228,7 +228,7 @@ export function CourseMonitoring() {
 
         {/* Course Progress Tab */}
         <TabsContent value="courses">
-          <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-2">
+          <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
                 <BookOpen className="h-6 w-6 text-[#0075CF]" />
@@ -257,7 +257,7 @@ export function CourseMonitoring() {
                     return (
                       <div
                         key={course.id}
-                        className="p-4 rounded-none border-4 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                        className="p-4 rounded-3xl border-4 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                       >
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-3">
@@ -276,7 +276,7 @@ export function CourseMonitoring() {
                           <div className="flex items-center gap-3">
                             <Badge
                               className={cn(
-                                "rounded-none border-2 border-[#000000] font-black uppercase tracking-widest",
+                                "rounded-3xl border-2 border-[#000000] font-black uppercase tracking-widest",
                                 course.is_published
                                   ? "bg-[#0075CF] text-white"
                                   : "bg-[#E9E9E9] text-[#000000]",
@@ -307,7 +307,7 @@ export function CourseMonitoring() {
                           </div>
                           <Progress
                             value={stats?.percentage || 0}
-                            className="h-3 border-2 border-[#000000] rounded-none"
+                            className="h-3 border-2 border-[#000000] rounded-3xl"
                           />
                         </div>
 
@@ -349,7 +349,7 @@ export function CourseMonitoring() {
 
         {/* Instructor Activity Tab */}
         <TabsContent value="instructors">
-          <Card className="bg-white rounded-none border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-2">
+          <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl font-black text-[#000000] uppercase tracking-wider">
                 <Activity className="h-6 w-6 text-[#FD5A1A]" />
@@ -386,7 +386,7 @@ export function CourseMonitoring() {
                     return (
                       <div
                         key={progress.id}
-                        className="p-4 rounded-none border-4 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                        className="p-4 rounded-3xl border-4 border-[#000000] bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                       >
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-3">
@@ -410,11 +410,11 @@ export function CourseMonitoring() {
                           </div>
                           <div className="flex items-center gap-2">
                             {isActive ? (
-                              <Badge className="bg-[#6BCB77] gap-1 rounded-none border-2 border-[#000000] font-black uppercase tracking-widest text-white">
+                              <Badge className="bg-[#6BCB77] gap-1 rounded-3xl border-2 border-[#000000] font-black uppercase tracking-widest text-white">
                                 <Activity className="h-3 w-3" /> Active
                               </Badge>
                             ) : (
-                              <Badge className="bg-[#E9E9E9] text-[#000000] gap-1 rounded-none border-2 border-[#000000] font-black uppercase tracking-widest">
+                              <Badge className="bg-[#E9E9E9] text-[#000000] gap-1 rounded-3xl border-2 border-[#000000] font-black uppercase tracking-widest">
                                 <AlertCircle className="h-3 w-3" /> Inactive
                               </Badge>
                             )}
@@ -480,7 +480,7 @@ export function CourseMonitoring() {
                           </div>
                           <Progress
                             value={progressPct}
-                            className={`h-3 border-2 border-[#000000] rounded-none ${progressPct >= 80 ? "[&>div]:bg-green-500" : progressPct >= 50 ? "[&>div]:bg-yellow-500" : "[&>div]:bg-red-500"}`}
+                            className={`h-3 border-2 border-[#000000] rounded-3xl ${progressPct >= 80 ? "[&>div]:bg-green-500" : progressPct >= 50 ? "[&>div]:bg-yellow-500" : "[&>div]:bg-red-500"}`}
                           />
                         </div>
 
@@ -514,3 +514,4 @@ export function CourseMonitoring() {
     </div>
   );
 }
+

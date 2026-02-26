@@ -149,7 +149,7 @@ export default function ExamHistoryPage() {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="bg-white border-2 border-[#000000] rounded-xl p-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-center"
+            className="bg-white border-2 border-[#000000] rounded-3xl p-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] text-center"
           >
             <div className={`text-3xl font-black ${stat.color}`}>
               {stat.value}
@@ -162,7 +162,7 @@ export default function ExamHistoryPage() {
       </div>
 
       {/* TABLE */}
-      <div className="bg-white border-4 border-[#000000] rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
+      <div className="bg-white border-4 border-[#000000] rounded-3xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
         {/* Headings */}
         <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-4 bg-[#E9E9E9] border-b-4 border-[#000000] font-black uppercase text-xs tracking-widest text-[#000000]/70">
           <div className="col-span-5">Exam Details</div>
@@ -273,3 +273,4 @@ export default function ExamHistoryPage() {
     </div>
   );
 }
+

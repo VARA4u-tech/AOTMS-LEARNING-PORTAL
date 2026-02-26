@@ -121,9 +121,9 @@ export function CourseApproval({
             pendingCourses.map((course) => (
               <div
                 key={course.id}
-                className="flex items-center gap-4 p-4 rounded-lg bg-muted/50"
+                className="flex items-center gap-4 p-4 rounded-3xl bg-muted/50"
               >
-                <div className="h-12 w-12 rounded-lg bg-accent/10 flex items-center justify-center">
+                <div className="h-12 w-12 rounded-3xl bg-accent/10 flex items-center justify-center">
                   <BookOpen className="h-5 w-5 text-accent" />
                 </div>
                 <div className="flex-1">
@@ -176,14 +176,14 @@ export function CourseApproval({
           <CardDescription>Platform-wide course data</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="p-4 rounded-lg bg-muted/50">
+          <div className="p-4 rounded-3xl bg-muted/50">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm">Total Courses</span>
               <span className="font-bold">{courses.length}</span>
             </div>
             <Progress value={100} className="h-2" />
           </div>
-          <div className="p-4 rounded-lg bg-green-500/10">
+          <div className="p-4 rounded-3xl bg-green-500/10">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-green-600">Published</span>
               <span className="font-bold">{approvedCourses.length}</span>
@@ -193,7 +193,7 @@ export function CourseApproval({
               className="h-2" 
             />
           </div>
-          <div className="p-4 rounded-lg bg-accent/10">
+          <div className="p-4 rounded-3xl bg-accent/10">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-accent">Pending</span>
               <span className="font-bold">{pendingCourses.length}</span>
@@ -203,7 +203,7 @@ export function CourseApproval({
               className="h-2" 
             />
           </div>
-          <div className="p-4 rounded-lg bg-destructive/10">
+          <div className="p-4 rounded-3xl bg-destructive/10">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-destructive">Rejected</span>
               <span className="font-bold">{rejectedCourses.length}</span>
@@ -213,7 +213,7 @@ export function CourseApproval({
               className="h-2" 
             />
           </div>
-          <div className="p-4 rounded-lg bg-muted">
+          <div className="p-4 rounded-3xl bg-muted">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-muted-foreground">Disabled</span>
               <span className="font-bold">{disabledCourses.length}</span>
@@ -260,3 +260,4 @@ export function CourseApproval({
     </div>
   );
 }
+

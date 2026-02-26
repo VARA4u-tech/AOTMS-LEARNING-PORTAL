@@ -110,7 +110,7 @@ export function ManagerAttendance() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Attendance Summary */}
-        <div className="bg-white border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6">
+        <div className="bg-white border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 rounded-3xl">
           <h2 className="text-xl font-black uppercase tracking-widest mb-4 flex items-center gap-2">
             <CalendarDays className="h-5 w-5 text-[#FD5A1A]" /> User Summary
           </h2>
@@ -158,14 +158,14 @@ export function ManagerAttendance() {
                         <>
                           <button
                             onClick={() => handleMarkAbsent(user.userId)}
-                            className="px-3 py-1 bg-white border-2 border-[#000000] text-xs font-bold uppercase hover:bg-red-100 transition-colors"
+                            className="px-3 py-1 bg-white border-2 border-[#000000] text-xs font-bold uppercase hover:bg-red-100 transition-colors rounded-3xl"
                           >
                             Mark Absent Today
                           </button>
                           {user.absent >= 5 && (
                             <button
                               onClick={() => handleSuspend(user.userId)}
-                              className="p-1 bg-red-500 text-white border-2 border-[#000000] hover:bg-red-600 transition-colors"
+                              className="p-1 bg-red-500 text-white border-2 border-[#000000] hover:bg-red-600 transition-colors rounded-3xl"
                               title="Suspend User (>= 5 Absences)"
                             >
                               <UserX className="h-4 w-4" />
@@ -186,7 +186,7 @@ export function ManagerAttendance() {
         </div>
 
         {/* Suspended Users Section */}
-        <div className="bg-white border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6">
+        <div className="bg-white border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-6 rounded-3xl">
           <h2 className="text-xl font-black uppercase tracking-widest text-[#000000] mb-4 flex items-center gap-2">
             <UserX className="h-5 w-5 text-red-500" /> Suspended Accounts
           </h2>
@@ -232,3 +232,4 @@ export function ManagerAttendance() {
     </div>
   );
 }
+

@@ -181,12 +181,12 @@ export default function AdminDashboard() {
                 placeholder={`Search ${label.toLowerCase()}...`}
                 value={userSearchQuery}
                 onChange={(e) => setUserSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-3 w-full border-4 border-[#000000] bg-white text-[#000000] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none placeholder:font-normal placeholder:text-[#000000]/50"
+                className="pl-10 pr-4 py-3 w-full border-4 border-[#000000] bg-white text-[#000000] font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] focus:outline-none placeholder:font-normal placeholder:text-[#000000]/50 rounded-3xl"
               />
             </div>
 
             {/* User List */}
-            <Card className="rounded-xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all bg-white relative overflow-hidden">
+            <Card className="rounded-3xl border-4 border-[#000000] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all bg-white relative overflow-hidden">
               {dataLoading ? (
                 <CardContent className="p-6 space-y-4">
                   {[1, 2, 3, 4, 5].map((i) => (
@@ -201,7 +201,7 @@ export default function AdminDashboard() {
                 </CardContent>
               ) : filtered.length === 0 ? (
                 <CardContent className="flex flex-col items-center justify-center py-20 gap-3 text-[#000000]/60 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-                  <div className="p-4 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-xl mb-2">
+                  <div className="p-4 bg-[#E9E9E9] border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] rounded-3xl mb-2">
                     <Users className="h-10 w-10 text-[#000000]" />
                   </div>
                   <p className="font-black uppercase tracking-wider text-xl text-[#000000]">
@@ -221,7 +221,7 @@ export default function AdminDashboard() {
                       className="flex items-center gap-4 px-6 py-4 hover:bg-[#E9E9E9] transition-colors group cursor-pointer"
                     >
                       <div
-                        className={`h-12 w-12 rounded-lg flex items-center justify-center flex-shrink-0 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all ${accentColor.bg}`}
+                        className={`h-12 w-12 rounded-3xl flex items-center justify-center flex-shrink-0 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all ${accentColor.bg}`}
                       >
                         <Users className={`h-6 w-6 ${accentColor.icon}`} />
                       </div>
@@ -302,12 +302,12 @@ export default function AdminDashboard() {
           {/* Candidates Overview */}
           <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 mb-4 sm:mb-6">
             <Card
-              className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+              className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
               onClick={() => openRoleListView("all")}
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="h-12 w-12 rounded-3xl flex items-center justify-center bg-[#000000] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     <Users className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -322,12 +322,12 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
             <Card
-              className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+              className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
               onClick={() => openRoleListView("student")}
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-[#0075CF] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="h-12 w-12 rounded-3xl flex items-center justify-center bg-[#0075CF] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     <GraduationCap className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -342,12 +342,12 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
             <Card
-              className="bg-white rounded-xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
+              className="bg-white rounded-3xl border-4 border-[#000000] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] transition-all cursor-pointer group"
               onClick={() => openRoleListView("instructor")}
             >
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-lg flex items-center justify-center bg-[#FD5A1A] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="h-12 w-12 rounded-3xl flex items-center justify-center bg-[#FD5A1A] border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     <UserCheck className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -365,7 +365,7 @@ export default function AdminDashboard() {
 
           {/* Stats Grid */}
           <div className="grid gap-3 sm:gap-4 grid-cols-2 lg:grid-cols-4 mt-4 sm:mt-6">
-            <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
+            <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
                   Total Revenue
@@ -391,7 +391,7 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
+            <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
                   Active Courses
@@ -416,7 +416,7 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
+            <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
                   Security Events
@@ -441,7 +441,7 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white rounded-xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
+            <Card className="bg-white rounded-3xl border-4 border-[#000000] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-default">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <CardTitle className="text-[10px] font-black uppercase tracking-widest text-[#000000]/60">
                   System Health
@@ -562,7 +562,7 @@ export default function AdminDashboard() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 rounded-lg bg-muted/50">
+                      <div className="p-4 rounded-3xl bg-muted/50">
                         <div className="flex items-center gap-2 mb-2">
                           <Users className="h-4 w-4 text-primary" />
                           <span className="text-sm text-muted-foreground">
@@ -574,7 +574,7 @@ export default function AdminDashboard() {
                           <TrendingUp className="h-3 w-3" /> Real-time data
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-muted/50">
+                      <div className="p-4 rounded-3xl bg-muted/50">
                         <div className="flex items-center gap-2 mb-2">
                           <BookOpen className="h-4 w-4 text-accent" />
                           <span className="text-sm text-muted-foreground">
@@ -589,7 +589,7 @@ export default function AdminDashboard() {
                           {stats.pendingCourses} pending
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-muted/50">
+                      <div className="p-4 rounded-3xl bg-muted/50">
                         <div className="flex items-center gap-2 mb-2">
                           <Shield className="h-4 w-4 text-destructive" />
                           <span className="text-sm text-muted-foreground">
@@ -603,7 +603,7 @@ export default function AdminDashboard() {
                           {stats.highPriorityEvents} high priority
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-primary/5 border border-primary/10">
+                      <div className="p-4 rounded-3xl bg-primary/5 border border-primary/10">
                         <div className="flex items-center gap-2 mb-2">
                           <DollarSign className="h-4 w-4 text-primary" />
                           <span className="text-sm text-muted-foreground">
@@ -617,7 +617,7 @@ export default function AdminDashboard() {
                           <TrendingUp className="h-3 w-3" /> +12% growth
                         </p>
                       </div>
-                      <div className="p-4 rounded-lg bg-muted/50">
+                      <div className="p-4 rounded-3xl bg-muted/50">
                         <div className="flex items-center gap-2 mb-2">
                           <Globe className="h-4 w-4 text-primary" />
                           <span className="text-sm text-muted-foreground">
@@ -858,3 +858,4 @@ export default function AdminDashboard() {
     </SidebarProvider>
   );
 }
+

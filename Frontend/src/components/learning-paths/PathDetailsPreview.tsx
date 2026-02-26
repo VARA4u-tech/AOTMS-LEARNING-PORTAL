@@ -43,11 +43,11 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 100 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="bg-white border-t-4 sm:border-8 border-black shadow-none sm:shadow-[20px_20px_0px_0px_#0075CF] max-w-3xl w-full max-h-[92vh] sm:max-h-[90vh] overflow-y-auto relative rounded-t-3xl sm:rounded-none"
+          className="bg-white border-t-4 sm:border-8 border-black shadow-none sm:shadow-[20px_20px_0px_0px_#0075CF] max-w-3xl w-full max-h-[92vh] sm:max-h-[90vh] overflow-y-auto relative rounded-t-3xl sm:rounded-3xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="sticky top-0 bg-[#E9E9E9] border-b-4 sm:border-b-8 border-black p-6 sm:p-8 flex items-center justify-between z-20">
+          <div className="sticky top-0 bg-[#E9E9E9] border-b-4 sm:border-b-8 border-black p-6 sm:p-8 flex items-center justify-between z-20 rounded-3xl">
             <div>
               <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0075CF] mb-1">
                 Strategy Briefing
@@ -58,7 +58,7 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
             </div>
             <button
               onClick={onClose}
-              className="w-10 h-10 sm:w-12 sm:h-12 bg-black text-white flex items-center justify-center border-2 sm:border-4 border-black hover:bg-[#FD5A1A] transition-colors shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] rounded-lg"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-black text-white flex items-center justify-center border-2 sm:border-4 border-black hover:bg-[#FD5A1A] transition-colors shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] rounded-3xl"
             >
               <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
@@ -82,10 +82,10 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
                         key={index}
                         className="flex items-start sm:items-center gap-4 sm:gap-6 relative"
                       >
-                        <div className="shrink-0 w-12 h-12 bg-white border-2 sm:border-4 border-black flex items-center justify-center z-10 shadow-[3px_3px_0px_0px_black] group transition-all rounded-lg">
+                        <div className="shrink-0 w-12 h-12 bg-white border-2 sm:border-4 border-black flex items-center justify-center z-10 shadow-[3px_3px_0px_0px_black] group transition-all rounded-3xl">
                           <Icon className="w-5 h-5 text-black group-hover:text-[#FD5A1A]" />
                         </div>
-                        <div className="flex-1 bg-[#F9F9F9] border-2 border-black p-3 sm:p-4 rounded-xl">
+                        <div className="flex-1 bg-[#F9F9F9] border-2 border-black p-3 sm:p-4 rounded-3xl">
                           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                             <span className="text-xs sm:text-sm font-black text-black uppercase tracking-tight">
                               {course}
@@ -112,7 +112,7 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
                   {path.skills.map((skill, index) => (
                     <div
                       key={index}
-                      className="bg-black text-white border-2 border-black px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_#FD5A1A] rounded-md"
+                      className="bg-black text-white border-2 border-black px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_#FD5A1A] rounded-3xl"
                     >
                       {skill}
                     </div>
@@ -128,7 +128,7 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
                   {path.tools.map((tool, index) => (
                     <div
                       key={index}
-                      className="bg-white text-black border-2 border-black px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_#0075CF] rounded-md"
+                      className="bg-white text-black border-2 border-black px-2.5 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest shadow-[2px_2px_0px_0px_#0075CF] rounded-3xl"
                     >
                       {tool}
                     </div>
@@ -138,7 +138,7 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
             </div>
 
             {/* Career Roles */}
-            <div className="bg-[#0075CF] text-white border-4 border-black p-6 sm:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative z-10 rounded-2xl">
+            <div className="bg-[#0075CF] text-white border-4 border-black p-6 sm:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative z-10 rounded-3xl">
               <h3 className="text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 sm:mb-6 text-white/70">
                 Deployment Targets
               </h3>
@@ -155,8 +155,8 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
             </div>
           </div>
 
-          <div className="sticky bottom-0 bg-white border-t-4 sm:border-t-8 border-black p-6 sm:p-8 z-20">
-            <Button className="w-full bg-[#FD5A1A] text-white border-4 border-black p-6 sm:p-8 text-lg sm:text-xl font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-xl h-auto italic">
+          <div className="sticky bottom-0 bg-white border-t-4 sm:border-t-8 border-black p-6 sm:p-8 z-20 rounded-3xl">
+            <Button className="w-full bg-[#FD5A1A] text-white border-4 border-black p-6 sm:p-8 text-lg sm:text-xl font-black uppercase tracking-widest shadow-[6px_6px_0px_0px_black] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all rounded-3xl h-auto italic">
               Initialize Enrollment
             </Button>
           </div>
@@ -167,3 +167,4 @@ const PathDetailsPreview = ({ path, onClose }: PathDetailsPreviewProps) => {
 };
 
 export default PathDetailsPreview;
+

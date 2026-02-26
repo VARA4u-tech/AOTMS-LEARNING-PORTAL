@@ -32,3 +32,4 @@ const LearningPathsHero = () => {
 };
 
 export default LearningPathsHero;
+

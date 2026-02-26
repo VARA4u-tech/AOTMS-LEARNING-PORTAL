@@ -7,11 +7,10 @@ import { useState, useEffect } from "react";
 const sections = [
   { id: "hero", label: "Home" },
   { id: "about", label: "Why Us" },
+  { id: "how-it-works", label: "Process" },
   { id: "features", label: "Features" },
   { id: "technology-ecosystem", label: "Tech Stack" },
-  { id: "leaderboard", label: "Leaderboard" },
   { id: "instructors", label: "Instructors" },
-  { id: "how-it-works", label: "Process" },
   { id: "testimonials", label: "Reviews" },
   { id: "faq", label: "FAQ" },
 ];
@@ -238,36 +237,36 @@ const HeroSection = () => {
 
       {/* Brutalist Sticky Scroll Spy Navigation (Desktop only) */}
       {!isMobile && (
-        <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-3">
+        <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-3">
           {sections.map((section, index) => {
             const isActive = activeSection === section.id;
             return (
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className={`group flex items-center justify-end gap-4 transition-all duration-300 ${
+                className={`group flex items-center justify-start gap-4 transition-all duration-300 ${
                   isActive ? "opacity-100" : "opacity-40 hover:opacity-100"
                 }`}
               >
                 <div
-                  className={`bg-white border-2 border-black font-black uppercase tracking-widest text-[10px] py-1 px-3 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 origin-right
-                  ${
-                    isActive
-                      ? "scale-100 translate-x-0"
-                      : "scale-0 translate-x-4 opacity-0 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100"
-                  }`}
-                >
-                  {section.label}
-                </div>
-                <div
-                  className={`w-10 h-10 border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-300
+                  className={`w-10 h-10 border-2 border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 shrink-0
                   ${
                     isActive
                       ? "bg-[#0075CF] text-white"
-                      : "bg-white text-black hover:bg-[#FD5A1A] hover:text-white hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
+                      : "bg-white text-black hover:bg-[#FD5A1A] hover:text-white"
                   }`}
                 >
                   <span className="font-black italic text-sm">{index + 1}</span>
+                </div>
+                <div
+                  className={`bg-white border-2 border-black font-black uppercase tracking-widest text-[10px] py-1 px-3 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 origin-left whitespace-nowrap
+                  ${
+                    isActive
+                      ? "scale-100 translate-x-0"
+                      : "scale-0 -translate-x-4 opacity-0 group-hover:scale-100 group-hover:translate-x-0 group-hover:opacity-100"
+                  }`}
+                >
+                  {section.label}
                 </div>
               </button>
             );

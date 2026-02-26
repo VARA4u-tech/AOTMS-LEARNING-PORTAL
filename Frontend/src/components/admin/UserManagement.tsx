@@ -243,9 +243,9 @@ export function UserManagement({
                       variant="ghost"
                       size="icon"
                       title="Suspend"
-                      onClick={() => {
-                        onUpdateStatus(user.id, "suspended");
-                        suspendUser(user.id);
+                      onClick={async () => {
+                        await onUpdateStatus(user.id, "suspended");
+                        await suspendUser(user.id);
                       }}
                     >
                       <Lock className="h-4 w-4 text-destructive" />
@@ -255,9 +255,9 @@ export function UserManagement({
                       variant="ghost"
                       size="icon"
                       title="Activate"
-                      onClick={() => {
-                        onUpdateStatus(user.id, "active");
-                        reactivateUser(user.id);
+                      onClick={async () => {
+                        await onUpdateStatus(user.id, "active");
+                        await reactivateUser(user.id);
                       }}
                     >
                       <Unlock className="h-4 w-4 text-green-600" />

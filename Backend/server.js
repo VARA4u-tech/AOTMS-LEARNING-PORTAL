@@ -553,7 +553,15 @@ app.get("/api/data/:table", async (req, res) => {
     const authClient = getAuthClient(token);
     let query = authClient.from(table).select("*");
 
-    const { sort, order, limit } = req.query;
+    const { sort, order, limit, ...filters } = req.query;
+
+    // Apply filters
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value !== undefined) {
+        query = query.eq(key, value);
+      }
+    });
+
     if (sort) {
       query = query.order(sort, { ascending: order === "asc" });
     }
@@ -564,15 +572,15 @@ app.get("/api/data/:table", async (req, res) => {
     const { data, error } = await query;
     if (error) {
       if (error.code === "PGRST205") {
-        console.warn(
-          `[Supabase] Table not found: ${table}. Return empty array.`,
-        );
         return res.json([]);
       }
       throw error;
     }
     res.json(data);
   } catch (err) {
+    if (err.code === "PGRST205") {
+      return res.json([]);
+    }
     console.error(`GET data/${table} error:`, err);
     res.status(500).json({ error: err.message });
   }

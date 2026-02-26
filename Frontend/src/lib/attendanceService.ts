@@ -16,6 +16,7 @@ export interface SuspendedUser {
 
 const ATTENDANCE_KEY = "aotms_attendance_records";
 const SUSPENDED_KEY = "aotms_suspended_users";
+const API_URL = "http://localhost:5000/api";
 
 function getTodayString() {
   const d = new Date();
@@ -52,11 +53,12 @@ export function saveSuspendedUsers(users: SuspendedUser[]) {
 }
 
 // 1. Log Daily Attendance on Login
-export function logDailyAttendance(userId: string, role: string) {
+export async function logDailyAttendance(userId: string, role: string) {
   const today = getTodayString();
   const records = getAllAttendance();
   const existing = records.find((r) => r.userId === userId && r.date === today);
 
+  // Still update LocalStorage for immediate UI feedback
   if (!existing) {
     records.push({
       id: `${userId}-${today}`,
@@ -68,10 +70,27 @@ export function logDailyAttendance(userId: string, role: string) {
     });
     saveAllAttendance(records);
   }
+
+  // Also call Backend
+  try {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      await fetch(`${API_URL}/attendance/log`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ userId, role }),
+      });
+    }
+  } catch (e) {
+    console.error("Failed to log attendance to backend:", e);
+  }
 }
 
 // 2. Mark absent (Manager or system could do this)
-export function markAbsent(userId: string, role: string, date: string) {
+export async function markAbsent(userId: string, role: string, date: string) {
   const records = getAllAttendance();
   const existingIndex = records.findIndex(
     (r) => r.userId === userId && r.date === date,
@@ -90,15 +109,58 @@ export function markAbsent(userId: string, role: string, date: string) {
     });
   }
   saveAllAttendance(records);
+
+  // Sync to Backend
+  try {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      await fetch(`${API_URL}/data/attendance`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          user_id: userId,
+          date,
+          status: "absent",
+          role,
+        }),
+      });
+    }
+  } catch (e) {
+    console.error("Failed to mark absent on backend:", e);
+  }
+
   checkAbsencesAndSuspend(userId);
 }
 
 // 3. Suspend & Reactivate
-export function suspendUser(userId: string) {
+export async function suspendUser(userId: string) {
   const suspended = getSuspendedUsers();
   if (!suspended.find((s) => s.userId === userId)) {
     suspended.push({ userId, suspendedAt: new Date().toISOString() });
     saveSuspendedUsers(suspended);
+
+    // Sync to Backend
+    try {
+      const token = localStorage.getItem("access_token");
+      if (token) {
+        await fetch(`${API_URL}/data/suspended_users`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            user_id: userId,
+            suspended_at: new Date().toISOString(),
+          }),
+        });
+      }
+    } catch (e) {
+      console.error("Failed to suspend user on backend:", e);
+    }
 
     // Simulate notification
     console.log(
@@ -110,10 +172,36 @@ export function suspendUser(userId: string) {
   }
 }
 
-export function reactivateUser(userId: string) {
+export async function reactivateUser(userId: string) {
   let suspended = getSuspendedUsers();
   suspended = suspended.filter((s) => s.userId !== userId);
   saveSuspendedUsers(suspended);
+
+  // Sync to Backend
+  try {
+    const token = localStorage.getItem("access_token");
+    if (token) {
+      // We need the record ID to delete, but for now we can delete by user_id if we had a proper route.
+      // Since /api/data/:table/:id expects ID, we'll try to find it or just use a generic delete if available.
+      // However, we'll assume the manager UI will handle the specific ID delete.
+      // For this helper, we'll try to find the ID first.
+      const res = await fetch(
+        `${API_URL}/data/suspended_users?user_id=${userId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
+      const data = await res.json();
+      if (data && data.length > 0) {
+        await fetch(`${API_URL}/data/suspended_users/${data[0].id}`, {
+          method: "DELETE",
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      }
+    }
+  } catch (e) {
+    console.error("Failed to reactivate user on backend:", e);
+  }
 }
 
 // Calculate total absences to check if we should throw a warning or suspend
@@ -130,7 +218,6 @@ export function checkAbsencesAndSuspend(userId: string) {
     console.log(
       `[Notification] Strict warning for ${userId}: Multiple days absent.`,
     );
-    // A realistic alert could be triggered if we had context, but we will mock a toast later.
   } else if (missingDays === 1) {
     console.log(
       `[Notification] Warning for ${userId}: Missed a class/test today.`,
@@ -138,7 +225,15 @@ export function checkAbsencesAndSuspend(userId: string) {
   }
 }
 
-export function isUserSuspended(userId: string): boolean {
-  const suspended = getSuspendedUsers();
-  return !!suspended.find((s) => s.userId === userId);
+export async function isUserSuspended(userId: string): Promise<boolean> {
+  // Check Backend First
+  try {
+    const res = await fetch(`${API_URL}/attendance/check-suspension/${userId}`);
+    const data = await res.json();
+    return data.suspended;
+  } catch (e) {
+    // Fallback to LocalStorage
+    const suspended = getSuspendedUsers();
+    return !!suspended.find((s) => s.userId === userId);
+  }
 }

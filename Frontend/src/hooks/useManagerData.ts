@@ -794,3 +794,24 @@ export function useCreateLeaderboardAudit() {
     },
   });
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// 10. ATTENDANCE MONITORING
+// ═══════════════════════════════════════════════════════════════════════════
+
+export function useAttendance() {
+  return useQuery<any[]>({
+    queryKey: ["attendance"],
+    queryFn: () => safeFetchWithAuth("/data/attendance?sort=date&order=desc"),
+    refetchInterval: 10000,
+  });
+}
+
+export function useSuspendedUsers() {
+  return useQuery<any[]>({
+    queryKey: ["suspended-users"],
+    queryFn: () =>
+      safeFetchWithAuth("/data/suspended_users?sort=suspended_at&order=desc"),
+    refetchInterval: 10000,
+  });
+}

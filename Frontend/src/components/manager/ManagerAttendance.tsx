@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
-  getAllAttendance,
-  getSuspendedUsers,
   markAbsent,
-  checkAbsencesAndSuspend,
   reactivateUser,
   suspendUser,
 } from "@/lib/attendanceService";
+import { useAttendance, useSuspendedUsers } from "@/hooks/useManagerData";
 import { UserRole } from "@/types/auth";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -18,71 +16,64 @@ import {
 } from "lucide-react";
 
 export function ManagerAttendance() {
-  const [attendances, setAttendances] = useState<any[]>([]);
-  const [suspended, setSuspended] = useState<any[]>([]);
+  const { data: attendances = [], refetch: refetchAttendance } =
+    useAttendance();
+  const { data: suspended = [], refetch: refetchSuspended } =
+    useSuspendedUsers();
   const [searchTerm, setSearchTerm] = useState("");
   const { toast } = useToast();
 
-  const loadData = () => {
-    setAttendances(getAllAttendance());
-    setSuspended(getSuspendedUsers());
-  };
-
-  useEffect(() => {
-    loadData();
-    // Refresh interval for live monitoring demo
-    const iv = setInterval(loadData, 5000);
-    return () => clearInterval(iv);
-  }, []);
-
-  const handleMarkAbsent = (
+  const handleMarkAbsent = async (
     userId: string,
     date: string = new Date().toISOString().split("T")[0],
   ) => {
-    markAbsent(userId, "student", date);
+    await markAbsent(userId, "student", date);
     toast({ title: `Student ${userId} marked absent for ${date}` });
-    loadData();
+    refetchAttendance();
   };
 
-  const handleSuspend = (userId: string) => {
-    suspendUser(userId);
+  const handleSuspend = async (userId: string) => {
+    await suspendUser(userId);
     toast({
       title: "Student Suspended",
       description: `Account suspended successfully.`,
     });
-    loadData();
+    refetchSuspended();
   };
 
-  const handleReactivate = (userId: string) => {
-    reactivateUser(userId);
+  const handleReactivate = async (userId: string) => {
+    await reactivateUser(userId);
     toast({
       title: "Account Reactivated",
       description: `Student ${userId} has been restored.`,
     });
-    loadData();
+    refetchSuspended();
   };
 
   // Group by users for summary
   const userSummaries = attendances.reduce(
     (acc, curr) => {
-      if (!acc[curr.userId]) {
-        acc[curr.userId] = {
-          userId: curr.userId,
+      const uId = curr.user_id || curr.userId;
+      if (!uId) return acc;
+
+      if (!acc[uId]) {
+        acc[uId] = {
+          userId: uId,
           role: curr.role,
           present: 0,
           absent: 0,
           lastSeen: null,
         };
       }
-      if (curr.status === "present") acc[curr.userId].present++;
-      if (curr.status === "absent") acc[curr.userId].absent++;
+      if (curr.status === "present") acc[uId].present++;
+      if (curr.status === "absent") acc[uId].absent++;
       // simple lastSeen Logic
+      const t = curr.created_at || curr.timestamp;
       if (
         curr.status === "present" &&
-        (!acc[curr.userId].lastSeen ||
-          new Date(curr.timestamp) > new Date(acc[curr.userId].lastSeen))
+        (!acc[uId].lastSeen || (t && new Date(t) > new Date(acc[uId].lastSeen)))
       ) {
-        acc[curr.userId].lastSeen = curr.timestamp;
+        acc[uId].lastSeen = t;
       }
       return acc;
     },
@@ -131,7 +122,7 @@ export function ManagerAttendance() {
             )}
             {userList.map((user: any) => {
               const isSuspended = suspended.some(
-                (s) => s.userId === user.userId,
+                (s) => (s.user_id || s.userId) === user.userId,
               );
               return (
                 <div
@@ -207,28 +198,33 @@ export function ManagerAttendance() {
             </div>
           ) : (
             <div className="space-y-4">
-              {suspended.map((s) => (
-                <div
-                  key={s.userId}
-                  className="flex items-center justify-between bg-red-50 p-4 border-2 border-[#000000]"
-                >
-                  <div>
-                    <h4 className="font-bold text-[#000000]">{s.userId}</h4>
-                    <p className="text-xs text-red-600 font-semibold mt-1">
-                      Suspended: {new Date(s.suspendedAt).toLocaleDateString()}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      Only Admin/Manager can reactivate.
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => handleReactivate(s.userId)}
-                    className="flex items-center gap-2 px-3 py-2 bg-[#1A1A1A] text-white font-bold uppercase text-xs border-2 border-[#000000] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+              {suspended.map((s) => {
+                const uId = s.user_id || s.userId;
+                const sAt = s.suspended_at || s.suspendedAt;
+                return (
+                  <div
+                    key={uId}
+                    className="flex items-center justify-between bg-red-50 p-4 border-2 border-[#000000]"
                   >
-                    <UserCheck className="h-4 w-4" /> Reactivate
-                  </button>
-                </div>
-              ))}
+                    <div>
+                      <h4 className="font-bold text-[#000000]">{uId}</h4>
+                      <p className="text-xs text-red-600 font-semibold mt-1">
+                        Suspended:{" "}
+                        {sAt ? new Date(sAt).toLocaleDateString() : "Unknown"}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        Only Admin/Manager can reactivate.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => handleReactivate(uId)}
+                      className="flex items-center gap-2 px-3 py-2 bg-[#1A1A1A] text-white font-bold uppercase text-xs border-2 border-[#000000] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+                    >
+                      <UserCheck className="h-4 w-4" /> Reactivate
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>

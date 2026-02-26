@@ -195,7 +195,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       // Check if suspended before setting session
       const { isUserSuspended, logDailyAttendance } =
         await import("@/lib/attendanceService");
-      if (isUserSuspended(data.user.id)) {
+      const suspended = await isUserSuspended(data.user.id);
+      if (suspended) {
         setLoading(false);
         return {
           error: new Error(
@@ -226,7 +227,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         localStorage.setItem("user_role", role);
 
         // Track Daily Attendance on successful login
-        logDailyAttendance(data.user.id, role);
+        await logDailyAttendance(data.user.id, role);
       }
 
       setLoading(false);

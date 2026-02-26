@@ -142,7 +142,7 @@ const Assignments = () => {
               <Button
                 variant="ghost"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="mt-6 text-black hover:bg-black hover:text-white border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px] sm:text-xs h-10 px-6 w-full sm:w-auto"
+                className="mt-4 sm:mt-6 text-black hover:bg-black hover:text-white border-2 border-black rounded-none font-black uppercase tracking-widest text-[10px] sm:text-xs h-10 px-6 w-full sm:w-auto"
               >
                 {isExpanded ? "COLLAPSE_LOGS" : "EXPAND_FULL_SPECS"}
               </Button>
@@ -207,16 +207,16 @@ const Assignments = () => {
               </div>
 
               <Tabs defaultValue="upload" className="w-full">
-                <TabsList className="flex flex-col sm:grid sm:grid-cols-2 mb-6 sm:mb-8 bg-[#E9E9E9] p-1 border-2 border-black rounded-none h-auto sm:h-14 gap-1 sm:gap-0">
+                <TabsList className="flex mb-6 sm:mb-8 bg-[#E9E9E9] p-1 border-2 border-black rounded-none w-full">
                   <TabsTrigger
                     value="upload"
-                    className="rounded-none data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[10px] sm:text-xs w-full py-3 sm:py-0"
+                    className="flex-1 rounded-none data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[9px] sm:text-xs py-2 sm:py-3"
                   >
                     HARD_DRIVE
                   </TabsTrigger>
                   <TabsTrigger
                     value="link"
-                    className="rounded-none data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[10px] sm:text-xs w-full py-3 sm:py-0"
+                    className="flex-1 rounded-none data-[state=active]:bg-black data-[state=active]:text-white font-black uppercase tracking-widest text-[9px] sm:text-xs py-2 sm:py-3"
                   >
                     NETWORK_LINK
                   </TabsTrigger>
@@ -297,15 +297,15 @@ const Assignments = () => {
                 </TabsContent>
               </Tabs>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t-2 sm:border-t-4 border-black/10">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-6 mt-6 sm:mt-12 pt-6 sm:pt-8 border-t-2 sm:border-t-4 border-black/10">
                 <Button
                   variant="ghost"
-                  className="font-black uppercase tracking-widest text-[#000000]/40 hover:text-black w-full sm:w-auto h-12 sm:h-14 border-2 border-black sm:border-none"
+                  className="font-black uppercase tracking-widest text-[#000000]/40 hover:text-black w-full sm:w-auto h-12 sm:h-14 border-2 border-black sm:border-transparent order-2 sm:order-1"
                 >
                   SAVE_LOG_DRAFT
                 </Button>
                 <Button
-                  className={`w-full sm:w-auto px-6 sm:px-12 h-12 sm:h-14 bg-black text-white rounded-none border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm ${submissionStatus === "submitted" ? "bg-[#0075CF]" : ""}`}
+                  className={`w-full sm:w-auto px-6 sm:px-12 h-12 sm:h-14 bg-black text-white rounded-none border-2 border-black shadow-[4px_4px_0px_0px_#FD5A1A] sm:shadow-[8px_8px_0px_0px_#FD5A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all font-black uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-sm order-1 sm:order-2 ${submissionStatus === "submitted" ? "bg-[#0075CF]" : ""}`}
                   onClick={handleSubmit}
                   disabled={submissionStatus === "submitted"}
                 >

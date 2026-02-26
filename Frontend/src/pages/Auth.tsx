@@ -212,7 +212,7 @@ export default function Auth() {
       <InteractiveBackground />
 
       {/* Left Panel - Brand Showcase */}
-      <div className="hidden lg:flex lg:w-1/2 p-12 flex-col justify-between relative z-10 border-r-4 border-black">
+      <div className="hidden lg:flex lg:w-1/2 p-12 flex-col justify-between relative z-10">
         <div className="space-y-12">
           <Link
             to="/"

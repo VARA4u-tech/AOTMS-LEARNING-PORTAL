@@ -65,8 +65,8 @@ const features = [
 const themeStyles = {
   blue: {
     iconBg: "bg-[#0075CF]",
-    shadow: "shadow-[4px_4px_0px_0px_rgba(0,117,207,1)]",
-    hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(0,117,207,1)]",
+    shadow: "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+    hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]",
     textHover: "group-hover:text-[#0075CF]",
     accentColor: "text-[#0075CF]",
     barBg: "bg-[#0075CF]",
@@ -75,8 +75,8 @@ const themeStyles = {
   },
   orange: {
     iconBg: "bg-[#FD5A1A]",
-    shadow: "shadow-[4px_4px_0px_0px_rgba(253,90,26,1)]",
-    hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(253,90,26,1)]",
+    shadow: "shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+    hoverShadow: "hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]",
     textHover: "group-hover:text-[#FD5A1A]",
     accentColor: "text-[#FD5A1A]",
     barBg: "bg-[#FD5A1A]",
@@ -89,7 +89,7 @@ const KeyFeatures = () => {
   return (
     <section
       id="features"
-      className="py-24 md:py-32 relative overflow-hidden bg-black font-['Inter']"
+      className="py-24 md:py-32 relative overflow-hidden bg-[#0075CF] font-['Inter']"
     >
       {/* Background patterns */}
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
@@ -104,15 +104,15 @@ const KeyFeatures = () => {
           className="text-center mb-24"
         >
           <div className="inline-flex items-center gap-4 mb-8">
-            <span className="h-1.5 w-12 bg-[#0075CF]" />
+            <span className="h-1.5 w-12 bg-black" />
             <span className="text-sm font-black tracking-[0.3em] uppercase text-white">
               Platform Features
             </span>
-            <span className="h-1.5 w-12 bg-[#FD5A1A]" />
+            <span className="h-1.5 w-12 bg-black" />
           </div>
           <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mb-6 uppercase italic leading-[0.9]">
-            Advanced <span className="text-[#0075CF]">Learning</span> <br />
-            Powered By <span className="text-[#FD5A1A]">AOTMS</span>
+            Advanced <span className="text-black">Learning</span> <br />
+            Powered By <span className="text-white">AOTMS</span>
           </h2>
           <p className="text-white font-bold uppercase tracking-widest text-sm max-w-2xl mx-auto opacity-40">
             Everything you need for a competitive edge — from live sessions to
@@ -132,7 +132,7 @@ const KeyFeatures = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="h-full bg-white border-4 border-black p-10 shadow-[8px_8px_0px_0px_rgba(255,107,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,117,207,1)] transition-all group relative rounded-none">
+                <div className="h-full bg-white border-4 border-black p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all group relative rounded-none">
                   {/* Decorative corner tag */}
                   <div
                     className={`absolute top-0 right-0 p-3 border-l-4 border-b-4 border-black font-black text-[10px] tracking-widest uppercase ${feature.theme === "blue" ? "bg-[#0075CF] text-white" : "bg-[#FD5A1A] text-white"}`}

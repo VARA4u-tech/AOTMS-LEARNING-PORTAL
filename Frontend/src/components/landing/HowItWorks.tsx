@@ -44,7 +44,10 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden font-['Inter']">
+    <section
+      id="how-it-works"
+      className="py-24 md:py-32 bg-white relative overflow-hidden font-['Inter']"
+    >
       <div className="absolute inset-0 z-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none" />
 
       <div className="container-width px-4 md:px-8 lg:px-16 relative z-10">

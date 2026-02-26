@@ -143,11 +143,11 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-16 md:pb-24 bg-white font-[ rounded-3xl'Inter']"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-16 bg-white font-['Inter']"
     >
       <TechBackground />
 
-      <div className="container-width section-padding relative z-10 w-full">
+      <div className="container-width px-4 md:px-8 lg:px-16 relative z-10 w-full mt-12 lg:mt-8">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -237,7 +237,7 @@ const HeroSection = () => {
 
       {/* Brutalist Sticky Scroll Spy Navigation (Desktop only) */}
       {!isMobile && (
-        <div className="fixed left-8 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-3">
+        <div className="fixed left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-3">
           {sections.map((section, index) => {
             const isActive = activeSection === section.id;
             return (

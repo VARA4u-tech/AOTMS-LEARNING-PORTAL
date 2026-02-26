@@ -22,7 +22,7 @@ const TechBackground = () => (
       <motion.div
         className="absolute -inset-[100%]"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(0, 117, 207, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 117, 207, 0.08) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, rgba(0, 117, 207, 0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 117, 207, 0.15) 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
         }}
         animate={{
@@ -38,7 +38,7 @@ const TechBackground = () => (
       <motion.div
         className="absolute -inset-[100%]"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(253, 90, 26, 0.15) 1.5px, transparent 1.5px)`,
+          backgroundImage: `radial-gradient(circle, rgba(253, 90, 26, 0.25) 1.5px, transparent 1.5px)`,
           backgroundSize: "20px 20px",
         }}
         animate={{

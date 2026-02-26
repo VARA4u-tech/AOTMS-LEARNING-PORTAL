@@ -30,7 +30,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import AmbientBackground from "@/components/ui/AmbientBackground";
-import InteractiveLeftPanel from "@/components/ui/InteractiveLeftPanel";
+import InteractiveBackground from "@/components/ui/InteractiveBackground";
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -209,9 +209,10 @@ export default function Auth() {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row bg-[#E9E9E9] font-['Inter'] relative overflow-hidden">
       <AmbientBackground />
+      <InteractiveBackground />
 
-      {/* Left Panel - Brand Showcase with Interactive Cursor */}
-      <InteractiveLeftPanel>
+      {/* Left Panel - Brand Showcase */}
+      <div className="hidden lg:flex lg:w-1/2 p-12 flex-col justify-between relative z-10 border-r-4 border-black">
         <div className="space-y-12">
           <Link
             to="/"
@@ -269,7 +270,7 @@ export default function Auth() {
             <Trophy className="h-6 w-6 text-black" />
           </div>
         </div>
-      </InteractiveLeftPanel>
+      </div>
 
       {/* Right Panel - Auth Form */}
       <div className="flex-1 p-4 sm:p-8 lg:p-12 flex items-center justify-center relative z-20 overflow-y-auto">

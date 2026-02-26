@@ -6,8 +6,41 @@ import { useState, useEffect } from "react";
 
 const TechBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-    {/* Tech grid */}
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
+    {/* Animated dual-layer grid pattern */}
+    <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]">
+      <motion.div
+        className="absolute -inset-[100%]"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0, 117, 207, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 117, 207, 0.08) 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+        animate={{
+          x: [0, -40],
+          y: [0, -40],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+      <motion.div
+        className="absolute -inset-[100%]"
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(253, 90, 26, 0.15) 1.5px, transparent 1.5px)`,
+          backgroundSize: "20px 20px",
+        }}
+        animate={{
+          x: [0, 20],
+          y: [0, 20],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+    </div>
 
     {/* Floating tech nodes */}
     {Array.from({ length: 8 }).map((_, i) => (
@@ -15,7 +48,7 @@ const TechBackground = () => (
         key={i}
         animate={{
           y: [0, -30, 0],
-          opacity: [0.1, 0.4, 0.1],
+          opacity: [0.3, 0.7, 0.3],
         }}
         transition={{
           duration: 3 + i,
@@ -33,24 +66,24 @@ const TechBackground = () => (
 
     {/* Moving data lines */}
     <motion.div
-      animate={{ y: [-200, 1000], opacity: [0, 0.5, 0] }}
+      animate={{ y: [-200, 1000], opacity: [0, 0.8, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
       className="absolute left-[25%] top-0 w-[1px] h-[200px] bg-gradient-to-b from-transparent via-[#0075CF] to-transparent"
     />
     <motion.div
-      animate={{ y: [-200, 1000], opacity: [0, 0.5, 0] }}
+      animate={{ y: [-200, 1000], opacity: [0, 0.8, 0] }}
       transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 2.5 }}
       className="absolute left-[75%] top-0 w-[1px] h-[250px] bg-gradient-to-b from-transparent via-[#FD5A1A] to-transparent"
     />
     <motion.div
-      animate={{ x: [-200, 1000], opacity: [0, 0.3, 0] }}
+      animate={{ x: [-200, 1000], opacity: [0, 0.6, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
       className="absolute top-[30%] left-0 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-[#0075CF] to-transparent"
     />
 
     {/* Soft glows */}
-    <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-[#0075CF]/5 rounded-full blur-[100px]" />
-    <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-[#FD5A1A]/5 rounded-full blur-[120px]" />
+    <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-[#0075CF]/10 rounded-full blur-[100px]" />
+    <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-[#FD5A1A]/10 rounded-full blur-[120px]" />
   </div>
 );
 

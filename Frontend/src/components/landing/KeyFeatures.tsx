@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Video,
@@ -86,6 +87,37 @@ const themeStyles = {
 };
 
 const KeyFeatures = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile || !scrollRef.current || isHovered) return;
+
+    const intervalId = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const maxScroll = scrollWidth - clientWidth;
+        const cardWidth = scrollRef.current.children[0].clientWidth + 32; // card width + gap
+
+        if (scrollLeft >= maxScroll - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
+        }
+      }
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [isMobile, isHovered]);
+
   return (
     <section
       id="features"
@@ -120,8 +152,17 @@ const KeyFeatures = () => {
           </p>
         </motion.div>
 
-        {/* Features Grid - Horizontal Scroll on Mobile */}
-        <div className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 snap-x snap-mandatory hide-scrollbar">
+        {/* Features Grid - Horizontal Scroll on Mobile with Autoplay */}
+        <div
+          ref={scrollRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
+          onTouchEnd={() => {
+            setTimeout(() => setIsHovered(false), 2000); // Resume autoplay after touch
+          }}
+          className="flex overflow-x-auto pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 snap-x snap-mandatory hide-scrollbar"
+        >
           {features.map((feature, index) => {
             const style = themeStyles[feature.theme];
             return (
@@ -200,5 +241,3 @@ const KeyFeatures = () => {
 };
 
 export default KeyFeatures;
-
-

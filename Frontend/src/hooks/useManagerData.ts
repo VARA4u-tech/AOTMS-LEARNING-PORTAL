@@ -800,7 +800,7 @@ export function useCreateLeaderboardAudit() {
 // ═══════════════════════════════════════════════════════════════════════════
 
 export function useAttendance() {
-  return useQuery<any[]>({
+  return useQuery<Record<string, unknown>[]>({
     queryKey: ["attendance"],
     queryFn: () => safeFetchWithAuth("/data/attendance?sort=date&order=desc"),
     refetchInterval: 10000,
@@ -808,7 +808,7 @@ export function useAttendance() {
 }
 
 export function useSuspendedUsers() {
-  return useQuery<any[]>({
+  return useQuery<Record<string, unknown>[]>({
     queryKey: ["suspended-users"],
     queryFn: () =>
       safeFetchWithAuth("/data/suspended_users?sort=suspended_at&order=desc"),

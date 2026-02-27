@@ -54,7 +54,15 @@ export default function SettingsPage() {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() =>
+                setActiveTab(
+                  tab.id as
+                    | "profile"
+                    | "security"
+                    | "notifications"
+                    | "appearance",
+                )
+              }
               className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-3xl border-2 transition-all font-black text-sm uppercase tracking-widest ${
                 activeTab === tab.id
                   ? "bg-[#000000] text-white border-[#000000] shadow-[4px_4px_0px_0px_rgba(253,90,26,1)] translate-x-[-2px] translate-y-[-2px]"
@@ -233,4 +241,3 @@ export default function SettingsPage() {
     </div>
   );
 }
-

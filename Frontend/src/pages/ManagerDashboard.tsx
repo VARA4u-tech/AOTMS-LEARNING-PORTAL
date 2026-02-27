@@ -436,9 +436,19 @@ export default function ManagerDashboard() {
     const enrichedUsers = userRoles
       .filter((u) => userListFilter === "all" || u.role === userListFilter)
       .map((u) => {
-        const profile = (profiles as any[]).find(
-          (p: any) => p.id === u.user_id,
+        type ProfileData = {
+          id: string;
+          full_name?: string | null;
+          email?: string | null;
+          avatar_url?: string | null;
+          created_at?: string | null;
+          status?: string | null;
+        };
+
+        const profile = (profiles as ProfileData[]).find(
+          (p) => p.id === u.user_id,
         );
+
         return {
           ...u,
           full_name: profile?.full_name || null,
@@ -551,24 +561,26 @@ export default function ManagerDashboard() {
                   {/* Info */}
                   <div className="flex-1 min-w-0">
                     <p className="font-black text-[#000000] text-lg uppercase tracking-wider truncate mb-1">
-                      {u.full_name || "Unknown User"}
+                      {(u.full_name as string) || "Unknown User"}
                     </p>
                     <p className="text-sm font-bold text-[#000000]/60 truncate">
-                      {u.email || u.user_id}
+                      {(u.email as string) || (u.user_id as string)}
                     </p>
                   </div>
 
                   {/* Join Date */}
                   <div className="hidden sm:flex items-center gap-1 text-xs font-bold text-[#000000]/60 flex-shrink-0">
                     <Clock className="h-4 w-4" />
-                    <span>Joined {formatJoinDate(u.created_at_profile)}</span>
+                    <span>
+                      Joined {formatJoinDate(u.created_at_profile as string)}
+                    </span>
                   </div>
 
                   {/* Role Badge */}
                   <span
                     className={`text-[10px] font-black uppercase tracking-widest px-2 py-1 border-2 border-[#000000] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${accentColor.bg} ${accentColor.text} flex-shrink-0`}
                   >
-                    {u.role}
+                    {u.role as string}
                   </span>
 
                   {/* Status Badge */}
@@ -579,7 +591,7 @@ export default function ManagerDashboard() {
                         : "bg-green-500 text-white"
                     }`}
                   >
-                    {u.status}
+                    {u.status as string}
                   </span>
                 </div>
               ))}
@@ -639,4 +651,3 @@ export default function ManagerDashboard() {
     </SidebarProvider>
   );
 }
-

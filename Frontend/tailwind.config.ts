@@ -39,7 +39,10 @@ const makeColorMap = (mainColor: string) => ({
   DEFAULT: mainColor,
 });
 
-const strictColorOverrides: Record<string, any> = {};
+const strictColorOverrides: Record<
+  string,
+  Record<number | string, string>
+> = {};
 ["slate", "gray", "zinc", "neutral", "stone"].forEach(
   (c) => (strictColorOverrides[c] = grayMap),
 );

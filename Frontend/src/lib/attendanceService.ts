@@ -66,7 +66,7 @@ export async function getAllAttendance(): Promise<AttendanceRecord[]> {
     if (!res.ok) throw new Error("Backend fetch failed");
 
     const data = await res.json();
-    const normalized = data.map((r: any) => ({
+    const normalized = data.map((r: Record<string, unknown>) => ({
       id: r.id,
       userId: r.user_id,
       role: r.role,
@@ -95,7 +95,7 @@ export async function getSuspendedUsers(): Promise<SuspendedUser[]> {
     if (!res.ok) throw new Error("Backend fetch failed");
 
     const data = await res.json();
-    const normalized = data.map((r: any) => ({
+    const normalized = data.map((r: Record<string, unknown>) => ({
       userId: r.user_id,
       suspendedAt: r.suspended_at || r.suspendedAt,
     }));
@@ -264,7 +264,8 @@ export async function checkAbsencesAndSuspend(userId: string) {
   const records = await getAllAttendance();
   const userRecords = records.filter(
     (r) =>
-      (r.userId === userId || (r as any).user_id === userId) &&
+      (r.userId === userId ||
+        (r as unknown as Record<string, unknown>).user_id === userId) &&
       r.status === "absent",
   );
   const missingDays = userRecords.length;

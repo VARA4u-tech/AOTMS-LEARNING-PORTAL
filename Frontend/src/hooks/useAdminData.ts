@@ -172,11 +172,14 @@ export function useAdminData() {
 
       // Calculate revenue from enrollments
       if (enrollmentsData) {
-        const revenue = (enrollmentsData as any[]).reduce((sum, enr) => {
-          // Check for price or amount, default to 0 if not found
-          const price = enr.amount || enr.price || 0;
-          return sum + price;
-        }, 0);
+        const revenue = (enrollmentsData as Record<string, unknown>[]).reduce(
+          (sum, enr) => {
+            // Check for price or amount, default to 0 if not found
+            const price = (enr.amount as number) || (enr.price as number) || 0;
+            return sum + price;
+          },
+          0,
+        );
         setStats((prev) => ({ ...prev, totalRevenue: revenue }));
       }
 

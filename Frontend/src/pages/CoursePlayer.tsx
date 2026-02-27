@@ -160,8 +160,8 @@ export default function CoursePlayer() {
             headers: { Authorization: `Bearer ${token}` },
           });
 
-          let loadedTopics: any[] = [];
-          let loadedVideos: any[] = [];
+          let loadedTopics: Topic[] = [];
+          let loadedVideos: Video[] = [];
 
           if (tRes.ok) loadedTopics = await tRes.json();
           if (vRes.ok) loadedVideos = await vRes.json();
@@ -351,7 +351,9 @@ export default function CoursePlayer() {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() =>
+                  setActiveTab(tab.id as "content" | "resources" | "qna")
+                }
                 className={`flex-1 flex items-center justify-center gap-2 py-3 px-2 text-sm font-black border-r-2 border-[#000000] last:border-r-0 transition-colors ${
                   activeTab === tab.id
                     ? "bg-white text-[#0075CF] border-b-4 border-b-[#0075CF] -mb-[2px]"
@@ -566,4 +568,3 @@ export default function CoursePlayer() {
     </div>
   );
 }
-

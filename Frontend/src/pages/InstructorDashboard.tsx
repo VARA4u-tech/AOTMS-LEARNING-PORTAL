@@ -113,7 +113,11 @@ export default function InstructorDashboard() {
     );
   }
 
-  const renderModulePlaceholder = (title: string, icon: any, desc: string) => {
+  const renderModulePlaceholder = (
+    title: string,
+    icon: React.ElementType,
+    desc: string,
+  ) => {
     const Icon = icon;
     return (
       <div className="space-y-6 font-['Inter']">
@@ -409,4 +413,3 @@ export default function InstructorDashboard() {
     </SidebarProvider>
   );
 }
-

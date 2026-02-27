@@ -11,9 +11,17 @@ import {
   Search,
   CalendarDays,
   UserX,
-  UserCheck,
   ShieldAlert,
+  UserCheck,
 } from "lucide-react";
+
+interface UserSummary {
+  userId: string;
+  role: string;
+  present: number;
+  absent: number;
+  lastSeen: string | null;
+}
 
 export function ManagerAttendance() {
   const { data: attendances = [], refetch: refetchAttendance } =
@@ -52,9 +60,9 @@ export function ManagerAttendance() {
 
   // Group by users for summary
   const userSummaries = attendances.reduce(
-    (acc, curr) => {
+    (acc: Record<string, UserSummary>, curr: any) => {
       const uId = curr.user_id || curr.userId;
-      if (!uId) return acc;
+      if (!uId || typeof uId !== "string") return acc;
 
       if (!acc[uId]) {
         acc[uId] = {
@@ -73,14 +81,14 @@ export function ManagerAttendance() {
         curr.status === "present" &&
         (!acc[uId].lastSeen || (t && new Date(t) > new Date(acc[uId].lastSeen)))
       ) {
-        acc[uId].lastSeen = t;
+        acc[uId].lastSeen = t as string;
       }
       return acc;
     },
-    {} as Record<string, any>,
+    {} as Record<string, UserSummary>,
   );
 
-  const userList = Object.values(userSummaries).filter((u: any) =>
+  const userList = Object.values(userSummaries).filter((u: UserSummary) =>
     u.userId.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
@@ -120,9 +128,9 @@ export function ManagerAttendance() {
                 No users found.
               </p>
             )}
-            {userList.map((user: any) => {
+            {userList.map((user: UserSummary) => {
               const isSuspended = suspended.some(
-                (s) => (s.user_id || s.userId) === user.userId,
+                (s: any) => (s.user_id || s.userId) === user.userId,
               );
               return (
                 <div
@@ -198,7 +206,7 @@ export function ManagerAttendance() {
             </div>
           ) : (
             <div className="space-y-4">
-              {suspended.map((s) => {
+              {suspended.map((s: any) => {
                 const uId = s.user_id || s.userId;
                 const sAt = s.suspended_at || s.suspendedAt;
                 return (
@@ -232,4 +240,3 @@ export function ManagerAttendance() {
     </div>
   );
 }
-
